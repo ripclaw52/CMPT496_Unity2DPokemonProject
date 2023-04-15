@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 15855
+  controlID: 16833
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 15856
+  controlID: 16834
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 15841
+  controlID: 16835
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -228,7 +228,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 9454ffffa655ffff1c63ffff6469ffff126affff8870ffff9abeffffdcbeffffe2c9ffff0acdffff4acdffffcacdffff24ceffffbcceffff0acfffff4ccfffffd6cfffff32d0ffffe2d6fffff6d6ffff80dcffff36deffffd0e8ffff5aeffffffaf4ffffd0f9ffffe4f9ffff2afbffff889b0000e69e0000a4ad000088bb0000b2bd000054c00000
+      m_ExpandedIDs: d447ffffac4dffff9454ffffa655ffff1c63ffff6469ffff126affff8870ffff9abeffffdcbeffffe2c9ffff0acdffff4acdffffcacdffff24ceffffbcceffff0acfffff4ccfffffd6cfffff32d0ffffe2d6fffff6d6ffff80dcffff36deffffd0e8ffff5aeffffffaf4ffffd0f9ffffe4f9ffff2afbffff889b0000e69e0000a4ad000088bb0000b2bd000054c00000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -367,7 +367,7 @@ MonoBehaviour:
       containerId: overlay-toolbar__top
       floating: 0
       collapsed: 0
-      displayed: 1
+      displayed: 0
       snapOffset: {x: 0, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
@@ -527,9 +527,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -28.300247, y: -4.799199, z: -0.1390467}
+    m_Target: {x: -28.141594, y: -2.0539713, z: -0.18983822}
     speed: 2
-    m_Value: {x: -28.300247, y: -4.799199, z: -0.1390467}
+    m_Value: {x: -28.141594, y: -2.0539713, z: -0.18983822}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -580,9 +580,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 4.0128975
+    m_Target: 5.7067447
     speed: 2
-    m_Value: 4.0128975
+    m_Value: 5.7067447
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -774,22 +774,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Game/Main
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Game/Main
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\ryley\Documents\Coding\Unity\Projects\PokemonGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: fe660000
-    m_LastClickedID: 26366
-    m_ExpandedIDs: 00000000d0660000f4660000
+    m_SelectedIDs: 32710000
+    m_LastClickedID: 28978
+    m_ExpandedIDs: 00000000d0660000f4660000f8660000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -842,8 +842,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 5cc00000
-    m_LastClickedInstanceID: 49244
+    m_SelectedInstanceIDs: 9044ffff
+    m_LastClickedInstanceID: -47984
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300004492000040920000428e00004c770000
     m_RenameOverlay:
@@ -903,7 +903,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 48570
+  m_LastSelectedObjectID: -47154
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -993,7 +993,7 @@ MonoBehaviour:
     m_CachedPref: -151
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 49244
+  m_LastInspectedObjectInstanceID: -47984
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
