@@ -123,12 +123,104 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &585593382
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7270024934051447565, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: connectedScenes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270024934051447565, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: connectedScenes.Array.data[0]
+      value: 
+      objectReference: {fileID: 1112566994}
+    - target: {fileID: 7270024934051447568, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: m_Name
+      value: House1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270024934051447570, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: m_Size.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270024934051447570, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: m_Size.y
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270024934051447570, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270024934051447570, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: m_Offset.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270024934051447571, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270024934051447571, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270024934051447571, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270024934051447571, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270024934051447571, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270024934051447571, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270024934051447571, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270024934051447571, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270024934051447571, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270024934051447571, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270024934051447571, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+--- !u!114 &585593383 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7270024934051447565, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+  m_PrefabInstance: {fileID: 585593382}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 630de0950659fd846b04fdb4aa8e380d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &751171108 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7270024934051447565, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
   m_PrefabInstance: {fileID: 961728392}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 961728393}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 630de0950659fd846b04fdb4aa8e380d, type: 3}
@@ -211,12 +303,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+--- !u!1 &961728393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7270024934051447568, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+  m_PrefabInstance: {fileID: 961728392}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &961728394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961728393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1218654664b58e468c44cdaa144e1d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wildPokemons:
+  - _base: {fileID: 11400000, guid: c47f7eab777b9d040be66b5090c96b53, type: 2}
+    level: 6
 --- !u!114 &1112566994 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7270024934051447565, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
   m_PrefabInstance: {fileID: 7270024934577174973}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 7270024934577174974}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 630de0950659fd846b04fdb4aa8e380d, type: 3}
@@ -300,12 +412,36 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7270024934051447565, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
   m_PrefabInstance: {fileID: 1612216331}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1612216333}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 630de0950659fd846b04fdb4aa8e380d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1612216333 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7270024934051447568, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+  m_PrefabInstance: {fileID: 1612216331}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1612216334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612216333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1218654664b58e468c44cdaa144e1d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wildPokemons:
+  - _base: {fileID: 11400000, guid: 1a6fe0a08f37f0448ada09c76ce4e080, type: 2}
+    level: 6
+  - _base: {fileID: 11400000, guid: 85e4f6beafe9d8c43a7f4516b7036c47, type: 2}
+    level: 4
+  - _base: {fileID: 11400000, guid: c501666c27cd21b47a427aebd0c6c8a7, type: 2}
+    level: 10
 --- !u!1001 &1937870226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -372,12 +508,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7270024934051447565, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: connectedScenes.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7270024934051447565, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: connectedScenes.Array.data[0]
       value: 
       objectReference: {fileID: 751171108}
+    - target: {fileID: 7270024934051447565, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: connectedScenes.Array.data[1]
+      value: 
+      objectReference: {fileID: 585593383}
     - target: {fileID: 7270024934051447568, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: m_Name
       value: HomeTown
@@ -436,3 +576,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+--- !u!1 &7270024934577174974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7270024934051447568, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+  m_PrefabInstance: {fileID: 7270024934577174973}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7270024934577174975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7270024934577174974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1218654664b58e468c44cdaa144e1d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wildPokemons:
+  - _base: {fileID: 11400000, guid: 1a6fe0a08f37f0448ada09c76ce4e080, type: 2}
+    level: 6
