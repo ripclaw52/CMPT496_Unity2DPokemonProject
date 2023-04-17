@@ -11,7 +11,6 @@ public class GameController : MonoBehaviour
     [SerializeField] Camera worldCamera;
 
     GameState state;
-
     GameState stateBeforePause;
 
     public SceneDetails CurrentScene { get; private set; }
@@ -21,6 +20,9 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+
+        PokemonDB.Init();
+        MoveDB.Init();
         ConditionsDB.Init();
     }
 
