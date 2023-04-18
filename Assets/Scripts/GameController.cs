@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GameState { FreeRoam, Battle, Dialog, Cutscene, Paused }
+public enum GameState { FreeRoam, Battle, Dialog, Menu, Cutscene, Paused }
 
 public class GameController : MonoBehaviour
 {
@@ -16,10 +16,14 @@ public class GameController : MonoBehaviour
     public SceneDetails CurrentScene { get; private set; }
     public SceneDetails PrevScene { get; private set; }
 
+    MenuController menuController;
+
     public static GameController Instance { get; private set; }
     private void Awake()
     {
         Instance = this;
+
+        menuController = GetComponent<MenuController>();
 
         PokemonDB.Init();
         MoveDB.Init();
@@ -40,6 +44,13 @@ public class GameController : MonoBehaviour
             if (state == GameState.Dialog)
                 state = GameState.FreeRoam;
         };
+
+        menuController.onBack += () =>
+        {
+            state = GameState.FreeRoam;
+        };
+
+        menuController.onMenuSelected += OnMenuSelected;
     }
 
     public void PauseGame(bool pause)
@@ -108,13 +119,10 @@ public class GameController : MonoBehaviour
         {
             playerController.HandleUpdate();
 
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.Return))
             {
-                SavingSystem.i.Save("saveSlot1");
-            }
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                SavingSystem.i.Load("saveSlot1");
+                menuController.OpenMenu();
+                state = GameState.Menu;
             }
         }
         else if (state == GameState.Battle)
@@ -125,11 +133,38 @@ public class GameController : MonoBehaviour
         {
             DialogManager.Instance.HandleUpdate();
         }
+        else if (state == GameState.Menu)
+        {
+            menuController.HandleUpdate();
+        }
     }
 
     public void SetCurrentScene(SceneDetails currScene)
     {
         PrevScene = CurrentScene;
         CurrentScene = currScene;
+    }
+
+    void OnMenuSelected(int selectedItem)
+    {
+        switch (selectedItem)
+        {
+            case 0:
+                // Pokemon
+                break;
+            case 1:
+                // Bag
+                break;
+            case 2:
+                // Save
+                SavingSystem.i.Save("saveSlot1");
+                break;
+            case 3:
+                // Load
+                SavingSystem.i.Load("saveSlot1");
+                break;
+        }
+
+        state = GameState.FreeRoam;
     }
 }
