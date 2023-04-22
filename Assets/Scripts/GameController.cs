@@ -186,7 +186,6 @@ public class GameController : MonoBehaviour
             case 0:
                 // Pokemon
                 partyScreen.gameObject.SetActive(true);
-                partyScreen.SetPartyData(playerController.GetComponent<PokemonParty>().Pokemons);
                 state = GameState.PartyScreen;
                 break;
             case 1:
