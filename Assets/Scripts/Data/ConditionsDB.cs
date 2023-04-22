@@ -25,7 +25,7 @@ public class ConditionsDB
                 StartMessage = "has been poisoned",
                 OnAfterTurn = (Pokemon pokemon) =>
                 {
-                    pokemon.UpdateHP(pokemon.MaxHP / 8);
+                    pokemon.DecreaseHP(pokemon.MaxHP / 8);
                     pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} was hurt by poison");
                 }
             }
@@ -38,7 +38,7 @@ public class ConditionsDB
                 StartMessage = "has been burned",
                 OnAfterTurn = (Pokemon pokemon) =>
                 {
-                    pokemon.UpdateHP(pokemon.MaxHP / 16);
+                    pokemon.DecreaseHP(pokemon.MaxHP / 16);
                     pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} was hurt by burn");
                 }
             }
@@ -137,7 +137,7 @@ public class ConditionsDB
 
                     // Hurt by confusion
                     pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} is confused");
-                    pokemon.UpdateHP(pokemon.MaxHP / 8);
+                    pokemon.DecreaseHP(pokemon.MaxHP / 8);
                     pokemon.StatusChanges.Enqueue($"It hurt itself in its confusion");
                     return false;
                 }

@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour, ISavable
 
     private Vector2 input;
     private Character character;
+
     private void Awake()
     {
         character = GetComponent<Character>();
