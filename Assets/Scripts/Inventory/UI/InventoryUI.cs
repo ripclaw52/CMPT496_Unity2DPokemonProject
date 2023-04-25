@@ -19,6 +19,8 @@ public class InventoryUI : MonoBehaviour
 
     [SerializeField] PartyScreen partyScreen;
 
+    Action onItemUsed;
+
     int selectedItem = 0;
     InventoryUIState state;
 
@@ -58,8 +60,10 @@ public class InventoryUI : MonoBehaviour
         UpdateItemSelection();
     }
 
-    public void HandleUpdate(Action onBack)
+    public void HandleUpdate(Action onBack, Action onItemUsed=null)
     {
+        this.onItemUsed = onItemUsed;
+
         if (state == InventoryUIState.ItemSelection)
         {
             int prevSelection = selectedItem;
@@ -102,7 +106,8 @@ public class InventoryUI : MonoBehaviour
         var usedItem = inventory.UseItem(selectedItem, partyScreen.SelectedMember);
         if (usedItem != null)
         {
-            yield return DialogManager.Instance.ShowDialogText($"You used a {usedItem.Name} on {partyScreen.SelectedMember.Base.Name}!");
+            yield return DialogManager.Instance.ShowDialogText($"The player used {usedItem.Name}");
+            onItemUsed?.Invoke();
         }
         else
         {
