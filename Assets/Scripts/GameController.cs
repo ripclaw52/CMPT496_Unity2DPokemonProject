@@ -205,4 +205,6 @@ public class GameController : MonoBehaviour
                 break;
         }
     }
+
+    public GameState State => state;
 }
