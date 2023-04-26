@@ -286,8 +286,13 @@ MonoBehaviour:
     count: 25
   - item: {fileID: 11400000, guid: 33f57d34329f903469fe033f4092546a, type: 2}
     count: 5
-  berrySlots: []
-  tmSlots: []
+  tmSlots:
+  - item: {fileID: 11400000, guid: 362b513423916c148848ea0b388b45d2, type: 2}
+    count: 5
+  - item: {fileID: 11400000, guid: a15a004177591fa4ea0a9908618fd287, type: 2}
+    count: 5
+  - item: {fileID: 11400000, guid: 4e78df0a1d6c80940bcf9ce0347ca050, type: 2}
+    count: 5
 --- !u!1 &5463470663971113751
 GameObject:
   m_ObjectHideFlags: 0

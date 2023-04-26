@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20b494dfa3678284c9484725538bc4ba, type: 3}
+  m_Name: TM006
+  m_EditorClassIdentifier: 
+  name: TM 006
+  description: Teaches the move Scary Face to a pokemon
+  usedMessage: 
+  icon: {fileID: 425232356, guid: 48b9b7014b5679f458972768c83ff248, type: 3}
+  move: {fileID: 11400000, guid: c142ad765cda169459b93a4b9291e525, type: 2}
