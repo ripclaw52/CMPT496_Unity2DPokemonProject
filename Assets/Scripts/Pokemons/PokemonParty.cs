@@ -20,12 +20,17 @@ public class PokemonParty : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Awake()
     {
         foreach (var pokemon in pokemons)
         {
             pokemon.Init();
         }
+    }
+
+    private void Start()
+    {
+        
     }
 
     public Pokemon GetHealthyPokemon()
