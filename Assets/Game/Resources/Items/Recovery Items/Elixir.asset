@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Elixir
   m_EditorClassIdentifier: 
   name: Elixir
-  description: "It restores the PP of all the moves learned by the targeted Pok\xE9mon
-    by 10 points each."
+  description: "A medicine that can be used to restore 10 PP to all four moves that
+    a Pok\xE9mon knows."
+  usedMessage: 
   icon: {fileID: 203212170, guid: 48b9b7014b5679f458972768c83ff248, type: 3}
   hpAmount: 0
   restoreMaxHP: 0

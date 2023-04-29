@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: MaxPotion
   m_EditorClassIdentifier: 
   name: Max Potion
-  description: Fully restores HP.
+  description: "A spray-type medicine for treating wounds. It can be used to fully
+    restore the max HP of a Pok\xE9mon.\r"
+  usedMessage: 
   icon: {fileID: -1261813468, guid: 48b9b7014b5679f458972768c83ff248, type: 3}
   hpAmount: 0
   restoreMaxHP: 1

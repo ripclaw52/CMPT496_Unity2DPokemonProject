@@ -105,7 +105,7 @@ public class InventoryUI : MonoBehaviour
             }
 
             if (Input.GetKeyDown(KeyCode.Z))
-                ItemSelected();
+                StartCoroutine(ItemSelected());
             else if (Input.GetKeyDown(KeyCode.X))
                 onBack?.Invoke();
         }
@@ -134,8 +134,33 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    void ItemSelected()
+    IEnumerator ItemSelected()
     {
+        state = InventoryUIState.Busy;
+
+        var item = inventory.GetItem(selectedItem, selectedCategory);
+
+        if (GameController.Instance.State == GameState.Battle)
+        {
+            // In Battle
+            if (!item.CanUseInBattle)
+            {
+                yield return DialogManager.Instance.ShowDialogText($"A battle is no place to use {item.Name}!");
+                state = InventoryUIState.ItemSelection;
+                yield break;
+            }
+        }
+        else
+        {
+            // Outside Battle
+            if (!item.CanUseOutsideBattle)
+            {
+                yield return DialogManager.Instance.ShowDialogText($"{item.Name}'s should only be used during a battle!");
+                state = InventoryUIState.ItemSelection;
+                yield break;
+            }
+        }
+
         if (selectedCategory == (int)ItemCategory.Pokeballs)
         {
             StartCoroutine(UseItem());
@@ -143,6 +168,9 @@ public class InventoryUI : MonoBehaviour
         else
         {
             OpenPartyScreen();
+
+            if (item is TmItem)
+                partyScreen.ShowIfTmIsUsable(item as TmItem);
         }
     }
 
@@ -156,12 +184,13 @@ public class InventoryUI : MonoBehaviour
         if (usedItem != null)
         {
             if (usedItem is RecoveryItem)
-                yield return DialogManager.Instance.ShowDialogText($"The player used {usedItem.Name}");
+                yield return DialogManager.Instance.ShowDialogText($"You used {usedItem.Name}");
             onItemUsed?.Invoke(usedItem);
         }
         else
         {
-            yield return DialogManager.Instance.ShowDialogText($"It won't have any effect!");
+            if (usedItem is RecoveryItem)
+                yield return DialogManager.Instance.ShowDialogText($"It won't have any effect!");
         }
 
         ClosePartyScreen();
@@ -174,15 +203,28 @@ public class InventoryUI : MonoBehaviour
             yield break;
 
         var pokemon = partyScreen.SelectedMember;
+
+        if (pokemon.HasMove(tmItem.Move))
+        {
+            yield return DialogManager.Instance.ShowDialogText($"{pokemon.Base.Name} already knows {tmItem.Move.Name}!");
+            yield break;
+        }
+
+        if (!tmItem.CanBeTaught(pokemon))
+        {
+            yield return DialogManager.Instance.ShowDialogText($"{pokemon.Base.Name} can't learn {tmItem.Move.Name}!");
+            yield break;
+        }
+
         if (pokemon.Moves.Count < PokemonBase.MaxNumOfMoves)
         {
             pokemon.LearnMove(tmItem.Move);
-            yield return DialogManager.Instance.ShowDialogText($"{pokemon.Base.Name} learned {tmItem.Move.Name}");
+            yield return DialogManager.Instance.ShowDialogText($"{pokemon.Base.Name} learned {tmItem.Move.Name}!");
         }
         else
         {
-            yield return DialogManager.Instance.ShowDialogText($"{pokemon.Base.Name} is trying to learn {tmItem.Move.Name}");
-            yield return DialogManager.Instance.ShowDialogText($"But it cannot learn more than {PokemonBase.MaxNumOfMoves} moves");
+            yield return DialogManager.Instance.ShowDialogText($"{pokemon.Base.Name} is trying to learn {tmItem.Move.Name}!");
+            yield return DialogManager.Instance.ShowDialogText($"But it cannot learn more than {PokemonBase.MaxNumOfMoves} moves!");
             yield return ChooseMoveToForget(pokemon, tmItem.Move);
             yield return new WaitUntil(() => state != InventoryUIState.MoveToForget);
         }
@@ -257,6 +299,8 @@ public class InventoryUI : MonoBehaviour
     void ClosePartyScreen()
     {
         state = InventoryUIState.ItemSelection;
+
+        partyScreen.ClearMemberSlotMessages();
         partyScreen.gameObject.SetActive(false);
     }
 
@@ -269,13 +313,13 @@ public class InventoryUI : MonoBehaviour
         if (moveIndex == PokemonBase.MaxNumOfMoves)
         {
             // Don't learn the new move
-            yield return DialogManager.Instance.ShowDialogText($"{pokemon.Base.Name} did not learn {moveToLearn.Name}");
+            yield return DialogManager.Instance.ShowDialogText($"{pokemon.Base.Name} did not learn {moveToLearn.Name}!");
         }
         else
         {
             // Forget the selected move and learn the new move
             var selectedMove = pokemon.Moves[moveIndex].Base;
-            yield return DialogManager.Instance.ShowDialogText($"{pokemon.Base.Name} forgot {selectedMove.Name} and learned {moveToLearn.Name}");
+            yield return DialogManager.Instance.ShowDialogText($"{pokemon.Base.Name} forgot {selectedMove.Name} and learned {moveToLearn.Name}!");
 
             pokemon.Moves[moveIndex] = new Move(moveToLearn);
         }

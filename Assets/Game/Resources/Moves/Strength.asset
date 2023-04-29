@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd06e1a6230da2f4a8ba71cd377dbc47, type: 3}
-  m_Name: FireSpin
+  m_Name: Strength
   m_EditorClassIdentifier: 
-  name: Fire Spin
-  description: The user traps the target inside a fierce vortex of fire that inflicts
-    damage for four to five turns.
-  type: 2
-  power: 35
-  accuracy: 85
+  name: Strength
+  description: The target is slugged with a punch thrown at maximum power. This can
+    also be used to move heavy boulders.
+  type: 1
+  power: 80
+  accuracy: 100
   alwaysHits: 0
   pp: 15
   priority: 0
-  category: 1
+  category: 0
   effects:
     boosts: []
     status: 0

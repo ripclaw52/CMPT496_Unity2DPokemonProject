@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Antidote
   m_EditorClassIdentifier: 
   name: Antidote
-  description: "A spray-type medicine. It lifts the effect of poison from one Pok\xE9mon."
+  description: "A spray-type medicine for treating poisoning. It can be used to lift
+    the effects of being poisoned from a Pok\xE9mon."
+  usedMessage: 
   icon: {fileID: 1086286740, guid: 48b9b7014b5679f458972768c83ff248, type: 3}
   hpAmount: 0
   restoreMaxHP: 0

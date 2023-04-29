@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: FullHeal
   m_EditorClassIdentifier: 
   name: Full Heal
-  description: "A spray-type medicine. It heals all the status problems of a single
-    Pok\xE9mon."
+  description: "A spray-type medicine that is broadly effective. It can be used to
+    cure any status condition a Pok\xE9mon may have."
+  usedMessage: 
   icon: {fileID: 1883472742, guid: 48b9b7014b5679f458972768c83ff248, type: 3}
   hpAmount: 0
   restoreMaxHP: 0

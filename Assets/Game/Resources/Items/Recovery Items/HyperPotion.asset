@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: HyperPotion
   m_EditorClassIdentifier: 
   name: Hyper Potion
-  description: Restores 120 HP.
+  description: "A spray-type medicine for treating wounds. It can be used to restore
+    120 HP to a Pok\xE9mon."
+  usedMessage: 
   icon: {fileID: -393766532, guid: 48b9b7014b5679f458972768c83ff248, type: 3}
   hpAmount: 120
   restoreMaxHP: 0

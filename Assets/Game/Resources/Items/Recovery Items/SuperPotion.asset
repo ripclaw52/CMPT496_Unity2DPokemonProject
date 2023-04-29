@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: SuperPotion
   m_EditorClassIdentifier: 
   name: Super Potion
-  description: Restores 60 HP.
+  description: "A spray-type medicine for treating wounds. It can be used to restore
+    60 HP to a Pok\xE9mon."
+  usedMessage: 
   icon: {fileID: 1722779796, guid: 48b9b7014b5679f458972768c83ff248, type: 3}
   hpAmount: 60
   restoreMaxHP: 0

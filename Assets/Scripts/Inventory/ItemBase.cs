@@ -13,8 +13,8 @@ public class ItemBase : ScriptableObject
     [SerializeField] string usedMessage;
     [SerializeField] Sprite icon;
 
-    public string Name => name;
-    public string Description => description;
+    public virtual string Name => name;
+    public virtual string Description => description;
     public string UsedMessage => usedMessage;
     public Sprite Icon => icon;
 
@@ -22,4 +22,8 @@ public class ItemBase : ScriptableObject
     {
         return false;
     }
+
+    public virtual bool IsResuable => false;
+    public virtual bool CanUseInBattle => true;
+    public virtual bool CanUseOutsideBattle => true;
 }

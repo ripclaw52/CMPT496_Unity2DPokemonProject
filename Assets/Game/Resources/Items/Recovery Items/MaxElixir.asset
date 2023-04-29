@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: MaxElixir
   m_EditorClassIdentifier: 
   name: Max Elixir
-  description: "It fully restores the PP of all the moves learned by the targeted
-    Pok\xE9mon."
+  description: "A medicine that can be used to fully restore the max PP of all four
+    moves that a Pok\xE9mon knows."
+  usedMessage: 
   icon: {fileID: -484327825, guid: 48b9b7014b5679f458972768c83ff248, type: 3}
   hpAmount: 0
   restoreMaxHP: 0

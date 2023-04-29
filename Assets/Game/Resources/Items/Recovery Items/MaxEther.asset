@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: MaxEther
   m_EditorClassIdentifier: 
   name: Max Ether
-  description: "It fully restores the PP of a single selected move that has been
-    learned by the target Pok\xE9mon."
+  description: "A medicine that can be used to fully restore the max PP of a single
+    move that a Pok\xE9mon knows."
+  usedMessage: 
   icon: {fileID: -34716503, guid: 48b9b7014b5679f458972768c83ff248, type: 3}
   hpAmount: 0
   restoreMaxHP: 0

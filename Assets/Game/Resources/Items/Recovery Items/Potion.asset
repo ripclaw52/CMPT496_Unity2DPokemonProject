@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Potion
   m_EditorClassIdentifier: 
   name: Potion
-  description: Restores 20 HP.
+  description: "A spray-type medicine for treating wounds. It can be used to restore
+    20 HP to a Pok\xE9mon."
+  usedMessage: 
   icon: {fileID: 1465975850, guid: 48b9b7014b5679f458972768c83ff248, type: 3}
   hpAmount: 20
   restoreMaxHP: 0

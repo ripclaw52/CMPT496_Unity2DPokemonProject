@@ -90,6 +90,33 @@ public class PartyScreen : MonoBehaviour
         }
     }
 
+    public void ShowIfTmIsUsable(TmItem tmItem)
+    {
+        for (int i = 0; i < pokemons.Count; i++)
+        {
+            string message = tmItem.CanBeTaught(pokemons[i]) ? "ABLE!" : "NOT ABLE!";
+            if (pokemons[i].HasMove(tmItem.Move))
+                message = "LEARNED!";
+            memberSlots[i].SetMessage(message);
+
+            if (message == "ABLE!")
+                memberSlots[i].MessageText.color = GlobalSettings.i.HighlightedColor;
+            else if (message == "LEARNED!")
+                memberSlots[i].MessageText.color = Color.black;
+            else
+                memberSlots[i].MessageText.color = Color.red;
+        }
+    }
+
+    public void ClearMemberSlotMessages()
+    {
+        for (int i = 0; i < pokemons.Count; i++)
+        {
+            memberSlots[i].MessageText.color = Color.black;
+            memberSlots[i].SetMessage("");
+        }
+    }
+
     public void SetMessageText(string message)
     {
         messageText.text = message;

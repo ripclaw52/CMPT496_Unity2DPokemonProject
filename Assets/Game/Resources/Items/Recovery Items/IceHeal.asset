@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: IceHeal
   m_EditorClassIdentifier: 
   name: Ice Heal
-  description: "A spray-type medicine. It defrosts a Pok\xE9mon that has been frozen
-    solid."
+  description: "A spray-type medicine for treating freezing. It can be used to thaw
+    out a Pok\xE9mon that has been frozen solid.\r"
+  usedMessage: 
   icon: {fileID: -20747824, guid: 48b9b7014b5679f458972768c83ff248, type: 3}
   hpAmount: 0
   restoreMaxHP: 0

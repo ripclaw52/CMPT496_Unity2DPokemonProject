@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: MaxRevive
   m_EditorClassIdentifier: 
   name: Max Revive
-  description: "A medicine that revives a fainted Pok\xE9mon. It fully restores the
-    Pok\xE9mon's HP."
+  description: "A medicine that can be used to revive a Pok\xE9mon that has fainted.
+    It also fully restores the Pok\xE9mon\u2019s max HP."
+  usedMessage: 
   icon: {fileID: 484213895, guid: 48b9b7014b5679f458972768c83ff248, type: 3}
   hpAmount: 0
   restoreMaxHP: 0

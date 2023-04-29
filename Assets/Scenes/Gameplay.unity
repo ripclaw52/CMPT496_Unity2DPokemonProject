@@ -1582,6 +1582,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: tmSlots.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: tmSlots.Array.data[3].item
+      value: 
+      objectReference: {fileID: 11400000, guid: a910421d7c928a143abe5cdc7e1af0d4, type: 2}
+    - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: tmSlots.Array.data[3].count
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4389046988437947982, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Ether
   m_EditorClassIdentifier: 
   name: Ether
-  description: "It restores the PP of a Pok\xE9mon's selected move by a maximum of
-    10 points."
+  description: "A medicine that can be used to restore 10 PP to a single move that
+    a Pok\xE9mon knows."
+  usedMessage: 
   icon: {fileID: -1121163335, guid: 48b9b7014b5679f458972768c83ff248, type: 3}
   hpAmount: 0
   restoreMaxHP: 0
