@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class represents the base of a Pokemon, containing all the necessary information to create a Pokemon.
+/// </summary>
 [CreateAssetMenu(fileName = "Pokemon", menuName = "Pokemon/Create new pokemon")]
 public class PokemonBase : ScriptableObject
 {
@@ -12,7 +15,7 @@ public class PokemonBase : ScriptableObject
 
     [SerializeField] Sprite frontSprite;
     [SerializeField] Sprite backSprite;
-    //[SerializeField] GameObject model;
+    //[SerializeField] GameObject model; for a potential 3D model
 
     [SerializeField] PokemonType type1;
     [SerializeField] PokemonType type2;
@@ -25,46 +28,50 @@ public class PokemonBase : ScriptableObject
     [SerializeField] int spDefense;
     [SerializeField] int speed;
 
+    // XP yield and Growth rate
     [SerializeField] int expYield;
     [SerializeField] GrowthRate growthRate;
-
+    // Catch rate
     [SerializeField] int catchRate = 255;
 
+    // Move lists
     [SerializeField] List<LearnableMove> learnableMoves;
     [SerializeField] List<MoveBase> learnableByItems;
 
     public static int MaxNumOfMoves { get; set; } = 4;
 
+    /// <summary>
+    /// Calculates the experience points needed to reach a certain level based on the growth rate.
+    /// </summary>
+    /// <param name="level">The level to calculate the experience points for.</param>
+    /// <returns>The experience points needed to reach the given level.</returns>
     public int GetExpForLevel(int level)
     {
-        if (growthRate == GrowthRate.Fast)
+        switch (growthRate)
         {
-            return 4 * (level * level * level) / 5;
+            case GrowthRate.Fast:
+                return 4 * (level * level * level) / 5;
+            case GrowthRate.MediumFast:
+                return level * level * level;
+            case GrowthRate.MediumSlow:
+                return (6 * (level * level * level) / 5) - (15 * (level * level)) + (100 * level) - 140;
+            case GrowthRate.Slow:
+                return 5 * (level * level * level) / 4;
+            case GrowthRate.Fluctuating:
+                return GetFluctuating(level);
+            case GrowthRate.Erratic:
+                return GetErratic(level);
+            default:
+                break;
         }
-        else if (growthRate == GrowthRate.MediumFast)
-        {
-            return level * level * level;
-        }
-        else if (growthRate == GrowthRate.MediumSlow)
-        {
-            return (6 * (level * level * level) / 5) - (15 * (level * level)) + (100 * level) - 140;
-        }
-        else if (growthRate == GrowthRate.Slow)
-        {
-            return 5 * (level * level * level) / 4;
-        }
-        else if (growthRate == GrowthRate.Fluctuating)
-        {
-            return GetFluctuating(level);
-        }
-        else if (growthRate == GrowthRate.Erratic)
-        {
-            return GetErratic(level);
-        }
-
         return -1;
     }
 
+    /// <summary>
+    /// Calculates a fluctuating value based on the given level.
+    /// </summary>
+    /// <param name="level">The level to use for the calculation.</param>
+    /// <returns>The calculated fluctuating value.</returns>
     public int GetFluctuating(int level)
     {
         if (level < 15)
@@ -81,11 +88,16 @@ public class PokemonBase : ScriptableObject
         }
     }
 
+    /// <summary>
+    /// Calculates the erratic value based on the given level.
+    /// </summary>
+    /// <param name="level">The level to calculate the erratic value for.</param>
+    /// <returns>The calculated erratic value.</returns>
     public int GetErratic(int level)
     {
         if (level < 50)
         {
-            return Mathf.FloorToInt(Mathf.Pow(level, 3) * (Mathf.Floor(100 - level) / 50 ));
+            return Mathf.FloorToInt(Mathf.Pow(level, 3) * (Mathf.Floor(100 - level) / 50));
         }
         else if ((level >= 50) && (level < 68))
         {
@@ -93,7 +105,7 @@ public class PokemonBase : ScriptableObject
         }
         else if ((level >= 68) && (level < 98))
         {
-            return Mathf.FloorToInt(Mathf.Pow(level, 3) * (Mathf.Floor((1911 - (10 * level)) / 3 ) / 500));
+            return Mathf.FloorToInt(Mathf.Pow(level, 3) * (Mathf.Floor((1911 - (10 * level)) / 3) / 500));
         }
         else
         {
@@ -101,37 +113,41 @@ public class PokemonBase : ScriptableObject
         }
     }
 
-    public string Name { get { return name; } }
-    public string Description { get { return description; } }
-    public Sprite FrontSprite { get { return frontSprite; } }
-    public Sprite BackSprite { get { return backSprite; } }
-    public PokemonType Type1 { get { return type1; } }
-    public PokemonType Type2 { get { return type2; } }
-    public int MaxHP { get { return maxHp; } }
-    public int Attack { get { return attack; } }
-    public int Defense { get { return defense; } }
-    public int SpAttack { get { return spAttack; } }
-    public int SpDefense { get { return spDefense; } }
-    public int Speed { get { return speed; } }
-    public List<LearnableMove> LearnableMoves { get { return learnableMoves; } }
-    public List<MoveBase> LearnableByItems => learnableByItems;
-    public int CatchRate => catchRate;
-
+    public string Name => name;
+    public string Description => description;
+    public Sprite FrontSprite => frontSprite;
+    public Sprite BackSprite => backSprite;
+    public PokemonType Type1 => type1;
+    public PokemonType Type2 => type2;
+    public int MaxHP => maxHp;
+    public int Attack => attack;
+    public int Defense => defense;
+    public int SpAttack => spAttack;
+    public int SpDefense => spDefense;
+    public int Speed => speed;
     public int ExpYield => expYield;
-
     public GrowthRate GrowthRate => growthRate;
+    public int CatchRate => catchRate;
+    public List<LearnableMove> LearnableMoves => learnableMoves;
+    public List<MoveBase> LearnableByItems => learnableByItems;
 }
 
+/// <summary>
+/// Represents a move that can be learned by a Pokemon at a specific level.
+/// </summary>
 [System.Serializable]
 public class LearnableMove
 {
     [SerializeField] MoveBase moveBase;
     [SerializeField] int level;
 
-    public MoveBase Base { get { return moveBase; } }
-    public int Level { get { return level; } }
+    public MoveBase Base => moveBase;
+    public int Level => level;
 }
 
+/// <summary>
+/// Enum containing all the different types of Pokemon.
+/// </summary>
 public enum PokemonType
 {
     None,
@@ -155,11 +171,17 @@ public enum PokemonType
     Fairy
 }
 
+/// <summary>
+/// Enum representing the different growth rates of a Pokémon.
+/// </summary>
 public enum GrowthRate
 {
     Erratic, Fast, MediumFast, MediumSlow, Slow, Fluctuating
 }
 
+/// <summary>
+/// Enum representing the different stats of a Pokemon.
+/// </summary>
 public enum Stat
 {
     Attack,
@@ -173,8 +195,14 @@ public enum Stat
     Evasion
 }
 
+/// <summary>
+/// This class provides a type chart for different types of data.
+/// </summary>
 public class TypeChart
 {
+    /// <summary>
+    /// This is a chart of type effectiveness for the Pokemon game.
+    /// </summary>
     static float[][] chart =
     {
         //    0 = no damage
@@ -204,6 +232,14 @@ public class TypeChart
         /*Fairy*/   new float[] {1f,   0.5f, 1f,   1f,   1f,   1f,   2f,   0.5f, 1f,   1f,   1f,   1f,   1f,   1f,   2f,   2f,   0.5f, 1f},
     };
 
+    /// <summary>
+    /// Calculates the effectiveness of an attack based on the attack and defense types of the Pokemon.
+    /// </summary>
+    /// <param name="attackType">The type of the attacking Pokemon.</param>
+    /// <param name="defenseType">The type of the defending Pokemon.</param>
+    /// <returns>
+    /// A float representing the effectiveness of the attack.
+    /// </returns>
     static public float GetEffectiveness(PokemonType attackType, PokemonType defenseType)
     {
         if (attackType == PokemonType.None || defenseType == PokemonType.None)

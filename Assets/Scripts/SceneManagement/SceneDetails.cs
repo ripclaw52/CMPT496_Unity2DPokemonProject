@@ -4,6 +4,9 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// This class is used to store the details of a scene, such as the name, description, and other relevant information. 
+/// </summary>
 public class SceneDetails : MonoBehaviour
 {
     [SerializeField] List<SceneDetails> connectedScenes;
@@ -12,6 +15,9 @@ public class SceneDetails : MonoBehaviour
 
     List<SavableEntity> savableEntities;
 
+    /// <summary>
+    /// Handles the OnTriggerEnter2D event for the current scene. Logs the name of the game object that was entered, sets the current scene, loads all connected scenes, and unloads any previously loaded scenes that are no longer connected.
+    /// </summary>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
@@ -39,11 +45,14 @@ public class SceneDetails : MonoBehaviour
                 }
 
                 if (!connectedScenes.Contains(prevScene))
-                prevScene.UnloadScene();
+                    prevScene.UnloadScene();
             }
         }
     }
 
+    /// <summary>
+    /// Loads a scene asynchronously and restores the state of the savable entities in the scene.
+    /// </summary>
     public void LoadScene()
     {
         if (!IsLoaded)
@@ -59,6 +68,9 @@ public class SceneDetails : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Unloads the scene if it is loaded. Captures the entity states before unloading.
+    /// </summary>
     public void UnloadScene()
     {
         if (IsLoaded)
@@ -70,6 +82,12 @@ public class SceneDetails : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Retrieves a list of SavableEntity objects in the current scene.
+    /// </summary>
+    /// <returns>
+    /// A list of SavableEntity objects in the current scene.
+    /// </returns>
     List<SavableEntity> GetSavableEntitiesInScene()
     {
         var currScene = SceneManager.GetSceneByName(gameObject.name);

@@ -3,13 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-// Teleports the player to a different position without switching scenes
+/// <summary>
+/// This class is used to represent a LocationPortal which is a MonoBehaviour and implements the IPlayerTriggerable interface.
+/// <br></br>
+/// Teleports the player to a different position without switching scenes
+/// </summary>
 public class LocationPortal : MonoBehaviour, IPlayerTriggerable
 {
     [SerializeField] DestinationIdentifier destinationPortal;
     [SerializeField] Transform spawnPoint;
 
     PlayerController player;
+
+    /// <summary>
+    /// Sets the player and starts the Teleport coroutine.
+    /// </summary>
     public void OnPlayerTriggered(PlayerController player)
     {
         this.player = player;
@@ -17,11 +25,21 @@ public class LocationPortal : MonoBehaviour, IPlayerTriggerable
     }
 
     Fader fader;
+
+    /// <summary>
+    /// Finds the Fader object in the scene.
+    /// </summary>
     private void Start()
     {
         fader = FindObjectOfType<Fader>();
     }
 
+    /// <summary>
+    /// Teleports the player to the destination portal.
+    /// </summary>
+    /// <returns>
+    /// An IEnumerator that fades in and out while teleporting the player.
+    /// </returns>
     IEnumerator Teleport()
     {
         GameController.Instance.PauseGame(true);

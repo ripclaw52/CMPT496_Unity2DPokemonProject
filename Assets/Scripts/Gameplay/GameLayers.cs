@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class is used to manage the different layers of a game.
+/// </summary>
 public class GameLayers : MonoBehaviour
 {
     [SerializeField] LayerMask solidObjectsLayer;
@@ -12,36 +15,20 @@ public class GameLayers : MonoBehaviour
     [SerializeField] LayerMask portalLayer;
 
     public static GameLayers i { get; set; }
+
+    /// <summary>
+    /// Sets the value of the static variable 'i' to the current instance of the class. 
+    /// </summary>
     private void Awake()
     {
         i = this;
     }
 
-    public LayerMask SolidLayer {
-        get => solidObjectsLayer;
-    }
-
-    public LayerMask InteractableLayer {
-        get => interactableLayer;
-    }
-
-    public LayerMask GrassLayer {
-        get => grassLayer;
-    }
-
-    public LayerMask PlayerLayer {
-        get => playerLayer;
-    }
-
-    public LayerMask FovLayer {
-        get => fovLayer;
-    }
-
-    public LayerMask PortalLayer {
-        get => portalLayer;
-    }
-
-    public LayerMask TriggerableLayers {
-        get => grassLayer | fovLayer | portalLayer;
-    }
+    public LayerMask SolidLayer => solidObjectsLayer;
+    public LayerMask InteractableLayer => interactableLayer;
+    public LayerMask GrassLayer => grassLayer;
+    public LayerMask PlayerLayer => playerLayer;
+    public LayerMask FovLayer => fovLayer;
+    public LayerMask PortalLayer => portalLayer;
+    public LayerMask TriggerableLayers => grassLayer | fovLayer | portalLayer;
 }

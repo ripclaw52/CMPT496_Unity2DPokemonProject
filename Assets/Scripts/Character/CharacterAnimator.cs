@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class is used to animate characters in a Unity project.
+/// </summary>
 public class CharacterAnimator : MonoBehaviour
 {
     [SerializeField] List<Sprite> walkDownSprites;
@@ -27,6 +30,11 @@ public class CharacterAnimator : MonoBehaviour
     // References
     SpriteRenderer spriteRenderer;
 
+    public FacingDirection DefaultDirection => defaultDirection;
+
+    /// <summary>
+    /// Initializes the SpriteAnimators and sets the default facing direction. 
+    /// </summary>
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -39,6 +47,9 @@ public class CharacterAnimator : MonoBehaviour
         currentAnim = walkDownAnim;
     }
 
+    /// <summary>
+    /// Updates the animation based on the current movement direction and whether the character is moving or not.
+    /// </summary>
     private void Update()
     {
         var prevAnim = currentAnim;
@@ -63,6 +74,10 @@ public class CharacterAnimator : MonoBehaviour
         wasPreviouslyMoving = IsMoving;
     }
 
+    /// <summary>
+    /// Sets the facing direction of the object.
+    /// </summary>
+    /// <param name="dir">The direction to face.</param>
     public void SetFacingDirection(FacingDirection dir)
     {
         if (dir == FacingDirection.Right)
@@ -74,10 +89,9 @@ public class CharacterAnimator : MonoBehaviour
         else if (dir == FacingDirection.Up)
             MoveY = 1;
     }
-
-    public FacingDirection DefaultDirection {
-        get => defaultDirection;
-    }
 }
 
+/// <summary>
+/// Enum representing the four cardinal directions.
+/// </summary>
 public enum FacingDirection { Up, Down, Left, Right }

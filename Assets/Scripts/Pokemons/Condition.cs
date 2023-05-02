@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Represents a condition that can be evaluated.
+/// </summary>
 public class Condition
 {
     public ConditionID Id { get; set; }

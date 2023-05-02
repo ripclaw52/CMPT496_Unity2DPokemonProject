@@ -3,8 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Enum representing the different states of a game. 
+/// </summary>
 public enum GameState { FreeRoam, Battle, Dialog, Menu, PartyScreen, Bag, Cutscene, Paused }
 
+/// <summary>
+/// This class is responsible for controlling the game logic.
+/// </summary>
 public class GameController : MonoBehaviour
 {
     [SerializeField] PlayerController playerController;
@@ -20,8 +26,13 @@ public class GameController : MonoBehaviour
     public SceneDetails PrevScene { get; private set; }
 
     MenuController menuController;
-
     public static GameController Instance { get; private set; }
+
+    public GameState State => state;
+
+    /// <summary>
+    /// Sets the instance of the GameManager, gets the MenuController component, locks the mouse, and initializes the databases. 
+    /// </summary>
     private void Awake()
     {
         Instance = this;
@@ -37,12 +48,13 @@ public class GameController : MonoBehaviour
         ConditionsDB.Init();
     }
 
+    /// <summary>
+    /// This method initializes the battle system, party screen, dialog manager, and menu controller. 
+    /// </summary>
     private void Start()
     {
         battleSystem.OnBattleOver += EndBattle;
-
         partyScreen.Init();
-
         DialogManager.Instance.OnShowDialog += () =>
         {
             state = GameState.Dialog;
@@ -62,6 +74,10 @@ public class GameController : MonoBehaviour
         menuController.onMenuSelected += OnMenuSelected;
     }
 
+    /// <summary>
+    /// Pauses or unpauses the game depending on the boolean parameter.
+    /// </summary>
+    /// <param name="pause">True to pause the game, false to unpause.</param>
     public void PauseGame(bool pause)
     {
         if (pause)
@@ -75,6 +91,9 @@ public class GameController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Starts a battle between the player's party and a randomly generated wild Pokemon.
+    /// </summary>
     public void StartBattle()
     {
         state = GameState.Battle;
@@ -90,6 +109,11 @@ public class GameController : MonoBehaviour
     }
 
     TrainerController trainer;
+
+    /// <summary>
+    /// Starts a battle between the player and a trainer.
+    /// </summary>
+    /// <param name="trainer">The trainer to battle.</param>
     public void StartTrainerBattle(TrainerController trainer)
     {
         state = GameState.Battle;
@@ -103,12 +127,20 @@ public class GameController : MonoBehaviour
         battleSystem.StartTrainerBattle(playerParty, trainerParty);
     }
 
+    /// <summary>
+    /// Triggers a trainer battle with the given trainer controller.
+    /// </summary>
+    /// <param name="trainer">The trainer controller to trigger the battle with.</param>
     public void OnEnterTrainersView(TrainerController trainer)
     {
         state = GameState.Cutscene;
         StartCoroutine(trainer.TriggerTrainerBattle(playerController));
     }
 
+
+    /// <summary>
+    /// Ends the battle and sets the game state to FreeRoam. If the battle was won, the trainer's BattleLost method is called.
+    /// </summary>
     void EndBattle(bool won)
     {
         if (trainer != null && won == true)
@@ -116,12 +148,14 @@ public class GameController : MonoBehaviour
             trainer.BattleLost();
             trainer = null;
         }
-
         state = GameState.FreeRoam;
         battleSystem.gameObject.SetActive(false);
         worldCamera.gameObject.SetActive(true);
     }
 
+    /// <summary>
+    /// Handles the Update function for the game, depending on the current state.
+    /// </summary>
     private void Update()
     {
         if (state == GameState.FreeRoam)
@@ -173,12 +207,20 @@ public class GameController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets the current scene to the given scene and stores the previous scene.
+    /// </summary>
+    /// <param name="currScene">The scene to set as the current scene.</param>
     public void SetCurrentScene(SceneDetails currScene)
     {
         PrevScene = CurrentScene;
         CurrentScene = currScene;
     }
 
+    /// <summary>
+    /// Handles the selection of a menu item.
+    /// </summary>
+    /// <param name="selectedItem">The index of the selected menu item.</param>
     void OnMenuSelected(int selectedItem)
     {
         switch (selectedItem)
@@ -205,6 +247,4 @@ public class GameController : MonoBehaviour
                 break;
         }
     }
-
-    public GameState State => state;
 }

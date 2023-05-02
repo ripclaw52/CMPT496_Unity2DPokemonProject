@@ -6,11 +6,24 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum BattleState { Start, ActionSelection, MoveSelection, RunningTurn, Busy, Bag, PartyScreen, AboutToUse, MoveToForget, BattleOver}
+/// <summary>
+/// Enum representing the different states of a battle.
+/// </summary>
+public enum BattleState { Start, ActionSelection, MoveSelection, RunningTurn, Busy, Bag, PartyScreen, AboutToUse, MoveToForget, BattleOver }
+
+/// <summary>
+/// Enum representing the possible actions a player can take in a battle.
+/// </summary>
 public enum BattleAction { Move, SwitchPokemon, UseItem, Run }
 
+/// <summary>
+/// This class is responsible for managing the battle system in the game.
+/// </summary>
 public class BattleSystem : MonoBehaviour
 {
+    /// <summary>
+    /// This class contains references to the various UI elements used in the battle scene.
+    /// </summary>
     [SerializeField] BattleUnit playerUnit;
     [SerializeField] BattleUnit enemyUnit;
     [SerializeField] BattleDialogBox dialogBox;
@@ -21,6 +34,9 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] MoveSelectionUI moveSelectionUI;
     [SerializeField] InventoryUI inventoryUI;
 
+    /// <summary>
+    /// Represents the state of a battle between two parties, either a player and a wild pokemon or a player and a trainer.
+    /// </summary>
     public event Action<bool> OnBattleOver;
 
     BattleState state;
@@ -40,6 +56,11 @@ public class BattleSystem : MonoBehaviour
     int escapeAttempts;
     MoveBase moveToLearn;
 
+    /// <summary>
+    /// Starts a battle between the player's party and a wild Pokemon. 
+    /// </summary>
+    /// <param name="playerParty">The player's party of Pokemon.</param>
+    /// <param name="wildPokemon">The wild Pokemon.</param>
     public void StartBattle(PokemonParty playerParty, Pokemon wildPokemon)
     {
         this.playerParty = playerParty;
@@ -50,6 +71,11 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(SetupBattle());
     }
 
+    /// <summary>
+    /// Starts a trainer battle between the player and the trainer.
+    /// </summary>
+    /// <param name="playerParty">The player's party.</param>
+    /// <param name="trainerParty">The trainer's party.</param>
     public void StartTrainerBattle(PokemonParty playerParty, PokemonParty trainerParty)
     {
         this.playerParty = playerParty;
@@ -62,6 +88,12 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(SetupBattle());
     }
 
+    /// <summary>
+    /// Sets up a battle between the player and either a wild Pokemon or a trainer.
+    /// </summary>
+    /// <returns>
+    /// An IEnumerator that sets up the battle.
+    /// </returns>
     public IEnumerator SetupBattle()
     {
         playerUnit.Clear();
@@ -112,6 +144,10 @@ public class BattleSystem : MonoBehaviour
         ActionSelection();
     }
 
+    /// <summary>
+    /// Sets the battle state to BattleOver, calls OnBattleOver for each pokemon in the player's party, and clears the HUD data for both the player and enemy units. 
+    /// </summary>
+    /// <param name="won">A boolean indicating whether the player won the battle.</param>
     void BattleOver(bool won)
     {
         state = BattleState.BattleOver;
@@ -121,6 +157,9 @@ public class BattleSystem : MonoBehaviour
         OnBattleOver(won);
     }
 
+    /// <summary>
+    /// Sets the battle state to ActionSelection and displays a dialog box prompting the user to choose an action. Enables the action selector.
+    /// </summary>
     void ActionSelection()
     {
         state = BattleState.ActionSelection;
@@ -128,12 +167,18 @@ public class BattleSystem : MonoBehaviour
         dialogBox.EnableActionSelector(true);
     }
 
+    /// <summary>
+    /// Opens the bag and sets the battle state to Bag. Also activates the inventory UI. 
+    /// </summary>
     void OpenBag()
     {
         state = BattleState.Bag;
         inventoryUI.gameObject.SetActive(true);
     }
 
+    /// <summary>
+    /// Opens the Party Screen and sets the current state to PartyScreen. 
+    /// </summary>
     void OpenPartyScreen()
     {
         partyScreen.CalledFrom = state;
@@ -141,6 +186,9 @@ public class BattleSystem : MonoBehaviour
         partyScreen.gameObject.SetActive(true);
     }
 
+    /// <summary>
+    /// Sets the battle state to MoveSelection, disables the action selector, dialog text, and enables the move selector.
+    /// </summary>
     void MoveSelection()
     {
         state = BattleState.MoveSelection;
@@ -149,6 +197,11 @@ public class BattleSystem : MonoBehaviour
         dialogBox.EnableMoveSelector(true);
     }
 
+    /// <summary>
+    /// Enables the dialog box and sets the battle state to busy when a new pokemon is about to be used.
+    /// </summary>
+    /// <param name="newPokemon">The new pokemon about to be used.</param>
+    /// <returns>An IEnumerator for the dialog box.</returns>
     IEnumerator AboutToUse(Pokemon newPokemon)
     {
         state = BattleState.Busy;
@@ -158,6 +211,12 @@ public class BattleSystem : MonoBehaviour
         dialogBox.EnableChoiceBox(true);
     }
 
+    /// <summary>
+    /// Enables the move selection UI and sets the move data for the Pokemon to choose a move to forget.
+    /// </summary>
+    /// <param name="pokemon">The Pokemon to choose a move to forget.</param>
+    /// <param name="newMove">The new move to learn.</param>
+    /// <returns>An IEnumerator for the coroutine.</returns>
     IEnumerator ChooseMoveToForget(Pokemon pokemon, MoveBase newMove)
     {
         state = BattleState.Busy;
@@ -169,6 +228,11 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.MoveToForget;
     }
 
+    /// <summary>
+    /// Runs the turns of a battle, alternating between the player and enemy units.
+    /// </summary>
+    /// <param name="playerAction">The action the player has chosen to take.</param>
+    /// <returns>An IEnumerator that runs the turns of the battle.</returns>
     IEnumerator RunTurns(BattleAction playerAction)
     {
         state = BattleState.RunningTurn;
@@ -235,6 +299,13 @@ public class BattleSystem : MonoBehaviour
             ActionSelection();
     }
 
+    /// <summary>
+    /// Runs the move for the source unit on the target unit.
+    /// </summary>
+    /// <param name="sourceUnit">The source unit.</param>
+    /// <param name="targetUnit">The target unit.</param>
+    /// <param name="move">The move to be used.</param>
+    /// <returns>An IEnumerator for the move.</returns>
     IEnumerator RunMove(BattleUnit sourceUnit, BattleUnit targetUnit, Move move)
     {
         bool canRunMove = sourceUnit.Pokemon.OnBeforeMove();
@@ -289,6 +360,14 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Applies Move Effects to the source and target Pokemon, including stat boosts, status conditions, and volatile status conditions.
+    /// </summary>
+    /// <param name="effects">The MoveEffects to apply.</param>
+    /// <param name="source">The source Pokemon.</param>
+    /// <param name="target">The target Pokemon.</param>
+    /// <param name="moveTarget">The MoveTarget.</param>
+    /// <returns>An IEnumerator for the coroutine.</returns>
     IEnumerator RunMoveEffects(MoveEffects effects, Pokemon source, Pokemon target, MoveTarget moveTarget)
     {
         // Stat Boosting
@@ -305,7 +384,7 @@ public class BattleSystem : MonoBehaviour
         {
             target.SetStatus(effects.Status);
         }
-        
+
         // Volatile Status Condition
         if (effects.VolatileStatus != ConditionID.none)
         {
@@ -316,6 +395,11 @@ public class BattleSystem : MonoBehaviour
         yield return ShowStatusChanges(target);
     }
 
+    /// <summary>
+    /// Runs the logic for a unit after its turn has ended, including applying status effects and handling fainting.
+    /// </summary>
+    /// <param name="sourceUnit">The unit whose turn has ended.</param>
+    /// <returns>An IEnumerator for the logic.</returns>
     IEnumerator RunAfterTurn(BattleUnit sourceUnit)
     {
         if (state == BattleState.BattleOver) yield break;
@@ -332,6 +416,13 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Checks if a move hits a target Pokemon based on accuracy and evasion boosts.
+    /// </summary>
+    /// <param name="move">The move to check.</param>
+    /// <param name="source">The source Pokemon.</param>
+    /// <param name="target">The target Pokemon.</param>
+    /// <returns>True if the move hits, false otherwise.</returns>
     bool CheckIfMoveHits(Move move, Pokemon source, Pokemon target)
     {
         if (move.Base.AlwaysHits)
@@ -357,6 +448,11 @@ public class BattleSystem : MonoBehaviour
         return UnityEngine.Random.Range(1, 101) <= moveAccuracy;
     }
 
+    /// <summary>
+    /// Iterates through the StatusChanges queue of a Pokemon and displays each message in a dialog box.
+    /// </summary>
+    /// <param name="pokemon">The Pokemon to display the StatusChanges of.</param>
+    /// <returns>An IEnumerator for the coroutine.</returns>
     IEnumerator ShowStatusChanges(Pokemon pokemon)
     {
         while (pokemon.StatusChanges.Count > 0)
@@ -366,6 +462,11 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles the logic when a Pokemon faints in battle. This includes awarding experience points, checking for level up, and learning new moves.
+    /// </summary>
+    /// <param name="faintedUnit">The BattleUnit that has fainted.</param>
+    /// <returns>An IEnumerator for the coroutine.</returns>
     IEnumerator HandlePokemonFainted(BattleUnit faintedUnit)
     {
         yield return dialogBox.TypeDialog($"{faintedUnit.Pokemon.Base.Name} Fainted!");
@@ -419,6 +520,10 @@ public class BattleSystem : MonoBehaviour
         CheckForBattleOver(faintedUnit);
     }
 
+    /// <summary>
+    /// Checks if the battle is over after a unit has fainted. If the fainted unit is a player unit, the party screen is opened. If the fainted unit is an enemy unit, the battle is over if it is not a trainer battle. If it is a trainer battle, the next healthy pokemon is used.
+    /// </summary>
+    /// <param name="faintedUnit">A fainted battle unit</param>
     void CheckForBattleOver(BattleUnit faintedUnit)
     {
         if (faintedUnit.IsPlayerUnit)
@@ -446,6 +551,11 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Displays a dialog box with information about the damage dealt.
+    /// </summary>
+    /// <param name="damageDetails">The details of the damage dealt.</param>
+    /// <returns>An IEnumerator that can be used to iterate through the dialog box.</returns>
     IEnumerator ShowDamageDetails(DamageDetails damageDetails)
     {
         if (damageDetails.Critical > 1f)
@@ -457,6 +567,9 @@ public class BattleSystem : MonoBehaviour
             yield return dialogBox.TypeDialog("It's not very effective...");
     }
 
+    /// <summary>
+    /// Handles the update of the battle state. Depending on the current state, different actions are taken. 
+    /// </summary>
     public void HandleUpdate()
     {
         if (state == BattleState.ActionSelection)
@@ -517,6 +630,9 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles the selection of an action in a battle.
+    /// </summary>
     void HandleActionSelection()
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -529,7 +645,7 @@ public class BattleSystem : MonoBehaviour
             currentAction -= 2;
 
         currentAction = Mathf.Clamp(currentAction, 0, 3);
-        
+
         dialogBox.UpdateActionSelection(currentAction);
 
         if (Input.GetKeyDown(KeyCode.Z))
@@ -557,6 +673,9 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles the selection of a move by the player.
+    /// </summary>
     void HandleMoveSelection()
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -589,6 +708,9 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles the selection of a pokemon from the party screen.
+    /// </summary>
     void HandlePartySelection()
     {
         Action onSelected = () =>
@@ -644,6 +766,9 @@ public class BattleSystem : MonoBehaviour
         partyScreen.HandleUpdate(onSelected, onBack);
     }
 
+    /// <summary>
+    /// Handles the logic for when the player is about to use a Pokemon.
+    /// </summary>
     void HandleAboutToUse()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
@@ -672,7 +797,13 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    IEnumerator SwitchPokemon(Pokemon newPokemon, bool isTrainerAboutToUse=false)
+    /// <summary>
+    /// Switches the current Pokemon to a new one.
+    /// </summary>
+    /// <param name="newPokemon">The new Pokemon to switch to.</param>
+    /// <param name="isTrainerAboutToUse">Whether the trainer is about to use the new Pokemon.</param>
+    /// <returns>An IEnumerator for the switching process.</returns>
+    IEnumerator SwitchPokemon(Pokemon newPokemon, bool isTrainerAboutToUse = false)
     {
         if (playerUnit.Pokemon.HP > 0)
         {
@@ -691,6 +822,12 @@ public class BattleSystem : MonoBehaviour
             state = BattleState.RunningTurn;
     }
 
+    /// <summary>
+    /// Sends the next Pokemon from the trainer's party to battle the enemy unit. 
+    /// </summary>
+    /// <returns>
+    /// An IEnumerator that types out the dialog for the trainer sending out the next Pokemon. 
+    /// </returns>
     IEnumerator SendNextTrainerPokemon()
     {
         state = BattleState.Busy;
@@ -702,6 +839,13 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.RunningTurn;
     }
 
+    /// <summary>
+    /// Coroutine for using an item in battle.
+    /// </summary>
+    /// <param name="usedItem">The item being used.</param>
+    /// <returns>
+    /// An IEnumerator for the coroutine.
+    /// </returns>
     IEnumerator OnItemUsed(ItemBase usedItem)
     {
         state = BattleState.Busy;
@@ -715,6 +859,11 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(RunTurns(BattleAction.UseItem));
     }
 
+    /// <summary>
+    /// Throws a Pokeball at the enemy Pokemon in an attempt to catch it.
+    /// </summary>
+    /// <param name="pokeballItem">The Pokeball item to use.</param>
+    /// <returns>An IEnumerator that runs the Pokeball throwing animation.</returns>
     IEnumerator ThrowPokeball(PokeballItem pokeballItem)
     {
         state = BattleState.Busy;
@@ -740,7 +889,7 @@ public class BattleSystem : MonoBehaviour
 
         int shakeCount = TryToCatchPokemon(enemyUnit.Pokemon, pokeballItem);
 
-        for (int i=0; i<Mathf.Min(shakeCount, 3); ++i)
+        for (int i = 0; i < Mathf.Min(shakeCount, 3); ++i)
         {
             yield return new WaitForSeconds(0.5f);
             yield return pokeball.transform.DOPunchRotation(new Vector3(0, 0, 10f), 0.8f).WaitForCompletion();
@@ -779,6 +928,12 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Attempts to catch a Pokemon using a Pokeball item.
+    /// </summary>
+    /// <param name="pokemon">The Pokemon to catch.</param>
+    /// <param name="pokeballItem">The Pokeball item to use.</param>
+    /// <returns>The number of shakes before the Pokemon is caught.</returns>
     int TryToCatchPokemon(Pokemon pokemon, PokeballItem pokeballItem)
     {
         float a = (3 * pokemon.MaxHP - 2 * pokemon.HP) * pokemon.Base.CatchRate * pokeballItem.CatchRateModifier * ConditionsDB.GetStatusBonus(pokemon.Status) / (3 * pokemon.MaxHP);
@@ -800,6 +955,12 @@ public class BattleSystem : MonoBehaviour
         return shakeCount;
     }
 
+    /// <summary>
+    /// Tries to escape from the battle.
+    /// </summary>
+    /// <returns>
+    /// An IEnumerator that will attempt to escape from the battle.
+    /// </returns>
     IEnumerator TryToEscape()
     {
         state = BattleState.Busy;

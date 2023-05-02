@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// This class is used to control the player's behavior in the game. It inherits from MonoBehaviour and implements the ISavable interface.
+/// </summary>
 public class PlayerController : MonoBehaviour, ISavable
 {
     [SerializeField] string name;
@@ -12,11 +15,21 @@ public class PlayerController : MonoBehaviour, ISavable
     private Vector2 input;
     private Character character;
 
+    public string Name => name;
+    public Sprite Sprite => sprite;
+    public Character Character => character;
+
+    /// <summary>
+    /// Gets the Character component on Awake. 
+    /// </summary>
     private void Awake()
     {
         character = GetComponent<Character>();
     }
 
+    /// <summary>
+    /// Handles the character's movement and interaction with the environment.
+    /// </summary>
     public void HandleUpdate()
     {
         if (!character.IsMoving)
@@ -39,6 +52,9 @@ public class PlayerController : MonoBehaviour, ISavable
             Interact();
     }
 
+    /// <summary>
+    /// Interacts with an interactable object in the direction the character is facing.
+    /// </summary>
     void Interact()
     {
         var facingDir = new Vector3(character.Animator.MoveX, character.Animator.MoveY);
@@ -53,6 +69,9 @@ public class PlayerController : MonoBehaviour, ISavable
         }
     }
 
+    /// <summary>
+    /// Checks for any triggerable objects in the vicinity of the character and triggers them if found.
+    /// </summary>
     private void OnMoveOver()
     {
         var colliders = Physics2D.OverlapCircleAll(transform.position - new Vector3(0, character.OffsetY), 0.2f, GameLayers.i.TriggerableLayers);
@@ -69,6 +88,10 @@ public class PlayerController : MonoBehaviour, ISavable
         }
     }
 
+    /// <summary>
+    /// Captures the state of the player and returns a PlayerSaveData object.
+    /// </summary>
+    /// <returns>PlayerSaveData object containing the player's position and pokemon party.</returns>
     public object CaptureState()
     {
         var saveData = new PlayerSaveData()
@@ -80,6 +103,10 @@ public class PlayerController : MonoBehaviour, ISavable
         return saveData;
     }
 
+    /// <summary>
+    /// Restores the state of the player from the given save data.
+    /// </summary>
+    /// <param name="state">The save data to restore the state from.</param>
     public void RestoreState(object state)
     {
         var saveData = (PlayerSaveData)state;
@@ -91,18 +118,11 @@ public class PlayerController : MonoBehaviour, ISavable
         // Restore Party
         GetComponent<PokemonParty>().Pokemons = saveData.pokemons.Select(s => new Pokemon(s)).ToList();
     }
-
-    public string Name {
-        get => name;
-    }
-
-    public Sprite Sprite {
-        get => sprite;
-    }
-
-    public Character Character => character;
 }
 
+/// <summary>
+/// This class is used to store the data of a player.
+/// </summary>
 [Serializable]
 public class PlayerSaveData
 {

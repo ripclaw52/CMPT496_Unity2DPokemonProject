@@ -2,8 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class provides methods to access and manipulate the conditions database.
+/// </summary>
 public class ConditionsDB
 {
+    /// <summary>
+    /// Initializes the conditions by assigning the condition Id to each condition.
+    /// </summary>
     public static void Init()
     {
         foreach (var kvp in Conditions)
@@ -15,6 +21,12 @@ public class ConditionsDB
         }
     }
 
+    /// <summary>
+    /// Creates a Dictionary of Conditions with their associated properties.
+    /// </summary>
+    /// <returns>
+    /// A Dictionary of Conditions with their associated properties.
+    /// </returns>
     public static Dictionary<ConditionID, Condition> Conditions { get; set; } = new Dictionary<ConditionID, Condition>()
     {
         {
@@ -145,6 +157,11 @@ public class ConditionsDB
         }
     };
 
+    /// <summary>
+    /// Calculates the status bonus based on the given condition.
+    /// </summary>
+    /// <param name="condition">The condition to calculate the bonus for.</param>
+    /// <returns>The status bonus.</returns>
     public static float GetStatusBonus(Condition condition)
     {
         if (condition == null)
@@ -158,6 +175,9 @@ public class ConditionsDB
     }
 }
 
+/// <summary>
+/// Enum representing the different conditions a Pokemon can have. 
+/// </summary>
 public enum ConditionID
 {
     none, psn, brn, slp, par, frz,

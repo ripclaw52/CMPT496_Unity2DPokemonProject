@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class is used to create a new move for a Pokemon.
+/// </summary>
 [CreateAssetMenu(fileName = "Move", menuName = "Pokemon/Create new move")]
 public class MoveBase : ScriptableObject
 {
@@ -22,20 +25,23 @@ public class MoveBase : ScriptableObject
     [SerializeField] List<SecondaryEffects> secondaries;
     [SerializeField] MoveTarget target;
 
-    public string Name { get { return name; } }
-    public string Description { get { return description; } }
-    public PokemonType Type { get { return type; } }
-    public int Power { get { return power; } }
-    public int Accuracy { get { return accuracy; } }
-    public bool AlwaysHits { get { return alwaysHits; } }
-    public int PP { get { return pp; } }
-    public int Priority { get { return priority; } }
-    public MoveCategory Category { get { return category; } }
-    public MoveEffects Effects { get { return effects; } }
-    public List<SecondaryEffects> Secondaries { get { return secondaries; } }
-    public MoveTarget Target { get { return target; } }
+    public string Name => name;
+    public string Description => description;
+    public PokemonType Type => type;
+    public int Power => power;
+    public int Accuracy => accuracy;
+    public bool AlwaysHits => alwaysHits;
+    public int PP => pp;
+    public int Priority => priority;
+    public MoveCategory Category => category;
+    public MoveEffects Effects => effects;
+    public List<SecondaryEffects> Secondaries => secondaries;
+    public MoveTarget Target => target;
 }
 
+/// <summary>
+/// This class is used to store the effects of a move.
+/// </summary>
 [System.Serializable]
 public class MoveEffects
 {
@@ -43,21 +49,27 @@ public class MoveEffects
     [SerializeField] ConditionID status;
     [SerializeField] ConditionID volatileStatus;
 
-    public List<StatBoost> Boosts { get { return boosts; } }
-    public ConditionID Status { get { return status; } }
-    public ConditionID VolatileStatus { get { return volatileStatus; } }
+    public List<StatBoost> Boosts => boosts;
+    public ConditionID Status => status;
+    public ConditionID VolatileStatus => volatileStatus;
 }
 
+/// <summary>
+/// Represents the SecondaryEffects class which inherits from the MoveEffects class.
+/// </summary>
 [System.Serializable]
 public class SecondaryEffects : MoveEffects
 {
     [SerializeField] int chance;
     [SerializeField] MoveTarget target;
 
-    public int Chance { get { return chance; } }
-    public MoveTarget Target { get { return target; } }
+    public int Chance => chance;
+    public MoveTarget Target => target;
 }
 
+/// <summary>
+/// This class is used to store information about a stat boost.
+/// </summary>
 [System.Serializable]
 public class StatBoost
 {
@@ -65,11 +77,17 @@ public class StatBoost
     public int boost;
 }
 
+/// <summary>
+/// Enum representing the different categories of moves in a Pokemon game.
+/// </summary>
 public enum MoveCategory
 {
     Physical, Special, Status
 }
 
+/// <summary>
+/// Enum to represent the target of a move.
+/// </summary>
 public enum MoveTarget
 {
     Foe, Self

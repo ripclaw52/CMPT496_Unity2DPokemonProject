@@ -4,6 +4,9 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// This class represents a Portal object which is a MonoBehaviour and implements the IPlayerTriggerable interface.
+/// </summary>
 public class Portal : MonoBehaviour, IPlayerTriggerable
 {
     [SerializeField] int sceneToLoad = -1;
@@ -11,6 +14,9 @@ public class Portal : MonoBehaviour, IPlayerTriggerable
     [SerializeField] Transform spawnPoint;
 
     PlayerController player;
+    /// <summary>
+    /// Sets the player controller and starts a coroutine to switch the scene.
+    /// </summary>
     public void OnPlayerTriggered(PlayerController player)
     {
         this.player = player;
@@ -18,11 +24,21 @@ public class Portal : MonoBehaviour, IPlayerTriggerable
     }
 
     Fader fader;
+
+    /// <summary>
+    /// Finds the Fader object in the scene.
+    /// </summary>
     private void Start()
     {
         fader = FindObjectOfType<Fader>();
     }
 
+    /// <summary>
+    /// Coroutine to switch scenes and move the player to the destination portal.
+    /// </summary>
+    /// <returns>
+    /// IEnumerator object for the coroutine.
+    /// </returns>
     IEnumerator SwitchScene()
     {
         DontDestroyOnLoad(gameObject);
@@ -44,4 +60,7 @@ public class Portal : MonoBehaviour, IPlayerTriggerable
     public Transform SpawnPoint => spawnPoint;
 }
 
-public enum DestinationIdentifier { A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z}
+/// <summary>
+/// Enum representing the possible destination identifiers.
+/// </summary>
+public enum DestinationIdentifier { A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z }

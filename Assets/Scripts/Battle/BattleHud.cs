@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// This class is responsible for managing the battle HUD UI elements.
+/// </summary>
 public class BattleHud : MonoBehaviour
 {
     [SerializeField] Text nameText;
@@ -21,6 +24,10 @@ public class BattleHud : MonoBehaviour
     Pokemon _pokemon;
     Dictionary<ConditionID, Color> statusColors;
 
+    /// <summary>
+    /// Sets the data for the Pokemon UI.
+    /// </summary>
+    /// <param name="pokemon">The Pokemon whose data is to be set.</param>
     public void SetData(Pokemon pokemon)
     {
         if (_pokemon != null)
@@ -33,7 +40,7 @@ public class BattleHud : MonoBehaviour
 
         nameText.text = pokemon.Base.Name;
         SetLevel();
-        hpBar.SetHP((float) pokemon.HP / pokemon.MaxHP);
+        hpBar.SetHP((float)pokemon.HP / pokemon.MaxHP);
         SetExp();
 
         statusColors = new Dictionary<ConditionID, Color>()
@@ -50,6 +57,9 @@ public class BattleHud : MonoBehaviour
         _pokemon.OnHPChanged += UpdateHP;
     }
 
+    /// <summary>
+    /// Sets the status text and color of the Pokemon based on its status.
+    ///</summary>
     void SetStatusText()
     {
         if (_pokemon.Status == null)
@@ -63,11 +73,18 @@ public class BattleHud : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets the level text to the level of the Pokemon.
+    /// </summary>
     public void SetLevel()
     {
         levelText.text = "Lvl " + _pokemon.Level;
     }
 
+
+    /// <summary>
+    /// Sets the experience bar to the normalized experience value.
+    /// </summary>
     public void SetExp()
     {
         if (expBar == null) return;
@@ -76,7 +93,13 @@ public class BattleHud : MonoBehaviour
         expBar.transform.localScale = new Vector3(normalizedExp, 1, 1);
     }
 
-    public IEnumerator SetExpSmooth(bool reset=false)
+
+    /// <summary>
+    /// Sets the experience bar to the normalized experience value.
+    /// </summary>
+    /// <param name="reset">Whether to reset the experience bar to 0.</param>
+    /// <returns>An IEnumerator for the experience bar animation.</returns>
+    public IEnumerator SetExpSmooth(bool reset = false)
     {
         if (expBar == null) yield break;
 
@@ -87,6 +110,10 @@ public class BattleHud : MonoBehaviour
         yield return expBar.transform.DOScaleX(normalizedExp, 1.5f).WaitForCompletion();
     }
 
+    /// <summary>
+    /// Calculates the normalized experience of a Pokemon.
+    /// </summary>
+    /// <returns>The normalized experience of the Pokemon.</returns>
     public float GetNormalizedExp()
     {
         int currLevelExp = _pokemon.Base.GetExpForLevel(_pokemon.Level);
@@ -96,21 +123,38 @@ public class BattleHud : MonoBehaviour
         return Mathf.Clamp01(normalizedExp);
     }
 
+    /// <summary>
+    /// Coroutine to update the HP of the player.
+    /// </summary>
     public void UpdateHP()
     {
         StartCoroutine(UpdateHPAsync());
     }
+
+    /// <summary>
+    /// Updates the HP bar of the Pokemon asynchronously.
+    /// </summary>
+    /// <returns>
+    /// An IEnumerator object that updates the HP bar.
+    /// </returns>
 
     public IEnumerator UpdateHPAsync()
     {
         yield return hpBar.SetHPSmooth((float)_pokemon.HP / _pokemon.MaxHP);
     }
 
+    /// <summary>
+    /// Waits until the HP bar is finished updating.
+    /// </summary>
+    /// <returns>An IEnumerator object.</returns>
     public IEnumerator WaitForHPUpdate()
     {
         yield return new WaitUntil(() => hpBar.IsUpdating == false);
     }
 
+    /// <summary>
+    /// Clears the data associated with the Pokemon instance, including any event handlers.
+    /// </summary>
     public void ClearData()
     {
         if (_pokemon != null)

@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+/// <summary>
+/// This class provides a MonoBehaviour that can be saved and loaded.
+/// </summary>
 [ExecuteAlways]
 public class SavableEntity : MonoBehaviour
 {
@@ -12,7 +15,10 @@ public class SavableEntity : MonoBehaviour
 
     public string UniqueId => uniqueId;
 
-    // Used to capture state of the gameobject on which the savableEntity is attached
+    /// <summary>
+    /// Captures the state of the gameobject on which the savableEntity is attached.
+    /// </summary>
+    /// <returns>A dictionary containing the state of all components implementing the ISavable interface.</returns>
     public object CaptureState()
     {
         Dictionary<string, object> state = new Dictionary<string, object>();
@@ -23,7 +29,9 @@ public class SavableEntity : MonoBehaviour
         return state;
     }
 
-    // Used to restore state of the gameobject on which the savableEntity is attached
+    /// <summary>
+    /// Restores the state of the gameobject on which the savableEntity is attached.
+    /// </summary>
     public void RestoreState(object state)
     {
         Dictionary<string, object> stateDict = (Dictionary<string, object>)state;
@@ -37,7 +45,11 @@ public class SavableEntity : MonoBehaviour
     }
 
 #if UNITY_EDITOR
-    // Update method used for generating UUID of the SavableEntity
+    /// <summary>
+    /// Update method used for generating UUID of the SavableEntity
+    /// Updates the unique ID of the game object, if it is not already set or is not unique. 
+    /// Also adds the game object to the global lookup.
+    /// </summary>
     private void Update()
     {
         // don't execute in playmode
@@ -59,6 +71,11 @@ public class SavableEntity : MonoBehaviour
     }
 #endif
 
+    /// <summary>
+    /// Checks if the given candidate is unique.
+    /// </summary>
+    /// <param name="candidate">The candidate to check.</param>
+    /// <returns>True if the candidate is unique, false otherwise.</returns>
     private bool IsUnique(string candidate)
     {
         if (!globalLookup.ContainsKey(candidate)) return true;

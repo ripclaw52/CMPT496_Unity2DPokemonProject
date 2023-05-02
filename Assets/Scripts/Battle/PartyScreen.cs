@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// This class is responsible for managing the Party Screen in the game.
+/// </summary>
 public class PartyScreen : MonoBehaviour
 {
     [SerializeField] Text messageText;
@@ -13,14 +16,12 @@ public class PartyScreen : MonoBehaviour
     PokemonParty party;
 
     int selection = 0;
-
     public Pokemon SelectedMember => pokemons[selection];
-
-    /// <summary>
-    /// Party screen can be called from different states like ActionSelection, RunningTurn, AboutToUse
-    /// </summary>
     public BattleState? CalledFrom { get; set; }
 
+    /// <summary>
+    /// Initializes the PartyUI by getting the PartyMemberUI components, getting the player's party, and setting the party data. Also adds a listener to the party's OnUpdated event.
+    /// </summary>
     public void Init()
     {
         memberSlots = GetComponentsInChildren<PartyMemberUI>(true);
@@ -31,6 +32,9 @@ public class PartyScreen : MonoBehaviour
         party.OnUpdated += SetPartyData;
     }
 
+    /// <summary>
+    /// Sets the party data by activating the member slots and initializing them with the pokemons in the party. Also updates the member selection and sets the message text.
+    /// </summary>
     public void SetPartyData()
     {
         pokemons = party.Pokemons;
@@ -50,7 +54,12 @@ public class PartyScreen : MonoBehaviour
 
         messageText.text = "Choose a Pokemon";
     }
-    
+
+    /// <summary>
+    /// Handles the update of the selection of the pokemon.
+    /// </summary>
+    /// <param name="onSelected">Action to be performed when the selection is confirmed.</param>
+    /// <param name="onBack">Action to be performed when the selection is cancelled.</param>
     public void HandleUpdate(Action onSelected, Action onBack)
     {
         var prevSelection = selection;
@@ -79,6 +88,10 @@ public class PartyScreen : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Updates the selection of the member in the list of pokemons.
+    /// </summary>
+    /// <param name="selectedMember">The index of the selected member.</param>
     public void UpdateMemberSelection(int selectedMember)
     {
         for (int i = 0; i < pokemons.Count; i++)
@@ -90,6 +103,10 @@ public class PartyScreen : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Displays a message for each pokemon in the party indicating whether the TM item can be used on it.
+    /// </summary>
+    /// <param name="tmItem">The TM item to check.</param>
     public void ShowIfTmIsUsable(TmItem tmItem)
     {
         for (int i = 0; i < pokemons.Count; i++)
@@ -108,6 +125,9 @@ public class PartyScreen : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Clears the message text and color of all member slots.
+    /// </summary>
     public void ClearMemberSlotMessages()
     {
         for (int i = 0; i < pokemons.Count; i++)
@@ -117,6 +137,10 @@ public class PartyScreen : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets the text of the messageText object to the given message.
+    /// </summary>
+    /// <param name="message">The message to be set.</param>
     public void SetMessageText(string message)
     {
         messageText.text = message;

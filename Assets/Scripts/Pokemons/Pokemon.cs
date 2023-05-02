@@ -3,12 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// This class represents a Pokemon object which can be serialized with properties such as name, type, and level.
+/// </summary>
 [System.Serializable]
 public class Pokemon
 {
     [SerializeField] PokemonBase _base;
     [SerializeField] int level;
 
+    /// <summary>
+    /// Constructor for the Pokemon class, initializing the base and level of the Pokemon.
+    /// </summary>
+    /// <param name="pBase">The base of the Pokemon.</param>
+    /// <param name="pLevel">The level of the Pokemon.</param>
+    /// <returns>A new Pokemon instance.</returns>
     public Pokemon(PokemonBase pBase, int pLevel)
     {
         _base = pBase;
@@ -17,32 +26,28 @@ public class Pokemon
         Init();
     }
 
-    public PokemonBase Base {
-        get {
-            return _base;
-        }
-    }
-    public int Level {
-        get {
-            return level;
-        }
-    }
-
+    public PokemonBase Base { get { return _base; } }
+    public int Level { get { return level; } }
     public int Exp { get; set; }
     public int HP { get; set; }
+
     public List<Move> Moves { get; set; }
     public Move CurrentMove { get; set; }
+
     public Dictionary<Stat, int> Stats { get; private set; }
     public Dictionary<Stat, int> StatBoosts { get; private set; }
     public Condition Status { get; private set; }
     public int StatusTime { get; set; }
     public Condition VolatileStatus { get; private set; }
     public int VolatileStatusTime { get; set; }
-
     public Queue<string> StatusChanges { get; private set; }
+
     public event System.Action OnStatusChanged;
     public event System.Action OnHPChanged;
 
+    /// <summary>
+    /// Initializes a Pokemon instance by generating its moves, calculating its stats, setting its HP to its max HP, creating a queue for status changes, resetting stat boosts, and setting its status and volatile status to null.
+    /// </summary>
     public void Init()
     {
         // Generate Moves
@@ -67,6 +72,12 @@ public class Pokemon
         VolatileStatus = null;
     }
 
+    /// <summary>
+    /// Constructor for the Pokemon class, taking a PokemonSaveData object as a parameter.
+    /// </summary>
+    /// <returns>
+    /// A new Pokemon object.
+    /// </returns>
     public Pokemon(PokemonSaveData saveData)
     {
         _base = PokemonDB.GetPokemonByName(saveData.name);
@@ -87,6 +98,10 @@ public class Pokemon
         VolatileStatus = null;
     }
 
+    /// <summary>
+    /// Gets the save data for the Pokemon.
+    /// </summary>
+    /// <returns>The Pokemon's save data.</returns>
     public PokemonSaveData GetSaveData()
     {
         var saveData = new PokemonSaveData()
@@ -102,6 +117,9 @@ public class Pokemon
         return saveData;
     }
 
+    /// <summary>
+    /// Calculates the stats of a Pokemon based on its base stats and level.
+    /// </summary>
     void CalculateStats()
     {
         Stats = new Dictionary<Stat, int>();
@@ -114,6 +132,9 @@ public class Pokemon
         MaxHP = Mathf.FloorToInt((Base.MaxHP * Level) / 100f) + 10 + Level;
     }
 
+    /// <summary>
+    /// Resets the StatBoosts dictionary to its default values.
+    /// </summary>
     void ResetStatBoost()
     {
         StatBoosts = new Dictionary<Stat, int>()
@@ -128,6 +149,11 @@ public class Pokemon
         };
     }
 
+    /// <summary>
+    /// Gets the stat value after applying any stat boosts.
+    /// </summary>
+    /// <param name="stat">The stat to get the value of.</param>
+    /// <returns>The stat value after applying any stat boosts.</returns>
     int GetStat(Stat stat)
     {
         int statVal = Stats[stat];
@@ -144,6 +170,10 @@ public class Pokemon
         return statVal;
     }
 
+    /// <summary>
+    /// Applies stat boosts to the character and enqueues status changes.
+    /// </summary>
+    /// <param name="statBoosts">The list of stat boosts to apply.</param>
     public void ApplyBoosts(List<StatBoost> statBoosts)
     {
         foreach (var statBoost in statBoosts)
@@ -162,6 +192,10 @@ public class Pokemon
         }
     }
 
+    /// <summary>
+    /// Checks if the experience is greater than the required experience for the next level and increments the level if it is.
+    /// </summary>
+    /// <returns>Returns true if the level was incremented, false otherwise.</returns>
     public bool CheckForLevelUp()
     {
         if (Exp > Base.GetExpForLevel(level + 1))
@@ -173,11 +207,19 @@ public class Pokemon
         return false;
     }
 
+    /// <summary>
+    /// Gets the LearnableMove at the current level.
+    /// </summary>
+    /// <returns>The LearnableMove at the current level.</returns>
     public LearnableMove GetLearnableMoveAtCurrLevel()
     {
         return Base.LearnableMoves.Where(x => x.Level == level).FirstOrDefault();
     }
 
+    /// <summary>
+    /// Adds a new move to the list of moves of the Pokemon.
+    /// </summary>
+    /// <param name="moveToLearn">The move to be added.</param>
     public void LearnMove(MoveBase moveToLearn)
     {
         if (Moves.Count > PokemonBase.MaxNumOfMoves)
@@ -186,33 +228,29 @@ public class Pokemon
         Moves.Add(new Move(moveToLearn));
     }
 
+    /// <summary>
+    /// Checks if the list of Moves contains a MoveBase object.
+    /// </summary>
+    /// <param name="moveToCheck">The MoveBase object to check for.</param>
+    /// <returns>True if the list of Moves contains the MoveBase object, false otherwise.</returns>
     public bool HasMove(MoveBase moveToCheck)
     {
         return Moves.Count(m => m.Base == moveToCheck) > 0;
     }
 
-    public int Attack {
-        get { return GetStat(Stat.Attack); }
-    }
-
-    public int Defense {
-        get { return GetStat(Stat.Defense); }
-    }
-
-    public int SpAttack {
-        get { return GetStat(Stat.SpAttack); }
-    }
-
-    public int SpDefense {
-        get { return GetStat(Stat.SpDefense); }
-    }
-
-    public int Speed {
-        get { return GetStat(Stat.Speed); }
-    }
-
+    public int Attack => GetStat(Stat.Attack);
+    public int Defense => GetStat(Stat.Defense);
+    public int SpAttack => GetStat(Stat.SpAttack);
+    public int SpDefense => GetStat(Stat.SpDefense);
+    public int Speed => GetStat(Stat.Speed);
     public int MaxHP { get; private set; }
 
+    /// <summary>
+    /// Calculates the damage taken by a Pokemon when attacked by a Move.
+    /// </summary>
+    /// <param name="move">The Move used to attack the Pokemon.</param>
+    /// <param name="attacker">The Pokemon attacking the Pokemon.</param>
+    /// <returns>A DamageDetails object containing the damage taken.</returns>
     public DamageDetails TakeDamage(Move move, Pokemon attacker)
     {
         float critical = 1f;
@@ -241,18 +279,27 @@ public class Pokemon
         return damageDetails;
     }
 
+    /// <summary>
+    /// Increases the HP of the object by the given amount, clamped between 0 and MaxHP. Invokes the OnHPChanged event.
+    /// </summary>
     public void IncreaseHP(int amount)
     {
         HP = Mathf.Clamp(HP + amount, 0, MaxHP);
         OnHPChanged?.Invoke();
     }
 
+    /// <summary>
+    /// Decreases the HP of the object by the specified damage amount, clamped between 0 and MaxHP. Invokes the OnHPChanged event.
+    /// </summary>
     public void DecreaseHP(int damage)
     {
         HP = Mathf.Clamp(HP - damage, 0, MaxHP);
         OnHPChanged?.Invoke();
     }
 
+    /// <summary>
+    /// Sets the status of the object based on the given condition ID. Invokes the OnStart event, adds a start message to the status changes queue, and invokes the OnStatusChanged event.
+    /// </summary>
     public void SetStatus(ConditionID conditionId)
     {
         if (Status != null) return;
@@ -263,12 +310,19 @@ public class Pokemon
         OnStatusChanged?.Invoke();
     }
 
+    /// <summary>
+    /// Sets the Status to null and invokes the OnStatusChanged event.
+    /// </summary>
     public void CureStatus()
     {
         Status = null;
         OnStatusChanged?.Invoke();
     }
 
+    /// <summary>
+    /// Sets the volatile status of the character to the specified condition.
+    /// </summary>
+    /// <param name="conditionId">The ID of the condition to set.</param>
     public void SetVolatileStatus(ConditionID conditionId)
     {
         if (VolatileStatus != null) return;
@@ -278,11 +332,18 @@ public class Pokemon
         StatusChanges.Enqueue($"{Base.Name} {VolatileStatus.StartMessage}");
     }
 
+    /// <summary>
+    /// Resets the VolatileStatus to null.
+    /// </summary>
     public void CureVolatileStatus()
     {
         VolatileStatus = null;
     }
 
+    /// <summary>
+    /// Gets a random move from the list of moves with PP greater than 0.
+    /// </summary>
+    /// <returns>A random move from the list of moves with PP greater than 0.</returns>
     public Move GetRandomMove()
     {
         var movesWithPP = Moves.Where(x => x.PP > 0).ToList();
@@ -291,6 +352,10 @@ public class Pokemon
         return movesWithPP[r];
     }
 
+    /// <summary>
+    /// Checks if the move can be performed by checking the Status and VolatileStatus objects.
+    /// </summary>
+    /// <returns>True if the move can be performed, false otherwise.</returns>
     public bool OnBeforeMove()
     {
         bool canPerformMove = true;
@@ -309,12 +374,18 @@ public class Pokemon
         return canPerformMove;
     }
 
+    /// <summary>
+    /// Invokes the OnAfterTurn methods of the Status and VolatileStatus objects.
+    /// </summary>
     public void OnAfterTurn()
     {
         Status?.OnAfterTurn?.Invoke(this);
         VolatileStatus?.OnAfterTurn?.Invoke(this);
     }
 
+    /// <summary>
+    /// Resets the volatile status and stat boosts after a battle is over.
+    /// </summary>
     public void OnBattleOver()
     {
         VolatileStatus = null;
@@ -322,6 +393,9 @@ public class Pokemon
     }
 }
 
+/// <summary>
+/// This class contains the details of the damage done to an object.
+/// </summary>
 public class DamageDetails
 {
     public bool Fainted { get; set; }
@@ -329,6 +403,9 @@ public class DamageDetails
     public float TypeEffectiveness { get; set; }
 }
 
+/// <summary>
+/// This class is used to store the data of a Pokemon for saving and loading.
+/// </summary>
 [System.Serializable]
 public class PokemonSaveData
 {

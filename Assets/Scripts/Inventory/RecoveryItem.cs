@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Represents a RecoveryItem which inherits from ItemBase and is used to create a new recovery item in the Items menu.
+/// </summary>
 [CreateAssetMenu(menuName = "Items/Create new recovery item")]
 public class RecoveryItem : ItemBase
 {
@@ -21,6 +24,11 @@ public class RecoveryItem : ItemBase
     [SerializeField] bool revive;
     [SerializeField] bool maxRevive;
 
+    /// <summary>
+    /// Uses an item on a Pokemon.
+    /// </summary>
+    /// <param name="pokemon">The Pokemon to use the item on.</param>
+    /// <returns>True if the item was used successfully, false otherwise.</returns>
     public override bool Use(Pokemon pokemon)
     {
         // Revive
