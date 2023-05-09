@@ -2,10 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// This class represents a Pickup object which inherits from the MonoBehaviour and Interactable classes.
-/// </summary>
-public class Pickup : MonoBehaviour, Interactable
+public class Pickup : MonoBehaviour, Interactable, ISavable
 {
     [SerializeField] ItemBase item;
     [SerializeField] int count = 1;
@@ -30,11 +27,27 @@ public class Pickup : MonoBehaviour, Interactable
 
             string playerName = initiator.GetComponent<PlayerController>().Name;
 
-            string dialogText = $"{playerName} found {item.Name}";
+            string dialogText = $"{playerName} found {item.Name}!";
             if (count > 1)
-                dialogText = $"{playerName} found {count} {item.Name}s";
+                dialogText = $"{playerName} found {count} {item.Name}'s!";
 
             yield return DialogManager.Instance.ShowDialogText(dialogText);
+        }
+    }
+
+    public object CaptureState()
+    {
+        return Used;
+    }
+
+    public void RestoreState(object state)
+    {
+        Used = (bool)state;
+
+        if (Used)
+        {
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 }

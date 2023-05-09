@@ -215,7 +215,7 @@ public class InventoryUI : MonoBehaviour
         if (usedItem != null)
         {
             if (usedItem is RecoveryItem)
-                yield return DialogManager.Instance.ShowDialogText($"You used {usedItem.Name}");
+                yield return DialogManager.Instance.ShowDialogText($"You used {usedItem.Name}!");
             onItemUsed?.Invoke(usedItem);
         }
         else
@@ -276,7 +276,7 @@ public class InventoryUI : MonoBehaviour
     IEnumerator ChooseMoveToForget(Pokemon pokemon, MoveBase newMove)
     {
         state = InventoryUIState.Busy;
-        yield return DialogManager.Instance.ShowDialogText($"Choose a move you want to forget", true, false);
+        yield return DialogManager.Instance.ShowDialogText($"Choose a move you want to forget!", true, false);
         moveSelectionUI.gameObject.SetActive(true);
         moveSelectionUI.SetMoveData(pokemon.Moves.Select(x => x.Base).ToList(), newMove);
         moveToLearn = newMove;

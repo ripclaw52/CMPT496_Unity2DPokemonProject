@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 /// <summary>
 /// This class provides methods to move a database from one server to another.
 /// </summary>
@@ -23,7 +22,7 @@ public class MoveDB
         {
             if (moves.ContainsKey(move.Name))
             {
-                Debug.LogError($"There are two moves with the name {move.Name}");
+                Debug.LogError($"There are two moves with the name {move.Name}!");
                 continue;
             }
 
@@ -40,7 +39,7 @@ public class MoveDB
     {
         if (!moves.ContainsKey(name))
         {
-            Debug.LogError($"Move with name {name} not found in the database");
+            Debug.LogError($"Move with name {name} not found in the database!");
             return null;
         }
 

@@ -7,15 +7,13 @@ using UnityEngine;
 /// <summary>
 /// Enum representing the different categories of items in the game.
 /// </summary>
-//public enum ItemCategory { Items, Pokeballs, Tms }
 public enum ItemCategory { Medicines, Pokeballs, BattleItems, Berries, OtherItems, Tms, Treasures, KeyItems }
 
 /// <summary>
 /// This class is used to manage the inventory of the game.
 /// </summary>
-public class Inventory : MonoBehaviour
+public class Inventory : MonoBehaviour, ISavable
 {
-    //
     [SerializeField] List<ItemSlot> medicineSlots;
     [SerializeField] List<ItemSlot> pokeballSlots;
     [SerializeField] List<ItemSlot> battleItemSlots;
@@ -24,12 +22,6 @@ public class Inventory : MonoBehaviour
     [SerializeField] List<ItemSlot> tmSlots;
     [SerializeField] List<ItemSlot> treasureSlots;
     [SerializeField] List<ItemSlot> keyItemSlots;
-    //
-    /*/
-    [SerializeField] List<ItemSlot> slots;
-    [SerializeField] List<ItemSlot> pokeballSlots;
-    [SerializeField] List<ItemSlot> tmSlots;
-    /*/
 
     List<List<ItemSlot>> allSlots;
 
@@ -40,7 +32,6 @@ public class Inventory : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-        //allSlots = new List<List<ItemSlot>>() { slots, pokeballSlots, tmSlots };
         allSlots = new List<List<ItemSlot>>() { medicineSlots, pokeballSlots, battleItemSlots, berrySlots, otherItemSlots, tmSlots, treasureSlots, keyItemSlots };
     }
 
@@ -50,7 +41,6 @@ public class Inventory : MonoBehaviour
     /// <returns>A list of item categories.</returns>
     public static List<string> ItemCategories { get; set; } = new List<string>()
     {
-        //"ITEMS", "POKEBALLS", "TMs & HMs"
         "Medicines", "Poke Balls", "Battle Items", "Berries", "Other Items", "TMs & HMs", "Treasures", "Key Items"
     };
 
@@ -164,6 +154,50 @@ public class Inventory : MonoBehaviour
     {
         return FindObjectOfType<PlayerController>().GetComponent<Inventory>();
     }
+
+    /// <summary>
+    /// Captures the state of the inventory and returns a save data object.
+    /// </summary>
+    /// <returns>
+    /// An InventorySaveData object containing the state of the inventory.
+    /// </returns>
+    public object CaptureState()
+    {
+        var saveData = new InventorySaveData()
+        {
+            medicines = medicineSlots.Select(i => i.GetSaveData()).ToList(),
+            pokeballs = pokeballSlots.Select(i => i.GetSaveData()).ToList(),
+            battleItems = battleItemSlots.Select(i => i.GetSaveData()).ToList(),
+            berries = berrySlots.Select(i => i.GetSaveData()).ToList(),
+            otherItems = otherItemSlots.Select(i => i.GetSaveData()).ToList(),
+            tms = tmSlots.Select(i => i.GetSaveData()).ToList(),
+            treasures = treasureSlots.Select(i => i.GetSaveData()).ToList(),
+            keyItems = keyItemSlots.Select(i => i.GetSaveData()).ToList(),
+        };
+
+        return saveData;
+    }
+
+    /// <summary>
+    /// Restores the inventory state from the given save data.
+    /// </summary>
+    public void RestoreState(object state)
+    {
+        var saveData = state as InventorySaveData;
+
+        medicineSlots = saveData.medicines.Select(i => new ItemSlot(i)).ToList();
+        pokeballSlots = saveData.pokeballs.Select(i => new ItemSlot(i)).ToList();
+        battleItemSlots = saveData.battleItems.Select(i => new ItemSlot(i)).ToList();
+        berrySlots = saveData.berries.Select(i => new ItemSlot(i)).ToList();
+        otherItemSlots = saveData.otherItems.Select(i => new ItemSlot(i)).ToList();
+        tmSlots = saveData.tms.Select(i => new ItemSlot(i)).ToList();
+        treasureSlots = saveData.treasures.Select(i => new ItemSlot(i)).ToList();
+        keyItemSlots = saveData.keyItems.Select(i => new ItemSlot(i)).ToList();
+
+        allSlots = new List<List<ItemSlot>>() { medicineSlots, pokeballSlots, battleItemSlots, berrySlots, otherItemSlots, tmSlots, treasureSlots, keyItemSlots };
+
+        OnUpdated?.Invoke();
+    }
 }
 
 /// <summary>
@@ -174,6 +208,45 @@ public class ItemSlot
 {
     [SerializeField] ItemBase item;
     [SerializeField] int count;
+
+    /// <summary>
+    /// Constructor for ItemSlot class.
+    /// </summary>
+    /// <returns>
+    /// Nothing.
+    /// </returns>
+    public ItemSlot()
+    {
+
+    }
+
+    /// <summary>
+    /// Constructor for ItemSlot class, taking an ItemSaveData object as parameter.
+    /// </summary>
+    /// <param name="saveData">ItemSaveData object containing item name and count.</param>
+    /// <returns>
+    /// An ItemSlot object.
+    /// </returns>
+    public ItemSlot(ItemSaveData saveData)
+    {
+        item = ItemDB.GetItemByName(saveData.name);
+        count = saveData.count;
+    }
+
+    /// <summary>
+    /// Gets the save data for an item.
+    /// </summary>
+    /// <returns>The save data for the item.</returns>
+    public ItemSaveData GetSaveData()
+    {
+        var saveData = new ItemSaveData()
+        {
+            name = item.Name,
+            count = count
+        };
+
+        return saveData;
+    }
 
     /// <summary>
     /// Gets or sets the ItemBase object.
@@ -192,4 +265,31 @@ public class ItemSlot
         get => count;
         set => count = value;
     }
+}
+
+/// <summary>
+/// Represents the data for an item that can be saved.
+/// </summary>
+[Serializable]
+public class ItemSaveData
+{
+    public string name;
+    public int count;
+}
+
+
+/// <summary>
+/// This class is used to store the inventory data of the player.
+/// </summary>
+[Serializable]
+public class InventorySaveData
+{
+    public List<ItemSaveData> medicines;
+    public List<ItemSaveData> pokeballs;
+    public List<ItemSaveData> battleItems;
+    public List<ItemSaveData> berries;
+    public List<ItemSaveData> otherItems;
+    public List<ItemSaveData> tms;
+    public List<ItemSaveData> treasures;
+    public List<ItemSaveData> keyItems;
 }

@@ -14,7 +14,7 @@ public class DialogManager : MonoBehaviour
     [SerializeField] int lettersPerSecond;
 
     public event Action OnShowDialog;
-    public event Action OnCloseDialog;
+    public event Action OnDialogFinished;
 
     public static DialogManager Instance { get; private set; }
 
@@ -52,6 +52,7 @@ public class DialogManager : MonoBehaviour
         {
             CloseDialog();
         }
+        OnDialogFinished?.Invoke();
     }
 
     /// <summary>
@@ -61,7 +62,6 @@ public class DialogManager : MonoBehaviour
     {
         dialogBox.SetActive(false);
         IsShowing = false;
-        OnCloseDialog?.Invoke();
     }
     
     /// <summary>
@@ -86,7 +86,7 @@ public class DialogManager : MonoBehaviour
 
         dialogBox.SetActive(false);
         IsShowing = false;
-        OnCloseDialog?.Invoke();
+        OnDialogFinished?.Invoke();
     }
 
     public void HandleUpdate()

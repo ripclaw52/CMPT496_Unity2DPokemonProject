@@ -52,7 +52,7 @@ public class PartyScreen : MonoBehaviour
 
         UpdateMemberSelection(selection);
 
-        messageText.text = "Choose a Pokemon";
+        messageText.text = "Choose a Pokemon!";
     }
 
     /// <summary>

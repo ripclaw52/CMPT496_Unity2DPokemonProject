@@ -163,7 +163,7 @@ public class BattleSystem : MonoBehaviour
     void ActionSelection()
     {
         state = BattleState.ActionSelection;
-        dialogBox.SetDialog("Choose an action");
+        dialogBox.SetDialog("Choose an action!");
         dialogBox.EnableActionSelector(true);
     }
 
@@ -220,7 +220,7 @@ public class BattleSystem : MonoBehaviour
     IEnumerator ChooseMoveToForget(Pokemon pokemon, MoveBase newMove)
     {
         state = BattleState.Busy;
-        yield return dialogBox.TypeDialog($"Choose a move you want to forget");
+        yield return dialogBox.TypeDialog($"Choose a move you want to forget!");
         moveSelectionUI.gameObject.SetActive(true);
         moveSelectionUI.SetMoveData(pokemon.Moves.Select(x => x.Base).ToList(), newMove);
         moveToLearn = newMove;
@@ -503,8 +503,8 @@ public class BattleSystem : MonoBehaviour
                     }
                     else
                     {
-                        yield return dialogBox.TypeDialog($"{playerUnit.Pokemon.Base.Name} is trying to learn {newMove.Base.Name}");
-                        yield return dialogBox.TypeDialog($"But, {playerUnit.Pokemon.Base.Name} can't learn more than {PokemonBase.MaxNumOfMoves} moves");
+                        yield return dialogBox.TypeDialog($"{playerUnit.Pokemon.Base.Name} is trying to learn {newMove.Base.Name}!");
+                        yield return dialogBox.TypeDialog($"But, {playerUnit.Pokemon.Base.Name} can't learn more than {PokemonBase.MaxNumOfMoves} moves!");
                         yield return ChooseMoveToForget(playerUnit.Pokemon, newMove.Base);
                         yield return new WaitUntil(() => state != BattleState.MoveToForget);
                         yield return new WaitForSeconds(2f);
@@ -611,13 +611,13 @@ public class BattleSystem : MonoBehaviour
                 if (moveIndex == PokemonBase.MaxNumOfMoves)
                 {
                     // Don't learn the new move
-                    StartCoroutine(dialogBox.TypeDialog($"{playerUnit.Pokemon.Base.Name} did not learn {moveToLearn.Name}"));
+                    StartCoroutine(dialogBox.TypeDialog($"{playerUnit.Pokemon.Base.Name} did not learn {moveToLearn.Name}!"));
                 }
                 else
                 {
                     // Forget the selected move and learn the new move
                     var selectedMove = playerUnit.Pokemon.Moves[moveIndex].Base;
-                    StartCoroutine(dialogBox.TypeDialog($"{playerUnit.Pokemon.Base.Name} forgot {selectedMove.Name} and learned {moveToLearn.Name}"));
+                    StartCoroutine(dialogBox.TypeDialog($"{playerUnit.Pokemon.Base.Name} forgot {selectedMove.Name} and learned {moveToLearn.Name}!"));
 
                     playerUnit.Pokemon.Moves[moveIndex] = new Move(moveToLearn);
                 }
@@ -807,7 +807,7 @@ public class BattleSystem : MonoBehaviour
     {
         if (playerUnit.Pokemon.HP > 0)
         {
-            yield return dialogBox.TypeDialog($"Come back {playerUnit.Pokemon.Base.Name}");
+            yield return dialogBox.TypeDialog($"Come back {playerUnit.Pokemon.Base.Name}!");
             playerUnit.PlayReturnAnimation();
             yield return new WaitForSeconds(2f);
         }
