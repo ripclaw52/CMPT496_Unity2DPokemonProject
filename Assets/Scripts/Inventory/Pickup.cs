@@ -8,6 +8,7 @@ using UnityEngine;
 public class Pickup : MonoBehaviour, Interactable
 {
     [SerializeField] ItemBase item;
+    [SerializeField] int count = 1;
 
     public bool Used { get; set; } = false;
 
@@ -20,14 +21,20 @@ public class Pickup : MonoBehaviour, Interactable
     {
         if (!Used)
         {
-            initiator.GetComponent<Inventory>().AddItem(item);
+            initiator.GetComponent<Inventory>().AddItem(item, count);
 
             Used = true;
 
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;
 
-            yield return DialogManager.Instance.ShowDialogText($"Player found {item.Name}");
+            string playerName = initiator.GetComponent<PlayerController>().Name;
+
+            string dialogText = $"{playerName} found {item.Name}";
+            if (count > 1)
+                dialogText = $"{playerName} found {count} {item.Name}s";
+
+            yield return DialogManager.Instance.ShowDialogText(dialogText);
         }
     }
 }

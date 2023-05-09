@@ -16,6 +16,7 @@ public class NPCController : MonoBehaviour, Interactable
     int currentPattern = 0;
 
     Character character;
+    ItemGiver itemGiver;
 
     /// <summary>
     /// Gets the Character component on Awake. 
@@ -23,6 +24,7 @@ public class NPCController : MonoBehaviour, Interactable
     private void Awake()
     {
         character = GetComponent<Character>();
+        itemGiver = GetComponent<ItemGiver>();
     }
 
     /// <summary>
@@ -37,7 +39,14 @@ public class NPCController : MonoBehaviour, Interactable
             state = NPCState.Dialog;
             character.LookTowards(initiator.position);
 
-            yield return DialogManager.Instance.ShowDialog(dialog);
+            if (itemGiver != null && itemGiver.CanBeGiven())
+            {
+                yield return itemGiver.GiveItem(initiator.GetComponent<PlayerController>());
+            }
+            else
+            {
+                yield return DialogManager.Instance.ShowDialog(dialog);
+            }
 
             idleTimer = 0f;
             state = NPCState.Idle;

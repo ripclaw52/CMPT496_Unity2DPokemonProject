@@ -2867,6 +2867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 3a2690b944374804fba76efe3a04a4c7, type: 2}
+  count: 1
 --- !u!61 &419310649
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8722,6 +8723,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 46218181946416111, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ca99a62f768c834a8d454e27efe6bae, type: 2}
+    - target: {fileID: 46218181946416111, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: count
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 46218181946416111, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: dialog.lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 46218181946416111, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: dialog.lines.Array.data[0]
+      value: I bought too many Pokeballs from the market.
+      objectReference: {fileID: 0}
+    - target: {fileID: 46218181946416111, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: dialog.lines.Array.data[1]
+      value: You look like you'll need them more than me.
+      objectReference: {fileID: 0}
+    - target: {fileID: 46218181946416111, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: dialog.lines.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
       propertyPath: m_RootOrder
       value: 1
