@@ -37,6 +37,7 @@ public class DialogManager : MonoBehaviour
     /// <returns>An IEnumerator that can be used to wait for the dialog box to finish.</returns>
     public IEnumerator ShowDialogText(string text, bool waitForInput = true, bool autoClose = true)
     {
+        OnShowDialog?.Invoke();
         IsShowing = true;
         dialogBox.SetActive(true);
 
@@ -60,6 +61,7 @@ public class DialogManager : MonoBehaviour
     {
         dialogBox.SetActive(false);
         IsShowing = false;
+        OnCloseDialog?.Invoke();
     }
     
     /// <summary>

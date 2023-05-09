@@ -220,7 +220,7 @@ public class InventoryUI : MonoBehaviour
         }
         else
         {
-            if (selectedCategory == (int)ItemCategory.Items)
+            if (selectedCategory == (int)ItemCategory.Medicines)
                 yield return DialogManager.Instance.ShowDialogText($"It won't have any effect!");
         }
 

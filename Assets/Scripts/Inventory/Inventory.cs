@@ -7,27 +7,41 @@ using UnityEngine;
 /// <summary>
 /// Enum representing the different categories of items in the game.
 /// </summary>
-public enum ItemCategory { Items, Pokeballs, Tms }
+//public enum ItemCategory { Items, Pokeballs, Tms }
+public enum ItemCategory { Medicines, Pokeballs, BattleItems, Berries, OtherItems, Tms, Treasures, KeyItems }
 
 /// <summary>
 /// This class is used to manage the inventory of the game.
 /// </summary>
 public class Inventory : MonoBehaviour
 {
+    //
+    [SerializeField] List<ItemSlot> medicineSlots;
+    [SerializeField] List<ItemSlot> pokeballSlots;
+    [SerializeField] List<ItemSlot> battleItemSlots;
+    [SerializeField] List<ItemSlot> berrySlots;
+    [SerializeField] List<ItemSlot> otherItemSlots;
+    [SerializeField] List<ItemSlot> tmSlots;
+    [SerializeField] List<ItemSlot> treasureSlots;
+    [SerializeField] List<ItemSlot> keyItemSlots;
+    //
+    /*/
     [SerializeField] List<ItemSlot> slots;
     [SerializeField] List<ItemSlot> pokeballSlots;
     [SerializeField] List<ItemSlot> tmSlots;
+    /*/
 
     List<List<ItemSlot>> allSlots;
 
     public event Action OnUpdated;
 
     /// <summary>
-    /// Creates a list of ItemSlot lists containing slots, pokeballSlots, and tmSlots. 
+    /// Creates a list of all item slots, including medicine, pokeball, battle item, berry, other item, TM, treasure, and key item slots.
     /// </summary>
     private void Awake()
     {
-        allSlots = new List<List<ItemSlot>>() { slots, pokeballSlots, tmSlots };
+        //allSlots = new List<List<ItemSlot>>() { slots, pokeballSlots, tmSlots };
+        allSlots = new List<List<ItemSlot>>() { medicineSlots, pokeballSlots, battleItemSlots, berrySlots, otherItemSlots, tmSlots, treasureSlots, keyItemSlots };
     }
 
     /// <summary>
@@ -36,7 +50,8 @@ public class Inventory : MonoBehaviour
     /// <returns>A list of item categories.</returns>
     public static List<string> ItemCategories { get; set; } = new List<string>()
     {
-        "ITEMS", "POKEBALLS", "TMs & HMs"
+        //"ITEMS", "POKEBALLS", "TMs & HMs"
+        "Medicines", "Poke Balls", "Battle Items", "Berries", "Other Items", "TMs & HMs", "Treasures", "Key Items"
     };
 
     /// <summary>
@@ -83,6 +98,33 @@ public class Inventory : MonoBehaviour
     }
 
     /// <summary>
+    /// Adds an item to the inventory, or increases the count of an existing item.
+    /// </summary>
+    /// <param name="item">The item to add.</param>
+    /// <param name="count">The number of items to add. Defaults to 1.</param>
+    public void AddItem(ItemBase item, int count = 1)
+    {
+        int category = (int)GetCategoryFromItem(item);
+        var currentSlots = GetSlotsByCategory(category);
+
+        var itemSlot = currentSlots.FirstOrDefault(slot => slot.Item == item);
+        if (itemSlot != null)
+        {
+            itemSlot.Count += count;
+        }
+        else
+        {
+            currentSlots.Add(new ItemSlot()
+            {
+                Item = item,
+                Count = count
+            });
+        }
+
+        OnUpdated?.Invoke();
+    }
+
+    /// <summary>
     /// Removes an item from the inventory, reducing the count of the item in the specified category. If the count reaches 0, the item is removed from the category.
     /// </summary>
     /// <param name="item">The item to remove.</param>
@@ -97,6 +139,21 @@ public class Inventory : MonoBehaviour
             currentSlots.Remove(itemSlot);
 
         OnUpdated?.Invoke();
+    }
+
+    /// <summary>
+    /// Gets the category of an item based on its type.
+    /// </summary>
+    /// <param name="item">The item to get the category of.</param>
+    /// <returns>The category of the item.</returns>
+    ItemCategory GetCategoryFromItem(ItemBase item)
+    {
+        if (item is RecoveryItem)
+            return ItemCategory.Medicines;
+        else if (item is PokeballItem)
+            return ItemCategory.Pokeballs;
+        else
+            return ItemCategory.Tms;
     }
 
     /// <summary>
@@ -118,7 +175,14 @@ public class ItemSlot
     [SerializeField] ItemBase item;
     [SerializeField] int count;
 
-    public ItemBase Item => item;
+    /// <summary>
+    /// Gets or sets the ItemBase object.
+    /// </summary>
+    public ItemBase Item
+    {
+        get => item;
+        set => item = value;
+    }
 
     /// <summary>
     /// Property to get and set the value of the count variable.
