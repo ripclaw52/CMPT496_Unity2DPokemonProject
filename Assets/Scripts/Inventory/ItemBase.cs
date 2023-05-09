@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class ItemBase : ScriptableObject
 {
-    [SerializeField] string name;
+    [SerializeField] new string name;
 
     [TextArea]
     [SerializeField] string description;

@@ -26,21 +26,21 @@ public class NPCController : MonoBehaviour, Interactable
     }
 
     /// <summary>
-    /// Interacts with the given initiator, changing the NPC's state to Dialog and starting a dialog. When the dialog is finished, the NPC's state is changed back to Idle. 
+    /// Interacts with the NPC by initiating a dialog.
     /// </summary>
-    /// <param name="initiator">The Transform of the initiator.</param>
-    public void Interact(Transform initiator)
+    /// <param name="initiator">The transform of the initiator.</param>
+    /// <returns>An IEnumerator for the dialog.</returns>
+    public IEnumerator Interact(Transform initiator)
     {
         if (state == NPCState.Idle)
         {
             state = NPCState.Dialog;
             character.LookTowards(initiator.position);
 
-            StartCoroutine(DialogManager.Instance.ShowDialog(dialog, () =>
-            {
-                idleTimer = 0f;
-                state = NPCState.Idle;
-            }));
+            yield return DialogManager.Instance.ShowDialog(dialog);
+
+            idleTimer = 0f;
+            state = NPCState.Idle;
         }
     }
 

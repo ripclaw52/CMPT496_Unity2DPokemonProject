@@ -8641,6 +8641,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: dialog.lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: dialog.lines.Array.data[0]
+      value: Hello there!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: dialog.lines.Array.data[1]
+      value: Do you need help with anything?
+      objectReference: {fileID: 0}
     - target: {fileID: 7473421002554971496, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
       propertyPath: m_Name
       value: NPC

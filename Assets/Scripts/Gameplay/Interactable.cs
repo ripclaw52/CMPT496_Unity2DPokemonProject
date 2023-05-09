@@ -8,8 +8,8 @@ using UnityEngine;
 public interface Interactable
 {
     /// <summary>
-    /// Interacts with the given initiator.
+    /// Enumerator to interact with the given Transform initiator.
     /// </summary>
     /// <param name="initiator">The initiator of the interaction.</param>
-    void Interact(Transform initiator);
+    IEnumerator Interact(Transform initiator);
 }

@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class TrainerController : MonoBehaviour, Interactable, ISavable
 {
-    [SerializeField] string name;
+    [SerializeField] new string name;
     [SerializeField] Sprite sprite;
     [SerializeField] Dialog dialog;
     [SerializeField] Dialog dialogAfterBattle;
@@ -44,23 +44,23 @@ public class TrainerController : MonoBehaviour, Interactable, ISavable
     }
 
     /// <summary>
-    /// Interacts with the given initiator by looking towards it and either starting a battle or showing a dialog.
+    /// Interacts with the trainer, either starting a battle or displaying a dialog after a battle has been lost.
     /// </summary>
-    /// <param name="initiator">The initiator of the interaction.</param>
-    public void Interact(Transform initiator)
+    /// <param name="initiator">The transform of the initiator of the interaction.</param>
+    /// <returns>An IEnumerator for the interaction.</returns>
+    public IEnumerator Interact(Transform initiator)
     {
         character.LookTowards(initiator.position);
 
         if (!battleLost)
         {
-            StartCoroutine(DialogManager.Instance.ShowDialog(dialog, () =>
-            {
-                GameController.Instance.StartTrainerBattle(this);
-            }));
+            yield return DialogManager.Instance.ShowDialog(dialog);
+
+            GameController.Instance.StartTrainerBattle(this);
         }
         else
         {
-            StartCoroutine(DialogManager.Instance.ShowDialog(dialogAfterBattle));
+            yield return DialogManager.Instance.ShowDialog(dialogAfterBattle);
         }
     }
 
@@ -84,10 +84,8 @@ public class TrainerController : MonoBehaviour, Interactable, ISavable
         yield return character.Move(moveVec);
 
         // Show dialog
-        StartCoroutine(DialogManager.Instance.ShowDialog(dialog, () =>
-        {
-            GameController.Instance.StartTrainerBattle(this);
-        }));
+        yield return DialogManager.Instance.ShowDialog(dialog);
+        GameController.Instance.StartTrainerBattle(this);
     }
 
     /// <summary>
