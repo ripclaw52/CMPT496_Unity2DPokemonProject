@@ -11,4 +11,6 @@ public interface IPlayerTriggerable
     /// This method is called when a PlayerController is triggered.
     /// </summary>
     void OnPlayerTriggered(PlayerController player);
+
+    bool TriggerRepeatedly { get; }
 }

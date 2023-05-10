@@ -20,9 +20,11 @@ public class LocationPortal : MonoBehaviour, IPlayerTriggerable
     /// </summary>
     public void OnPlayerTriggered(PlayerController player)
     {
+        player.Character.Animator.IsMoving = false;
         this.player = player;
         StartCoroutine(Teleport());
     }
+    public bool TriggerRepeatedly => false;
 
     Fader fader;
 

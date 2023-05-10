@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class represents a Pickup object which is a MonoBehaviour, Interactable and ISavable.
+/// </summary>
 public class Pickup : MonoBehaviour, Interactable, ISavable
 {
     [SerializeField] ItemBase item;
@@ -35,11 +38,19 @@ public class Pickup : MonoBehaviour, Interactable, ISavable
         }
     }
 
+    /// <summary>
+    /// Captures the current state of the object.
+    /// </summary>
+    /// <returns>The current state of the object.</returns>
     public object CaptureState()
     {
         return Used;
     }
 
+    /// <summary>
+    /// Restores the state of the object.
+    /// </summary>
+    /// <param name="state">The state to restore.</param>
     public void RestoreState(object state)
     {
         Used = (bool)state;
