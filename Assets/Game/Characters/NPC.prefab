@@ -198,11 +198,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog:
     lines: []
-  movementPattern:
-  - {x: 2, y: 0}
-  - {x: 0, y: -2}
-  - {x: -2, y: 0}
-  - {x: 0, y: 2}
+  questToStart: {fileID: 0}
+  movementPattern: []
   timeBetweenPattern: 5
 --- !u!114 &46218181946416111
 MonoBehaviour:

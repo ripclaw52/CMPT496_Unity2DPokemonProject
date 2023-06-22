@@ -8964,6 +8964,38 @@ PrefabInstance:
       propertyPath: dialog.lines.Array.data[1]
       value: But buy 10 of any kind, and you should get a special reward.
       objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: movementPattern.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: movementPattern.Array.data[0].x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: movementPattern.Array.data[0].y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: movementPattern.Array.data[1].x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: movementPattern.Array.data[2].x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: movementPattern.Array.data[2].y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: movementPattern.Array.data[3].x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: movementPattern.Array.data[3].y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7473421002554971496, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
       propertyPath: m_Name
       value: NPC

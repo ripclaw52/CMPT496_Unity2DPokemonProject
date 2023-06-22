@@ -1365,6 +1365,103 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &1036880344
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7415719013316972699, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: uniqueId
+      value: 7ff3b6ec-028f-4fdb-9da1-3063f57eeaca
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -33.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: questToComplete
+      value: 
+      objectReference: {fileID: 11400000, guid: d33ee4b9046278e4fa26076205c74cca, type: 2}
+    - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: dialog.lines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: dialog.lines.Array.data[0]
+      value: Now you can battle the wild pokemon in the tall grass
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971496, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_Name
+      value: NPC
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+--- !u!1 &1036880345 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7473421002554971496, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+  m_PrefabInstance: {fileID: 1036880344}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1036880346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036880345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9faf41b1f21e1640a636f3407710b21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pokemonToGive:
+    _base: {fileID: 11400000, guid: 302ed754aa48cc044823e077e1408adc, type: 2}
+    level: 5
+  dialog:
+    lines:
+    - It's not safe to go out their without a Pokemon
+    - Take this Charmander with you
 --- !u!1 &1074102495
 GameObject:
   m_ObjectHideFlags: 0
