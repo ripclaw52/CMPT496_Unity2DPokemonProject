@@ -1584,7 +1584,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
       propertyPath: tmSlots.Array.size
-      value: 4
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: medicineSlots.Array.size
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
       propertyPath: tmSlots.Array.data[3].item
@@ -1592,6 +1596,74 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: a910421d7c928a143abe5cdc7e1af0d4, type: 2}
     - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
       propertyPath: tmSlots.Array.data[3].count
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: medicineSlots.Array.data[5].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 396f854c454800e40979a744f6c21fb0, type: 2}
+    - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: medicineSlots.Array.data[6].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 0f445fd3c0b5c71498793aeaafefede7, type: 2}
+    - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: medicineSlots.Array.data[7].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 754cc243433ded547a6c9360316a3fdf, type: 2}
+    - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: medicineSlots.Array.data[8].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 5f21c0a1a848d86449e7c5a39a912d38, type: 2}
+    - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: medicineSlots.Array.data[9].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 880afbfc6174c0b42a96a642f82bc105, type: 2}
+    - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: medicineSlots.Array.data[10].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 919d7370bf475f84c9e8d7060012a59e, type: 2}
+    - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: medicineSlots.Array.data[11].item
+      value: 
+      objectReference: {fileID: 11400000, guid: e877e8160745c3449894ea08cc6668b0, type: 2}
+    - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: medicineSlots.Array.data[12].item
+      value: 
+      objectReference: {fileID: 11400000, guid: c23765e85e9053947b071b28f08f9c99, type: 2}
+    - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: medicineSlots.Array.data[13].item
+      value: 
+      objectReference: {fileID: 11400000, guid: dbfd7afd8e45e8e40bb8892437b2f700, type: 2}
+    - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: medicineSlots.Array.data[14].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 46163f14517d1f943b3397e663629493, type: 2}
+    - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: medicineSlots.Array.data[15].item
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: medicineSlots.Array.data[5].count
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: medicineSlots.Array.data[10].count
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: medicineSlots.Array.data[11].count
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: medicineSlots.Array.data[12].count
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: medicineSlots.Array.data[13].count
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: medicineSlots.Array.data[14].count
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4389046988437947982, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}

@@ -80,7 +80,7 @@ public class Inventory : MonoBehaviour, ISavable
         if (itemUsed)
         {
             if (!item.IsResuable)
-                RemoveItem(item, selectedCategory);
+                RemoveItem(item);
             return item;
         }
 
@@ -118,9 +118,9 @@ public class Inventory : MonoBehaviour, ISavable
     /// Removes an item from the inventory, reducing the count of the item in the specified category. If the count reaches 0, the item is removed from the category.
     /// </summary>
     /// <param name="item">The item to remove.</param>
-    /// <param name="category">The category from which to remove the item.</param>
-    public void RemoveItem(ItemBase item, int category)
+    public void RemoveItem(ItemBase item)
     {
+        int category = (int)GetCategoryFromItem(item);
         var currentSlots = GetSlotsByCategory(category);
 
         var itemSlot = currentSlots.First(slot => slot.Item == item);
@@ -129,6 +129,19 @@ public class Inventory : MonoBehaviour, ISavable
             currentSlots.Remove(itemSlot);
 
         OnUpdated?.Invoke();
+    }
+    
+    /// <summary>
+    /// Checks if the given item is present in the inventory.
+    /// </summary>
+    /// <param name="item">The item to check for.</param>
+    /// <returns>True if the item is present, false otherwise.</returns>
+    public bool HasItem(ItemBase item)
+    {
+        int category = (int)GetCategoryFromItem(item);
+        var currentSlots = GetSlotsByCategory(category);
+
+        return currentSlots.Exists(slot => slot.Item == item);
     }
 
     /// <summary>

@@ -8585,6 +8585,112 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aa401564d25d23469879195daf03550, type: 3}
+--- !u!1001 &1838475287
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 46218181946416111, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ca99a62f768c834a8d454e27efe6bae, type: 2}
+    - target: {fileID: 46218181946416111, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: count
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 46218181946416111, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: dialog.lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 46218181946416111, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: dialog.lines.Array.data[0]
+      value: I bought too many Pokeballs from the market.
+      objectReference: {fileID: 0}
+    - target: {fileID: 46218181946416111, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: dialog.lines.Array.data[1]
+      value: You look like you'll need them more than me.
+      objectReference: {fileID: 0}
+    - target: {fileID: 46218181946416111, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: dialog.lines.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7415719013316972699, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: uniqueId
+      value: 782e0fe6-bb8e-4fe7-9858-6e1abde828d9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: questToStart
+      value: 
+      objectReference: {fileID: 11400000, guid: 73a64a641facab642aee52125c7a96bd, type: 2}
+    - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: dialog.lines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: dialog.lines.Array.data[0]
+      value: You can use HM01 to cut down small trees
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: dialog.lines.Array.data[1]
+      value: Here, take some.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: movementPattern.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971496, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_Name
+      value: NPC (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 46218181946416111, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
 --- !u!1 &1929602463
 GameObject:
   m_ObjectHideFlags: 0
@@ -8651,7 +8757,7 @@ PrefabInstance:
     - target: {fileID: 3241841358959443096, guid: 28fd902169dafcc46a3c9b8de26d00c7, type: 3}
       propertyPath: item
       value: 
-      objectReference: {fileID: 11400000, guid: 5f21c0a1a848d86449e7c5a39a912d38, type: 2}
+      objectReference: {fileID: 11400000, guid: e613f15e73d3cea4f90f22ef688b1ef0, type: 2}
     - target: {fileID: 3241841358959443096, guid: 28fd902169dafcc46a3c9b8de26d00c7, type: 3}
       propertyPath: count
       value: 5
@@ -8804,11 +8910,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.84
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.54
+      value: -2.8
       objectReference: {fileID: 0}
     - target: {fileID: 7473421002554971488, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8843,16 +8949,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: questToStart
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
       propertyPath: dialog.lines.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
       propertyPath: dialog.lines.Array.data[0]
-      value: Hello there!
+      value: Their are a number of different kinds of pokeballs out their.
       objectReference: {fileID: 0}
     - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
       propertyPath: dialog.lines.Array.data[1]
-      value: Do you need help with anything?
+      value: But buy 10 of any kind, and you should get a special reward.
       objectReference: {fileID: 0}
     - target: {fileID: 7473421002554971496, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
       propertyPath: m_Name
@@ -8881,11 +8991,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9217893221454379495, guid: aee00117bddfd59449a3281ea07b6bc3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.9
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 9217893221454379495, guid: aee00117bddfd59449a3281ea07b6bc3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.55
+      value: 6.8
       objectReference: {fileID: 0}
     - target: {fileID: 9217893221454379495, guid: aee00117bddfd59449a3281ea07b6bc3, type: 3}
       propertyPath: m_LocalPosition.z
