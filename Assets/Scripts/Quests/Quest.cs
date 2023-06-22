@@ -5,6 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Represents a Quest object with properties for tracking progress.
 /// </summary>
+[System.Serializable]
 public class Quest
 {
     public QuestBase Base { get; private set; }
@@ -31,6 +32,9 @@ public class Quest
         Status = QuestStatus.Started;
 
         yield return DialogManager.Instance.ShowDialog(Base.StartDialogue);
+
+        var questList = QuestList.GetQuestList();
+        questList.AddQuest(this);
     }
 
     /// <summary>
@@ -57,6 +61,9 @@ public class Quest
             string playerName = player.GetComponent<PlayerController>().Name;
             yield return DialogManager.Instance.ShowDialogText($"{playerName} received {Base.RewardItem.Name}");
         }
+
+        var questList = QuestList.GetQuestList();
+        questList.AddQuest(this);
     }
 
     /// <summary>

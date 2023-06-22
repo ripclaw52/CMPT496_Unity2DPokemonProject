@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5463470663888356621}
   - component: {fileID: 7623786209937433768}
   - component: {fileID: 2124624965561403372}
+  - component: {fileID: 759735386078973023}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -294,6 +295,18 @@ MonoBehaviour:
     count: 5
   treasureSlots: []
   keyItemSlots: []
+--- !u!114 &759735386078973023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5463470663888356661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaa79c59e6800dc4ba680520646fd067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5463470663971113751
 GameObject:
   m_ObjectHideFlags: 0
