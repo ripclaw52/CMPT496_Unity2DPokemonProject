@@ -5,9 +5,9 @@ using System.Linq;
 using UnityEngine;
 
 /// <summary>
-/// This class is used to manage the list of quests in the game.
+/// QuestList is a MonoBehaviour class that implements the ISavable interface. It is used to store and manage a list of quests.
 /// </summary>
-public class QuestList : MonoBehaviour
+public class QuestList : MonoBehaviour, ISavable
 {
     List<Quest> quests = new List<Quest>();
 
@@ -53,5 +53,29 @@ public class QuestList : MonoBehaviour
     public static QuestList GetQuestList()
     {
         return FindObjectOfType<PlayerController>().GetComponent<QuestList>();
+    }
+
+    /// <summary>
+    /// Captures the state of the quests and returns a list of save data.
+    /// </summary>
+    /// <returns>
+    /// A list of save data for the quests.
+    /// </returns>
+    public object CaptureState()
+    {
+        return quests.Select(q => q.GetSaveData()).ToList();
+    }
+
+    /// <summary>
+    /// Restores the state of the quest manager from a given object.
+    /// </summary>
+    public void RestoreState(object state)
+    {
+        var saveData = state as List<QuestSaveData>;
+        if (saveData != null)
+        {
+            quests = saveData.Select(q => new Quest(q)).ToList();
+            OnUpdated?.Invoke();
+        }
     }
 }

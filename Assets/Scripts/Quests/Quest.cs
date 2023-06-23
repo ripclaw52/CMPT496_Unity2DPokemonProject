@@ -24,6 +24,33 @@ public class Quest
     }
 
     /// <summary>
+    /// Constructor for Quest class, taking a QuestSaveData object as parameter.
+    /// </summary>
+    /// <param name="saveData">QuestSaveData object containing quest data.</param>
+    /// <returns>
+    /// A new Quest object.
+    /// </returns>
+    public Quest(QuestSaveData saveData)
+    {
+        Base = QuestDB.GetObjectByName(saveData.name);
+        Status = saveData.status;
+    }
+
+    /// <summary>
+    /// Gets the save data for the quest.
+    /// </summary>
+    /// <returns>The save data for the quest.</returns>
+    public QuestSaveData GetSaveData()
+    {
+        var saveData = new QuestSaveData()
+        {
+            name = Base.Name,
+            status = Status
+        };
+        return saveData;
+    }
+
+    /// <summary>
     /// Starts the quest by setting the status to Started and displaying the start dialogue.
     /// </summary>
     /// <returns>An IEnumerator for the coroutine.</returns>
@@ -81,6 +108,16 @@ public class Quest
 
         return true;
     }
+}
+
+/// <summary>
+/// This class is used to store quest data for saving and loading.
+/// </summary>
+[System.Serializable]
+public class QuestSaveData
+{
+    public string name;
+    public QuestStatus status;
 }
 
 /// <summary>

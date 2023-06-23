@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// This class is used to control the behavior of NPCs in the game. It inherits from MonoBehaviour and implements the Interactable interface.
+/// This class is used to control the behavior of NPCs in the game. It inherits from MonoBehaviour and implements the Interactable and ISavable interfaces.
 /// </summary>
-public class NPCController : MonoBehaviour, Interactable
+public class NPCController : MonoBehaviour, Interactable, ISavable
 {
     [SerializeField] Dialog dialog;
 
@@ -137,6 +137,53 @@ public class NPCController : MonoBehaviour, Interactable
 
         state = NPCState.Idle;
     }
+
+    /// <summary>
+    /// Captures the state of the NPCQuest object and returns it as an object.
+    /// </summary>
+    /// <returns>
+    /// An object containing the state of the NPCQuest object.
+    /// </returns>
+    public object CaptureState()
+    {
+        var saveData = new NPCQuestSaveData();
+        saveData.activeQuest = activeQuest?.GetSaveData();
+
+        if (questToStart != null)
+            saveData.questToStart = (new Quest(questToStart)).GetSaveData();
+
+        if (questToComplete != null)
+            saveData.questToComplete = (new Quest(questToComplete)).GetSaveData();
+
+        return saveData;
+    }
+
+    /// <summary>
+    /// Restores the state of the NPCQuest from a given object.
+    /// </summary>
+    /// <param name="state">The object to restore the state from.</param>
+    public void RestoreState(object state)
+    {
+        var saveData = state as NPCQuestSaveData;
+        if (saveData != null)
+        {
+            activeQuest = (saveData.activeQuest != null) ? new Quest(saveData.activeQuest) : null;
+
+            questToStart = (saveData.questToStart != null) ? new Quest(saveData.questToStart).Base : null;
+            questToComplete = (saveData.questToComplete != null) ? new Quest(saveData.questToComplete).Base : null;
+        }
+    }
+}
+
+/// <summary>
+/// Represents the save data for an NPC's quests.
+/// </summary>
+[System.Serializable]
+public class NPCQuestSaveData
+{
+    public QuestSaveData activeQuest;
+    public QuestSaveData questToStart;
+    public QuestSaveData questToComplete;
 }
 
 /// <summary>
