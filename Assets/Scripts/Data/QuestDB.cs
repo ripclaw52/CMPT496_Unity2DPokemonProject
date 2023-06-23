@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Represents a database of MoveBase objects.
+/// Represents a database of QuestBase objects.
 /// </summary>
-public class MoveDB : ScriptableObjectDB<MoveBase>
+public class QuestDB : ScriptableObjectDB<QuestBase>
 {
 
 }

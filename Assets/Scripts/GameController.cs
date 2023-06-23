@@ -47,6 +47,7 @@ public class GameController : MonoBehaviour
         MoveDB.Init();
         ConditionsDB.Init();
         ItemDB.Init();
+        QuestDB.Init();
     }
 
     /// <summary>
