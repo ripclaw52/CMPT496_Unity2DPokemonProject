@@ -6,7 +6,7 @@ using UnityEngine;
 /// <summary>
 /// Enum representing the different states of a game. 
 /// </summary>
-public enum GameState { FreeRoam, Battle, Dialog, Menu, PartyScreen, Bag, Cutscene, Paused }
+public enum GameState { FreeRoam, Battle, Dialog, Menu, PartyScreen, Bag, Cutscene, Paused, Evolution }
 
 /// <summary>
 /// This class is responsible for controlling the game logic.
@@ -51,7 +51,7 @@ public class GameController : MonoBehaviour
     }
 
     /// <summary>
-    /// This method initializes the battle system, party screen, dialog manager, and menu controller. 
+    /// This method sets up the event handlers for the battle system, party screen, dialog manager, menu controller, and evolution manager. 
     /// </summary>
     private void Start()
     {
@@ -75,6 +75,9 @@ public class GameController : MonoBehaviour
         };
 
         menuController.onMenuSelected += OnMenuSelected;
+
+        EvolutionManager.i.OnStartEvolution += () => state = GameState.Evolution;
+        EvolutionManager.i.OnCompleteEvolution += () => state = GameState.FreeRoam;
     }
 
     /// <summary>
