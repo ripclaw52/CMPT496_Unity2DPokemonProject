@@ -211,7 +211,26 @@ public class InventoryUI : MonoBehaviour
 
         yield return HandleTmItems();
 
-        var usedItem = inventory.UseItem(selectedItem, partyScreen.SelectedMember, selectedCategory);
+        var item = inventory.GetItem(selectedItem, selectedCategory);
+        var pokemon = partyScreen.SelectedMember;
+
+        // Handle Evolution Items
+        if (item is EvolutionItem)
+        {
+            var evolution = pokemon.CheckForEvolution(item);
+            if (evolution != null)
+            {
+                yield return EvolutionManager.i.Evolve(pokemon, evolution);
+            }
+            else
+            {
+                yield return DialogManager.Instance.ShowDialogText($"It won't have any effect!");
+                ClosePartyScreen();
+                yield break;
+            }
+        }
+
+        var usedItem = inventory.UseItem(selectedItem, pokemon, selectedCategory);
         if (usedItem != null)
         {
             if (usedItem is RecoveryItem)

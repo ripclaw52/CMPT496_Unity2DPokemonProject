@@ -248,6 +248,16 @@ public class Pokemon
     }
 
     /// <summary>
+    /// Checks if the given item is a required item for an evolution.
+    /// </summary>
+    /// <param name="item">The item to check.</param>
+    /// <returns>The evolution that requires the given item, or null if none.</returns>
+    public Evolution CheckForEvolution(ItemBase item)
+    {
+        return Base.Evolutions.FirstOrDefault(e => e.RequiredItem == item);
+    }
+
+    /// <summary>
     /// Evolves the current object into the specified evolution and calculates the stats.
     /// </summary>
     public void Evolve(Evolution evolution)

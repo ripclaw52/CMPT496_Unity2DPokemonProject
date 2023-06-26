@@ -7,7 +7,7 @@ using UnityEngine;
 /// <summary>
 /// Enum representing the different categories of items in the game.
 /// </summary>
-public enum ItemCategory { Medicines, Pokeballs, BattleItems, Berries, OtherItems, Tms, Treasures, KeyItems }
+public enum ItemCategory { Medicines, Pokeballs, BattleItems, Berries, OtherItems, Tms, TmMaterials, Treasures, KeyItems }
 
 /// <summary>
 /// This class is used to manage the inventory of the game.
@@ -20,6 +20,7 @@ public class Inventory : MonoBehaviour, ISavable
     [SerializeField] List<ItemSlot> berrySlots;
     [SerializeField] List<ItemSlot> otherItemSlots;
     [SerializeField] List<ItemSlot> tmSlots;
+    [SerializeField] List<ItemSlot> tmMaterialSlots;
     [SerializeField] List<ItemSlot> treasureSlots;
     [SerializeField] List<ItemSlot> keyItemSlots;
 
@@ -28,11 +29,11 @@ public class Inventory : MonoBehaviour, ISavable
     public event Action OnUpdated;
 
     /// <summary>
-    /// Creates a list of all item slots, including medicine, pokeball, battle item, berry, other item, TM, treasure, and key item slots.
+    /// Creates a list of all item slots, including medicine, pokeball, battle item, berry, other item, TM, TM materials, treasure, and key item slots.
     /// </summary>
     private void Awake()
     {
-        allSlots = new List<List<ItemSlot>>() { medicineSlots, pokeballSlots, battleItemSlots, berrySlots, otherItemSlots, tmSlots, treasureSlots, keyItemSlots };
+        allSlots = new List<List<ItemSlot>>() { medicineSlots, pokeballSlots, battleItemSlots, berrySlots, otherItemSlots, tmSlots, tmMaterialSlots, treasureSlots, keyItemSlots };
     }
 
     /// <summary>
@@ -41,7 +42,7 @@ public class Inventory : MonoBehaviour, ISavable
     /// <returns>A list of item categories.</returns>
     public static List<string> ItemCategories { get; set; } = new List<string>()
     {
-        "Medicines", "Poke Balls", "Battle Items", "Berries", "Other Items", "TMs & HMs", "Treasures", "Key Items"
+        "Medicines", "Poke Balls", "Battle Items", "Berries", "Other Items", "TMs & HMs", "TM Materials", "Treasures", "Key Items"
     };
 
     /// <summary>
@@ -155,8 +156,10 @@ public class Inventory : MonoBehaviour, ISavable
             return ItemCategory.Medicines;
         else if (item is PokeballItem)
             return ItemCategory.Pokeballs;
-        else
+        else if (item is TmItem)
             return ItemCategory.Tms;
+        else
+            return ItemCategory.OtherItems;
     }
 
     /// <summary>
