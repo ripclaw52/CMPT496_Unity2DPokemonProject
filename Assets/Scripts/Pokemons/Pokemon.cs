@@ -238,6 +238,24 @@ public class Pokemon
         return Moves.Count(m => m.Base == moveToCheck) > 0;
     }
 
+    /// <summary>
+    /// Checks for an evolution based on the current level.
+    /// </summary>
+    /// <returns>The evolution that is required for the current level.</returns>
+    public Evolution CheckForEvolution()
+    {
+        return Base.Evolutions.FirstOrDefault(e => e.RequiredLevel == level);
+    }
+
+    /// <summary>
+    /// Evolves the current object into the specified evolution and calculates the stats.
+    /// </summary>
+    public void Evolve(Evolution evolution)
+    {
+        _base = evolution.EvolvesInto;
+        CalculateStats();
+    }
+
     public int Attack => GetStat(Stat.Attack);
     public int Defense => GetStat(Stat.Defense);
     public int SpAttack => GetStat(Stat.SpAttack);

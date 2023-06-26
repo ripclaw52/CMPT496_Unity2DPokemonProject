@@ -103,6 +103,16 @@ public class SavingSystem : MonoBehaviour
     }
 
     /// <summary>
+    /// Restores the state of the given SavableEntity from the gameState dictionary.
+    /// </summary>
+    /// <param name="entity">The SavableEntity to restore.</param>
+    public void RestoreEntity(SavableEntity entity)
+    {
+        if (gameState.ContainsKey(entity.UniqueId))
+            entity.RestoreState(gameState[entity.UniqueId]);
+    }
+
+    /// <summary>
     /// Saves the given state to the specified file.
     /// </summary>
     /// <param name="saveFile">The file to save the state to.</param>

@@ -140,9 +140,8 @@ public class GameController : MonoBehaviour
         StartCoroutine(trainer.TriggerTrainerBattle(playerController));
     }
 
-
     /// <summary>
-    /// Ends the battle and sets the game state to FreeRoam. If the battle was won, the trainer's BattleLost method is called.
+    /// Ends the battle, setting the game state to FreeRoam and checking for evolutions in the player's party.
     /// </summary>
     void EndBattle(bool won)
     {
@@ -154,6 +153,9 @@ public class GameController : MonoBehaviour
         state = GameState.FreeRoam;
         battleSystem.gameObject.SetActive(false);
         worldCamera.gameObject.SetActive(true);
+
+        var playerParty = playerController.GetComponent<PokemonParty>();
+        StartCoroutine(playerParty.CheckForEvolutions());
     }
 
     /// <summary>

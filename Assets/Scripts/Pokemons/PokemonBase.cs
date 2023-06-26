@@ -8,7 +8,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Pokemon", menuName = "Pokemon/Create new pokemon")]
 public class PokemonBase : ScriptableObject
 {
-    [SerializeField] new string name;
+    [SerializeField] string name;
 
     [TextArea]
     [SerializeField] string description;
@@ -37,6 +37,8 @@ public class PokemonBase : ScriptableObject
     // Move lists
     [SerializeField] List<LearnableMove> learnableMoves;
     [SerializeField] List<MoveBase> learnableByItems;
+    // Evolution list
+    [SerializeField] List<Evolution> evolutions;
 
     public static int MaxNumOfMoves { get; set; } = 4;
 
@@ -130,6 +132,7 @@ public class PokemonBase : ScriptableObject
     public int CatchRate => catchRate;
     public List<LearnableMove> LearnableMoves => learnableMoves;
     public List<MoveBase> LearnableByItems => learnableByItems;
+    public List<Evolution> Evolutions => evolutions;
 }
 
 /// <summary>
@@ -143,6 +146,19 @@ public class LearnableMove
 
     public MoveBase Base => moveBase;
     public int Level => level;
+}
+
+/// <summary>
+/// Represents the evolution of a Pokemon, including the Pokemon it evolves into and the required level for the evolution.
+/// </summary>
+[System.Serializable]
+public class Evolution
+{
+    [SerializeField] PokemonBase evolvesInto;
+    [SerializeField] int requiredLevel;
+
+    public PokemonBase EvolvesInto => evolvesInto;
+    public int RequiredLevel => requiredLevel;
 }
 
 /// <summary>

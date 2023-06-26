@@ -76,6 +76,27 @@ public class PokemonParty : MonoBehaviour
     }
 
     /// <summary>
+    /// Checks if any of the pokemons can evolve and evolves them if they can.
+    /// </summary>
+    /// <returns>
+    /// An IEnumerator that shows a dialog when a pokemon evolves.
+    /// </returns>
+    public IEnumerator CheckForEvolutions()
+    {
+        foreach (var pokemon in pokemons)
+        {
+            var evolution = pokemon.CheckForEvolution();
+            if (evolution != null)
+            {
+                yield return DialogManager.Instance.ShowDialogText($"{pokemon.Base.Name} evolved into {evolution.EvolvesInto.Name}!");
+                pokemon.Evolve(evolution);
+            }
+        }
+
+        OnUpdated?.Invoke();
+    }
+
+    /// <summary>
     /// Gets the PokemonParty component of the PlayerController object.
     /// </summary>
     /// <returns>The PokemonParty component of the PlayerController object.</returns>

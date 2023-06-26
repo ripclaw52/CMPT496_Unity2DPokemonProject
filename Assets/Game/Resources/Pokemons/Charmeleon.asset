@@ -10,35 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50d6a81213263ba40a3ba4a850bc9aaa, type: 3}
-  m_Name: Charmander
+  m_Name: Charmeleon
   m_EditorClassIdentifier: 
-  name: Charmander
-  description: "Charmander, the Fire Pok\xE9mon. This fiery creature exhibits a strong
-    affinity for scorching environments, evident by the perpetual flame burning at
-    the tip of its tail since birth. The intensity of this flame serves as a reflection
-    of Charmander's emotional state. When content, the flame flickers and wavers,
-    while in a state of rage, it blazes fiercely. Interestingly, during rainfall,
-    steam is said to emanate from its tail, creating a captivating spectacle. To
-    experience the gentle crackling sound of its burning flame, one must seek out
-    tranquil surroundings. Notably, the strength of Charmander's life force is revealed
-    by the vigor of its tail's fiery glow. When in good health, the flame burns brightly,
-    undeterred even by dampness. However, should its vitality dwindle, the flame
-    weakens accordingly. It is worth noting that the flame on Charmander's tail is
-    not merely an aesthetic feature; it is a vital sign of its very existence. In
-    fact, the flame's extinguishment would mark the unfortunate end of this remarkable
-    Pok\xE9mon. Embodying the essence of fire, Charmander captivates with its unwavering
-    flame, truly standing as an exceptional specimen."
-  frontSprite: {fileID: 21300000, guid: 638cbd99df124994db8b455beb83096f, type: 3}
-  backSprite: {fileID: 21300000, guid: 62b20a6fda1cc0340a16b5d908d630e2, type: 3}
+  name: Charmeleon
+  description: Charmeleon mercilessly destroys its foes using its sharp claws. If
+    it encounters a strong foe, it turns aggressive. In this excited state, the flame
+    at the tip of its tail flares with a bluish white color.
+  frontSprite: {fileID: 21300000, guid: f04c7766c1d26be498e73e6f2ad246fa, type: 3}
+  backSprite: {fileID: 21300000, guid: 9f5b1249cfac55941b0817e6b39aaae3, type: 3}
   type1: 2
   type2: 0
-  maxHp: 39
-  attack: 52
-  defense: 43
-  spAttack: 60
-  spDefense: 50
-  speed: 65
-  expYield: 62
+  maxHp: 58
+  attack: 64
+  defense: 58
+  spAttack: 80
+  spDefense: 65
+  speed: 80
+  expYield: 142
   growthRate: 3
   catchRate: 45
   learnableMoves:
@@ -79,6 +67,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c142ad765cda169459b93a4b9291e525, type: 2}
   - {fileID: 0}
   - {fileID: 0}
-  evolutions:
-  - evolvesInto: {fileID: 11400000, guid: b435882301b698d429225e8c929ede16, type: 2}
-    requiredLevel: 16
+  evolutions: []
