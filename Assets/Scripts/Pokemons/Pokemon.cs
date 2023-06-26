@@ -129,7 +129,10 @@ public class Pokemon
         Stats.Add(Stat.SpDefense, Mathf.FloorToInt((Base.SpDefense * Level) / 100f) + 5);
         Stats.Add(Stat.Speed, Mathf.FloorToInt((Base.Speed * Level) / 100f) + 5);
 
+        int oldMaxHP = MaxHP;
         MaxHP = Mathf.FloorToInt((Base.MaxHP * Level) / 100f) + 10 + Level;
+
+        HP += MaxHP - oldMaxHP;
     }
 
     /// <summary>
@@ -193,14 +196,15 @@ public class Pokemon
     }
 
     /// <summary>
-    /// Checks if the experience is greater than the required experience for the next level and increments the level if it is.
+    /// Checks if the experience is greater than the required experience for the next level and updates the level and stats accordingly.
     /// </summary>
-    /// <returns>Returns true if the level was incremented, false otherwise.</returns>
+    /// <returns>Returns true if the level was updated, false otherwise.</returns>
     public bool CheckForLevelUp()
     {
         if (Exp > Base.GetExpForLevel(level + 1))
         {
             ++level;
+            CalculateStats();
             return true;
         }
 
@@ -244,7 +248,7 @@ public class Pokemon
     /// <returns>The evolution that is required for the current level.</returns>
     public Evolution CheckForEvolution()
     {
-        return Base.Evolutions.FirstOrDefault(e => e.RequiredLevel == level);
+        return Base.Evolutions.FirstOrDefault(e => e.RequiredLevel <= level);
     }
 
     /// <summary>

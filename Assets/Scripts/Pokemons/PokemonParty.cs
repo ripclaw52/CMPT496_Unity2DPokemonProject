@@ -76,10 +76,10 @@ public class PokemonParty : MonoBehaviour
     }
 
     /// <summary>
-    /// Checks each pokemon in the list for evolution and invokes the OnUpdated event.
+    /// Iterates through a list of pokemons and checks for any evolutions. If an evolution is found, it is returned.
     /// </summary>
     /// <returns>
-    /// An IEnumerator that yields the result of the EvolutionManager.Evolve method.
+    /// An IEnumerator containing the evolution of the pokemon.
     /// </returns>
     public IEnumerator CheckForEvolutions()
     {
@@ -91,8 +91,6 @@ public class PokemonParty : MonoBehaviour
                 yield return EvolutionManager.i.Evolve(pokemon, evolution);
             }
         }
-
-        OnUpdated?.Invoke();
     }
 
     /// <summary>
