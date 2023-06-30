@@ -10,6 +10,7 @@ using UnityEngine.UI;
 public class DialogManager : MonoBehaviour
 {
     [SerializeField] GameObject dialogBox;
+    [SerializeField] ChoiceBox choiceBox;
     [SerializeField] Text dialogText;
     [SerializeField] int lettersPerSecond;
 
@@ -63,14 +64,14 @@ public class DialogManager : MonoBehaviour
         dialogBox.SetActive(false);
         IsShowing = false;
     }
-    
+
     /// <summary>
-    /// Displays a dialog and waits for user input before continuing.
+    /// Displays a dialog with the given lines and choices.
     /// </summary>
     /// <param name="dialog">The dialog to display.</param>
-    /// <param name="onFinished">An action to perform when the dialog is finished.</param>
-    /// <returns>An IEnumerator that can be used in a coroutine.</returns>
-    public IEnumerator ShowDialog(Dialog dialog)
+    /// <param name="choices">The list of choices to display.</param>
+    /// <returns>An IEnumerator that can be used to wait for the dialog to finish.</returns>
+    public IEnumerator ShowDialog(Dialog dialog, List<string> choices = null, Action<int> onChoiceSelected=null)
     {
         yield return new WaitForEndOfFrame();
 
@@ -82,6 +83,11 @@ public class DialogManager : MonoBehaviour
         {
             yield return TypeDialog(line);
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Z));
+        }
+
+        if (choices != null && choices.Count > 1)
+        {
+            yield return choiceBox.ShowChoices(choices, onChoiceSelected);
         }
 
         dialogBox.SetActive(false);
