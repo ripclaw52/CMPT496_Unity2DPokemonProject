@@ -25,15 +25,17 @@ public class NPCController : MonoBehaviour, Interactable, ISavable
     Character character;
     ItemGiver itemGiver;
     PokemonGiver pokemonGiver;
+    Healer healer;
 
     /// <summary>
-    /// Gets the Character component on Awake. 
+    /// This method is used to get the components of the Character, ItemGiver, PokemonGiver and Healer. 
     /// </summary>
     private void Awake()
     {
         character = GetComponent<Character>();
         itemGiver = GetComponent<ItemGiver>();
         pokemonGiver = GetComponent<PokemonGiver>();
+        healer = GetComponent<Healer>();
     }
 
     /// <summary>
@@ -88,6 +90,10 @@ public class NPCController : MonoBehaviour, Interactable, ISavable
                 {
                     yield return DialogManager.Instance.ShowDialog(activeQuest.Base.InProgressDialogue);
                 }
+            }
+            else if (healer != null)
+            {
+                yield return healer.Heal(initiator, dialog);
             }
             else
             {

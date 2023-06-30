@@ -94,6 +94,14 @@ public class PokemonParty : MonoBehaviour
     }
 
     /// <summary>
+    /// Invokes the OnUpdated event.
+    /// </summary>
+    public void PartyUpdated()
+    {
+        OnUpdated?.Invoke();
+    }
+
+    /// <summary>
     /// Gets the PokemonParty component of the PlayerController object.
     /// </summary>
     /// <returns>The PokemonParty component of the PlayerController object.</returns>
