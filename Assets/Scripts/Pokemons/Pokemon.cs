@@ -278,6 +278,7 @@ public class Pokemon
     {
         HP = MaxHP;
         OnHPChanged?.Invoke();
+        CureStatus();
     }
 
     public int Attack => GetStat(Stat.Attack);

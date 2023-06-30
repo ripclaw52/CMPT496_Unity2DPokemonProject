@@ -29,14 +29,8 @@ public class DialogManager : MonoBehaviour
 
     public bool IsShowing { get; private set; }
 
-    /// <summary>
-    /// Displays a dialog box with the given text and waits for user input (z key) before closing.
-    /// </summary>
-    /// <param name="text">The text to be displayed in the dialog box.</param>
-    /// <param name="waitForInput">Whether to wait for user input before closing the dialog box.</param>
-    /// <param name="autoClose">Whether to automatically close the dialog box after displaying the text.</param>
-    /// <returns>An IEnumerator that can be used to wait for the dialog box to finish.</returns>
-    public IEnumerator ShowDialogText(string text, bool waitForInput = true, bool autoClose = true)
+    public IEnumerator ShowDialogText(string text, bool waitForInput = true, bool autoClose = true,
+        List<string> choices = null, Action<int> onChoiceSelected = null)
     {
         OnShowDialog?.Invoke();
         IsShowing = true;
@@ -47,6 +41,11 @@ public class DialogManager : MonoBehaviour
         {
             // makes function wait for user input (z key)
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Z));
+        }
+
+        if (choices != null && choices.Count > 1)
+        {
+            yield return choiceBox.ShowChoices(choices, onChoiceSelected);
         }
 
         if (autoClose)
@@ -65,12 +64,6 @@ public class DialogManager : MonoBehaviour
         IsShowing = false;
     }
 
-    /// <summary>
-    /// Displays a dialog with the given lines and choices.
-    /// </summary>
-    /// <param name="dialog">The dialog to display.</param>
-    /// <param name="choices">The list of choices to display.</param>
-    /// <returns>An IEnumerator that can be used to wait for the dialog to finish.</returns>
     public IEnumerator ShowDialog(Dialog dialog, List<string> choices = null, Action<int> onChoiceSelected=null)
     {
         yield return new WaitForEndOfFrame();

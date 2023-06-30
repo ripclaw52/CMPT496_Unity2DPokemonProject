@@ -6,7 +6,7 @@ using UnityEngine;
 /// <summary>
 /// Enum representing the different states of a game. 
 /// </summary>
-public enum GameState { FreeRoam, Battle, Dialog, Menu, PartyScreen, Bag, Cutscene, Paused, Evolution }
+public enum GameState { FreeRoam, Battle, Dialog, Menu, PartyScreen, Bag, Cutscene, Paused, Evolution, Shop }
 
 /// <summary>
 /// This class is responsible for controlling the game logic.
@@ -87,6 +87,9 @@ public class GameController : MonoBehaviour
             partyScreen.SetPartyData();
             state = stateBeforeEvolution;
         };
+
+        ShopController.i.OnStart += () => state = GameState.Shop;
+        ShopController.i.OnFinish += () => state = GameState.FreeRoam;
     }
 
     /// <summary>
@@ -224,6 +227,10 @@ public class GameController : MonoBehaviour
             };
 
             inventoryUI.HandleUpdate(onBack);
+        }
+        else if (state == GameState.Shop)
+        {
+            ShopController.i.HandleUpdate();
         }
     }
 

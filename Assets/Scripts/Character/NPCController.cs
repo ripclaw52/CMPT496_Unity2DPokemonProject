@@ -26,6 +26,7 @@ public class NPCController : MonoBehaviour, Interactable, ISavable
     ItemGiver itemGiver;
     PokemonGiver pokemonGiver;
     Healer healer;
+    Merchant merchant;
 
     /// <summary>
     /// This method is used to get the components of the Character, ItemGiver, PokemonGiver and Healer. 
@@ -36,6 +37,7 @@ public class NPCController : MonoBehaviour, Interactable, ISavable
         itemGiver = GetComponent<ItemGiver>();
         pokemonGiver = GetComponent<PokemonGiver>();
         healer = GetComponent<Healer>();
+        merchant = GetComponent<Merchant>();
     }
 
     /// <summary>
@@ -94,6 +96,10 @@ public class NPCController : MonoBehaviour, Interactable, ISavable
             else if (healer != null)
             {
                 yield return healer.Heal(initiator, dialog);
+            }
+            else if (merchant != null)
+            {
+                yield return merchant.Trade();
             }
             else
             {

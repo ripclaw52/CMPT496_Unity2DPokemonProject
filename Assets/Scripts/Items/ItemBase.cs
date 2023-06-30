@@ -15,11 +15,15 @@ public class ItemBase : ScriptableObject
     [TextArea]
     [SerializeField] string usedMessage;
     [SerializeField] Sprite icon;
+    [SerializeField] float price;
+    [SerializeField] bool isSellable;
 
     public virtual string Name => name;
     public virtual string Description => description;
     public string UsedMessage => usedMessage;
     public Sprite Icon => icon;
+    public float Price => price;
+    public bool IsSellable => isSellable;
 
     /// <summary>
     /// Checks if a Pokemon can use a certain item.
