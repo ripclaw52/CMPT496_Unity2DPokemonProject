@@ -9,6 +9,7 @@ public class ShopController : MonoBehaviour
 {
     [SerializeField] InventoryUI inventoryUI;
     [SerializeField] WalletUI walletUI;
+    [SerializeField] CountSelectorUI countSelectorUI;
 
     public event Action OnStart;
     public event Action OnFinish;
@@ -89,6 +90,21 @@ public class ShopController : MonoBehaviour
         walletUI.Show();
 
         float sellingPrice = Mathf.Round((item.Price / 4) * 3);
+        int countToSell = 1;
+
+        int itemCount = inventory.GetItemCount(item);
+        if (itemCount > 1)
+        {
+            yield return DialogManager.Instance.ShowDialogText($"How many {item.Name} would you like to sell?",
+                waitForInput: false, autoClose: false);
+
+            yield return countSelectorUI.ShowSelector(itemCount, sellingPrice,
+                (selectedCount) => countToSell = selectedCount);
+
+            DialogManager.Instance.CloseDialog();
+        }
+
+        sellingPrice = sellingPrice * countToSell;
 
         int selectedChoice = 0;
         yield return DialogManager.Instance.ShowDialogText($"{item.Name} are going for {sellingPrice}$. Will you be selling?",
@@ -99,7 +115,7 @@ public class ShopController : MonoBehaviour
         if (selectedChoice == 0)
         {
             // Yes
-            inventory.RemoveItem(item);
+            inventory.RemoveItem(item, countToSell);
             Wallet.i.AddMoney(sellingPrice);
             yield return DialogManager.Instance.ShowDialogText($"Turned over {item.Name} and received {sellingPrice}!");
         }

@@ -115,17 +115,31 @@ public class Inventory : MonoBehaviour, ISavable
         OnUpdated?.Invoke();
     }
 
+    public int GetItemCount(ItemBase item)
+    {
+        int category = (int)GetCategoryFromItem(item);
+        var currentSlots = GetSlotsByCategory(category);
+
+        var itemSlot = currentSlots.FirstOrDefault(slot => slot.Item == item);
+
+        if (itemSlot != null)
+            return itemSlot.Count;
+        else
+            return 0;
+    }
+
     /// <summary>
     /// Removes an item from the inventory, reducing the count of the item in the specified category. If the count reaches 0, the item is removed from the category.
     /// </summary>
     /// <param name="item">The item to remove.</param>
-    public void RemoveItem(ItemBase item)
+    /// <param name="count">The number of items to remove.</param>
+    public void RemoveItem(ItemBase item, int countToRemove=1)
     {
         int category = (int)GetCategoryFromItem(item);
         var currentSlots = GetSlotsByCategory(category);
 
         var itemSlot = currentSlots.First(slot => slot.Item == item);
-        itemSlot.Count--;
+        itemSlot.Count -= countToRemove;
         if (itemSlot.Count == 0)
             currentSlots.Remove(itemSlot);
 
