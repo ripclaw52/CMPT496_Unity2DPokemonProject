@@ -2779,6 +2779,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7181432146811036800, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: walletUI
+      value: 
+      objectReference: {fileID: 45539617}
+    - target: {fileID: 7181432146811036800, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
       propertyPath: inventoryUI
       value: 
       objectReference: {fileID: 329698361}
@@ -3828,6 +3832,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9bfffa59f680334886a2734305961c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &45539617 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 348330784412050066, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+  m_PrefabInstance: {fileID: 45539613}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761621af36301f0448c5c8cb91d428d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &329698361 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3722974387102677836, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
@@ -3860,11 +3875,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7270024934051447570, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: m_Size.x
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7270024934051447570, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: m_Size.y
-      value: 16
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7270024934051447570, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: m_Offset.x
@@ -3880,11 +3895,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7270024934051447571, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -35
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 7270024934051447571, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 7270024934051447571, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: m_LocalPosition.z

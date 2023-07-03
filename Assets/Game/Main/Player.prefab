@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 7623786209937433768}
   - component: {fileID: 2124624965561403372}
   - component: {fileID: 759735386078973023}
+  - component: {fileID: 7924518199723820551}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -293,6 +294,7 @@ MonoBehaviour:
     count: 5
   - item: {fileID: 11400000, guid: 4e78df0a1d6c80940bcf9ce0347ca050, type: 2}
     count: 5
+  tmMaterialSlots: []
   treasureSlots: []
   keyItemSlots: []
 --- !u!114 &759735386078973023
@@ -307,6 +309,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaa79c59e6800dc4ba680520646fd067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7924518199723820551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5463470663888356661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1512dc6cf6d26c4d80d2c8432f76b95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 1000
 --- !u!1 &5463470663971113751
 GameObject:
   m_ObjectHideFlags: 0
