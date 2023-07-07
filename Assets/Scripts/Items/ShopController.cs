@@ -7,6 +7,7 @@ public enum ShopState { Menu, Buying, Selling, Busy }
 
 public class ShopController : MonoBehaviour
 {
+    [SerializeField] Vector2 shopCameraOffset;
     [SerializeField] InventoryUI inventoryUI;
     [SerializeField] ShopUI shopUI;
     [SerializeField] WalletUI walletUI;
@@ -52,10 +53,12 @@ public class ShopController : MonoBehaviour
         if (selectedChoice == 0)
         {
             // Buy
-            state = ShopState.Buying;
+            yield return GameController.Instance.MoveCamera(shopCameraOffset);
             walletUI.Show();
             shopUI.Show(merchant.AvailableItems, (item) => StartCoroutine(BuyItem(item)),
-                OnBackFromBuying);
+                () => StartCoroutine(OnBackFromBuying()));
+            
+            state = ShopState.Buying;
         }
         else if (selectedChoice == 1)
         {
@@ -180,8 +183,9 @@ public class ShopController : MonoBehaviour
         state = ShopState.Buying;
     }
 
-    void OnBackFromBuying()
+    IEnumerator OnBackFromBuying()
     {
+        yield return GameController.Instance.MoveCamera(-shopCameraOffset);
         shopUI.Close();
         walletUI.Close();
         StartCoroutine(StartMenuState());
