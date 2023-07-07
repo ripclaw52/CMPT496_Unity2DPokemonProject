@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,9 @@ public class ShopUI : MonoBehaviour
 
     int selectedItem;
 
+    Action<ItemBase> onItemSelected;
+    Action onBack;
+
     List<ItemBase> availableItems;
     List<ItemSlotUI> slotUIList;
 
@@ -26,12 +30,19 @@ public class ShopUI : MonoBehaviour
         itemListRect = itemList.GetComponent<RectTransform>();
     }
 
-    public void Show(List<ItemBase> availableItems)
+    public void Show(List<ItemBase> availableItems, Action<ItemBase> onItemSelected, Action onBack)
     {
         this.availableItems = availableItems;
+        this.onItemSelected = onItemSelected;
+        this.onBack = onBack;
 
         gameObject.SetActive(true);
         UpdateItemList();
+    }
+
+    public void Close()
+    {
+        gameObject.SetActive(false);
     }
 
     public void HandleUpdate()
@@ -53,6 +64,11 @@ public class ShopUI : MonoBehaviour
 
         if (selectedItem != prevSelection)
             UpdateItemSelection();
+
+        if (Input.GetKeyDown(KeyCode.Z))
+            onItemSelected?.Invoke(availableItems[selectedItem]);
+        else if (Input.GetKeyDown(KeyCode.X))
+            onBack?.Invoke();
     }
 
     void UpdateItemList()
