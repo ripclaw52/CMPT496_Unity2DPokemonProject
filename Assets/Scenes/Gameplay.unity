@@ -386,6 +386,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 366686073419881236, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: m_Volume
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 396420564090353561, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -7264,6 +7268,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7270024934051447565, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: sceneMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 86b1dd1206636d344a9ede9094e4ffa3, type: 3}
+    - target: {fileID: 7270024934051447565, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: connectedScenes.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -7367,6 +7375,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7270024934051447565, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: sceneMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: fc504f2aff8153f41b7b5bd498811257, type: 3}
+    - target: {fileID: 7270024934051447565, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: connectedScenes.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -7384,11 +7396,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7270024934051447570, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: m_Size.x
-      value: 27
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 7270024934051447570, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: m_Size.y
-      value: 17
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7270024934051447571, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: m_RootOrder
@@ -7475,6 +7487,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7270024934051447565, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: sceneMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: cef9b5c0ed448544aa623a9fb3eb1c5e, type: 3}
+    - target: {fileID: 7270024934051447565, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: connectedScenes.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -7488,11 +7504,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7270024934051447570, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: m_Size.x
-      value: 27
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 7270024934051447570, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: m_Size.y
-      value: 17
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7270024934051447571, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: m_RootOrder
@@ -7500,7 +7516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7270024934051447571, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27
+      value: -26.75
       objectReference: {fileID: 0}
     - target: {fileID: 7270024934051447571, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7583,6 +7599,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7270024934051447565, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: sceneMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: b537700733abb6647b65145bbbe148ee, type: 3}
+    - target: {fileID: 7270024934051447565, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: connectedScenes.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -7600,11 +7620,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7270024934051447570, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: m_Size.x
-      value: 27
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 7270024934051447570, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: m_Size.y
-      value: 17
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7270024934051447571, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: m_RootOrder

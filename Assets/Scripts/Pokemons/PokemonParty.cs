@@ -75,13 +75,18 @@ public class PokemonParty : MonoBehaviour
         }
     }
 
+    public bool CheckForEvolution()
+    {
+        return pokemons.Any(p => p.CheckForEvolution() != null);
+    }
+
     /// <summary>
     /// Iterates through a list of pokemons and checks for any evolutions. If an evolution is found, it is returned.
     /// </summary>
     /// <returns>
     /// An IEnumerator containing the evolution of the pokemon.
     /// </returns>
-    public IEnumerator CheckForEvolutions()
+    public IEnumerator RunEvolutions()
     {
         foreach (var pokemon in pokemons)
         {

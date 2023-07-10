@@ -34,6 +34,13 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] MoveSelectionUI moveSelectionUI;
     [SerializeField] InventoryUI inventoryUI;
 
+    [Header("Audio")]
+    [SerializeField] AudioClip wildBattleMusic;
+    [SerializeField] AudioClip wildBattleVictoryMusic;
+
+    [SerializeField] AudioClip trainerBattleMusic;
+    [SerializeField] AudioClip trainerBattleVictoryMusic;
+
     /// <summary>
     /// Represents the state of a battle between two parties, either a player and a wild pokemon or a player and a trainer.
     /// </summary>
@@ -68,6 +75,8 @@ public class BattleSystem : MonoBehaviour
         player = playerParty.GetComponent<PlayerController>();
         isTrainerBattle = false;
 
+        AudioManager.i.PlayMusic(wildBattleMusic);
+
         StartCoroutine(SetupBattle());
     }
 
@@ -84,6 +93,8 @@ public class BattleSystem : MonoBehaviour
         isTrainerBattle = true;
         player = playerParty.GetComponent<PlayerController>();
         trainer = trainerParty.GetComponent<TrainerController>();
+
+        AudioManager.i.PlayMusic(trainerBattleMusic);
 
         StartCoroutine(SetupBattle());
     }
@@ -475,6 +486,15 @@ public class BattleSystem : MonoBehaviour
 
         if (!faintedUnit.IsPlayerUnit)
         {
+            bool battleWon = true;
+            if (isTrainerBattle)
+                battleWon = trainerParty.GetHealthyPokemon() == null;
+
+            if (battleWon && !isTrainerBattle)
+                AudioManager.i.PlayMusic(wildBattleVictoryMusic);
+            else if (battleWon && isTrainerBattle)
+                AudioManager.i.PlayMusic(trainerBattleVictoryMusic);
+
             // Exp Gain
             int expYield = faintedUnit.Pokemon.Base.ExpYield;
             int enemyLevel = faintedUnit.Pokemon.Level;
