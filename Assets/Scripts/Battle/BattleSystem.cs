@@ -333,8 +333,9 @@ public class BattleSystem : MonoBehaviour
 
         if (CheckIfMoveHits(move, sourceUnit.Pokemon, targetUnit.Pokemon))
         {
-
             sourceUnit.PlayAttackAnimation();
+            AudioManager.i.PlaySfx(move.Base.Sound);
+
             yield return new WaitForSeconds(1f);
             targetUnit.PlayHitAnimation();
 
@@ -481,6 +482,7 @@ public class BattleSystem : MonoBehaviour
     IEnumerator HandlePokemonFainted(BattleUnit faintedUnit)
     {
         yield return dialogBox.TypeDialog($"{faintedUnit.Pokemon.Base.Name} Fainted!");
+        AudioManager.i.PlaySfx(AudioId.Faint);
         faintedUnit.PlayFaintAnimation();
         yield return new WaitForSeconds(2f);
 
@@ -579,12 +581,24 @@ public class BattleSystem : MonoBehaviour
     IEnumerator ShowDamageDetails(DamageDetails damageDetails)
     {
         if (damageDetails.Critical > 1f)
+        {
             yield return dialogBox.TypeDialog("A critical hit!");
+        }
 
         if (damageDetails.TypeEffectiveness > 1f)
+        {
+            AudioManager.i.PlaySfx(AudioId.HitSuper);
             yield return dialogBox.TypeDialog("It's super effective!");
+        }
         else if (damageDetails.TypeEffectiveness < 1f)
+        {
+            AudioManager.i.PlaySfx(AudioId.HitWeak);
             yield return dialogBox.TypeDialog("It's not very effective...");
+        }
+        else
+        {
+            AudioManager.i.PlaySfx(AudioId.HitNormal);
+        }
     }
 
     /// <summary>
