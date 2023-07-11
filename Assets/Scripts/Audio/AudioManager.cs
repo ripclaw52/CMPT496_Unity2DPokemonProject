@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] float fadeDuration = 0.75f;
 
+    AudioClip currentMusic;
     float originalMusicVol;
     Dictionary<AudioId, AudioData> sfxLookup;
 
@@ -29,25 +30,32 @@ public class AudioManager : MonoBehaviour
         sfxLookup = sfxList.ToDictionary(x => x.id);
     }
 
-    public void PlaySfx(AudioClip clip)
+    public void PlaySfx(AudioClip clip, bool pauseMusic = false)
     {
         if (clip == null) return;
+
+        if (pauseMusic)
+        {
+            musicPlayer.Pause();
+            StartCoroutine(UnPauseMusic(clip.length));
+        }
 
         sfxPlayer.PlayOneShot(clip);
     }
 
-    public void PlaySfx(AudioId audioId)
+    public void PlaySfx(AudioId audioId, bool pauseMusic = false)
     {
         if (!sfxLookup.ContainsKey(audioId)) return;
 
         var audioData = sfxLookup[audioId];
-        PlaySfx(audioData.clip);
+        PlaySfx(audioData.clip, pauseMusic);
     }
 
     public void PlayMusic(AudioClip clip, bool loop = true, bool fade=false)
     {
-        if (clip == null) return;
+        if (clip == null || clip == currentMusic) return;
 
+        currentMusic = clip;
         StartCoroutine(PlayMusicAsync(clip, loop, fade));
     }
 
@@ -63,9 +71,18 @@ public class AudioManager : MonoBehaviour
         if (fade)
             yield return musicPlayer.DOFade(originalMusicVol, fadeDuration).WaitForCompletion();
     }
+
+    IEnumerator UnPauseMusic(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        musicPlayer.volume = 0;
+        musicPlayer.UnPause();
+        musicPlayer.DOFade(originalMusicVol, fadeDuration);
+    }
 }
 
-public enum AudioId { UISelect, UICancel, HitNormal, HitSuper, HitWeak, Faint, ExpGain }
+public enum AudioId { UISelect, UICancel, HitNormal, HitSuper, HitWeak, Faint, ExpGain, ItemObtained, KeyItemObtained, PokemonObtained }
 
 [System.Serializable]
 public class AudioData

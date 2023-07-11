@@ -30,6 +30,8 @@ public class Pickup : MonoBehaviour, Interactable, ISavable
 
             string playerName = initiator.GetComponent<PlayerController>().Name;
 
+            AudioManager.i.PlaySfx(AudioId.ItemObtained, pauseMusic: true);
+
             string dialogText = $"{playerName} found {item.Name}!";
             if (count > 1)
                 dialogText = $"{playerName} found {count} {item.Name}'s!";

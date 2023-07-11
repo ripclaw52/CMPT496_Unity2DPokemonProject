@@ -26,6 +26,14 @@ public class ItemGiver : MonoBehaviour, ISavable
 
         used = true;
 
+        // Implement key item, so play special sound effect
+        /*
+        if (item is KeyItem)
+            AudioManager.i.PlaySfx(AudioId.KeyItemObtained, pauseMusic: true);
+        */
+
+        AudioManager.i.PlaySfx(AudioId.ItemObtained, pauseMusic: true);
+
         string dialogText = $"{player.Name} received {item.Name}";
         if (count > 1)
             dialogText = $"{player.Name} received {count} {item.Name}s";
