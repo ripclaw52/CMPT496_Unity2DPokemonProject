@@ -9,9 +9,11 @@ using UnityEngine;
 public class MapArea : MonoBehaviour
 {
     [SerializeField] List<PokemonEncounteredRecord> wildPokemons;
-    int totalChance;
 
-    private void Start()
+    [HideInInspector]
+    [SerializeField] int totalChance = 0;
+
+    private void OnValidate()
     {
         totalChance = 0;
         foreach (var record in wildPokemons)
@@ -19,19 +21,18 @@ public class MapArea : MonoBehaviour
             record.chanceLower = totalChance;
             record.chanceUpper = totalChance + record.chancePercentage;
 
-            totalChance = totalChance + record.chancePercentage + 1;
+            totalChance = totalChance + record.chancePercentage;
         }
     }
 
-    /// <summary>
-    /// Generates a random wild Pokemon from the list of available wild Pokemons. 
-    /// </summary>
-    /// <returns>
-    /// A randomly generated wild Pokemon.
-    /// </returns>
+    private void Start()
+    {
+        
+    }
+
     public Pokemon GetRandomWildPokemon()
     {
-        int randVal = Random.Range(0, totalChance);
+        int randVal = Random.Range(1, 101);
         var pokemonRecord = wildPokemons.First(p => randVal >= p.chanceLower && randVal <= p.chanceUpper);
 
         var levelRange = pokemonRecord.levelRange;
