@@ -6038,6 +6038,46 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7908569587950186193, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: pokemons.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908569587950186193, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: pokemons.Array.data[2]._base
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b97e354023529b44824c3d75f799fde, type: 2}
+    - target: {fileID: 7908569587950186193, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: pokemons.Array.data[2].level
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908569587950186193, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: pokemons.Array.data[3]._base
+      value: 
+      objectReference: {fileID: 11400000, guid: 7125a213c7ab2ef4a8166248086c8635, type: 2}
+    - target: {fileID: 7908569587950186193, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: pokemons.Array.data[3].level
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908569587950186198, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: surfSprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908569587950186198, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: surfSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: -357781072, guid: 7e69de98e6d8abb479526ce35bc30d2f, type: 3}
+    - target: {fileID: 7908569587950186198, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: surfSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 208990756, guid: 7e69de98e6d8abb479526ce35bc30d2f, type: 3}
+    - target: {fileID: 7908569587950186198, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: surfSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 867492899, guid: 7e69de98e6d8abb479526ce35bc30d2f, type: 3}
+    - target: {fileID: 7908569587950186198, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: surfSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: -327747297, guid: 7e69de98e6d8abb479526ce35bc30d2f, type: 3}
     - target: {fileID: 7908569587997318542, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6105,6 +6145,10 @@ PrefabInstance:
     - target: {fileID: 7908569588757230535, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908569588792250252, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: waterLayer.m_Bits
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7908569588792250255, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
       propertyPath: choiceBox
