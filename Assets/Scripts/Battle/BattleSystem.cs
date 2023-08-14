@@ -16,6 +16,8 @@ public enum BattleState { Start, ActionSelection, MoveSelection, RunningTurn, Bu
 /// </summary>
 public enum BattleAction { Move, SwitchPokemon, UseItem, Run }
 
+public enum BattleTrigger { LongGrass, Water }
+
 /// <summary>
 /// This class is responsible for managing the battle system in the game.
 /// </summary>
