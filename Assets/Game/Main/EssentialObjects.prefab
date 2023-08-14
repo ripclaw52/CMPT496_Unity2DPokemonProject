@@ -2009,6 +2009,9 @@ MonoBehaviour:
   ledgeLayer:
     serializedVersion: 2
     m_Bits: 32768
+  waterLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &3484403320806375266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2604,6 +2607,9 @@ MonoBehaviour:
   wildBattleVictoryMusic: {fileID: 8300000, guid: 66ba8ab0d204a7744a53bf8bbbb57d30, type: 3}
   trainerBattleMusic: {fileID: 8300000, guid: 0635e4349f55d5c47ad2edf0fd6a9048, type: 3}
   trainerBattleVictoryMusic: {fileID: 8300000, guid: a026159b1f0b46e4b87ab4df912c7f0b, type: 3}
+  backgroundImage: {fileID: 7908569588324077287}
+  grassBackground: {fileID: 1060724488, guid: 04bc532c8c44f03468fde7ed64163ff0, type: 3}
+  waterBackground: {fileID: -506897773, guid: 04bc532c8c44f03468fde7ed64163ff0, type: 3}
 --- !u!1 &7908569589185278541
 GameObject:
   m_ObjectHideFlags: 0

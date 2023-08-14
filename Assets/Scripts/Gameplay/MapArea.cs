@@ -19,30 +19,44 @@ public class MapArea : MonoBehaviour
 
     private void OnValidate()
     {
-        // long grass
-        totalChance = 0;
-        foreach (var record in wildPokemons)
-        {
-            record.chanceLower = totalChance;
-            record.chanceUpper = totalChance + record.chancePercentage;
-
-            totalChance = totalChance + record.chancePercentage;
-        }
-
-        // water
-        totalChanceInWater = 0;
-        foreach (var record in wildPokemonsInWater)
-        {
-            record.chanceLower = totalChanceInWater;
-            record.chanceUpper = totalChanceInWater + record.chancePercentage;
-
-            totalChanceInWater = totalChanceInWater + record.chancePercentage;
-        }
+        CalculateChancePercentage();
     }
 
     private void Start()
     {
-        
+        CalculateChancePercentage();
+    }
+
+    void CalculateChancePercentage()
+    {
+        totalChance = -1;
+        totalChanceInWater = -1;
+
+        if (wildPokemons.Count > 0)
+        {
+            // long grass
+            totalChance = 0;
+            foreach (var record in wildPokemons)
+            {
+                record.chanceLower = totalChance;
+                record.chanceUpper = totalChance + record.chancePercentage;
+
+                totalChance = totalChance + record.chancePercentage;
+            }
+        }
+
+        if (wildPokemonsInWater.Count > 0)
+        {
+            // water
+            totalChanceInWater = 0;
+            foreach (var record in wildPokemonsInWater)
+            {
+                record.chanceLower = totalChanceInWater;
+                record.chanceUpper = totalChanceInWater + record.chancePercentage;
+
+                totalChanceInWater = totalChanceInWater + record.chancePercentage;
+            }
+        }
     }
 
     public Pokemon GetRandomWildPokemon(BattleTrigger trigger)

@@ -43,6 +43,11 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] AudioClip trainerBattleMusic;
     [SerializeField] AudioClip trainerBattleVictoryMusic;
 
+    [Header("Background Images")]
+    [SerializeField] Image backgroundImage;
+    [SerializeField] Sprite grassBackground;
+    [SerializeField] Sprite waterBackground;
+
     /// <summary>
     /// Represents the state of a battle between two parties, either a player and a wild pokemon or a player and a trainer.
     /// </summary>
@@ -65,17 +70,21 @@ public class BattleSystem : MonoBehaviour
     int escapeAttempts;
     MoveBase moveToLearn;
 
+    BattleTrigger battleTrigger;
+
     /// <summary>
     /// Starts a battle between the player's party and a wild Pokemon. 
     /// </summary>
     /// <param name="playerParty">The player's party of Pokemon.</param>
     /// <param name="wildPokemon">The wild Pokemon.</param>
-    public void StartBattle(PokemonParty playerParty, Pokemon wildPokemon)
+    public void StartBattle(PokemonParty playerParty, Pokemon wildPokemon, BattleTrigger trigger = BattleTrigger.LongGrass)
     {
         this.playerParty = playerParty;
         this.wildPokemon = wildPokemon;
         player = playerParty.GetComponent<PlayerController>();
         isTrainerBattle = false;
+
+        battleTrigger = trigger;
 
         AudioManager.i.PlayMusic(wildBattleMusic);
 
@@ -87,7 +96,7 @@ public class BattleSystem : MonoBehaviour
     /// </summary>
     /// <param name="playerParty">The player's party.</param>
     /// <param name="trainerParty">The trainer's party.</param>
-    public void StartTrainerBattle(PokemonParty playerParty, PokemonParty trainerParty)
+    public void StartTrainerBattle(PokemonParty playerParty, PokemonParty trainerParty, BattleTrigger trigger = BattleTrigger.LongGrass)
     {
         this.playerParty = playerParty;
         this.trainerParty = trainerParty;
@@ -95,6 +104,8 @@ public class BattleSystem : MonoBehaviour
         isTrainerBattle = true;
         player = playerParty.GetComponent<PlayerController>();
         trainer = trainerParty.GetComponent<TrainerController>();
+
+        battleTrigger = trigger;
 
         AudioManager.i.PlayMusic(trainerBattleMusic);
 
@@ -111,6 +122,9 @@ public class BattleSystem : MonoBehaviour
     {
         playerUnit.Clear();
         enemyUnit.Clear();
+
+        // changing background for pokemon battles // so far only deals with longgrass & water
+        backgroundImage.sprite = (battleTrigger == BattleTrigger.LongGrass) ? grassBackground : waterBackground;
 
         if (!isTrainerBattle)
         {
