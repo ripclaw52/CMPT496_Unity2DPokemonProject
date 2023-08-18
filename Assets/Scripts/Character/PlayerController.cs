@@ -9,10 +9,12 @@ using UnityEngine;
 /// </summary>
 public class PlayerController : MonoBehaviour, ISavable
 {
-    [SerializeField] new string name;
+    [SerializeField] string name;
     [SerializeField] Sprite sprite;
 
     private Vector2 input;
+
+    public static PlayerController i { get; private set; }
     private Character character;
 
     public string Name => name;
@@ -24,6 +26,7 @@ public class PlayerController : MonoBehaviour, ISavable
     /// </summary>
     private void Awake()
     {
+        i = this;
         character = GetComponent<Character>();
     }
 
