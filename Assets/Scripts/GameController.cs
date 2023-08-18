@@ -111,6 +111,16 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void StartCutsceneState()
+    {
+        state = GameState.Cutscene;
+    }
+
+    public void StartFreeRoamState()
+    {
+        state = GameState.FreeRoam;
+    }
+
     /// <summary>
     /// Starts a battle between the player's party and a randomly generated wild Pokemon.
     /// </summary>
