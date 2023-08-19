@@ -10,14 +10,35 @@ public class CutsceneEditor : Editor
     {
         var cutscene = target as Cutscene;
 
-        if (GUILayout.Button("Add Dialogue Action"))
-            cutscene.AddAction(new DialogueAction());
-        else if (GUILayout.Button("Add Move Actor Action"))
-            cutscene.AddAction(new MoveActorAction());
-        else if (GUILayout.Button("Add Turn Actor Action"))
-            cutscene.AddAction(new TurnActorAction());
-        else if (GUILayout.Button("Add Teleport Object Action"))
-            cutscene.AddAction(new TeleportObjectAction());
+        using (var scope = new GUILayout.HorizontalScope())
+        {
+            if (GUILayout.Button("Dialogue"))
+                cutscene.AddAction(new DialogueAction());
+            else if (GUILayout.Button("Move Actor"))
+                cutscene.AddAction(new MoveActorAction());
+            else if (GUILayout.Button("Turn Actor"))
+                cutscene.AddAction(new TurnActorAction());
+        }
+
+        using (var scope = new GUILayout.HorizontalScope())
+        {
+            if (GUILayout.Button("Teleport Object"))
+                cutscene.AddAction(new TeleportObjectAction());
+            else if (GUILayout.Button("Enable Object"))
+                cutscene.AddAction(new EnableObjectAction());
+            else if (GUILayout.Button("Disable Object"))
+                cutscene.AddAction(new DisableObjectAction());
+        }
+
+        using (var scope = new GUILayout.HorizontalScope())
+        {
+            if (GUILayout.Button("NPC Interact"))
+                cutscene.AddAction(new NPCInteractAction());
+            else if (GUILayout.Button("Fade In"))
+                cutscene.AddAction(new FadeInAction());
+            else if (GUILayout.Button("Fade Out"))
+                cutscene.AddAction(new FadeOutAction());
+        }
 
         base.OnInspectorGUI();
     }
