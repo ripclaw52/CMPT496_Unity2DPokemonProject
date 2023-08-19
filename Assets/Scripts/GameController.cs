@@ -28,8 +28,6 @@ public class GameController : MonoBehaviour
 
     public SceneDetails CurrentScene { get; private set; }
     public SceneDetails PrevScene { get; private set; }
-
-    MenuController menuController;
     public static GameController Instance { get; private set; }
 
     public GameState State => state;
@@ -40,8 +38,6 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-
-        menuController = GetComponent<MenuController>();
 
         // disables the mouse
         Cursor.lockState = CursorLockMode.Locked;
@@ -77,13 +73,6 @@ public class GameController : MonoBehaviour
             if (state == GameState.Dialog)
                 state = prevState;
         };
-
-        menuController.onBack += () =>
-        {
-            state = GameState.FreeRoam;
-        };
-
-        menuController.onMenuSelected += OnMenuSelected;
 
         EvolutionManager.i.OnStartEvolution += () =>
         {
@@ -229,10 +218,6 @@ public class GameController : MonoBehaviour
         else if (state == GameState.Dialog)
         {
             DialogManager.Instance.HandleUpdate();
-        }
-        else if (state == GameState.Menu)
-        {
-            menuController.HandleUpdate();
         }
         else if (state == GameState.PartyScreen)
         {
