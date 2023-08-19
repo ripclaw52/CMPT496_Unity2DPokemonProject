@@ -9495,9 +9495,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971489, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: movementPattern.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971495, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -952403166, guid: e2bd8919dd700664091fca4f47efa93f, type: 3}
     - target: {fileID: 7473421002554971496, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
       propertyPath: m_Name
-      value: NPC (2)
+      value: CutsceneNPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
@@ -9506,12 +9514,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7473421002554971492, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
   m_PrefabInstance: {fileID: 1664258712}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1664258714}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0b0fee136e4d4f4ca5e6ecd299da3b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1664258714 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7473421002554971496, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+  m_PrefabInstance: {fileID: 1664258712}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1689325718
 GameObject:
   m_ObjectHideFlags: 0
@@ -9544,9 +9557,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actions:
   - rid: 5809020505891799040
+  - rid: 5809020542440177664
   - rid: 5809020505891799041
   - rid: 5809020521126035457
   - rid: 5809020521126035458
+  - rid: 5809020542440177665
+  - rid: 5809020542440177666
+  - rid: 5809020542440177668
+  - rid: 5809020542440177667
   references:
     version: 2
     RefIds:
@@ -9568,7 +9586,8 @@ MonoBehaviour:
         waitForCompletion: 1
         dialog:
           lines:
-          - Don't leave yet! The professor is looking for you!
+          - Don't leave yet! The professor is looking for you.
+          - I'll take you to him. Follow me.
     - rid: 5809020521126035457
       type: {class: MoveActorAction, ns: , asm: Assembly-CSharp}
       data:
@@ -9592,6 +9611,50 @@ MonoBehaviour:
         - {x: -1, y: 0}
         - {x: 0, y: -8}
         - {x: -6, y: 0}
+    - rid: 5809020542440177664
+      type: {class: TurnActorAction, ns: , asm: Assembly-CSharp}
+      data:
+        name: TurnActorAction
+        waitForCompletion: 1
+        actor:
+          isPlayer: 1
+          character: {fileID: 0}
+        direction: 2
+    - rid: 5809020542440177665
+      type: {class: TurnActorAction, ns: , asm: Assembly-CSharp}
+      data:
+        name: TurnActorAction
+        waitForCompletion: 1
+        actor:
+          isPlayer: 0
+          character: {fileID: 1664258713}
+        direction: 3
+    - rid: 5809020542440177666
+      type: {class: DialogueAction, ns: , asm: Assembly-CSharp}
+      data:
+        name: DialogueAction
+        waitForCompletion: 1
+        dialog:
+          lines:
+          - This is the professors lab. He's waiting inside.
+    - rid: 5809020542440177667
+      type: {class: TeleportObjectAction, ns: , asm: Assembly-CSharp}
+      data:
+        name: TeleportObjectAction
+        waitForCompletion: 1
+        go: {fileID: 1664258714}
+        position: {x: -6.5, y: 7.8}
+    - rid: 5809020542440177668
+      type: {class: MoveActorAction, ns: , asm: Assembly-CSharp}
+      data:
+        name: MoveActorAction
+        waitForCompletion: 1
+        actor:
+          isPlayer: 0
+          character: {fileID: 1664258713}
+        movePatterns:
+        - {x: -2, y: 0}
+        - {x: 0, y: 6}
 --- !u!4 &1689325720
 Transform:
   m_ObjectHideFlags: 0

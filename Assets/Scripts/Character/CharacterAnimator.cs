@@ -99,6 +99,9 @@ public class CharacterAnimator : MonoBehaviour
     /// <param name="dir">The direction to face.</param>
     public void SetFacingDirection(FacingDirection dir)
     {
+        MoveX = 0;
+        MoveY = 0;
+
         if (dir == FacingDirection.Right)
             MoveX = 1;
         else if (dir == FacingDirection.Left)
