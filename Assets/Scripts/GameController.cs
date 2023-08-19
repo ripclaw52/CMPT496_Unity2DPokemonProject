@@ -1,3 +1,4 @@
+using GDEUtils.StateMachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,6 +23,8 @@ public class GameController : MonoBehaviour
     GameState state;
     GameState prevState;
     GameState stateBeforeEvolution;
+
+    public StateMachine<GameController> StateMachine { get; private set; }
 
     public SceneDetails CurrentScene { get; private set; }
     public SceneDetails PrevScene { get; private set; }
@@ -56,8 +59,13 @@ public class GameController : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        StateMachine = new StateMachine<GameController>(this);
+        StateMachine.ChangeState(FreeRoamState.i);
+
         battleSystem.OnBattleOver += EndBattle;
+
         partyScreen.Init();
+        
         DialogManager.Instance.OnShowDialog += () =>
         {
             prevState = state;
@@ -198,17 +206,19 @@ public class GameController : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        if (state == GameState.FreeRoam)
-        {
-            playerController.HandleUpdate();
+        StateMachine.Execute();
 
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                menuController.OpenMenu();
-                state = GameState.Menu;
-            }
-        }
-        else if (state == GameState.Cutscene)
+        //if (state == GameState.FreeRoam)
+        //{
+        //    playerController.HandleUpdate();
+
+        //    if (Input.GetKeyDown(KeyCode.Return))
+        //    {
+        //        menuController.OpenMenu();
+        //        state = GameState.Menu;
+        //    }
+        //}
+        if (state == GameState.Cutscene)
         {
             playerController.Character.HandleUpdate();
         }
@@ -307,4 +317,18 @@ public class GameController : MonoBehaviour
         else
             StartCoroutine(Fader.i.FadeOut(0.5f));
     }
+
+    // Debug Purposes for telling if the states exist inside the stack
+    private void OnGUI()
+    {
+        var style = new GUIStyle();
+        style.fontSize = 24;
+
+        GUILayout.Label("STATE STACK", style);
+        foreach (var state in StateMachine.StateStack)
+        {
+            GUILayout.Label(state.GetType().ToString(), style);
+        }
+    }
+
 }
