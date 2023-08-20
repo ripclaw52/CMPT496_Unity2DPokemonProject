@@ -18,21 +18,29 @@ public class GameMenuState : State<GameController>
     {
         gc = owner;
         menuController.gameObject.SetActive(true);
+        menuController.OnSelected += OnMenuItemSelected;
+        menuController.OnBack += OnBack;
     }
 
     public override void Execute()
     {
         menuController.HandleUpdate();
-
-        if (Input.GetKeyUp(KeyCode.X))
-        {
-            gc.StateMachine.Pop();
-            AudioManager.i.PlaySfx(AudioId.UICancel);
-        }
     }
 
     public override void Exit()
     {
         menuController.gameObject.SetActive(false);
+        menuController.OnSelected -= OnMenuItemSelected;
+        menuController.OnBack -= OnBack;
+    }
+
+    void OnMenuItemSelected(int selection)
+    {
+        Debug.Log($"Selected menu item {selection}");
+    }
+
+    void OnBack()
+    {
+        gc.StateMachine.Pop();
     }
 }

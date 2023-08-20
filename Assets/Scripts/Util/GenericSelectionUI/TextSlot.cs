@@ -15,7 +15,7 @@ public class TextSlot : MonoBehaviour, ISelectableItem
 
     public void OnSelectionChanged(bool selected)
     {
-        text.color = (selected) ? GlobalSettings.i.HighlightedColor : originalColor;
         AudioManager.i.PlaySfx(AudioId.UISelect);
+        text.color = (selected) ? GlobalSettings.i.HighlightedColor : originalColor;
     }
 }
