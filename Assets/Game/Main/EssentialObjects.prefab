@@ -252,7 +252,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1919,6 +1919,7 @@ GameObject:
   - component: {fileID: 7181432146811036800}
   - component: {fileID: 8073566584587591846}
   - component: {fileID: 4924247610311024138}
+  - component: {fileID: 704141252562988725}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -2084,6 +2085,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuController: {fileID: 6564811363761403414}
+--- !u!114 &704141252562988725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7908569588792250248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31d8426c224fe6042a2c2f50dbf309e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partyScreen: {fileID: 8723140071825289307}
 --- !u!1 &7908569588828984517
 GameObject:
   m_ObjectHideFlags: 0

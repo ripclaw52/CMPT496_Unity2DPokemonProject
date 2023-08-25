@@ -1,13 +1,15 @@
+using GDEUtils.GenericSelectionUI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
 /// This class is responsible for managing the Party Screen in the game.
 /// </summary>
-public class PartyScreen : MonoBehaviour
+public class PartyScreen : SelectionUI<TextSlot>
 {
     [SerializeField] Text messageText;
 
@@ -15,9 +17,7 @@ public class PartyScreen : MonoBehaviour
     List<Pokemon> pokemons;
     PokemonParty party;
 
-    int selection = 0;
-    public Pokemon SelectedMember => pokemons[selection];
-    public BattleState? CalledFrom { get; set; }
+    public Pokemon SelectedMember => pokemons[selectedItem];
 
     /// <summary>
     /// Initializes the PartyUI by getting the PartyMemberUI components, getting the player's party, and setting the party data. Also adds a listener to the party's OnUpdated event.
@@ -25,6 +25,7 @@ public class PartyScreen : MonoBehaviour
     public void Init()
     {
         memberSlots = GetComponentsInChildren<PartyMemberUI>(true);
+        SetSelectionSettings(SelectionType.Grid, 2);
 
         party = PokemonParty.GetPlayerParty();
         SetPartyData();
@@ -50,57 +51,10 @@ public class PartyScreen : MonoBehaviour
                 memberSlots[i].gameObject.SetActive(false);
         }
 
-        UpdateMemberSelection(selection);
+        var textSlots = memberSlots.Select(m => m.GetComponent<TextSlot>());
+        SetItems(textSlots.Take(pokemons.Count).ToList());
 
         messageText.text = "Choose a Pokemon!";
-    }
-
-    /// <summary>
-    /// Handles the update of the selection of the pokemon.
-    /// </summary>
-    /// <param name="onSelected">Action to be performed when the selection is confirmed.</param>
-    /// <param name="onBack">Action to be performed when the selection is cancelled.</param>
-    public void HandleUpdate(Action onSelected, Action onBack)
-    {
-        var prevSelection = selection;
-
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-            ++selection;
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-            --selection;
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-            selection += 2;
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-            selection -= 2;
-
-        selection = Mathf.Clamp(selection, 0, pokemons.Count - 1);
-
-        if (selection != prevSelection)
-            UpdateMemberSelection(selection);
-
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            onSelected?.Invoke();
-        }
-        else if (Input.GetKeyDown(KeyCode.X))
-        {
-            onBack?.Invoke();
-        }
-    }
-
-    /// <summary>
-    /// Updates the selection of the member in the list of pokemons.
-    /// </summary>
-    /// <param name="selectedMember">The index of the selected member.</param>
-    public void UpdateMemberSelection(int selectedMember)
-    {
-        for (int i = 0; i < pokemons.Count; i++)
-        {
-            if (i == selectedMember)
-                memberSlots[i].SetSelected(true);
-            else
-                memberSlots[i].SetSelected(false);
-        }
     }
 
     /// <summary>

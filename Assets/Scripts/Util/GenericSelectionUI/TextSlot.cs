@@ -8,14 +8,15 @@ public class TextSlot : MonoBehaviour, ISelectableItem
     [SerializeField] Text text;
 
     Color originalColor;
-    private void Awake()
+    public void Init()
     {
         originalColor = text.color;
     }
 
     public void OnSelectionChanged(bool selected)
     {
-        AudioManager.i.PlaySfx(AudioId.UISelect);
+        //AudioManager.i.PlaySfx(AudioId.UISelect);
+
         text.color = (selected) ? GlobalSettings.i.HighlightedColor : originalColor;
     }
 }
