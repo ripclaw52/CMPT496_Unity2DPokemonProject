@@ -38,6 +38,8 @@ public class GameMenuState : State<GameController>
     {
         if (selection == 1) // Pokemon
             gc.StateMachine.Push(GamePartyState.i);
+        else if (selection == 2) // Bag
+            gc.StateMachine.Push(InventoryState.i);
     }
 
     void OnBack()

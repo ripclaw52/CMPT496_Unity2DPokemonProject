@@ -1,3 +1,4 @@
+using GDEUtils.GenericSelectionUI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,15 +6,9 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// Enum representing the different states of the Inventory UI. 
-/// </summary>
 public enum InventoryUIState { ItemSelection, PartySelection, MoveToForget, Busy }
 
-/// <summary>
-/// This class is responsible for managing the UI elements of the inventory system.
-/// </summary>
-public class InventoryUI : MonoBehaviour
+public class InventoryUI : SelectionUI<TextSlot>
 {
     [SerializeField] GameObject itemList;
     [SerializeField] ItemSlotUI itemSlotUI;
@@ -30,7 +25,6 @@ public class InventoryUI : MonoBehaviour
 
     Action<ItemBase> onItemUsed;
 
-    int selectedItem = 0;
     int selectedCategory = 0;
 
     MoveBase moveToLearn;
@@ -42,19 +36,12 @@ public class InventoryUI : MonoBehaviour
     List<ItemSlotUI> slotUIList;
     Inventory inventory;
     RectTransform itemListRect;
-
-    /// <summary>
-    /// Retrieves the Inventory and RectTransform components for use in the Awake method.
-    /// </summary>
     private void Awake()
     {
         inventory = Inventory.GetInventory();
         itemListRect = itemList.GetComponent<RectTransform>();
     }
 
-    /// <summary>
-    /// Updates the item list and adds a handler for the inventory's OnUpdated event.
-    /// </summary>
     private void Start()
     {
         UpdateItemList();
@@ -62,9 +49,6 @@ public class InventoryUI : MonoBehaviour
         inventory.OnUpdated += UpdateItemList;
     }
 
-    /// <summary>
-    /// Updates the list of items in the inventory based on the selected category.
-    /// </summary>
     void UpdateItemList()
     {
         // Clear all the existing items
@@ -80,90 +64,41 @@ public class InventoryUI : MonoBehaviour
             slotUIList.Add(slotUIObj);
         }
 
-        UpdateItemSelection();
+        SetItems(slotUIList.Select(s => s.GetComponent<TextSlot>()).ToList());
+
+        UpdateSelectionInUI();
     }
 
-    /// <summary>
-    /// Handles the update of the inventory UI.
-    /// </summary>
-    /// <param name="onBack">Callback for when the update is finished.</param>
-    /// <param name="onItemUsed">Optional callback for when an item is used.</param>
-    public void HandleUpdate(Action onBack, Action<ItemBase> onItemUsed = null)
+    public override void HandleUpdate()
     {
-        this.onItemUsed = onItemUsed;
+        int prevCategory = selectedCategory;
 
-        if (state == InventoryUIState.ItemSelection)
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+            ++selectedCategory;
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            --selectedCategory;
+
+        if (selectedCategory > Inventory.ItemCategories.Count - 1)
+            selectedCategory = 0;
+        else if (selectedCategory < 0)
+            selectedCategory = Inventory.ItemCategories.Count - 1;
+
+        if (prevCategory != selectedCategory)
         {
-            int prevSelection = selectedItem;
-            int prevCategory = selectedCategory;
-
-            if (Input.GetKeyDown(KeyCode.DownArrow))
-                ++selectedItem;
-            else if (Input.GetKeyDown(KeyCode.UpArrow))
-                --selectedItem;
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
-                ++selectedCategory;
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
-                --selectedCategory;
-
-            if (selectedCategory > Inventory.ItemCategories.Count - 1)
-                selectedCategory = 0;
-            else if (selectedCategory < 0)
-                selectedCategory = Inventory.ItemCategories.Count - 1;
-
-            selectedCategory = Mathf.Clamp(selectedCategory, 0, Inventory.ItemCategories.Count - 1);
-            selectedItem = Mathf.Clamp(selectedItem, 0, inventory.GetSlotsByCategory(selectedCategory).Count - 1);
-
-            if (prevCategory != selectedCategory)
-            {
-                ResetSelection();
-                categoryText.text = Inventory.ItemCategories[selectedCategory];
-                UpdateItemList();
-            }
-            else if (prevSelection != selectedItem)
-            {
-                UpdateItemSelection();
-            }
-
-            if (Input.GetKeyDown(KeyCode.Z))
-                StartCoroutine(ItemSelected());
-            else if (Input.GetKeyDown(KeyCode.X))
-                onBack?.Invoke();
+            ResetSelection();
+            categoryText.text = Inventory.ItemCategories[selectedCategory];
+            UpdateItemList();
         }
-        else if (state == InventoryUIState.PartySelection)
-        {
-            Action onSelected = () =>
-            {
-                StartCoroutine(UseItem());
-            };
 
-            Action onBackPartyScreen = () =>
-            {
-                ClosePartyScreen();
-            };
-
-            // partyScreen.HandleUpdate(onSelected, onBackPartyScreen);
-        }
-        else if (state == InventoryUIState.MoveToForget)
-        {
-            Action<int> onMoveSelected = (int moveIndex) =>
-            {
-                StartCoroutine(OnMoveToForgetSelected(moveIndex));
-            };
-
-            moveSelectionUI.HandleMoveSelection(onMoveSelected);
-        }
+        base.HandleUpdate();
     }
 
-    /// <summary>
-    /// Checks if the selected item can be used in the current game state and opens the party screen if necessary.
-    /// </summary>
-    /// <returns>IEnumerator for the coroutine.</returns>
     IEnumerator ItemSelected()
     {
         state = InventoryUIState.Busy;
 
         var item = inventory.GetItem(selectedItem, selectedCategory);
+
 
         if (GameController.Instance.State == GameState.Shop)
         {
@@ -206,12 +141,6 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Uses the selected item from the inventory.
-    /// </summary>
-    /// <returns>
-    /// An IEnumerator that handles the use of the item.
-    /// </returns>
     IEnumerator UseItem()
     {
         state = InventoryUIState.Busy;
@@ -242,6 +171,7 @@ public class InventoryUI : MonoBehaviour
         {
             if (usedItem is RecoveryItem)
                 yield return DialogManager.Instance.ShowDialogText($"You used {usedItem.Name}!");
+
             onItemUsed?.Invoke(usedItem);
         }
         else
@@ -253,12 +183,6 @@ public class InventoryUI : MonoBehaviour
         ClosePartyScreen();
     }
 
-    /// <summary>
-    /// Handles the teaching of a TM item to a Pokemon.
-    /// </summary>
-    /// <returns>
-    /// An IEnumerator that handles the teaching of a TM item to a Pokemon.
-    /// </returns>
     IEnumerator HandleTmItems()
     {
         var tmItem = inventory.GetItem(selectedItem, selectedCategory) as TmItem;
@@ -293,12 +217,6 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Enables the move selection UI and sets the move data for the Pokemon to choose a move to forget.
-    /// </summary>
-    /// <param name="pokemon">The Pokemon to choose a move to forget.</param>
-    /// <param name="newMove">The new move to learn.</param>
-    /// <returns>An IEnumerator for the coroutine.</returns>
     IEnumerator ChooseMoveToForget(Pokemon pokemon, MoveBase newMove)
     {
         state = InventoryUIState.Busy;
@@ -310,23 +228,11 @@ public class InventoryUI : MonoBehaviour
         state = InventoryUIState.MoveToForget;
     }
 
-    /// <summary>
-    /// Updates the selection of the item in the inventory based on the selected category and the selected item. Also handles the scrolling of the inventory.
-    /// </summary>
-    void UpdateItemSelection()
+    public override void UpdateSelectionInUI()
     {
+        base.UpdateSelectionInUI();
+
         var slots = inventory.GetSlotsByCategory(selectedCategory);
-
-        selectedItem = Mathf.Clamp(selectedItem, 0, slots.Count - 1);
-
-        for (int i = 0; i < slotUIList.Count; i++)
-        {
-            if (i == selectedItem)
-                slotUIList[i].NameText.color = GlobalSettings.i.HighlightedColor;
-            else
-                slotUIList[i].NameText.color = Color.black;
-        }
-
         if (slots.Count > 0)
         {
             var item = slots[selectedItem].Item;
@@ -337,9 +243,6 @@ public class InventoryUI : MonoBehaviour
         HandleScrolling();
     }
 
-    /// <summary>
-    /// Handles the scrolling of the item list. Clamps the selected item to the middle of the viewport and sets the up and down arrows active or inactive depending on the selected item.
-    /// </summary>
     void HandleScrolling()
     {
         if (slotUIList.Count <= itemsInViewport) return;
@@ -354,9 +257,6 @@ public class InventoryUI : MonoBehaviour
         downArrow.gameObject.SetActive(showDownArrow);
     }
 
-    /// <summary>
-    /// Resets the selection of the item by setting the selected item to 0, deactivating the up and down arrows, and setting the item icon and description to null.
-    /// </summary>
     void ResetSelection()
     {
         selectedItem = 0;
@@ -368,18 +268,12 @@ public class InventoryUI : MonoBehaviour
         itemDescription.text = "";
     }
 
-    /// <summary>
-    /// Sets the state to PartySelection and activates the partyScreen gameObject.
-    /// </summary>
     void OpenPartyScreen()
     {
         state = InventoryUIState.PartySelection;
         partyScreen.gameObject.SetActive(true);
     }
 
-    /// <summary>
-    /// Closes the party screen and sets the inventory UI state to item selection. 
-    /// </summary>
     void ClosePartyScreen()
     {
         state = InventoryUIState.ItemSelection;
@@ -388,13 +282,6 @@ public class InventoryUI : MonoBehaviour
         partyScreen.gameObject.SetActive(false);
     }
 
-    /// <summary>
-    /// Forgets the selected move and learns the new move for the selected pokemon.
-    /// </summary>
-    /// <param name="moveIndex">Index of the item to move.</param>
-    /// <returns>
-    /// An IEnumerator that runs the logic for the move selection.
-    /// </returns>
     IEnumerator OnMoveToForgetSelected(int moveIndex)
     {
         var pokemon = partyScreen.SelectedMember;

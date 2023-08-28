@@ -37,8 +37,16 @@ public class GamePartyState : State<GameController>
 
     void OnPokemonSelected(int selection)
     {
-        // Todo: Open summary screen
-        Debug.Log($"Selected pokemon at index {selection}");
+        if (gc.StateMachine.GetPrevState() == InventoryState.i)
+        {
+            // Use Item
+            Debug.Log("Use Item");
+        }
+        else
+        {
+            // Todo: Open summary screen
+            Debug.Log($"Selected pokemon at index {selection}");
+        }
     }
 
     void OnBack()

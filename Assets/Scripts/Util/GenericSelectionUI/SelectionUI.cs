@@ -91,7 +91,7 @@ namespace GDEUtils.GenericSelectionUI
             }
         }
 
-        void UpdateSelectionInUI()
+        public virtual void UpdateSelectionInUI()
         {
             for (int i = 0; i < items.Count; i++)
             {
