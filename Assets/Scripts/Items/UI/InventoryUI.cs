@@ -6,8 +6,6 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum InventoryUIState { ItemSelection, PartySelection, MoveToForget, Busy }
-
 public class InventoryUI : SelectionUI<TextSlot>
 {
     [SerializeField] GameObject itemList;
@@ -20,16 +18,7 @@ public class InventoryUI : SelectionUI<TextSlot>
     [SerializeField] Image upArrow;
     [SerializeField] Image downArrow;
 
-    [SerializeField] PartyScreen partyScreen;
-    [SerializeField] MoveSelectionUI moveSelectionUI;
-
-    Action<ItemBase> onItemUsed;
-
     int selectedCategory = 0;
-
-    MoveBase moveToLearn;
-
-    InventoryUIState state;
 
     const int itemsInViewport = 8;
 
@@ -93,65 +82,6 @@ public class InventoryUI : SelectionUI<TextSlot>
         base.HandleUpdate();
     }
 
-    IEnumerator ItemSelected()
-    {
-        state = InventoryUIState.Busy;
-
-        var item = inventory.GetItem(selectedItem, selectedCategory);
-
-
-        if (GameController.Instance.State == GameState.Shop)
-        {
-            onItemUsed?.Invoke(item);
-            state = InventoryUIState.ItemSelection;
-            yield break;
-        }
-
-        if (GameController.Instance.State == GameState.Battle)
-        {
-            // In Battle
-            if (!item.CanUseInBattle)
-            {
-                yield return DialogManager.Instance.ShowDialogText($"A battle is no place to use {item.Name}!");
-                state = InventoryUIState.ItemSelection;
-                yield break;
-            }
-        }
-        else
-        {
-            // Outside Battle
-            if (!item.CanUseOutsideBattle)
-            {
-                yield return DialogManager.Instance.ShowDialogText($"{item.Name}'s should only be used during a battle!");
-                state = InventoryUIState.ItemSelection;
-                yield break;
-            }
-        }
-
-        if (selectedCategory == (int)ItemCategory.Pokeballs)
-        {
-            // StartCoroutine(UseItem());
-        }
-        else
-        {
-            OpenPartyScreen();
-
-            if (item is TmItem)
-                partyScreen.ShowIfTmIsUsable(item as TmItem);
-        }
-    }
-
-    IEnumerator ChooseMoveToForget(Pokemon pokemon, MoveBase newMove)
-    {
-        state = InventoryUIState.Busy;
-        yield return DialogManager.Instance.ShowDialogText($"Choose a move you want to forget!", true, false);
-        moveSelectionUI.gameObject.SetActive(true);
-        moveSelectionUI.SetMoveData(pokemon.Moves.Select(x => x.Base).ToList(), newMove);
-        moveToLearn = newMove;
-
-        state = InventoryUIState.MoveToForget;
-    }
-
     public override void UpdateSelectionInUI()
     {
         base.UpdateSelectionInUI();
@@ -190,44 +120,6 @@ public class InventoryUI : SelectionUI<TextSlot>
 
         itemIcon.sprite = null;
         itemDescription.text = "";
-    }
-
-    void OpenPartyScreen()
-    {
-        state = InventoryUIState.PartySelection;
-        partyScreen.gameObject.SetActive(true);
-    }
-
-    void ClosePartyScreen()
-    {
-        state = InventoryUIState.ItemSelection;
-
-        partyScreen.ClearMemberSlotMessages();
-        partyScreen.gameObject.SetActive(false);
-    }
-
-    IEnumerator OnMoveToForgetSelected(int moveIndex)
-    {
-        var pokemon = partyScreen.SelectedMember;
-
-        DialogManager.Instance.CloseDialog();
-        moveSelectionUI.gameObject.SetActive(false);
-        if (moveIndex == PokemonBase.MaxNumOfMoves)
-        {
-            // Don't learn the new move
-            yield return DialogManager.Instance.ShowDialogText($"{pokemon.Base.Name} did not learn {moveToLearn.Name}!");
-        }
-        else
-        {
-            // Forget the selected move and learn the new move
-            var selectedMove = pokemon.Moves[moveIndex].Base;
-            yield return DialogManager.Instance.ShowDialogText($"{pokemon.Base.Name} forgot {selectedMove.Name} and learned {moveToLearn.Name}!");
-
-            pokemon.Moves[moveIndex] = new Move(moveToLearn);
-        }
-
-        moveToLearn = null;
-        state = InventoryUIState.ItemSelection;
     }
 
     public ItemBase SelectedItem => inventory.GetItem(selectedItem, selectedCategory);
