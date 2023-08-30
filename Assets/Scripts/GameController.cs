@@ -4,14 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Enum representing the different states of a game. 
-/// </summary>
 public enum GameState { FreeRoam, Battle, Dialog, Menu, PartyScreen, Bag, Cutscene, Paused, Evolution, Shop }
 
-/// <summary>
-/// This class is responsible for controlling the game logic.
-/// </summary>
 public class GameController : MonoBehaviour
 {
     [SerializeField] PlayerController playerController;
@@ -30,11 +24,6 @@ public class GameController : MonoBehaviour
     public SceneDetails PrevScene { get; private set; }
     public static GameController Instance { get; private set; }
 
-    public GameState State => state;
-
-    /// <summary>
-    /// Sets the instance of the GameManager, gets the MenuController component, locks the mouse, and initializes the databases. 
-    /// </summary>
     private void Awake()
     {
         Instance = this;
@@ -50,9 +39,6 @@ public class GameController : MonoBehaviour
         QuestDB.Init();
     }
 
-    /// <summary>
-    /// This method sets up the event handlers for the battle system, party screen, dialog manager, menu controller, and evolution manager. 
-    /// </summary>
     private void Start()
     {
         StateMachine = new StateMachine<GameController>(this);
@@ -91,10 +77,6 @@ public class GameController : MonoBehaviour
         ShopController.i.OnFinish += () => state = GameState.FreeRoam;
     }
 
-    /// <summary>
-    /// Pauses or unpauses the game depending on the boolean parameter.
-    /// </summary>
-    /// <param name="pause">True to pause the game, false to unpause.</param>
     public void PauseGame(bool pause)
     {
         if (pause)
@@ -118,55 +100,25 @@ public class GameController : MonoBehaviour
         state = GameState.FreeRoam;
     }
 
-    /// <summary>
-    /// Starts a battle between the player's party and a randomly generated wild Pokemon.
-    /// </summary>
     public void StartBattle(BattleTrigger trigger)
     {
-        state = GameState.Battle;
-        battleSystem.gameObject.SetActive(true);
-        worldCamera.gameObject.SetActive(false);
-
-        var playerParty = playerController.GetComponent<PokemonParty>();
-        var wildPokemon = CurrentScene.GetComponent<MapArea>().GetRandomWildPokemon(trigger);
-
-        var wildPokemonCopy = new Pokemon(wildPokemon.Base, wildPokemon.Level);
-
-        battleSystem.StartBattle(playerParty, wildPokemonCopy, trigger);
+        BattleState.i.trigger = trigger;
+        StateMachine.Push(BattleState.i);
     }
 
     TrainerController trainer;
-
-    /// <summary>
-    /// Starts a battle between the player and a trainer.
-    /// </summary>
-    /// <param name="trainer">The trainer to battle.</param>
     public void StartTrainerBattle(TrainerController trainer)
     {
-        state = GameState.Battle;
-        battleSystem.gameObject.SetActive(true);
-        worldCamera.gameObject.SetActive(false);
-
-        this.trainer = trainer;
-        var playerParty = playerController.GetComponent<PokemonParty>();
-        var trainerParty = trainer.GetComponent<PokemonParty>();
-
-        battleSystem.StartTrainerBattle(playerParty, trainerParty);
+        BattleState.i.trainer = trainer;
+        StateMachine.Push(BattleState.i);
     }
 
-    /// <summary>
-    /// Triggers a trainer battle with the given trainer controller.
-    /// </summary>
-    /// <param name="trainer">The trainer controller to trigger the battle with.</param>
     public void OnEnterTrainersView(TrainerController trainer)
     {
         state = GameState.Cutscene;
         StartCoroutine(trainer.TriggerTrainerBattle(playerController));
     }
 
-    /// <summary>
-    /// Ends the battle, setting the game state to FreeRoam and checking for evolutions in the player's party.
-    /// </summary>
     void EndBattle(bool won)
     {
         if (trainer != null && won == true)
@@ -190,9 +142,6 @@ public class GameController : MonoBehaviour
             AudioManager.i.PlayMusic(CurrentScene.SceneMusic, fade: true);
     }
 
-    /// <summary>
-    /// Handles the Update function for the game, depending on the current state.
-    /// </summary>
     private void Update()
     {
         StateMachine.Execute();
@@ -200,10 +149,6 @@ public class GameController : MonoBehaviour
         if (state == GameState.Cutscene)
         {
             playerController.Character.HandleUpdate();
-        }
-        else if (state == GameState.Battle)
-        {
-            battleSystem.HandleUpdate();
         }
         else if (state == GameState.Dialog)
         {
@@ -215,20 +160,12 @@ public class GameController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Sets the current scene to the given scene and stores the previous scene.
-    /// </summary>
-    /// <param name="currScene">The scene to set as the current scene.</param>
     public void SetCurrentScene(SceneDetails currScene)
     {
         PrevScene = CurrentScene;
         CurrentScene = currScene;
     }
 
-    /// <summary>
-    /// Handles the selection of a menu item.
-    /// </summary>
-    /// <param name="selectedItem">The index of the selected menu item.</param>
     void OnMenuSelected(int selectedItem)
     {
         switch (selectedItem)
@@ -268,7 +205,6 @@ public class GameController : MonoBehaviour
             StartCoroutine(Fader.i.FadeOut(0.5f));
     }
 
-    // Debug Purposes for telling if the states exist inside the stack
     private void OnGUI()
     {
         var style = new GUIStyle();
@@ -281,4 +217,8 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public GameState State => state;
+
+    public PlayerController PlayerController => playerController;
+    public Camera WorldCamera => worldCamera;
 }
