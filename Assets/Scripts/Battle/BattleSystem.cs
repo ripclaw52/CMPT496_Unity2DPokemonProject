@@ -58,7 +58,8 @@ public class BattleSystem : MonoBehaviour
 
     public bool IsTrainerBattle { get; private set; } = false;
     PlayerController player;
-    TrainerController trainer;
+
+    public TrainerController Trainer { get; private set; }
 
     public int EscapeAttempts { get; set; }
     MoveBase moveToLearn;
@@ -86,7 +87,7 @@ public class BattleSystem : MonoBehaviour
 
         IsTrainerBattle = true;
         player = playerParty.GetComponent<PlayerController>();
-        trainer = trainerParty.GetComponent<TrainerController>();
+        Trainer = trainerParty.GetComponent<TrainerController>();
 
         battleTrigger = trigger;
 
@@ -125,16 +126,16 @@ public class BattleSystem : MonoBehaviour
             playerImage.gameObject.SetActive(true);
             trainerImage.gameObject.SetActive(true);
             playerImage.sprite = player.Sprite;
-            trainerImage.sprite = trainer.Sprite;
+            trainerImage.sprite = Trainer.Sprite;
 
-            yield return dialogBox.TypeDialog($"{trainer.Name} wants to battle!");
+            yield return dialogBox.TypeDialog($"{Trainer.Name} wants to battle!");
 
             // Send out first pokemon of the trainer
             trainerImage.gameObject.SetActive(false);
             enemyUnit.gameObject.SetActive(true);
             var enemyPokemon = TrainerParty.GetHealthyPokemon();
             enemyUnit.Setup(enemyPokemon);
-            yield return dialogBox.TypeDialog($"{trainer.Name} sent out {enemyPokemon.Base.Name}!");
+            yield return dialogBox.TypeDialog($"{Trainer.Name} sent out {enemyPokemon.Base.Name}!");
 
             // Send out first pokemon of the player
             playerImage.gameObject.SetActive(false);
@@ -192,7 +193,7 @@ public class BattleSystem : MonoBehaviour
     IEnumerator AboutToUse(Pokemon newPokemon)
     {
         state = BattleStates.Busy;
-        yield return dialogBox.TypeDialog($"{trainer.Name} is about to send out {newPokemon.Base.Name}. Do you want to change pokemon?");
+        yield return dialogBox.TypeDialog($"{Trainer.Name} is about to send out {newPokemon.Base.Name}. Do you want to change pokemon?");
 
         state = BattleStates.AboutToUse;
         dialogBox.EnableChoiceBox(true);
@@ -432,13 +433,13 @@ public class BattleSystem : MonoBehaviour
         yield return dialogBox.TypeDialog($"Go {newPokemon.Base.Name}!");
     }
 
-    IEnumerator SendNextTrainerPokemon()
+    public IEnumerator SendNextTrainerPokemon()
     {
         state = BattleStates.Busy;
 
         var nextPokemon = TrainerParty.GetHealthyPokemon();
         enemyUnit.Setup(nextPokemon);
-        yield return dialogBox.TypeDialog($"{trainer.Name} sent out {nextPokemon.Base.Name}!");
+        yield return dialogBox.TypeDialog($"{Trainer.Name} sent out {nextPokemon.Base.Name}!");
 
         state = BattleStates.RunningTurn;
     }

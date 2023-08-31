@@ -98,6 +98,8 @@ public class BattleDialogBox : MonoBehaviour
         choiceBox.SetActive(enabled);
     }
 
+    public bool IsChoiceBoxEnabled => choiceBox.activeSelf;
+
     /// <summary>
     /// Updates the action selection by highlighting the selected action and setting the other actions to black.
     /// </summary>

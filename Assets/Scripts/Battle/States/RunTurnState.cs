@@ -316,7 +316,10 @@ public class RunTurnState : State<BattleSystem>
             {
                 var nextPokemon = trainerParty.GetHealthyPokemon();
                 if (nextPokemon != null)
-                    yield break; // StartCoroutine(AboutToUse(nextPokemon));
+                {
+                    AboutToUseState.i.NewPokemon = nextPokemon;
+                    yield return bs.StateMachine.PushAndWait(AboutToUseState.i);
+                }
                 else
                     bs.BattleOver(true);
             }

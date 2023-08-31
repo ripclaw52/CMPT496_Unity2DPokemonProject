@@ -190,13 +190,13 @@ public class Pokemon
             // Apply sfx here for stat raise or fall
             if (boost > 0)
             {
-                StatusChanges.Enqueue($"{Base.Name}'s {stat} rose!");
                 AudioManager.i.PlaySfx(AudioId.StatRose);
+                StatusChanges.Enqueue($"{Base.Name}'s {stat} rose!");
             }
             else
             {
-                StatusChanges.Enqueue($"{Base.Name}'s {stat} fell!");
                 AudioManager.i.PlaySfx(AudioId.StatFall);
+                StatusChanges.Enqueue($"{Base.Name}'s {stat} fell!");
             }
 
             Debug.Log($"{stat} has been boosted to {StatBoosts[stat]}");
