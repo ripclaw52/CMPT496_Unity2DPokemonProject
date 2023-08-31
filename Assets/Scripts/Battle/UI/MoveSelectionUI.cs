@@ -22,6 +22,8 @@ public class MoveSelectionUI : SelectionUI<TextSlot>
     {
         _moves = moves;
 
+        selectedItem = 0;
+
         SetItems(moveTexts.Take(moves.Count).ToList());
 
         for (int i = 0; i < moveTexts.Count; ++i)

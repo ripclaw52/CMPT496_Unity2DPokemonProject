@@ -82,7 +82,7 @@ public class AudioManager : MonoBehaviour
     }
 }
 
-public enum AudioId { UISelect, UIConfirm, UICancel, HitNormal, HitSuper, HitWeak, Faint, ExpGain, ItemObtained, KeyItemObtained, PokemonObtained }
+public enum AudioId { UISelect, UIConfirm, UICancel, HitNormal, HitSuper, HitWeak, Faint, ExpGain, ItemObtained, KeyItemObtained, PokemonObtained, StatRose, StatFall }
 
 [System.Serializable]
 public class AudioData

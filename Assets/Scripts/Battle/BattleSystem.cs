@@ -42,6 +42,7 @@ public class BattleSystem : MonoBehaviour
 
     public int SelectedMove { get; set; }
     public BattleAction SelectedAction { get; set; }
+    public Pokemon SelectedPokemon { get; set; }
 
     public bool IsBattleOver { get; private set; }
 
@@ -417,7 +418,7 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    IEnumerator SwitchPokemon(Pokemon newPokemon, bool isTrainerAboutToUse = false)
+    public IEnumerator SwitchPokemon(Pokemon newPokemon)
     {
         if (playerUnit.Pokemon.HP > 0)
         {
@@ -429,11 +430,6 @@ public class BattleSystem : MonoBehaviour
         playerUnit.Setup(newPokemon);
         dialogBox.SetMoveNames(newPokemon.Moves);
         yield return dialogBox.TypeDialog($"Go {newPokemon.Base.Name}!");
-
-        if (isTrainerAboutToUse)
-            StartCoroutine(SendNextTrainerPokemon());
-        else
-            state = BattleStates.RunningTurn;
     }
 
     IEnumerator SendNextTrainerPokemon()

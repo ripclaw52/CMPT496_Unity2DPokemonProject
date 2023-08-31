@@ -36,6 +36,13 @@ namespace GDEUtils.GenericSelectionUI
             UpdateSelectionInUI();
         }
 
+        public void ClearItems()
+        {
+            items.ForEach(i => i.Clear());
+
+            this.items = null;
+        }
+
         public virtual void HandleUpdate()
         {
             UpdateSelectionTimer();
@@ -72,6 +79,8 @@ namespace GDEUtils.GenericSelectionUI
                 selectedItem += -(int)Mathf.Sign(v);
 
                 selectionTimer = 1 / selectionSpeed;
+
+                AudioManager.i.PlaySfx(AudioId.UISelect);
             }
         }
 
@@ -88,6 +97,8 @@ namespace GDEUtils.GenericSelectionUI
                     selectedItem += -(int)Mathf.Sign(v) * gridWidth;
 
                 selectionTimer = 1 / selectionSpeed;
+
+                AudioManager.i.PlaySfx(AudioId.UISelect);
             }
         }
 

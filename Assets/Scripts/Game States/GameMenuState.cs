@@ -39,7 +39,7 @@ public class GameMenuState : State<GameController>
         if (selection == 0)
             Debug.Log($"Selected index:{selection} || Pokedex!");
         else if (selection == 1) // Pokemon
-            gc.StateMachine.Push(GamePartyState.i);
+            gc.StateMachine.Push(PartyState.i);
         else if (selection == 2) // Bag
             gc.StateMachine.Push(InventoryState.i);
     }
