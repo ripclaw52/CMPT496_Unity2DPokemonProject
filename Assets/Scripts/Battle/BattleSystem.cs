@@ -43,6 +43,7 @@ public class BattleSystem : MonoBehaviour
     public int SelectedMove { get; set; }
     public BattleAction SelectedAction { get; set; }
     public Pokemon SelectedPokemon { get; set; }
+    public ItemBase SelectedItem { get; set; }
 
     public bool IsBattleOver { get; private set; }
 
@@ -457,10 +458,8 @@ public class BattleSystem : MonoBehaviour
         // StartCoroutine(RunTurns(BattleAction.UseItem));
     }
 
-    IEnumerator ThrowPokeball(PokeballItem pokeballItem)
+    public IEnumerator ThrowPokeball(PokeballItem pokeballItem)
     {
-        state = BattleStates.Busy;
-
         if (IsTrainerBattle)
         {
             // YOU BROKE THE RULES YOU THIEF
@@ -517,7 +516,6 @@ public class BattleSystem : MonoBehaviour
                 yield return dialogBox.TypeDialog($"Gah! It was so close, too!");
 
             Destroy(pokeball);
-            state = BattleStates.RunningTurn;
         }
     }
 

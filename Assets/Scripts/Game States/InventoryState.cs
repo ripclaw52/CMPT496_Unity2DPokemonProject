@@ -7,16 +7,27 @@ public class InventoryState : State<GameController>
 {
     [SerializeField] InventoryUI inventoryUI;
 
+    // Output
+    public ItemBase SelectedItem { get; private set; }
+
     public static InventoryState i { get; private set; }
     private void Awake()
     {
         i = this;
     }
 
+    Inventory inventory;
+    private void Start()
+    {
+        inventory = Inventory.GetInventory();
+    }
+
     GameController gc;
     public override void Enter(GameController owner)
     {
         gc = owner;
+
+        SelectedItem = null;
 
         inventoryUI.gameObject.SetActive(true);
         inventoryUI.OnSelected += OnItemSelected;
@@ -37,11 +48,51 @@ public class InventoryState : State<GameController>
 
     void OnItemSelected(int selection)
     {
-        gc.StateMachine.Push(PartyState.i);
+        SelectedItem = inventoryUI.SelectedItem;
+        StartCoroutine(SelectPokemonAndUseItem());
     }
 
     void OnBack()
     {
+        SelectedItem = null;
         gc.StateMachine.Pop();
+    }
+
+    IEnumerator SelectPokemonAndUseItem()
+    {
+        var prevState = gc.StateMachine.GetPrevState();
+        if (prevState == BattleState.i)
+        {
+            // In Battle
+            if (!SelectedItem.CanUseInBattle)
+            {
+                yield return DialogManager.Instance.ShowDialogText($"The {SelectedItem.Name} cannot be used in battle!");
+                yield break;
+            }
+        }
+        else
+        {
+            // Outside Battle
+            if (!SelectedItem.CanUseOutsideBattle)
+            {
+                yield return DialogManager.Instance.ShowDialogText($"The {SelectedItem.Name} cannot be used outside a battle!");
+                yield break;
+            }
+        }
+
+        if (SelectedItem is PokeballItem)
+        {
+            inventory.UseItem(SelectedItem, null);
+            gc.StateMachine.Pop();
+            yield break;
+        }
+
+        yield return gc.StateMachine.PushAndWait(PartyState.i);
+
+        if (prevState == BattleState.i)
+        {
+            if (UseItemState.i.ItemUsed)
+                gc.StateMachine.Pop();
+        }
     }
 }

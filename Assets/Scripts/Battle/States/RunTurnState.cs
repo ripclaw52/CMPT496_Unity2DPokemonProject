@@ -81,8 +81,15 @@ public class RunTurnState : State<BattleSystem>
             }
             else if (playerAction == BattleAction.UseItem)
             {
-                // This is handled from item screen, so do nothing and skip to enemy move
-                dialogBox.EnableActionSelector(false);
+                if (bs.SelectedItem is PokeballItem)
+                {
+                    yield return bs.ThrowPokeball(bs.SelectedItem as PokeballItem);
+                    if (bs.IsBattleOver) yield break;
+                }
+                else
+                {
+                    // This is handled from item screen, so do nothing and skip to enemy move
+                }
             }
             else if (playerAction == BattleAction.Run)
             {
