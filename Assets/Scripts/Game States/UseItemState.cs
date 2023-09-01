@@ -47,7 +47,7 @@ public class UseItemState : State<GameController>
                 var evolution = pokemon.CheckForEvolution(item);
                 if (evolution != null)
                 {
-                    yield return EvolutionManager.i.Evolve(pokemon, evolution);
+                    yield return EvolutionState.i.Evolve(pokemon, evolution);
                 }
                 else
                 {
@@ -107,11 +107,11 @@ public class UseItemState : State<GameController>
 
             yield return DialogManager.Instance.ShowDialogText($"Choose a move you want to forget!", true, false);
 
-            MoveToForgetState.i.NewMove = tmItem.Move;
             MoveToForgetState.i.CurrentMoves = pokemon.Moves.Select(m => m.Base).ToList();
+            MoveToForgetState.i.NewMove = tmItem.Move;
             yield return gc.StateMachine.PushAndWait(MoveToForgetState.i);
 
-            int moveIndex = MoveToForgetState.i.Selection;
+            var moveIndex = MoveToForgetState.i.Selection;
             if (moveIndex == PokemonBase.MaxNumOfMoves || moveIndex == -1)
             {
                 // Don't learn the new move

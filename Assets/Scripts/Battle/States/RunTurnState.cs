@@ -283,11 +283,29 @@ public class RunTurnState : State<BattleSystem>
                     }
                     else
                     {
-                        //yield return dialogBox.TypeDialog($"{playerUnit.Pokemon.Base.Name} is trying to learn {newMove.Base.Name}!");
-                        //yield return dialogBox.TypeDialog($"But, {playerUnit.Pokemon.Base.Name} can't learn more than {PokemonBase.MaxNumOfMoves} moves!");
-                        //yield return ChooseMoveToForget(playerUnit.Pokemon, newMove.Base);
-                        //yield return new WaitUntil(() => state != BattleStates.MoveToForget);
-                        //yield return new WaitForSeconds(2f);
+                        yield return dialogBox.TypeDialog($"{playerUnit.Pokemon.Base.Name} is trying to learn {newMove.Base.Name}!");
+                        yield return dialogBox.TypeDialog($"But, {playerUnit.Pokemon.Base.Name} can't learn more than {PokemonBase.MaxNumOfMoves} moves!");
+                        
+                        yield return dialogBox.TypeDialog($"Choose a move you want to forget");
+                        
+                        MoveToForgetState.i.CurrentMoves = playerUnit.Pokemon.Moves.Select(m => m.Base).ToList();
+                        MoveToForgetState.i.NewMove = newMove.Base;
+                        yield return GameController.Instance.StateMachine.PushAndWait(MoveToForgetState.i);
+
+                        var moveIndex = MoveToForgetState.i.Selection;
+                        if (moveIndex == PokemonBase.MaxNumOfMoves || moveIndex == -1)
+                        {
+                            // Don't learn the new move
+                            yield return dialogBox.TypeDialog($"{playerUnit.Pokemon.Base.Name} did not learn {newMove.Base.Name}!");
+                        }
+                        else
+                        {
+                            // Forget the selected move and learn the new move
+                            var selectedMove = playerUnit.Pokemon.Moves[moveIndex].Base;
+                            yield return dialogBox.TypeDialog($"{playerUnit.Pokemon.Base.Name} forgot {selectedMove.Name} and learned {newMove.Base.Name}!");
+
+                            playerUnit.Pokemon.Moves[moveIndex] = new Move(newMove.Base);
+                        }
                     }
                 }
 

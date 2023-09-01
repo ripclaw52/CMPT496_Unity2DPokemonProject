@@ -58,19 +58,6 @@ public class GameController : MonoBehaviour
             StateMachine.Pop();
         };
 
-        EvolutionManager.i.OnStartEvolution += () =>
-        {
-            stateBeforeEvolution = state;
-            state = GameState.Evolution;
-        };
-        EvolutionManager.i.OnCompleteEvolution += () =>
-        {
-            partyScreen.SetPartyData();
-            state = stateBeforeEvolution;
-
-            AudioManager.i.PlayMusic(CurrentScene.SceneMusic, fade: true);
-        };
-
         ShopController.i.OnStart += () => state = GameState.Shop;
         ShopController.i.OnFinish += () => state = GameState.FreeRoam;
     }
@@ -208,4 +195,6 @@ public class GameController : MonoBehaviour
 
     public PlayerController PlayerController => playerController;
     public Camera WorldCamera => worldCamera;
+
+    public PartyScreen PartyScreen => partyScreen;
 }

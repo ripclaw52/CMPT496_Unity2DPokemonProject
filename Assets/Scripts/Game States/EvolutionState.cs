@@ -1,13 +1,11 @@
+using GDEUtils.StateMachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// EvolutionManager is a MonoBehaviour class that manages the evolution of the game.
-/// </summary>
-public class EvolutionManager : MonoBehaviour
+public class EvolutionState : State<GameController>
 {
     [SerializeField] GameObject evolutionUI;
     [SerializeField] Image pokemonImage;
@@ -15,28 +13,18 @@ public class EvolutionManager : MonoBehaviour
     [SerializeField] AudioClip evolutionMusic;
     [SerializeField] AudioClip evolutionCompleteMusic;
 
-    public event Action OnStartEvolution;
-    public event Action OnCompleteEvolution;
+    public static EvolutionState i { get; private set; }
 
-    public static EvolutionManager i { get; private set; }
-
-    /// <summary>
-    /// Sets the value of the static variable 'i' to the current instance of the class. 
-    /// </summary>
     private void Awake()
     {
         i = this;
     }
 
-    /// <summary>
-    /// Evolves a Pokemon with the given Evolution.
-    /// </summary>
-    /// <param name="pokemon">The Pokemon to evolve.</param>
-    /// <param name="evolution">The Evolution to use.</param>
-    /// <returns>An IEnumerator for the evolution process.</returns>
     public IEnumerator Evolve(Pokemon pokemon, Evolution evolution)
     {
-        OnStartEvolution?.Invoke();
+        var gc = GameController.Instance;
+        gc.StateMachine.Push(this);
+
         evolutionUI.SetActive(true);
 
         AudioManager.i.PlayMusic(evolutionMusic);
@@ -54,6 +42,10 @@ public class EvolutionManager : MonoBehaviour
         yield return DialogManager.Instance.ShowDialogText($"{oldPokemon.Name} evolved into {pokemon.Base.Name}!");
 
         evolutionUI.SetActive(false);
-        OnCompleteEvolution?.Invoke();
+
+        gc.PartyScreen.SetPartyData();
+        AudioManager.i.PlayMusic(gc.CurrentScene.SceneMusic, fade: true);
+
+        gc.StateMachine.Pop();
     }
 }
