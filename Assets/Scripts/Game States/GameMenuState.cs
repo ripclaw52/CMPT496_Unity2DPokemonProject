@@ -42,6 +42,10 @@ public class GameMenuState : State<GameController>
             gc.StateMachine.Push(PartyState.i);
         else if (selection == 2) // Bag
             gc.StateMachine.Push(InventoryState.i);
+        else if (selection == 3) // Save
+            SavingSystem.i.Save("slot1");
+        else if (selection == 4) // Load
+            SavingSystem.i.Load("slot1");
     }
 
     void OnBack()
