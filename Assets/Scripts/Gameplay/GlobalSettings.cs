@@ -8,8 +8,10 @@ using UnityEngine;
 public class GlobalSettings : MonoBehaviour
 {
     [SerializeField] Color highlightedColor;
+    [SerializeField] Gradient healthbarGradient;
 
     public Color HighlightedColor => highlightedColor;
+    public Gradient HealthbarGradient => healthbarGradient;
     public static GlobalSettings i { get; private set; }
 
     /// <summary>

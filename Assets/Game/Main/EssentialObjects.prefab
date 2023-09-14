@@ -1561,7 +1561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.035617713, g: 0.8207547, b: 0.25450438, a: 1}
+  m_Color: {r: 0.4392157, g: 0.972549, b: 0.65882355, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2134,6 +2134,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightedColor: {r: 0.17254902, g: 0.44705883, b: 0.79607844, a: 1}
+  healthbarGradient:
+    serializedVersion: 2
+    key0: {r: 0.972549, g: 0.34509805, b: 0.21960784, a: 1}
+    key1: {r: 0.972549, g: 0.34509805, b: 0.21960784, a: 1}
+    key2: {r: 0.972549, g: 0.8784314, b: 0.21960784, a: 0}
+    key3: {r: 0.972549, g: 0.8784314, b: 0.21960784, a: 0}
+    key4: {r: 0.4392157, g: 0.972549, b: 0.65882355, a: 0}
+    key5: {r: 0.4392157, g: 0.972549, b: 0.65882355, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 13107
+    ctime2: 13762
+    ctime3: 32768
+    ctime4: 33423
+    ctime5: 65535
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 6
+    m_NumAlphaKeys: 2
 --- !u!114 &1018375014048523518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3001,7 +3030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3393,7 +3422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3890,7 +3919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
+  m_Color: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4365,6 +4394,18 @@ PrefabInstance:
     - target: {fileID: 7903872960682138948, guid: 0c04f4c91d99a764698dd4a4f8869929, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7903872961279438315, guid: 0c04f4c91d99a764698dd4a4f8869929, type: 3}
+      propertyPath: m_Color.b
+      value: 0.65882355
+      objectReference: {fileID: 0}
+    - target: {fileID: 7903872961279438315, guid: 0c04f4c91d99a764698dd4a4f8869929, type: 3}
+      propertyPath: m_Color.g
+      value: 0.972549
+      objectReference: {fileID: 0}
+    - target: {fileID: 7903872961279438315, guid: 0c04f4c91d99a764698dd4a4f8869929, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4392157
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c04f4c91d99a764698dd4a4f8869929, type: 3}

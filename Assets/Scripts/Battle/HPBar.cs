@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// This class is used to manage the HP bar of the Pokemon.
@@ -18,6 +19,8 @@ public class HPBar : MonoBehaviour
     public void SetHP(float hpNormalized)
     {
         health.transform.localScale = new Vector3(hpNormalized, 1f);
+
+        health.GetComponent<Image>().color = GlobalSettings.i.HealthbarGradient.Evaluate(hpNormalized);
     }
 
     /// <summary>
@@ -36,9 +39,11 @@ public class HPBar : MonoBehaviour
         {
             curHp -= changeAmt * Time.deltaTime;
             health.transform.localScale = new Vector3(curHp, 1f);
+            health.GetComponent<Image>().color = GlobalSettings.i.HealthbarGradient.Evaluate(curHp);
             yield return null;
         }
         health.transform.localScale = new Vector3(newHp, 1f);
+        health.GetComponent<Image>().color = GlobalSettings.i.HealthbarGradient.Evaluate(newHp);
 
         IsUpdating = false;
     }

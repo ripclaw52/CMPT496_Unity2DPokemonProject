@@ -10,7 +10,7 @@ public class PokemonBase : ScriptableObject
 {
     [SerializeField] string name;
 
-    [TextArea]
+    [TextAreaAttribute(minLines: 3, maxLines: 18)]
     [SerializeField] string description;
 
     [SerializeField] Sprite frontSprite;
