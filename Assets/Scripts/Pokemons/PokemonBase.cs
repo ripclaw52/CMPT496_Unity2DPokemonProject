@@ -13,8 +13,8 @@ public class PokemonBase : ScriptableObject
     [TextAreaAttribute(minLines: 3, maxLines: 18)]
     [SerializeField] string description;
 
-    [SerializeField] Sprite frontSprite;
-    [SerializeField] Sprite backSprite;
+    [SerializeField] List<Sprite> frontSprite;
+    [SerializeField] List<Sprite> backSprite;
     //[SerializeField] GameObject model; for a potential 3D model
 
     [SerializeField] PokemonType type1;
@@ -117,8 +117,8 @@ public class PokemonBase : ScriptableObject
 
     public string Name => name;
     public string Description => description;
-    public Sprite FrontSprite => frontSprite;
-    public Sprite BackSprite => backSprite;
+    public List<Sprite> FrontSprite => frontSprite;
+    public List<Sprite> BackSprite => backSprite;
     public PokemonType Type1 => type1;
     public PokemonType Type2 => type2;
     public int MaxHP => maxHp;

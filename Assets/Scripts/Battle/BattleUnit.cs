@@ -17,6 +17,9 @@ public class BattleUnit : MonoBehaviour
 
     public Pokemon Pokemon { get; set; }
 
+    ImageAnimator pokemonIdleAnim;
+
+    List<Sprite> spriteMap;
     Image image;
     Vector3 originalPos;
     Color originalColor;
@@ -31,6 +34,11 @@ public class BattleUnit : MonoBehaviour
         originalColor = image.color;
     }
 
+    private void Update()
+    {
+        pokemonIdleAnim.HandleUpdate();
+    }
+
     /// <summary>
     /// Sets up the Pokemon unit with the given Pokemon data. This includes setting the sprite, activating the HUD, setting the scale, and playing the enter animation.
     /// </summary>
@@ -39,15 +47,24 @@ public class BattleUnit : MonoBehaviour
     {
         Pokemon = pokemon;
         if (isPlayerUnit)
-            image.sprite = Pokemon.Base.BackSprite;
+        {
+            // Back facing pokemon animations
+            spriteMap = Pokemon.Base.BackSprite;
+        }
         else
-            image.sprite = Pokemon.Base.FrontSprite;
+        {
+            // Front facing pokemon animations
+            spriteMap = Pokemon.Base.FrontSprite;
+        }
+
+        pokemonIdleAnim = new ImageAnimator(spriteMap, image);
 
         hud.gameObject.SetActive(true);
         hud.SetData(pokemon);
 
         transform.localScale = new Vector3(1, 1, 1);
         image.color = originalColor;
+
         PlayEnterAnimation();
     }
 
@@ -65,11 +82,16 @@ public class BattleUnit : MonoBehaviour
     public void PlayEnterAnimation()
     {
         if (isPlayerUnit)
+        {
             image.transform.localPosition = new Vector3(-500f, originalPos.y);
+        }
         else
+        {
             image.transform.localPosition = new Vector3(500f, originalPos.y);
-
+        }
         image.transform.DOLocalMoveX(originalPos.x, 1f);
+
+        pokemonIdleAnim.HandleUpdate();
     }
 
     /// <summary>
@@ -78,9 +100,13 @@ public class BattleUnit : MonoBehaviour
     public void PlayReturnAnimation()
     {
         if (isPlayerUnit)
+        {
             image.transform.DOLocalMoveX(originalPos.x + -500f, 1f);
+        }
         else
+        {
             image.transform.DOLocalMoveX(originalPos.x + 500f, 1f);
+        }
     }
 
     /// <summary>
@@ -89,10 +115,15 @@ public class BattleUnit : MonoBehaviour
     public void PlayAttackAnimation()
     {
         var sequence = DOTween.Sequence();
+        pokemonIdleAnim.Start();
         if (isPlayerUnit)
+        {
             sequence.Append(image.transform.DOLocalMoveX(originalPos.x + 50f, 0.25f));
+        }
         else
+        {
             sequence.Append(image.transform.DOLocalMoveX(originalPos.x - 50f, 0.25f));
+        }
 
         sequence.Append(image.transform.DOLocalMoveX(originalPos.x, 0.25f));
     }

@@ -29,7 +29,7 @@ public class EvolutionState : State<GameController>
 
         AudioManager.i.PlayMusic(evolutionMusic);
 
-        pokemonImage.sprite = pokemon.Base.FrontSprite;
+        pokemonImage.sprite = pokemon.Base.FrontSprite[0];
         yield return DialogManager.Instance.ShowDialogText($"What!?! {pokemon.Base.Name} is evolving!");
 
         var oldPokemon = pokemon.Base;
@@ -38,7 +38,7 @@ public class EvolutionState : State<GameController>
         // might be temporary, evolution sfx at end
         AudioManager.i.PlayMusic(evolutionCompleteMusic, loop: false);
 
-        pokemonImage.sprite = pokemon.Base.FrontSprite;
+        pokemonImage.sprite = pokemon.Base.FrontSprite[0];
         yield return DialogManager.Instance.ShowDialogText($"{oldPokemon.Name} evolved into {pokemon.Base.Name}!");
 
         evolutionUI.SetActive(false);

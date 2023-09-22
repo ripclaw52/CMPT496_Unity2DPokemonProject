@@ -2,21 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// GlobalSettings is a MonoBehaviour class that provides access to global settings.
-/// </summary>
 public class GlobalSettings : MonoBehaviour
 {
     [SerializeField] Color highlightedColor;
-    [SerializeField] Gradient healthbarGradient;
+    [SerializeField] Gradient healthbarGradientTop;
+    [SerializeField] Gradient healthbarGradientBottom;
 
     public Color HighlightedColor => highlightedColor;
-    public Gradient HealthbarGradient => healthbarGradient;
+    public Gradient HealthbarGradientTop => healthbarGradientTop;
+    public Gradient HealthbarGradientBottom => healthbarGradientBottom;
     public static GlobalSettings i { get; private set; }
 
-    /// <summary>
-    /// Sets the value of the static variable 'i' to the current instance of the class. 
-    /// </summary>
     private void Awake()
     {
         i = this;

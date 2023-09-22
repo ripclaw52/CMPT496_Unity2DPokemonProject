@@ -3,47 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// This class is used to manage the HP bar of the Pokemon.
-/// </summary>
 public class HPBar : MonoBehaviour
 {
-    [SerializeField] GameObject health;
+    [SerializeField] GameObject healthTop;
+    [SerializeField] GameObject healthBottom;
 
     public bool IsUpdating { get; private set; }
 
-    /// <summary>
-    /// Sets the health of the object by transforming the local scale of the health object.
-    /// </summary>
-    /// <param name="hpNormalized">The normalized health value to set.</param>
     public void SetHP(float hpNormalized)
     {
-        health.transform.localScale = new Vector3(hpNormalized, 1f);
+        healthTop.transform.localScale = new Vector3(hpNormalized, 1f);
+        healthBottom.transform.localScale = new Vector3(hpNormalized, 1f);
 
-        health.GetComponent<Image>().color = GlobalSettings.i.HealthbarGradient.Evaluate(hpNormalized);
+        healthTop.GetComponent<Image>().color = GlobalSettings.i.HealthbarGradientTop.Evaluate(hpNormalized);
+        healthBottom.GetComponent<Image>().color = GlobalSettings.i.HealthbarGradientBottom.Evaluate(hpNormalized);
     }
 
-    /// <summary>
-    /// Smoothly updates the health bar to the new health value.
-    /// </summary>
-    /// <param name="newHp">The new health value.</param>
-    /// <returns>An IEnumerator for the coroutine.</returns>
     public IEnumerator SetHPSmooth(float newHp)
     {
         IsUpdating = true;
 
-        float curHp = health.transform.localScale.x;
+        float curHp = healthTop.transform.localScale.x;
         float changeAmt = curHp - newHp;
 
         while (curHp - newHp > Mathf.Epsilon)
         {
             curHp -= changeAmt * Time.deltaTime;
-            health.transform.localScale = new Vector3(curHp, 1f);
-            health.GetComponent<Image>().color = GlobalSettings.i.HealthbarGradient.Evaluate(curHp);
+            healthTop.transform.localScale = new Vector3(curHp, 1f);
+            healthBottom.transform.localScale = new Vector3(curHp, 1f);
+            healthTop.GetComponent<Image>().color = GlobalSettings.i.HealthbarGradientTop.Evaluate(curHp);
+            healthBottom.GetComponent<Image>().color = GlobalSettings.i.HealthbarGradientBottom.Evaluate(curHp);
             yield return null;
         }
-        health.transform.localScale = new Vector3(newHp, 1f);
-        health.GetComponent<Image>().color = GlobalSettings.i.HealthbarGradient.Evaluate(newHp);
+        healthTop.transform.localScale = new Vector3(newHp, 1f);
+        healthBottom.transform.localScale = new Vector3(newHp, 1f);
+        healthTop.GetComponent<Image>().color = GlobalSettings.i.HealthbarGradientTop.Evaluate(newHp);
+        healthBottom.GetComponent<Image>().color = GlobalSettings.i.HealthbarGradientBottom.Evaluate(newHp);
 
         IsUpdating = false;
     }
