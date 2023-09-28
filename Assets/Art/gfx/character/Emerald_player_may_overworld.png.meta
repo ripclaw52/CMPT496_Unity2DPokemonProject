@@ -1,0 +1,2587 @@
+fileFormatVersion: 2
+guid: c40754d1c12bca149bec9a82e259c9ea
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 429
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cf10fcf6ff00014d884cff8228ab364
+      internalID: 1498325301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_1
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 429
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa41fd91870cd73419ef65db251b4b25
+      internalID: 537972644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 429
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a9685879719404ba43d9261a4f875c
+      internalID: -1099623599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_3
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 425
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9b561c914358944c93d1a21e8cbb852
+      internalID: -1216928262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_4
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 425
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9e5dbb0156f52e408f6673eb8ede154
+      internalID: -1501215207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_5
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 425
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d6f32e7304a91c418313a2a282e2308
+      internalID: -1404786564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_6
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 403
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f2a4d2293bc3f642a626925db129532
+      internalID: -1365511966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_7
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 403
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c0643072bea5f6438e780496cc2fab7
+      internalID: -651467412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_8
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 403
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49ee0ba3e38d0a74fb543e5c84555b6b
+      internalID: -1136287071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_9
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 402
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2c904f11635109498f2844886628eca
+      internalID: -1303029582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_10
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 402
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3814dad361e78ec4abd528083d192ab1
+      internalID: 319574984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_11
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 402
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94e2f612b96a73e4482068b8788a7ea1
+      internalID: -318816339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_12
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 384
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd52bfdbde477e64198c26ca03444a8f
+      internalID: 657863521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_13
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 377
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 094137992e5883b458b01b6121de0c36
+      internalID: -863567919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_14
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 377
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 562b0313afc52da4a961397b5f1e251b
+      internalID: -349207884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_15
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 377
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3104c82baef77bc44990372121b2b339
+      internalID: 1148119195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_16
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 376
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c22e0b8e3cb2b740916ddd9ff748b53
+      internalID: -1578427668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_17
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 376
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cad09ba6d64203440bc6d3125fac2a5e
+      internalID: -867567172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_18
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 375
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 820dd9b55437d7d439773bfccf0208ee
+      internalID: 375889486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_19
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 358
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 160acd7e009e9404aadb88bcf6ef0ea2
+      internalID: 1653159848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_20
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 348
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3394e184db5359a40932ef07fe447521
+      internalID: 2022509669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_21
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 351
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 655d6ca2c229eb2459e34223b358c4e0
+      internalID: 1920491624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_22
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 351
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7a70215d8e6b4648bbcc4eec649227b
+      internalID: 967205536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_23
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 351
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f3ba1ed3be1d94fa85b724f5976e6e
+      internalID: 1596123992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_24
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 352
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0c764e02a281ad428211c432ea74705
+      internalID: 3781057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_25
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 352
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 623ad378f47d91a48b7a6d08c4458fcd
+      internalID: -926251811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_26
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 352
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 906187c3bac7bb84890fc9285c3045b2
+      internalID: 1914023427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_27
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 303
+        width: 37
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95ddce5f943e43b44b66d647dffca564
+      internalID: -1629112395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_28
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 316
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a3c5dfb52eb542499e332517a1ecdeb
+      internalID: -1812967437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_29
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 316
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 597c2012f68db234a91acd7884110ce0
+      internalID: 889715588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_30
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 316
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6322a88d12e5dbf40869b8a252e51085
+      internalID: -1715289518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_31
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 315
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae7eda18f53244b41936a4a896608c69
+      internalID: -1198644095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_32
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 314
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c17c694eb967bf14fba7a8f3a058c50f
+      internalID: 1823878446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_33
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 318
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab7fe72cc20a8a44b9fcb97614e4790f
+      internalID: 1909685624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_34
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 318
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6edf4a204b977c84ebf8c64152062bd5
+      internalID: 1179190489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_35
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 318
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b042a18f25281540b1f28682ec39daa
+      internalID: 282556113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_36
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 318
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda473c049c053a448101295e82ae466
+      internalID: 1292754945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_37
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 297
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1702647b908495a4085733de4dd50edd
+      internalID: -1795645440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_38
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 271
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5258ea52d71cb18479233d1037e8c09a
+      internalID: 435696460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_39
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 271
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 325364c35a6b6be4c80cb49d6737a6e1
+      internalID: -8319224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_40
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 271
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc7e81f268307f344bf79282c5344e8b
+      internalID: -1407688019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_41
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 269
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e64afac47fdb3b24295918a886621782
+      internalID: -1424919269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_42
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 274
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57fa2737e0eb82f46829d77e608e6471
+      internalID: 666058103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_43
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 274
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a021ac3565ce8142aee0777afdcea7c
+      internalID: 369259325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_44
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 281
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f320b80652499e49b61a82f3b30d8f4
+      internalID: 1232627662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_45
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 281
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57f6f10f7449a834aa8eedf7bddb1137
+      internalID: 432539615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_46
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 281
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45e15cbcfe5662b40a6a0bc835879e52
+      internalID: -2141619824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_47
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 281
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40b50dd309c6a054cbcff1b0cc84d845
+      internalID: -1429134844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_48
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 281
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0803b9822befea348bcdbc6ee048656b
+      internalID: -320477564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_49
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 242
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c196e6b217cf17144986fa7ba2a894e7
+      internalID: 2107994915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_50
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 248
+        width: 29
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e0117aea3cf1954b80affca8073f537
+      internalID: 797334242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_51
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 245
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83e9072577e6e0049837d37e5d3e50e0
+      internalID: 1554624311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_52
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 215
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56d88abb547032442adb849495cd6205
+      internalID: 76185063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_53
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 215
+        width: 55
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7906e97e616481f47aee5ccec18b8089
+      internalID: 1903057978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_54
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 215
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 643031257e3d935479aa624b4c0628d3
+      internalID: -1562513762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_55
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 232
+        width: 29
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b178670aaa923ff4fb37562b2c7ca948
+      internalID: -1842466892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_56
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 232
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5f8afe62dd9bd045a7fe23274d26b86
+      internalID: -1206592736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_57
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 233
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c088395645fdf44a9c7f1db111ce554
+      internalID: -1948759978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_58
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 234
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b4c7eb1d12226b4481373595b359102
+      internalID: 1194041453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_59
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 233
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b6e377c073cc7b4998dd544f223750f
+      internalID: 1293317098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_60
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 233
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e9f0f4c11ad8fa449c85ded57b42068
+      internalID: 792785550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_61
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 233
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 318d8ef399134004a8133a15786b9674
+      internalID: -1857920149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_62
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 215
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9160cb94cc9d57a48a8351684492fbed
+      internalID: -1561391235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_63
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 215
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ac20493fca41bd49bd222c574bf2ae3
+      internalID: 417758436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_64
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 215
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65e6e81686c1c614b8abbb905cd4bb20
+      internalID: 1704172532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_65
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 217
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dc6f44fac7b1e1449e6c4c71c0c34bf
+      internalID: -392241265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_66
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 217
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33a9a071cd9d6384aa7c818fc18401ba
+      internalID: -641374787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_67
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 210
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1685cca0a1afc0745bc6cd7c93025dd8
+      internalID: 916402207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_68
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 202
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17acc7ce86ceeb84180bfd5434a0be9b
+      internalID: 293130835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_69
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 199
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7fce6716c92c2d4cbbee441537f1985
+      internalID: -947639661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_70
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 192
+        width: 29
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7935d5e02c8b1e44fba6c1edcd50e508
+      internalID: -1294476482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_71
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 172
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e30ccd637bf8f86458280277f8a63db2
+      internalID: -1643134985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_72
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 172
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e7c82f14e869894ba5475add7faa09f
+      internalID: -1386334808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_73
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 182
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 558275e8805d9134380bdd8516b71ba0
+      internalID: 620104751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_74
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 158
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddea001a3a288b4499ea1cdeb836f472
+      internalID: -1190319804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_75
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 146
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c95d088db103d6f4485370a15d3430aa
+      internalID: -281056746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_76
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 146
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b0154abd4d00a6498e9d36710012e7b
+      internalID: 1423772523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_77
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 146
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9a274eec01a9834b9712636fa66b3c6
+      internalID: 294267280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_78
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 147
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0f884919766dff47a06296b005b96f4
+      internalID: 1411061176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_79
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 146
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed165e7d385cf0d429842def1c3b1501
+      internalID: -1424985674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_80
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 159
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 373d2c820a06bd24abba7c6c0c6f068c
+      internalID: -239823939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_81
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 157
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d55b8af160cc15d4197ce1056b035234
+      internalID: 2095721740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_82
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 158
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b40aac3397c6667438b9e6b6cbdc0800
+      internalID: -393690331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_83
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 158
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d14b75f9d2e2a884f83b033d63e4ace7
+      internalID: -1982651527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_84
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 158
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 766e24e0f0781364c8b2073cc861b8db
+      internalID: 238737412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_85
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 121
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d48c1c9cdc3a0914680a15d284489451
+      internalID: -1997184030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_86
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 121
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0898c9e910d52a49a3d0e4bf3f5f1b6
+      internalID: 910844407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_87
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 121
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82838f89424f25246b0642892ae2a43d
+      internalID: -1856359776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_88
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 121
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 383700e847c2cae46a1a106e1ec48ed8
+      internalID: -1726346820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_89
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 121
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce3740cf56c3684883b97bbe16c20dd
+      internalID: 670026600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_90
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 121
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 891874197cdc44e4cabbae997b6b40d5
+      internalID: 1634746340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_91
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 121
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00dfa481e9ed21448b877fd05450075c
+      internalID: 338176995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_92
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 127
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e280abe7e1aa5a4a9c0734ace43f0c3
+      internalID: -208354143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_93
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 121
+        width: 26
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b69b9df4a4885ba409eb06d037957ee2
+      internalID: -445123762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_94
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 94
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3947dcc09a1685043a79060f6b459e6f
+      internalID: 905097239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_95
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 94
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9267c61eba5549d4a8a487e29ed56423
+      internalID: -2118788779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_96
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 94
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 092effdb3ea5f1c41b5aac57821be9ff
+      internalID: -1922806074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_97
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 94
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c8b39e34c3cd194ca8102c45c3e88d1
+      internalID: 1308009142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_98
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 94
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86e843cad8b0172478e8cf292809fb73
+      internalID: -1940533044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_99
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 94
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b25b8676e99f27d46b8c32fe7b4a316c
+      internalID: 1074369016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_100
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 94
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc596396f05eb2049924e2d8b7c02d8c
+      internalID: -871721286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_101
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 69
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84d4db32903859c4992891fde7ea91fb
+      internalID: -1370190630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_102
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 69
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b19b1587ac39a9b4e897c4d311e63d73
+      internalID: -176685566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_103
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 69
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c95df441564332f4e8f03f52496c0f22
+      internalID: -1256195925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_104
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 70
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ad62b52140e99147b1c8172fee1bdee
+      internalID: 1215331488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_105
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 69
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dffa935f7ab2dca4283a03da598e904c
+      internalID: 1779144065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_106
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 41
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acaf1d44015009b4aba809f9b0698930
+      internalID: -242326437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_107
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 41
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f369b8f3aa08e3e46b40ed67fb02fa46
+      internalID: -2001826840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_108
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 17
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a50a2c09307f53439c540f0e0dd837a
+      internalID: 361481180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_109
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 17
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 784aef4a11d783b4b81b7e90d18ba9be
+      internalID: -2057230296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_110
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 18
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 052895753bd2b28488fcff195cde570a
+      internalID: -1490062522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_player_may_overworld_111
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 17
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0be938f8c0a523a4b832dfe6982ec415
+      internalID: 103602578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Emerald_player_may_overworld_17: -867567172
+      Emerald_player_may_overworld_96: -1922806074
+      Emerald_player_may_overworld_99: 1074369016
+      Emerald_player_may_overworld_84: 238737412
+      Emerald_player_may_overworld_5: -1404786564
+      Emerald_player_may_overworld_24: 3781057
+      Emerald_player_may_overworld_61: -1857920149
+      Emerald_player_may_overworld_45: 432539615
+      Emerald_player_may_overworld_7: -651467412
+      Emerald_player_may_overworld_101: -1370190630
+      Emerald_player_may_overworld_9: -1303029582
+      Emerald_player_may_overworld_48: -320477564
+      Emerald_player_may_overworld_14: -349207884
+      Emerald_player_may_overworld_76: 1423772523
+      Emerald_player_may_overworld_63: 417758436
+      Emerald_player_may_overworld_40: -1407688019
+      Emerald_player_may_overworld_43: 369259325
+      Emerald_player_may_overworld_33: 1909685624
+      Emerald_player_may_overworld_90: 1634746340
+      Emerald_player_may_overworld_68: 293130835
+      Emerald_player_may_overworld_35: 282556113
+      Emerald_player_may_overworld_16: -1578427668
+      Emerald_player_may_overworld_1: 537972644
+      Emerald_player_may_overworld_79: -1424985674
+      Emerald_player_may_overworld_80: -239823939
+      Emerald_player_may_overworld_50: 797334242
+      Emerald_player_may_overworld_42: 666058103
+      Emerald_player_may_overworld_108: 361481180
+      Emerald_player_may_overworld_38: 435696460
+      Emerald_player_may_overworld_62: -1561391235
+      Emerald_player_may_overworld_64: 1704172532
+      Emerald_player_may_overworld_60: 792785550
+      Emerald_player_may_overworld_97: 1308009142
+      Emerald_player_may_overworld_65: -392241265
+      Emerald_player_may_overworld_89: 670026600
+      Emerald_player_may_overworld_103: -1256195925
+      Emerald_player_may_overworld_74: -1190319804
+      Emerald_player_may_overworld_77: 294267280
+      Emerald_player_may_overworld_93: -445123762
+      Emerald_player_may_overworld_26: 1914023427
+      Emerald_player_may_overworld_32: 1823878446
+      Emerald_player_may_overworld_69: -947639661
+      Emerald_player_may_overworld_31: -1198644095
+      Emerald_player_may_overworld_78: 1411061176
+      Emerald_player_may_overworld_94: 905097239
+      Emerald_player_may_overworld_11: -318816339
+      Emerald_player_may_overworld_27: -1629112395
+      Emerald_player_may_overworld_47: -1429134844
+      Emerald_player_may_overworld_10: 319574984
+      Emerald_player_may_overworld_105: 1779144065
+      Emerald_player_may_overworld_36: 1292754945
+      Emerald_player_may_overworld_55: -1842466892
+      Emerald_player_may_overworld_71: -1643134985
+      Emerald_player_may_overworld_73: 620104751
+      Emerald_player_may_overworld_8: -1136287071
+      Emerald_player_may_overworld_15: 1148119195
+      Emerald_player_may_overworld_44: 1232627662
+      Emerald_player_may_overworld_54: -1562513762
+      Emerald_player_may_overworld_59: 1293317098
+      Emerald_player_may_overworld_67: 916402207
+      Emerald_player_may_overworld_107: -2001826840
+      Emerald_player_may_overworld_85: -1997184030
+      Emerald_player_may_overworld_75: -281056746
+      Emerald_player_may_overworld_83: -1982651527
+      Emerald_player_may_overworld_104: 1215331488
+      Emerald_player_may_overworld_106: -242326437
+      Emerald_player_may_overworld_102: -176685566
+      Emerald_player_may_overworld_109: -2057230296
+      Emerald_player_may_overworld_39: -8319224
+      Emerald_player_may_overworld_86: 910844407
+      Emerald_player_may_overworld_4: -1501215207
+      Emerald_player_may_overworld_87: -1856359776
+      Emerald_player_may_overworld_25: -926251811
+      Emerald_player_may_overworld_3: -1216928262
+      Emerald_player_may_overworld_2: -1099623599
+      Emerald_player_may_overworld_18: 375889486
+      Emerald_player_may_overworld_82: -393690331
+      Emerald_player_may_overworld_53: 1903057978
+      Emerald_player_may_overworld_21: 1920491624
+      Emerald_player_may_overworld_41: -1424919269
+      Emerald_player_may_overworld_49: 2107994915
+      Emerald_player_may_overworld_57: -1948759978
+      Emerald_player_may_overworld_28: -1812967437
+      Emerald_player_may_overworld_110: -1490062522
+      Emerald_player_may_overworld_81: 2095721740
+      Emerald_player_may_overworld_22: 967205536
+      Emerald_player_may_overworld_12: 657863521
+      Emerald_player_may_overworld_20: 2022509669
+      Emerald_player_may_overworld_6: -1365511966
+      Emerald_player_may_overworld_37: -1795645440
+      Emerald_player_may_overworld_66: -641374787
+      Emerald_player_may_overworld_72: -1386334808
+      Emerald_player_may_overworld_98: -1940533044
+      Emerald_player_may_overworld_92: -208354143
+      Emerald_player_may_overworld_51: 1554624311
+      Emerald_player_may_overworld_100: -871721286
+      Emerald_player_may_overworld_91: 338176995
+      Emerald_player_may_overworld_13: -863567919
+      Emerald_player_may_overworld_23: 1596123992
+      Emerald_player_may_overworld_95: -2118788779
+      Emerald_player_may_overworld_58: 1194041453
+      Emerald_player_may_overworld_34: 1179190489
+      Emerald_player_may_overworld_52: 76185063
+      Emerald_player_may_overworld_0: 1498325301
+      Emerald_player_may_overworld_70: -1294476482
+      Emerald_player_may_overworld_56: -1206592736
+      Emerald_player_may_overworld_111: 103602578
+      Emerald_player_may_overworld_88: -1726346820
+      Emerald_player_may_overworld_19: 1653159848
+      Emerald_player_may_overworld_29: 889715588
+      Emerald_player_may_overworld_30: -1715289518
+      Emerald_player_may_overworld_46: -2141619824
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

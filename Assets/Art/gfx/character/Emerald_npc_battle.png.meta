@@ -1,0 +1,2631 @@
+fileFormatVersion: 2
+guid: 11bc816b27a0d3f43986e1682aee0217
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Emerald_npc_battle_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 662
+        width: 36
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6f00269a7b9e3249a8e0003681a1beb
+      internalID: -2146403488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 662
+        width: 37
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2441870c3b156564d9be885872aac363
+      internalID: -370247921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_2
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 662
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301a4e47b352a614d9097fd07a5b9849
+      internalID: 1153983898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_3
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 662
+        width: 35
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fb31630ad7ba8d47bb7aaa30f5478d6
+      internalID: -1588233212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_4
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 661
+        width: 47
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b6158d92dbeb4c439db2f07680bd093
+      internalID: -1061742829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_5
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 703
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32e8a1ef6490b804eb38ba4c8173e095
+      internalID: 1042238223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_6
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 662
+        width: 38
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1801f05f6ae11314db1f8105c02e10cb
+      internalID: -578211226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_7
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 662
+        width: 58
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd7b3d5c507d58448a34021f36012e7d
+      internalID: -507534921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_8
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 661
+        width: 42
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4386c0163a959348bc8afa8371dc45c
+      internalID: -61915770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_9
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 661
+        width: 47
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 841ac1add1ae7bd49bbd66e431bf55e3
+      internalID: 210079355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_10
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 662
+        width: 48
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eff611b6f0809cf4ca6eed9bf51c2ce4
+      internalID: -601595782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_11
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 597
+        width: 51
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a3add82df819f44f8b454b3f1dde5cb
+      internalID: -313158373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_12
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 597
+        width: 35
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04d68c9db8a93a1409ec982795f8ac94
+      internalID: 63839754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_13
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 598
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6644920e9d2d3614bba326e04fb548a5
+      internalID: 1526565380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_14
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 597
+        width: 31
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adacd122827c6374e954872e91485970
+      internalID: -924582811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_15
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 597
+        width: 23
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 714d476def0c6664589cceaec8bf6f98
+      internalID: 952710856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_16
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 597
+        width: 29
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bb08e288a6b35a46974d93b6f8cf095
+      internalID: -154059605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_17
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 597
+        width: 23
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9e60cf981dae5b4f8f40bafd504d933
+      internalID: 1642680281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_18
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 596
+        width: 41
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d73600fddec89b049ac69aa3d5e6830d
+      internalID: -1933806988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_19
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 596
+        width: 27
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88101b36d3124c445863821f229d7884
+      internalID: -943206426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_20
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 597
+        width: 50
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2f8c4648d754b34182f4e5f756879f7
+      internalID: 905310528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_21
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 596
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 172b4e09310797a4a82f5357cf37bcbd
+      internalID: -984647472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_22
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 532
+        width: 30
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5423c06f58847d8478c7513d610ba476
+      internalID: -201776127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_23
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 532
+        width: 45
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 726a41f99e098f14f9e255d73d33722a
+      internalID: 1796480546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_24
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 532
+        width: 46
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c59e84c1c43be5048902e99478e79b57
+      internalID: 2076356895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_25
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 531
+        width: 45
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 254a7308b127e5b40adb51284bfb4060
+      internalID: 602680973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_26
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 532
+        width: 33
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd7750a83a4401e469e75f68d6d30ad9
+      internalID: 208844479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_27
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 533
+        width: 29
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f0fcea9bfec68343a22997a5359e6ef
+      internalID: 2093014978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_28
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 532
+        width: 30
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0e0d899374ad9d4a8bf669f6f37a7d1
+      internalID: 82813795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_29
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 532
+        width: 41
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0042a62f090d4a74c82a7eb67194341c
+      internalID: 1718459195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_30
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 532
+        width: 43
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc397e8ce2c659d478b97b4a674eabf0
+      internalID: 1821166367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_31
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 532
+        width: 31
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5f483501d0238840b9d9359a9d8fcb9
+      internalID: 1770293944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_32
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 531
+        width: 34
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cd3e3ff2f9a6b941b66dbd37a0ab24c
+      internalID: 1086454740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_33
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 466
+        width: 29
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb884f5fcef43904b8473f7b097f4ede
+      internalID: 130758565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_34
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 467
+        width: 26
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e70ab3eb98dd78345988b1e3a2619813
+      internalID: -124635756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_35
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 467
+        width: 29
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9731f36c29b65704bbf1cbb3f46fb7d5
+      internalID: -149060737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_36
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 482
+        width: 57
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c79727292cc3a5648a3ca9150cede3f2
+      internalID: 944730566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_37
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 466
+        width: 37
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c64bf5ee18bf4014a85c2993175cb80d
+      internalID: -2109921978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_38
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 467
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a94625eadb05824a898a232f6f8dd96
+      internalID: -1470876701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_39
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 467
+        width: 51
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58cee50c39a404948af87e8a3b29cb5a
+      internalID: -369993815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_40
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 467
+        width: 40
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 063f93d5ea422914c91bb5ab4142b11b
+      internalID: 243745398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_41
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 468
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a8f530b46474e4b913b063b41c033d
+      internalID: 371866428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_42
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 467
+        width: 42
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f4d53bb5e1a2a44887e7717b151600f
+      internalID: 1616149035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_43
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 466
+        width: 22
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45762fe988928fd4fa302bbcfe7a1602
+      internalID: 413202488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_44
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 468
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b845f697740611341ba78eb07cc16c1b
+      internalID: 1881058434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_45
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 402
+        width: 32
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d266bd614441f64cb5efb8de7ae3c55
+      internalID: 117347246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_46
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 402
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbb45e7f54fd93740ac58c34a1cc4ba0
+      internalID: -1492896890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_47
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 406
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6a234c57b425074a99f300297b95397
+      internalID: -492908545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_48
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 402
+        width: 23
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daa28828eaa6c0746bbf60107845c7dc
+      internalID: -259632338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_49
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 401
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1004b82673727294aa3076984bb519a1
+      internalID: 1664281676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_50
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 402
+        width: 37
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 704242f4d79bc484bbd12d334f212ca4
+      internalID: -351410779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_51
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 403
+        width: 60
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: decd3b5bbc2c8fc4c81ee2a9c1991d11
+      internalID: 1691997378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_52
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 402
+        width: 37
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 190846aa9c398424fab5444e35fb469a
+      internalID: -421991044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_53
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 402
+        width: 43
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc9a65d16fced644bba88ac7eb8ae255
+      internalID: 1054564475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_54
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 401
+        width: 38
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cea6ddad418741e479746fb1b26b502a
+      internalID: -1823559048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_55
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 402
+        width: 38
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af63e3caf2ab6e3458fa31f7c2fa0912
+      internalID: 1734365408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_56
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 337
+        width: 41
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98c9d83a32c9f4040bdb4a2256309126
+      internalID: 251432563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_57
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 336
+        width: 51
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08d3bf55363754c4a93df8adcac6c575
+      internalID: -835314987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_58
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 336
+        width: 42
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c5acf4da5172de40baaad59a6f7f250
+      internalID: -1139240946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_59
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 337
+        width: 38
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b06faab8deadbf64591dcbd14ac50cd2
+      internalID: -1616116729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_60
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 338
+        width: 39
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89f7e957975b6b94b89a46de45f3add4
+      internalID: 1198585178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_61
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 337
+        width: 24
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85269ba0629757142bc281babed2ec91
+      internalID: -1833545201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_62
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 337
+        width: 34
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c1b1a215600a174996049ba5acc6886
+      internalID: 987953105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_63
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 337
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e6e4bebf47039148b25de5483462ccb
+      internalID: -21839212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_64
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 337
+        width: 42
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ce13979293b0d042ab3e9adce288747
+      internalID: 1394247529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_65
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 337
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8510e8fc7c7243459944472f999f9c2
+      internalID: -1088024891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_66
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 272
+        width: 35
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26e6272baf426b24d96972e434d231c8
+      internalID: -163424454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_67
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 283
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5c312725ff16a44789f51e6e2725ef5
+      internalID: 32564258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_68
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 272
+        width: 44
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c0b36725d952674ca012507a003cb59
+      internalID: -971380055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_69
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 272
+        width: 47
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee59e094a22ed054a8971fb71c5a2a8e
+      internalID: 1205986831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_70
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 271
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccda865daa1abe04c9469e93eea46274
+      internalID: 1329055124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_71
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 277
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c7a1889fdc5239449a5e80b308515ed
+      internalID: -1513080878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_72
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 271
+        width: 37
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66d2dac1963c16248a270edb0cfeac97
+      internalID: 2042423895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_73
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 276
+        width: 30
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 429a94414273f4a408a5a0d5df813ec1
+      internalID: -1684341491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_74
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 271
+        width: 35
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 978b5916faabea34491467a1fcd9a797
+      internalID: -1891148079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_75
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 272
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 726f02885020ab7478138f8d49404bd3
+      internalID: -1734641031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_76
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 272
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 840f7152b6956d54db5c0dd06ad631d0
+      internalID: -822404428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_77
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 271
+        width: 41
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f48ba20b526d0842ab1e5c5b460ae8f
+      internalID: -631267905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_78
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 271
+        width: 38
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca40a509a031cb145bc389707eb271f6
+      internalID: -1877311128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_79
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 274
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09d53d970343e534f9af4af5525a9e82
+      internalID: 1478902742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_80
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 207
+        width: 33
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4540cf17747a6a6419d2f5d52f7242f1
+      internalID: 268896332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_81
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 206
+        width: 51
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fd1dc6d7de666c448fb73132d3c2569
+      internalID: 679125850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_82
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 206
+        width: 31
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 278954e8f639ec8479671be1834f90ee
+      internalID: -994727226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_83
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 207
+        width: 45
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a15039c7a24d13488807f598d3088b9
+      internalID: -768586175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_84
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 206
+        width: 34
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcd5ffd554a8ee248baf32b2d6547936
+      internalID: 160098335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_85
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 207
+        width: 45
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a9d7ff7db6bb8949b86e0bd7f277bd7
+      internalID: -1194897910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_86
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 206
+        width: 21
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f22f9049a29db654cbdfab56a3faef13
+      internalID: -1235328049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_87
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 207
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6557106ccb83aed49aa0f90a6bab7ee8
+      internalID: 10696577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_88
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 207
+        width: 48
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de70e44f8f2b4c345b7bfe5c240fa0fd
+      internalID: -698355030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_89
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 239
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 893485fdbe80cb643ac0d2934f1c6e6e
+      internalID: 600499440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_90
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 207
+        width: 36
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 283a46725267ed247a16cf8776d48792
+      internalID: -52888093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_91
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 207
+        width: 28
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86a4caea8bbd1d748ad30c9c3701aead
+      internalID: 2072033483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_92
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 142
+        width: 40
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cfb9df3ef56260438c1414d50d4eba2
+      internalID: 624098030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_93
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 141
+        width: 47
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b621835cc9511994284c53efe22c48db
+      internalID: -2067707777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_94
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 141
+        width: 41
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 194ccf9cffc9d054cbebf3d67fe546b4
+      internalID: 1466654137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_95
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 142
+        width: 48
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b33a7203d4e4ed74493a32148f7b42be
+      internalID: -565827714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_96
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 142
+        width: 30
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7669682616a9e2b4e980a7cce947f613
+      internalID: -1410486654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_97
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 142
+        width: 37
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a1ab7f5714607242845092a99261f3f
+      internalID: -1963038209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_98
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 142
+        width: 25
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e92bc81d0e3687478862b0dd857c06e
+      internalID: -1125097730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_99
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 142
+        width: 32
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 991c839222eed354e865fa590eb60282
+      internalID: -838866735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_100
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 76
+        width: 40
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1ac0640cffd29845ac7c1512ee360e8
+      internalID: 145795273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_101
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 77
+        width: 56
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d113170ca74c91340b86a2c3f9d1f357
+      internalID: 2113989556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_102
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 77
+        width: 36
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da46fcefdc653244fa335eef51bb1124
+      internalID: -1847462454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_103
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 77
+        width: 37
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 587daa5beeecc584caceba2f6a4324b2
+      internalID: 1105955749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_104
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 77
+        width: 41
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7655f6fae677d554e97ad29f63931d45
+      internalID: 605086261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_105
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 77
+        width: 57
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d6b48734c8d39241a2f580e131c1e38
+      internalID: -410069427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_106
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 77
+        width: 39
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 965522177afb1c649bcf26f434f51f0b
+      internalID: -1963999980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_107
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 77
+        width: 43
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53049e6f81ada2d40a3bc65f687f35fb
+      internalID: -379559497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_108
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 76
+        width: 30
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb95e06fc97a49949a7359049ca0e56c
+      internalID: 1362345324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_109
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 77
+        width: 38
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8672aa4672b1084dbd96d73752af4a0
+      internalID: 941711563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_110
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 11
+        width: 37
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3c3f644c4797914699a7ad08b30d78c
+      internalID: -1094997914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_111
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 12
+        width: 40
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c7dfd4070bac5498ecae7c44279f71
+      internalID: 2056938414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_112
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 12
+        width: 40
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3404109b0361d247af9d34bb9ee5d1c
+      internalID: 608133591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_npc_battle_113
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 11
+        width: 42
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa24709daff53e45a3d6395853af53d
+      internalID: -1336965909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Emerald_npc_battle_88: -698355030
+      Emerald_npc_battle_112: 608133591
+      Emerald_npc_battle_29: 1718459195
+      Emerald_npc_battle_79: 1478902742
+      Emerald_npc_battle_23: 1796480546
+      Emerald_npc_battle_108: 1362345324
+      Emerald_npc_battle_30: 1821166367
+      Emerald_npc_battle_46: -1492896890
+      Emerald_npc_battle_83: -768586175
+      Emerald_npc_battle_84: 160098335
+      Emerald_npc_battle_104: 605086261
+      Emerald_npc_battle_61: -1833545201
+      Emerald_npc_battle_13: 1526565380
+      Emerald_npc_battle_60: 1198585178
+      Emerald_npc_battle_106: -1963999980
+      Emerald_npc_battle_77: -631267905
+      Emerald_npc_battle_21: -984647472
+      Emerald_npc_battle_75: -1734641031
+      Emerald_npc_battle_66: -163424454
+      Emerald_npc_battle_41: 371866428
+      Emerald_npc_battle_65: -1088024891
+      Emerald_npc_battle_54: -1823559048
+      Emerald_npc_battle_53: 1054564475
+      Emerald_npc_battle_17: 1642680281
+      Emerald_npc_battle_97: -1963038209
+      Emerald_npc_battle_62: 987953105
+      Emerald_npc_battle_103: 1105955749
+      Emerald_npc_battle_35: -149060737
+      Emerald_npc_battle_28: 82813795
+      Emerald_npc_battle_69: 1205986831
+      Emerald_npc_battle_58: -1139240946
+      Emerald_npc_battle_19: -943206426
+      Emerald_npc_battle_2: 1153983898
+      Emerald_npc_battle_63: -21839212
+      Emerald_npc_battle_95: -565827714
+      Emerald_npc_battle_47: -492908545
+      Emerald_npc_battle_4: -1061742829
+      Emerald_npc_battle_25: 602680973
+      Emerald_npc_battle_87: 10696577
+      Emerald_npc_battle_76: -822404428
+      Emerald_npc_battle_86: -1235328049
+      Emerald_npc_battle_22: -201776127
+      Emerald_npc_battle_26: 208844479
+      Emerald_npc_battle_15: 952710856
+      Emerald_npc_battle_96: -1410486654
+      Emerald_npc_battle_105: -410069427
+      Emerald_npc_battle_0: -2146403488
+      Emerald_npc_battle_31: 1770293944
+      Emerald_npc_battle_8: -61915770
+      Emerald_npc_battle_78: -1877311128
+      Emerald_npc_battle_107: -379559497
+      Emerald_npc_battle_82: -994727226
+      Emerald_npc_battle_36: 944730566
+      Emerald_npc_battle_57: -835314987
+      Emerald_npc_battle_52: -421991044
+      Emerald_npc_battle_91: 2072033483
+      Emerald_npc_battle_24: 2076356895
+      Emerald_npc_battle_81: 679125850
+      Emerald_npc_battle_1: -370247921
+      Emerald_npc_battle_16: -154059605
+      Emerald_npc_battle_68: -971380055
+      Emerald_npc_battle_59: -1616116729
+      Emerald_npc_battle_102: -1847462454
+      Emerald_npc_battle_51: 1691997378
+      Emerald_npc_battle_38: -1470876701
+      Emerald_npc_battle_6: -578211226
+      Emerald_npc_battle_10: -601595782
+      Emerald_npc_battle_43: 413202488
+      Emerald_npc_battle_90: -52888093
+      Emerald_npc_battle_18: -1933806988
+      Emerald_npc_battle_14: -924582811
+      Emerald_npc_battle_72: 2042423895
+      Emerald_npc_battle_67: 32564258
+      Emerald_npc_battle_71: -1513080878
+      Emerald_npc_battle_111: 2056938414
+      Emerald_npc_battle_113: -1336965909
+      Emerald_npc_battle_93: -2067707777
+      Emerald_npc_battle_33: 130758565
+      Emerald_npc_battle_56: 251432563
+      Emerald_npc_battle_9: 210079355
+      Emerald_npc_battle_73: -1684341491
+      Emerald_npc_battle_44: 1881058434
+      Emerald_npc_battle_42: 1616149035
+      Emerald_npc_battle_55: 1734365408
+      Emerald_npc_battle_92: 624098030
+      Emerald_npc_battle_32: 1086454740
+      Emerald_npc_battle_94: 1466654137
+      Emerald_npc_battle_20: 905310528
+      Emerald_npc_battle_11: -313158373
+      Emerald_npc_battle_7: -507534921
+      Emerald_npc_battle_49: 1664281676
+      Emerald_npc_battle_50: -351410779
+      Emerald_npc_battle_80: 268896332
+      Emerald_npc_battle_98: -1125097730
+      Emerald_npc_battle_64: 1394247529
+      Emerald_npc_battle_27: 2093014978
+      Emerald_npc_battle_40: 243745398
+      Emerald_npc_battle_45: 117347246
+      Emerald_npc_battle_101: 2113989556
+      Emerald_npc_battle_37: -2109921978
+      Emerald_npc_battle_70: 1329055124
+      Emerald_npc_battle_48: -259632338
+      Emerald_npc_battle_89: 600499440
+      Emerald_npc_battle_3: -1588233212
+      Emerald_npc_battle_5: 1042238223
+      Emerald_npc_battle_12: 63839754
+      Emerald_npc_battle_39: -369993815
+      Emerald_npc_battle_74: -1891148079
+      Emerald_npc_battle_99: -838866735
+      Emerald_npc_battle_34: -124635756
+      Emerald_npc_battle_85: -1194897910
+      Emerald_npc_battle_109: 941711563
+      Emerald_npc_battle_100: 145795273
+      Emerald_npc_battle_110: -1094997914
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
