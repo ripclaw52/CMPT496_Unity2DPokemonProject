@@ -13,13 +13,18 @@ MonoBehaviour:
   m_Name: Surf
   m_EditorClassIdentifier: 
   name: Surf
-  description: 
+  description: The user attacks everything around it by swamping its surroundings
+    with a giant wave.
   type: 3
   power: 90
   accuracy: 100
   alwaysHits: 0
   pp: 15
   priority: 0
+  criticalHitBehaviour: 0
+  recoil:
+    recoilType: 0
+    recoilDamage: 0
   category: 1
   effects:
     boosts: []

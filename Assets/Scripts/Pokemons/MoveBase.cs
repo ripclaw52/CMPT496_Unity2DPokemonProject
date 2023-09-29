@@ -20,6 +20,7 @@ public class MoveBase : ScriptableObject
     [SerializeField] int pp;
     [SerializeField] int priority;
     [SerializeField] CriticalHitBehaviour criticalHitBehaviour;
+    [SerializeField] RecoilMoveEffect recoil;
 
     [SerializeField] MoveCategory category;
     [SerializeField] MoveEffects effects;
@@ -37,6 +38,7 @@ public class MoveBase : ScriptableObject
     public int PP => pp;
     public int Priority => priority;
     public CriticalHitBehaviour CriticalHitBehaviour => criticalHitBehaviour;
+    public RecoilMoveEffect Recoil => recoil;
     public MoveCategory Category => category;
     public MoveEffects Effects => effects;
     public List<SecondaryEffects> Secondaries => secondaries;
@@ -101,4 +103,16 @@ public enum MoveTarget
 public enum CriticalHitBehaviour
 {
     None, High, Always, Never
+}
+
+[System.Serializable]
+public class RecoilMoveEffect
+{
+    public RecoilType recoilType;
+    public float recoilDamage = 0;
+}
+
+public enum RecoilType
+{
+    None, MaxHP, CurrentHP, Damage
 }

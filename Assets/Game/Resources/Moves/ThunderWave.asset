@@ -13,13 +13,17 @@ MonoBehaviour:
   m_Name: ThunderWave
   m_EditorClassIdentifier: 
   name: Thunder Wave
-  description: 
+  description: The user launches a weak jolt of electricity that paralyzes the target.
   type: 4
   power: 0
   accuracy: 90
   alwaysHits: 0
   pp: 20
   priority: 0
+  criticalHitBehaviour: 0
+  recoil:
+    recoilType: 0
+    recoilDamage: 0
   category: 2
   effects:
     boosts: []

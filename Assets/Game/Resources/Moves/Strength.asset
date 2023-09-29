@@ -13,14 +13,17 @@ MonoBehaviour:
   m_Name: Strength
   m_EditorClassIdentifier: 
   name: Strength
-  description: The target is slugged with a punch thrown at maximum power. This can
-    also be used to move heavy boulders.
+  description: The target is slugged with a punch thrown at maximum power.
   type: 1
   power: 80
   accuracy: 100
   alwaysHits: 0
   pp: 15
   priority: 0
+  criticalHitBehaviour: 0
+  recoil:
+    recoilType: 0
+    recoilDamage: 0
   category: 0
   effects:
     boosts: []

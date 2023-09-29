@@ -13,13 +13,18 @@ MonoBehaviour:
   m_Name: FlareBlitz
   m_EditorClassIdentifier: 
   name: Flare Blitz
-  description: 
+  description: The user cloaks itself in fire and charges the target to inflict damage.
+    This also damages the user quite a lot and may leave the target with a burn.
   type: 2
   power: 120
   accuracy: 100
   alwaysHits: 0
   pp: 15
   priority: 0
+  criticalHitBehaviour: 0
+  recoil:
+    recoilType: 3
+    recoilDamage: 0.333333
   category: 0
   effects:
     boosts: []

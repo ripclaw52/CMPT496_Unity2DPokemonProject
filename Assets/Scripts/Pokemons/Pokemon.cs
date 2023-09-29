@@ -326,7 +326,8 @@ public class Pokemon
         {
             TypeEffectiveness = type,
             Critical = critical,
-            Fainted = false
+            Fainted = false,
+            DamageDealt = 0
         };
 
         float attack = (move.Base.Category == MoveCategory.Special) ? attacker.SpAttack : attacker.Attack;
@@ -339,7 +340,17 @@ public class Pokemon
 
         DecreaseHP(damage);
 
+        damageDetails.DamageDealt = damage;
+
         return damageDetails;
+    }
+
+    public void TakeRecoilDamage(int damage)
+    {
+        if (damage < 1)
+            damage = 1;
+        DecreaseHP(damage);
+        StatusChanges.Enqueue($"{Base.Name} was damaged by recoil!");
     }
 
     /// <summary>
@@ -464,6 +475,7 @@ public class DamageDetails
     public bool Fainted { get; set; }
     public float Critical { get; set; }
     public float TypeEffectiveness { get; set; }
+    public int DamageDealt { get; set; }
 }
 
 /// <summary>

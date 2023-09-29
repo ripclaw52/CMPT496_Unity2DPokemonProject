@@ -13,13 +13,18 @@ MonoBehaviour:
   m_Name: Smokescreen
   m_EditorClassIdentifier: 
   name: Smokescreen
-  description: 
+  description: "The user releases an obscuring cloud of smoke or ink. This lowers
+    the target\u2019s accuracy."
   type: 1
   power: 0
   accuracy: 100
   alwaysHits: 0
   pp: 20
   priority: 0
+  criticalHitBehaviour: 0
+  recoil:
+    recoilType: 0
+    recoilDamage: 0
   category: 2
   effects:
     boosts:

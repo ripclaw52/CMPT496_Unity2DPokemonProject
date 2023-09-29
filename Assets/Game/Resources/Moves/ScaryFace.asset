@@ -13,13 +13,18 @@ MonoBehaviour:
   m_Name: ScaryFace
   m_EditorClassIdentifier: 
   name: Scary Face
-  description: 
+  description: The user frightens the target with a scary face to harshly lower its
+    Speed stat.
   type: 1
   power: 0
   accuracy: 100
   alwaysHits: 0
   pp: 10
   priority: 0
+  criticalHitBehaviour: 0
+  recoil:
+    recoilType: 0
+    recoilDamage: 0
   category: 2
   effects:
     boosts:

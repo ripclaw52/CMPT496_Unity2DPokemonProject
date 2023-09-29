@@ -13,13 +13,18 @@ MonoBehaviour:
   m_Name: SandAttack
   m_EditorClassIdentifier: 
   name: Sand Attack
-  description: 
+  description: "Sand is hurled in the target\u2019s face, lowering the target\u2019s
+    accuracy."
   type: 9
   power: 0
   accuracy: 100
   alwaysHits: 0
   pp: 15
   priority: 0
+  criticalHitBehaviour: 0
+  recoil:
+    recoilType: 0
+    recoilDamage: 0
   category: 2
   effects:
     boosts:

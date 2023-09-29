@@ -123,9 +123,10 @@ public class RunTurnState : State<BattleSystem>
 
         if (CheckIfMoveHits(move, sourceUnit.Pokemon, targetUnit.Pokemon))
         {
+            var damageDetails = new DamageDetails();
+
             sourceUnit.PlayAttackAnimation();
             AudioManager.i.PlaySfx(move.Base.Sound);
-
             yield return new WaitForSeconds(1f);
             targetUnit.PlayHitAnimation();
 
@@ -135,7 +136,7 @@ public class RunTurnState : State<BattleSystem>
             }
             else
             {
-                var damageDetails = targetUnit.Pokemon.TakeDamage(move, sourceUnit.Pokemon);
+                damageDetails = targetUnit.Pokemon.TakeDamage(move, sourceUnit.Pokemon);
                 yield return targetUnit.Hud.WaitForHPUpdate();
                 yield return ShowDamageDetails(damageDetails);
             }
@@ -150,6 +151,8 @@ public class RunTurnState : State<BattleSystem>
                 }
             }
 
+            yield return RunAfterMove(damageDetails, move.Base, sourceUnit.Pokemon, targetUnit.Pokemon);
+
             if (targetUnit.Pokemon.HP <= 0)
             {
                 yield return HandlePokemonFainted(targetUnit);
@@ -160,6 +163,39 @@ public class RunTurnState : State<BattleSystem>
         {
             yield return dialogBox.TypeDialog($"{sourceUnit.Pokemon.Base.Name}'s attack missed!");
         }
+    }
+
+    IEnumerator RunAfterMove(DamageDetails details, MoveBase move, Pokemon source, Pokemon target)
+    {
+        if (details == null)
+            yield break;
+        if (move.Recoil.recoilType != RecoilType.None)
+        {
+            int damage = 0;
+            switch (move.Recoil.recoilType)
+            {
+                case RecoilType.MaxHP:
+                    int maxHp = source.MaxHP;
+                    damage = (int)Mathf.Floor(maxHp * move.Recoil.recoilDamage);
+                    source.TakeRecoilDamage(damage);
+                    break;
+                case RecoilType.CurrentHP:
+                    int currentHp = source.HP;
+                    damage = (int)Mathf.Floor(currentHp * move.Recoil.recoilDamage);
+                    source.TakeRecoilDamage(damage);
+                    break;
+                case RecoilType.Damage:
+                    damage = (int)Mathf.Floor(details.DamageDealt * move.Recoil.recoilDamage);
+                    source.TakeRecoilDamage(damage);
+                    break;
+                default:
+                    Debug.Log("Error: Unknown Recoil Effect");
+                    break;
+            }
+        }
+
+        yield return ShowStatusChanges(source);
+        yield return ShowStatusChanges(target);
     }
 
     IEnumerator RunMoveEffects(MoveEffects effects, Pokemon source, Pokemon target, MoveTarget moveTarget)

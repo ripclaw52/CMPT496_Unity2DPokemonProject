@@ -13,13 +13,17 @@ MonoBehaviour:
   m_Name: PoisonPowder
   m_EditorClassIdentifier: 
   name: Poison Powder
-  description: 
+  description: The user scatters a cloud of poisonous dust that poisons the target.
   type: 8
   power: 0
   accuracy: 75
   alwaysHits: 0
   pp: 35
   priority: 0
+  criticalHitBehaviour: 0
+  recoil:
+    recoilType: 0
+    recoilDamage: 0
   category: 2
   effects:
     boosts: []

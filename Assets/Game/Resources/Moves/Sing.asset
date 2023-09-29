@@ -13,13 +13,18 @@ MonoBehaviour:
   m_Name: Sing
   m_EditorClassIdentifier: 
   name: Sing
-  description: 
+  description: A soothing lullaby is sung in a beautiful voice that puts the target
+    to sleep.
   type: 1
   power: 0
   accuracy: 55
   alwaysHits: 0
   pp: 15
   priority: 0
+  criticalHitBehaviour: 0
+  recoil:
+    recoilType: 0
+    recoilDamage: 0
   category: 2
   effects:
     boosts: []

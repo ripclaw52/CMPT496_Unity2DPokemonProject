@@ -13,13 +13,18 @@ MonoBehaviour:
   m_Name: Pound
   m_EditorClassIdentifier: 
   name: Pound
-  description: 
+  description: The target is physically pounded with a long tail, a foreleg, or the
+    like.
   type: 1
   power: 40
   accuracy: 100
   alwaysHits: 0
   pp: 35
   priority: 0
+  criticalHitBehaviour: 0
+  recoil:
+    recoilType: 0
+    recoilDamage: 0
   category: 0
   effects:
     boosts: []

@@ -13,13 +13,18 @@ MonoBehaviour:
   m_Name: QuickAttack
   m_EditorClassIdentifier: 
   name: Quick Attack
-  description: 
+  description: The user lunges at the target to inflict damage, moving at blinding
+    speed. This move always goes first.
   type: 1
   power: 40
   accuracy: 100
   alwaysHits: 0
   pp: 30
   priority: 1
+  criticalHitBehaviour: 0
+  recoil:
+    recoilType: 0
+    recoilDamage: 0
   category: 0
   effects:
     boosts: []

@@ -13,13 +13,18 @@ MonoBehaviour:
   m_Name: Gust
   m_EditorClassIdentifier: 
   name: Gust
-  description: 
+  description: A gust of wind is whipped up by wings and launched at the target to
+    inflict damage.
   type: 10
   power: 40
   accuracy: 100
   alwaysHits: 0
   pp: 35
   priority: 0
+  criticalHitBehaviour: 0
+  recoil:
+    recoilType: 0
+    recoilDamage: 0
   category: 1
   effects:
     boosts: []

@@ -13,13 +13,17 @@ MonoBehaviour:
   m_Name: VineWhip
   m_EditorClassIdentifier: 
   name: Vine Whip
-  description: 
+  description: The target is struck with slender, whiplike vines to inflict damage.
   type: 5
   power: 45
   accuracy: 100
   alwaysHits: 0
   pp: 25
   priority: 0
+  criticalHitBehaviour: 0
+  recoil:
+    recoilType: 0
+    recoilDamage: 0
   category: 1
   effects:
     boosts: []

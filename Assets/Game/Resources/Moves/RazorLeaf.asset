@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: RazorLeaf
   m_EditorClassIdentifier: 
   name: Razor Leaf
-  description: "Sharp-edged leaves are launched to slash at opposing Pok\xE9mon."
+  description: "Sharp-edged leaves are launched to slash at opposing Pok\xE9mon.
+    This move has a heightened chance of landing a critical hit."
   type: 5
   power: 55
   accuracy: 95
@@ -21,6 +22,9 @@ MonoBehaviour:
   pp: 22
   priority: 0
   criticalHitBehaviour: 1
+  recoil:
+    recoilType: 0
+    recoilDamage: 0
   category: 0
   effects:
     boosts: []

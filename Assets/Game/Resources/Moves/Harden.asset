@@ -13,13 +13,18 @@ MonoBehaviour:
   m_Name: Harden
   m_EditorClassIdentifier: 
   name: Harden
-  description: 
+  description: The user stiffens all the muscles in its body to boost its Defense
+    stat.
   type: 1
   power: 0
   accuracy: 100
   alwaysHits: 0
   pp: 30
   priority: 0
+  criticalHitBehaviour: 0
+  recoil:
+    recoilType: 0
+    recoilDamage: 0
   category: 2
   effects:
     boosts:
