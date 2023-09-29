@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 31754681790101585, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 16.199997
+      objectReference: {fileID: 0}
+    - target: {fileID: 31754681959642925, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 12.033997
+      objectReference: {fileID: 0}
     - target: {fileID: 50721622797741234, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4246,6 +4254,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5377433032520526214, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 12.033997
+      objectReference: {fileID: 0}
     - target: {fileID: 5399799912194364871, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6246,30 +6258,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7908569587950186193, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
-      propertyPath: pokemons.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7908569587950186193, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
-      propertyPath: pokemons.Array.data[0].level
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7908569587950186193, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
-      propertyPath: pokemons.Array.data[2]._base
-      value: 
-      objectReference: {fileID: 11400000, guid: 8b97e354023529b44824c3d75f799fde, type: 2}
-    - target: {fileID: 7908569587950186193, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
-      propertyPath: pokemons.Array.data[2].level
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 7908569587950186193, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
-      propertyPath: pokemons.Array.data[3]._base
-      value: 
-      objectReference: {fileID: 11400000, guid: 7125a213c7ab2ef4a8166248086c8635, type: 2}
-    - target: {fileID: 7908569587950186193, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
-      propertyPath: pokemons.Array.data[3].level
-      value: 13
-      objectReference: {fileID: 0}
     - target: {fileID: 7908569587950186198, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
       propertyPath: surfSprites.Array.size
       value: 4
@@ -6413,6 +6401,18 @@ PrefabInstance:
     - target: {fileID: 7908569588828984522, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908569588845477674, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -23.029999
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908569589291945346, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -23.029999
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908569589476636858, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -46.300003
       objectReference: {fileID: 0}
     - target: {fileID: 7908569589688834762, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
       propertyPath: m_AnchorMax.y
