@@ -19,6 +19,7 @@ public class MoveBase : ScriptableObject
     [SerializeField] bool alwaysHits;
     [SerializeField] int pp;
     [SerializeField] int priority;
+    [SerializeField] CriticalHitBehaviour criticalHitBehaviour;
 
     [SerializeField] MoveCategory category;
     [SerializeField] MoveEffects effects;
@@ -35,6 +36,7 @@ public class MoveBase : ScriptableObject
     public bool AlwaysHits => alwaysHits;
     public int PP => pp;
     public int Priority => priority;
+    public CriticalHitBehaviour CriticalHitBehaviour => criticalHitBehaviour;
     public MoveCategory Category => category;
     public MoveEffects Effects => effects;
     public List<SecondaryEffects> Secondaries => secondaries;
@@ -94,4 +96,9 @@ public enum MoveCategory
 public enum MoveTarget
 {
     Foe, Self
+}
+
+public enum CriticalHitBehaviour
+{
+    None, High, Always, Never
 }

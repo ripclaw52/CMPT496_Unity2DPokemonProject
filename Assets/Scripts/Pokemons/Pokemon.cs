@@ -304,8 +304,21 @@ public class Pokemon
     public DamageDetails TakeDamage(Move move, Pokemon attacker)
     {
         float critical = 1f;
-        if (Random.value * 100f <= 6.25f)
-            critical = 2f;
+        if (!(move.Base.CriticalHitBehaviour == CriticalHitBehaviour.Never))
+        {
+            if (move.Base.CriticalHitBehaviour == CriticalHitBehaviour.Always)
+            {
+                critical = 1.5f;
+            }
+            else
+            {
+                // how to specify moves like razor leaf which have crit chance of 12.5?
+                int criticalChance = 0 + ((move.Base.CriticalHitBehaviour == CriticalHitBehaviour.High) ? 1 : 0);
+                float[] chances = new float[] { (4.167f), (12.5f), (50f), 100f };
+                if (Random.value * 100f <= chances[Mathf.Clamp(criticalChance, 0, 3)])
+                    critical = 1.5f;
+            }
+        }
 
         float type = TypeChart.GetEffectiveness(move.Base.Type, this.Base.Type1) * TypeChart.GetEffectiveness(move.Base.Type, this.Base.Type2);
 

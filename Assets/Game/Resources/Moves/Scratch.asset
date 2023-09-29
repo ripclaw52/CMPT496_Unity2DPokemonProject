@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: Scratch
   m_EditorClassIdentifier: 
   name: Scratch
-  description: 
+  description: Hard, pointed, sharp claws rake the target to inflict damage.
   type: 1
   power: 40
   accuracy: 100
   alwaysHits: 0
   pp: 35
   priority: 0
+  criticalHitBehaviour: 0
   category: 0
   effects:
     boosts: []

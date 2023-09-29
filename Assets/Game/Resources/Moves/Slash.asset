@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: Slash
   m_EditorClassIdentifier: 
   name: Slash
-  description: 
+  description: The target is attacked with a slash of claws, scythes, or the like.
+    This move has a heightened chance of landing a critical hit.
   type: 1
   power: 70
   accuracy: 100
   alwaysHits: 0
   pp: 20
   priority: 0
+  criticalHitBehaviour: 1
   category: 0
   effects:
     boosts: []
