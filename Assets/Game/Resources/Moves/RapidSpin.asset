@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd06e1a6230da2f4a8ba71cd377dbc47, type: 3}
+  m_Name: RapidSpin
+  m_EditorClassIdentifier: 
+  name: Rapid Spin
+  description: "The user performs a spin attack that can also eliminate the effects
+    of such moves as Bind, Wrap, and Leech Seed. This also boosts the user\u2019s
+    Speed stat."
+  type: 1
+  power: 50
+  accuracy: 100
+  alwaysHits: 0
+  pp: 40
+  priority: 0
+  criticalHitBehaviour: 0
+  recoil:
+    recoilType: 0
+    recoilDamage: 0
+  category: 0
+  effects:
+    boosts: []
+    status: 0
+    volatileStatus: 0
+  secondaries:
+  - boosts:
+    - stat: 4
+      boost: 1
+    status: 0
+    volatileStatus: 0
+    chance: 100
+    target: 1
+  target: 0
+  sound: {fileID: 8300000, guid: 21aa6b4594301d14db852c7d2b30cc8e, type: 3}

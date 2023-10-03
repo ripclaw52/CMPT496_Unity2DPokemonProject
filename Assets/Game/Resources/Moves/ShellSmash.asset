@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd06e1a6230da2f4a8ba71cd377dbc47, type: 3}
+  m_Name: ShellSmash
+  m_EditorClassIdentifier: 
+  name: Shell Smash
+  description: The user breaks its shell, which lowers its Defense and Sp. Def stats
+    but sharply boosts its Attack, Sp. Atk, and Speed stats.
+  type: 1
+  power: 0
+  accuracy: 0
+  alwaysHits: 0
+  pp: 15
+  priority: 0
+  criticalHitBehaviour: 0
+  recoil:
+    recoilType: 0
+    recoilDamage: 0
+  category: 2
+  effects:
+    boosts:
+    - stat: 1
+      boost: -1
+    - stat: 3
+      boost: -1
+    - stat: 0
+      boost: 2
+    - stat: 2
+      boost: 2
+    - stat: 4
+      boost: 2
+    status: 0
+    volatileStatus: 0
+  secondaries: []
+  target: 1
+  sound: {fileID: 8300000, guid: 839f1746d45414742baa301230b08f22, type: 3}
