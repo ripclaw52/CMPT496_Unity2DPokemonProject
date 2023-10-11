@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: HM01
   m_EditorClassIdentifier: 
   name: HM01
-  description: 
+  description: Cut is used to tear down small trees in your path.
   usedMessage: 
   icon: {fileID: 17094133, guid: 48b9b7014b5679f458972768c83ff248, type: 3}
+  price: 0
+  isSellable: 0
   move: {fileID: 11400000, guid: 5f3a32d0fef81494fb3a8579060d4464, type: 2}
   isHM: 1
   isTR: 0

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20b494dfa3678284c9484725538bc4ba, type: 3}
+  m_Name: HM03
+  m_EditorClassIdentifier: 
+  name: HM03
+  description: "Surf is used to cross water. While surfing, wild Pok\xE9mon may appear."
+  usedMessage: 
+  icon: {fileID: -2121465300, guid: 48b9b7014b5679f458972768c83ff248, type: 3}
+  price: 0
+  isSellable: 0
+  move: {fileID: 11400000, guid: e41ca92d0a53bb54ab88b62e7bd26e53, type: 2}
+  isHM: 1
+  isTR: 0

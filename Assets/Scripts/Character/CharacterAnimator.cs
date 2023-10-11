@@ -7,10 +7,18 @@ using UnityEngine;
 /// </summary>
 public class CharacterAnimator : MonoBehaviour
 {
+    // Walk
     [SerializeField] List<Sprite> walkDownSprites;
     [SerializeField] List<Sprite> walkUpSprites;
     [SerializeField] List<Sprite> walkRightSprites;
     [SerializeField] List<Sprite> walkLeftSprites;
+
+    // Run
+    [SerializeField] List<Sprite> runDownSprites;
+    [SerializeField] List<Sprite> runUpSprites;
+    [SerializeField] List<Sprite> runRightSprites;
+    [SerializeField] List<Sprite> runLeftSprites;
+
     [SerializeField] List<Sprite> surfSprites;
     [SerializeField] FacingDirection defaultDirection = FacingDirection.Down;
 
@@ -18,6 +26,7 @@ public class CharacterAnimator : MonoBehaviour
     public float MoveX { get; set; }
     public float MoveY { get; set; }
     public bool IsMoving { get; set; }
+    public bool IsRunning { get; set; }
     public bool IsJumping { get; set; }
     public bool IsSurfing { get; set; }
 
@@ -26,6 +35,11 @@ public class CharacterAnimator : MonoBehaviour
     SpriteAnimator walkUpAnim;
     SpriteAnimator walkRightAnim;
     SpriteAnimator walkLeftAnim;
+
+    SpriteAnimator runDownAnim;
+    SpriteAnimator runUpAnim;
+    SpriteAnimator runRightAnim;
+    SpriteAnimator runLeftAnim;
 
     SpriteAnimator currentAnim;
     bool wasPreviouslyMoving;
