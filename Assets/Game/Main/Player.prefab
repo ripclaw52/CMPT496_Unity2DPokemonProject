@@ -141,26 +141,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkDownSprites:
-  - {fileID: -1018586348, guid: 7dd78ad0568b58f418f4d1f8d5ee9ca6, type: 3}
-  - {fileID: 2071444933, guid: 7dd78ad0568b58f418f4d1f8d5ee9ca6, type: 3}
-  - {fileID: 83550794, guid: 7dd78ad0568b58f418f4d1f8d5ee9ca6, type: 3}
-  - {fileID: -777474960, guid: 7dd78ad0568b58f418f4d1f8d5ee9ca6, type: 3}
+  - {fileID: 76875493, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: -886209194, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: 76875493, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: 1519739803, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
   walkUpSprites:
-  - {fileID: 24205099, guid: 7dd78ad0568b58f418f4d1f8d5ee9ca6, type: 3}
-  - {fileID: -546912177, guid: 7dd78ad0568b58f418f4d1f8d5ee9ca6, type: 3}
-  - {fileID: -1197055204, guid: 7dd78ad0568b58f418f4d1f8d5ee9ca6, type: 3}
-  - {fileID: 1296426761, guid: 7dd78ad0568b58f418f4d1f8d5ee9ca6, type: 3}
+  - {fileID: -210740044, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: 1475712177, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: -210740044, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: -2004775320, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
   walkRightSprites:
-  - {fileID: 706670521, guid: 7dd78ad0568b58f418f4d1f8d5ee9ca6, type: 3}
-  - {fileID: -1304061667, guid: 7dd78ad0568b58f418f4d1f8d5ee9ca6, type: 3}
-  - {fileID: 1290187982, guid: 7dd78ad0568b58f418f4d1f8d5ee9ca6, type: 3}
-  - {fileID: 354014462, guid: 7dd78ad0568b58f418f4d1f8d5ee9ca6, type: 3}
+  - {fileID: -317871599, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: -201348003, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: -317871599, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: -1364733714, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
   walkLeftSprites:
-  - {fileID: -200983103, guid: 7dd78ad0568b58f418f4d1f8d5ee9ca6, type: 3}
-  - {fileID: 934789478, guid: 7dd78ad0568b58f418f4d1f8d5ee9ca6, type: 3}
-  - {fileID: 1568456623, guid: 7dd78ad0568b58f418f4d1f8d5ee9ca6, type: 3}
-  - {fileID: -1457778598, guid: 7dd78ad0568b58f418f4d1f8d5ee9ca6, type: 3}
-  surfSprites: []
+  - {fileID: -362039416, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: 1887477869, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: -362039416, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: -1220580721, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  runDownSprites:
+  - {fileID: 522593826, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: 572649810, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: 522593826, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: 1398948713, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  runUpSprites:
+  - {fileID: 65676295, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: -1641766559, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: 65676295, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: -1950751106, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  runRightSprites:
+  - {fileID: -16236666, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: -1062335572, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: -16236666, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: -1501008409, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  runLeftSprites:
+  - {fileID: -627086979, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: 68682313, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: -627086979, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: 907002847, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  surfSprites:
+  - {fileID: -1720545648, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: 679346010, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: 1174256849, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
+  - {fileID: 1911669965, guid: b117a12100d622240bb2b5f9d8105442, type: 3}
   defaultDirection: 1
 --- !u!114 &5463470663888356622
 MonoBehaviour:
@@ -175,6 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  runSpeed: 0
 --- !u!50 &5463470663888356620
 Rigidbody2D:
   serializedVersion: 4

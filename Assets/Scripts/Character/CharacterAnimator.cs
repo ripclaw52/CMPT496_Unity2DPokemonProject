@@ -59,6 +59,12 @@ public class CharacterAnimator : MonoBehaviour
         walkUpAnim = new SpriteAnimator(walkUpSprites, spriteRenderer);
         walkRightAnim = new SpriteAnimator(walkRightSprites, spriteRenderer);
         walkLeftAnim = new SpriteAnimator(walkLeftSprites, spriteRenderer);
+
+        runDownAnim = new SpriteAnimator(runDownSprites, spriteRenderer);
+        runUpAnim = new SpriteAnimator(runUpSprites, spriteRenderer);
+        runRightAnim = new SpriteAnimator(runRightSprites, spriteRenderer);
+        runLeftAnim = new SpriteAnimator(runLeftSprites, spriteRenderer);
+
         SetFacingDirection(defaultDirection);
 
         currentAnim = walkDownAnim;
@@ -74,13 +80,13 @@ public class CharacterAnimator : MonoBehaviour
         if (!IsSurfing)
         {
             if (MoveX == 1)
-                currentAnim = walkRightAnim;
+                currentAnim = !IsRunning ? walkRightAnim : runRightAnim;
             else if (MoveX == -1)
-                currentAnim = walkLeftAnim;
+                currentAnim = !IsRunning ? walkLeftAnim : runLeftAnim;
             else if (MoveY == 1)
-                currentAnim = walkUpAnim;
+                currentAnim = !IsRunning ? walkUpAnim : runUpAnim;
             else if (MoveY == -1)
-                currentAnim = walkDownAnim;
+                currentAnim = !IsRunning ? walkDownAnim : runDownAnim;
 
             if (currentAnim != prevAnim || IsMoving != wasPreviouslyMoving)
                 currentAnim.Start();

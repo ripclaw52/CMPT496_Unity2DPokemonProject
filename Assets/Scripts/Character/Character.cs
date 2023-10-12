@@ -9,7 +9,9 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     public float moveSpeed;
+    public float runSpeed;
     public bool IsMoving { get; private set; }
+    public bool IsRunning { get; private set; }
     public float OffsetY { get; private set; } = 0.3f;
 
     CharacterAnimator animator;
@@ -69,16 +71,28 @@ public class Character : MonoBehaviour
             animator.IsSurfing = false;
         }
 
+        IsRunning = Input.GetButton("Run");
+        if (IsRunning)
+        {
+            runSpeed = moveSpeed;
+            Debug.Log($"runspeed={runSpeed}");
+        }
+        else
+        {
+            runSpeed = 0f;
+        }
+
         IsMoving = true;
 
         while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, (moveSpeed + runSpeed) * Time.deltaTime);
             yield return null;
         }
         transform.position = targetPos;
 
         IsMoving = false;
+        IsRunning = false;
 
         OnMoveOver?.Invoke();
     }
@@ -89,6 +103,7 @@ public class Character : MonoBehaviour
     public void HandleUpdate()
     {
         animator.IsMoving = IsMoving;
+        animator.IsRunning = IsRunning;
     }
 
     /// <summary>
