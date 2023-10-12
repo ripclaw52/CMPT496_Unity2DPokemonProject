@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GlobalSettings : MonoBehaviour
 {
@@ -8,13 +9,53 @@ public class GlobalSettings : MonoBehaviour
     [SerializeField] Gradient healthbarGradientTop;
     [SerializeField] Gradient healthbarGradientBottom;
 
+    [SerializeField] CategoryBase[] category;
+    [SerializeField] StatusBase[] status;
+    [SerializeField] TypeBase[] type;
+
     public Color HighlightedColor => highlightedColor;
     public Gradient HealthbarGradientTop => healthbarGradientTop;
     public Gradient HealthbarGradientBottom => healthbarGradientBottom;
+
+    public CategoryBase[] Category => category;
+    public StatusBase[] Status => status;
+    public TypeBase[] Type => type;
+
     public static GlobalSettings i { get; private set; }
 
     private void Awake()
     {
         i = this;
     }
+}
+
+[System.Serializable]
+public class CategoryBase
+{
+    [SerializeField] MoveCategory category;
+    [SerializeField] Sprite categoryIcon;
+    public MoveCategory Category => category;
+    public Sprite CategoryIcon => categoryIcon;
+}
+
+[System.Serializable]
+public class StatusBase
+{
+    [SerializeField] ConditionID condition;
+    [SerializeField] Sprite conditionIcon;
+    [SerializeField] Color conditionColor;
+    public ConditionID Condition => condition;
+    public Sprite ConditionIcon => conditionIcon;
+    public Color ConditionColor => conditionColor;
+}
+
+[System.Serializable]
+public class TypeBase
+{
+    [SerializeField] PokemonType type;
+    [SerializeField] Sprite typeIcon;
+    [SerializeField] Color typeColor;
+    public PokemonType Type => type;
+    public Sprite TypeIcon => typeIcon;
+    public Color TypeColor => typeColor;
 }
