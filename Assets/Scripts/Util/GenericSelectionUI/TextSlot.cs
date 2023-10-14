@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TextSlot : MonoBehaviour, ISelectableItem
 {
-    [SerializeField] Text text;
+    [SerializeField] TextMeshProUGUI text;
 
     Color originalColor;
     public void Init()

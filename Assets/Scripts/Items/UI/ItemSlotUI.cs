@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,8 +9,8 @@ using UnityEngine.UI;
 /// </summary>
 public class ItemSlotUI : MonoBehaviour
 {
-    [SerializeField] Text nameText;
-    [SerializeField] Text countText;
+    [SerializeField] TextMeshProUGUI nameText;
+    [SerializeField] TextMeshProUGUI countText;
 
     RectTransform rectTransform;
 
@@ -21,8 +22,8 @@ public class ItemSlotUI : MonoBehaviour
         
     }
 
-    public Text NameText => nameText;
-    public Text CountText => countText;
+    public TextMeshProUGUI NameText => nameText;
+    public TextMeshProUGUI CountText => countText;
     public float Height => rectTransform.rect.height;
 
     /// <summary>

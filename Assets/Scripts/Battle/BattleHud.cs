@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,9 +10,9 @@ using UnityEngine.UI;
 /// </summary>
 public class BattleHud : MonoBehaviour
 {
-    [SerializeField] Text nameText;
-    [SerializeField] Text levelText;
-    [SerializeField] Text statusText;
+    [SerializeField] TextMeshProUGUI nameText;
+    [SerializeField] TextMeshProUGUI levelText;
+    [SerializeField] TextMeshProUGUI statusText;
     [SerializeField] HPBar hpBar;
     [SerializeField] GameObject expBar;
 

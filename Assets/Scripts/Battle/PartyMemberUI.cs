@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,14 +9,14 @@ using UnityEngine.UI;
 /// </summary>
 public class PartyMemberUI : MonoBehaviour
 {
-    [SerializeField] Text nameText;
-    [SerializeField] Text levelText;
+    [SerializeField] TextMeshProUGUI nameText;
+    [SerializeField] TextMeshProUGUI levelText;
     [SerializeField] HPBar hpBar;
-    [SerializeField] Text messageText;
+    [SerializeField] TextMeshProUGUI messageText;
 
     Pokemon _pokemon;
 
-    public Text MessageText => messageText;
+    public TextMeshProUGUI MessageText => messageText;
 
     /// <summary>
     /// Initializes the class with the given Pokemon and sets up event handlers.

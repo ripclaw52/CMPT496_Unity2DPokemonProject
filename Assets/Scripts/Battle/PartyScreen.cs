@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,7 @@ using UnityEngine.UI;
 /// </summary>
 public class PartyScreen : SelectionUI<TextSlot>
 {
-    [SerializeField] Text messageText;
+    [SerializeField] TextMeshProUGUI messageText;
 
     PartyMemberUI[] memberSlots;
     List<Pokemon> pokemons;

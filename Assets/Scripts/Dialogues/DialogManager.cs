@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,7 @@ public class DialogManager : MonoBehaviour
 {
     [SerializeField] GameObject dialogBox;
     [SerializeField] ChoiceBox choiceBox;
-    [SerializeField] Text dialogText;
+    [SerializeField] TextMeshProUGUI dialogText;
     [SerializeField] int lettersPerSecond;
 
     public event Action OnShowDialog;

@@ -71,6 +71,8 @@ public class Character : MonoBehaviour
             animator.IsSurfing = false;
         }
 
+        IsMoving = true;
+
         IsRunning = Input.GetButton("Run");
         if (IsRunning)
         {
@@ -82,18 +84,14 @@ public class Character : MonoBehaviour
             runSpeed = 0f;
         }
 
-        IsMoving = true;
-
         while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPos, (moveSpeed + runSpeed) * Time.deltaTime);
             yield return null;
         }
         transform.position = targetPos;
-
-        IsMoving = false;
         IsRunning = false;
-
+        IsMoving = false;
         OnMoveOver?.Invoke();
     }
 

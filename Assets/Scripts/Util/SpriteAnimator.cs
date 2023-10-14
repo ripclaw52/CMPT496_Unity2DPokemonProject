@@ -36,8 +36,7 @@ public class SpriteAnimator
         currentFrame = 0;
         timer = 0f;
         spriteRenderer.sprite = frames[0];
-
-        Debug.Log($"{frames.Count} frames");
+        //Debug.Log($"{frames.Count} frames");
     }
 
     /// <summary>

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,13 +9,13 @@ using UnityEngine.UI;
 /// </summary>
 public class ChoiceText : MonoBehaviour
 {
-    Text text;
+    TextMeshProUGUI text;
     /// <summary>
     /// Gets a reference to the Text component attached to the GameObject.
     /// </summary>
     private void Awake()
     {
-        text = GetComponent<Text>();
+        text = GetComponent<TextMeshProUGUI>();
     }
 
     /// <summary>
@@ -26,5 +27,5 @@ public class ChoiceText : MonoBehaviour
         text.color = (selected) ? GlobalSettings.i.HighlightedColor : Color.black;
     }
 
-    public Text TextField => text;
+    public TextMeshProUGUI TextField => text;
 }

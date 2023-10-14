@@ -88,13 +88,14 @@ public class CharacterAnimator : MonoBehaviour
             else if (MoveY == -1)
                 currentAnim = !IsRunning ? walkDownAnim : runDownAnim;
 
+            Debug.Log($"move:{IsMoving} run:{IsRunning}");
             if (currentAnim != prevAnim || IsMoving != wasPreviouslyMoving)
-                currentAnim.Start();
+                StartCoroutine(DelayStart());
 
             if (IsJumping)
                 spriteRenderer.sprite = currentAnim.Frames[currentAnim.Frames.Count - 1];
             else if (IsMoving)
-                currentAnim.HandleUpdate();
+                StartCoroutine(DelayUpdate());
             else
                 spriteRenderer.sprite = currentAnim.Frames[0];
         }
@@ -111,6 +112,18 @@ public class CharacterAnimator : MonoBehaviour
         }
 
         wasPreviouslyMoving = IsMoving;
+    }
+
+    IEnumerator DelayStart(float delay = 0.01f)
+    {
+        yield return new WaitForSeconds(delay);
+        currentAnim.Start();
+    }
+
+    IEnumerator DelayUpdate(float delay = 0.05f)
+    {
+        yield return new WaitForSeconds(delay);
+        currentAnim.HandleUpdate();
     }
 
     /// <summary>

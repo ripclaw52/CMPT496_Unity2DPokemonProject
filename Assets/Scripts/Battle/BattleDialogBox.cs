@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,20 +11,20 @@ public class BattleDialogBox : MonoBehaviour
 {
     [SerializeField] int lettersPerSecond;
 
-    [SerializeField] Text dialogText;
+    [SerializeField] TextMeshProUGUI dialogText;
     [SerializeField] GameObject actionSelector;
     [SerializeField] GameObject moveSelector;
     [SerializeField] GameObject moveDetails;
     [SerializeField] GameObject choiceBox;
 
-    [SerializeField] List<Text> actionTexts;
-    [SerializeField] List<Text> moveTexts;
+    [SerializeField] List<TextMeshProUGUI> actionTexts;
+    [SerializeField] List<TextMeshProUGUI> moveTexts;
 
-    [SerializeField] Text ppText;
-    [SerializeField] Text typeText;
+    [SerializeField] TextMeshProUGUI ppText;
+    [SerializeField] TextMeshProUGUI typeText;
 
-    [SerializeField] Text yesText;
-    [SerializeField] Text noText;
+    [SerializeField] TextMeshProUGUI yesText;
+    [SerializeField] TextMeshProUGUI noText;
 
     Color highlightedColor;
 

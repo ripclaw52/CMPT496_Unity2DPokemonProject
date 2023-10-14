@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,9 +12,9 @@ public class InventoryUI : SelectionUI<TextSlot>
     [SerializeField] GameObject itemList;
     [SerializeField] ItemSlotUI itemSlotUI;
 
-    [SerializeField] Text categoryText;
+    [SerializeField] TextMeshProUGUI categoryText;
     [SerializeField] Image itemIcon;
-    [SerializeField] Text itemDescription;
+    [SerializeField] TextMeshProUGUI itemDescription;
 
     [SerializeField] Image upArrow;
     [SerializeField] Image downArrow;
