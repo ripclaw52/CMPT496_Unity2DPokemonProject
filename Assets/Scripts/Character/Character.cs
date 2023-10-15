@@ -77,7 +77,7 @@ public class Character : MonoBehaviour
         if (IsRunning)
         {
             runSpeed = moveSpeed;
-            Debug.Log($"runspeed={runSpeed}");
+            //Debug.Log($"runspeed={runSpeed}");
         }
         else
         {

@@ -35,8 +35,14 @@ public class SpriteAnimator
     {
         currentFrame = 0;
         timer = 0f;
+        
+        // stop frame initialization if null or empty
+        if (frames == null || frames.Count == 0)
+        {
+            //Debug.Log($"frames null at start");
+            return;
+        }
         spriteRenderer.sprite = frames[0];
-        //Debug.Log($"{frames.Count} frames");
     }
 
     /// <summary>
@@ -47,6 +53,13 @@ public class SpriteAnimator
         timer += Time.deltaTime;
         if (timer > frameRate)
         {
+            // stop frame iteration if null or empty
+            if (frames == null || frames.Count == 0)
+            {
+                //Debug.Log($"frames null at handleupdate");
+                return;
+            }
+
             currentFrame = (currentFrame + 1) % frames.Count;
             spriteRenderer.sprite = frames[currentFrame];
             timer -= frameRate;
