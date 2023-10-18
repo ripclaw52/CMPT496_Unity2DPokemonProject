@@ -6,8 +6,12 @@ using UnityEngine;
 
 public class SummaryUI : MonoBehaviour
 {
+    enum PageTypes { Cover, Stats, Moves }
+
     [SerializeField] List<GameObject> pageList;
     Pokemon selectedPokemon;
+
+    //List<Pokemon> selectedPokemonList;
 
     public int selectedPage = 0;
 
@@ -19,6 +23,8 @@ public class SummaryUI : MonoBehaviour
 
     public void HandleUpdate()
     {
+        selectedPokemon = SummaryState.i.SelectedPokemon;
+
         UpdateSelectionTimer();
         int prevSelection = selectedPage;
 
@@ -47,12 +53,12 @@ public class SummaryUI : MonoBehaviour
             pageList[selectedPage].SetActive(true);
         }
 
-        if (Input.GetButtonDown("Action"))
+        if (selectedPokemon != null)
         {
-            AudioManager.i.PlaySfx(AudioId.UIConfirm);
-            OnSelected?.Invoke(selectedPage);
+            Debug.Log($"name: {selectedPokemon.Base.Name}");
         }
-        else if (Input.GetButtonDown("Back"))
+
+        if (Input.GetButtonDown("Back"))
         {
             AudioManager.i.PlaySfx(AudioId.UICancel);
             OnBack?.Invoke();
