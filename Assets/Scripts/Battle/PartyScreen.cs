@@ -19,6 +19,7 @@ public class PartyScreen : SelectionUI<TextSlot>
     PokemonParty party;
 
     public Pokemon SelectedMember => pokemons[selectedItem];
+    public List<Pokemon> PokemonList => pokemons;
 
     /// <summary>
     /// Initializes the PartyUI by getting the PartyMemberUI components, getting the player's party, and setting the party data. Also adds a listener to the party's OnUpdated event.

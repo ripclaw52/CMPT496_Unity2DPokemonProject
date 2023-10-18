@@ -8,6 +8,7 @@ public class PartyState : State<GameController>
     [SerializeField] PartyScreen partyScreen;
 
     public Pokemon SelectedPokemon { get; private set; }
+    public PartyScreen PartyScreen => partyScreen;
 
     public static PartyState i { get; private set; }
     private void Awake()
@@ -77,6 +78,10 @@ public class PartyState : State<GameController>
             {
                 // Todo: Open summary screen
                 // Debug.Log($"Selected pokemon at index {selection}");
+
+                // array partyScreen.PokemonList
+                // SelectedPokemon
+                gc.StateMachine.Push(SummaryState.i);
             }
             else
             {
@@ -91,6 +96,7 @@ public class PartyState : State<GameController>
             {
                 // Todo: Open summary screen
                 // Debug.Log($"Selected pokemon at index {selection}");
+                gc.StateMachine.Push(SummaryState.i);
             }
             else if (DynamicMenuState.i.SelectedItem == 1)
             {
@@ -98,6 +104,7 @@ public class PartyState : State<GameController>
             }
             else
             {
+                // Cancel operation
                 yield break;
             }
         }

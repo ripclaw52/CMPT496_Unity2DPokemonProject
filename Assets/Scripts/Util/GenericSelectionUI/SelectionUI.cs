@@ -5,7 +5,8 @@ using UnityEngine;
 
 namespace GDEUtils.GenericSelectionUI
 {
-    public enum SelectionType { List, Grid }
+    public enum AxisType { Vertical, Horizontal }
+    public enum SelectionType { ListH, ListV, Grid }
 
     public class SelectionUI<T> : MonoBehaviour where T : ISelectableItem
     {
@@ -48,8 +49,10 @@ namespace GDEUtils.GenericSelectionUI
             UpdateSelectionTimer();
             int prevSelection = selectedItem;
 
-            if (selectionType == SelectionType.List)
-                HandleListSelection();
+            if (selectionType == SelectionType.ListH)
+                HandleListSelection(AxisType.Horizontal);
+            else if (selectionType == SelectionType.ListV)
+                HandleListSelection(AxisType.Vertical);
             else if (selectionType == SelectionType.Grid)
                 HandleGridSelection();
 
@@ -70,9 +73,9 @@ namespace GDEUtils.GenericSelectionUI
             }
         }
 
-        void HandleListSelection()
+        void HandleListSelection(AxisType axis)
         {
-            float v = Input.GetAxis("Vertical");
+            float v = Input.GetAxis(axis.ToString());
 
             if (selectionTimer == 0 && Mathf.Abs(v) > 0.2f)
             {

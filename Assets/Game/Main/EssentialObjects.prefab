@@ -2793,6 +2793,7 @@ GameObject:
   - component: {fileID: 1082113926703949332}
   - component: {fileID: 6359782964612168659}
   - component: {fileID: 7194352252452384657}
+  - component: {fileID: 615530713496883728}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -3242,6 +3243,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicMenuUI: {fileID: 4829006319041581588}
   itemTextPrefab: {fileID: 4096246971448647070, guid: 524c5f76af8a2f44893834b388b97b0a, type: 3}
+--- !u!114 &615530713496883728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7908569588792250248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c5a0f9c36f83534a9665ba325588403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  summaryUI: {fileID: 5399691356576153998}
 --- !u!1 &7908569588828984517
 GameObject:
   m_ObjectHideFlags: 0
@@ -11089,6 +11103,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b418b9bcf83c96d4eaa7af60cf224390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5399691356576153998 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4536077847789537623, guid: ab851fd2979f6204f9af31caf53bafca, type: 3}
+  m_PrefabInstance: {fileID: 8366822151557974233}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c81ddf8a27d450d49900a6eab8481ea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &6116872692984737539 stripped

@@ -16,6 +16,7 @@ public class PokemonBase : ScriptableObject
     [SerializeField] List<Sprite> frontSprite;
     [SerializeField] List<Sprite> backSprite;
     //[SerializeField] GameObject model; for a potential 3D model
+    [SerializeField] List<Sprite> smallSprite;
 
     [SerializeField] PokemonType type1;
     [SerializeField] PokemonType type2;
@@ -27,6 +28,14 @@ public class PokemonBase : ScriptableObject
     [SerializeField] int spAttack;
     [SerializeField] int spDefense;
     [SerializeField] int speed;
+
+    // Maximum Stats
+    [SerializeField] int maximumHp;
+    [SerializeField] int maximumAttack;
+    [SerializeField] int maximumDefense;
+    [SerializeField] int maximumSpAttack;
+    [SerializeField] int maximumSpDefense;
+    [SerializeField] int maximumSpeed;
 
     // XP yield and Growth rate
     [SerializeField] int expYield;
@@ -119,6 +128,7 @@ public class PokemonBase : ScriptableObject
     public string Description => description;
     public List<Sprite> FrontSprite => frontSprite;
     public List<Sprite> BackSprite => backSprite;
+    public List<Sprite> SmallSprite => smallSprite;
     public PokemonType Type1 => type1;
     public PokemonType Type2 => type2;
     public int MaxHP => maxHp;
@@ -127,6 +137,14 @@ public class PokemonBase : ScriptableObject
     public int SpAttack => spAttack;
     public int SpDefense => spDefense;
     public int Speed => speed;
+
+    public int MaximumHP => maximumHp;
+    public int MaximumAttack => maximumAttack;
+    public int MaximumDefense => maximumDefense;
+    public int MaximumSpAttack => maximumSpAttack;
+    public int MaximumSpDefense => maximumSpDefense;
+    public int MaximumSpeed => maximumSpeed;
+
     public int ExpYield => expYield;
     public GrowthRate GrowthRate => growthRate;
     public int CatchRate => catchRate;

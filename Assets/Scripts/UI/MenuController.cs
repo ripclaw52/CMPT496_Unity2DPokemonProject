@@ -11,5 +11,6 @@ public class MenuController : SelectionUI<TextSlot>
     private void Start()
     {
         SetItems(GetComponentsInChildren<TextSlot>().ToList());
+        SetSelectionSettings(SelectionType.ListV, 1);
     }
 }

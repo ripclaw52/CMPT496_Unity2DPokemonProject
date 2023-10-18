@@ -42,6 +42,9 @@ public class Pokemon
     public int VolatileStatusTime { get; set; }
     public Queue<string> StatusChanges { get; private set; }
 
+    public int MaximumHp { get; private set; }
+    public Dictionary<Stat, int> MaximumStats { get; private set; }
+
     public event System.Action OnStatusChanged;
     public event System.Action OnHPChanged;
 
@@ -136,6 +139,18 @@ public class Pokemon
             HP += MaxHP - oldMaxHP;
     }
 
+    void CalculateMaxStats()
+    {
+        MaximumStats = new Dictionary<Stat, int>();
+        MaximumStats.Add(Stat.Attack, Base.MaximumAttack);
+        MaximumStats.Add(Stat.Defense, Base.MaximumDefense);
+        MaximumStats.Add(Stat.SpAttack, Base.MaximumSpAttack);
+        MaximumStats.Add(Stat.SpDefense, Base.MaximumSpDefense);
+        MaximumStats.Add(Stat.Speed, Base.MaximumSpeed);
+
+        MaximumHp = Base.MaximumHP;
+    }
+
     /// <summary>
     /// Resets the StatBoosts dictionary to its default values.
     /// </summary>
@@ -152,6 +167,14 @@ public class Pokemon
             {Stat.Evasion, 0}
         };
     }
+
+    int GetCurentStat(Stat stat) { return Stats[stat];}
+    int GetMaximumStat(Stat stat) { return MaximumStats[stat]; }
+    int GetCurrentHP() { return MaxHP; }
+    int GetMaximumHP() { return MaximumHp; }
+
+    float GetHPNormalized() { return (float)GetCurrentHP() / GetMaximumHP(); }
+    float GetStatNormalized(Stat stat) { return (float)GetCurentStat(stat) / GetMaximumStat(stat); }
 
     /// <summary>
     /// Gets the stat value after applying any stat boosts.

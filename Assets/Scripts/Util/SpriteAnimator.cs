@@ -59,7 +59,6 @@ public class SpriteAnimator
                 //Debug.Log($"frames null at handleupdate");
                 return;
             }
-
             currentFrame = (currentFrame + 1) % frames.Count;
             spriteRenderer.sprite = frames[currentFrame];
             timer -= frameRate;

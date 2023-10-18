@@ -20,7 +20,9 @@ public class InventoryUI : SelectionUI<TextSlot>
     [SerializeField] Image downArrow;
 
     int selectedCategory = 0;
+    float timer = 0f;
 
+    const float selectionSpeed = 5f;
     const int itemsInViewport = 8;
 
     List<ItemSlotUI> slotUIList;
@@ -63,10 +65,16 @@ public class InventoryUI : SelectionUI<TextSlot>
     {
         int prevCategory = selectedCategory;
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-            ++selectedCategory;
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-            --selectedCategory;
+        float v = Input.GetAxis("Horizontal");
+        if (timer == 0 && Mathf.Abs(v) > 0.2f)
+        {
+            selectedCategory += -(int)Mathf.Sign(v);
+
+            timer = 1 / selectionSpeed;
+
+            AudioManager.i.PlaySfx(AudioId.UISelect);
+        }
+        UpdateSelectionTimer();
 
         if (selectedCategory > Inventory.ItemCategories.Count - 1)
             selectedCategory = 0;
@@ -81,6 +89,7 @@ public class InventoryUI : SelectionUI<TextSlot>
         }
 
         base.HandleUpdate();
+        SetSelectionSettings(SelectionType.ListV, 1);
     }
 
     public override void UpdateSelectionInUI()
@@ -121,6 +130,12 @@ public class InventoryUI : SelectionUI<TextSlot>
 
         itemIcon.sprite = null;
         itemDescription.text = "";
+    }
+
+    void UpdateSelectionTimer()
+    {
+        if (timer > 0)
+            timer = Mathf.Clamp(timer - Time.deltaTime, 0, timer);
     }
 
     public ItemBase SelectedItem => inventory.GetItem(selectedItem, selectedCategory);
