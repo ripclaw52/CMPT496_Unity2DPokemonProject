@@ -2,13 +2,17 @@ using GDEUtils.GenericSelectionUI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+
+public enum PageTypes { Cover, Stats, Moves }
 
 public class SummaryUI : MonoBehaviour
 {
-    enum PageTypes { Cover, Stats, Moves }
-
     [SerializeField] List<GameObject> pageList;
+    [SerializeField] TextMeshProUGUI selectedPageText;
+    SummaryCoverUI cover;
+
     Pokemon selectedPokemon;
 
     //List<Pokemon> selectedPokemonList;
@@ -18,8 +22,18 @@ public class SummaryUI : MonoBehaviour
     float selectionTimer = 0;
     const float selectionSpeed = 5;
 
-    public event Action<int> OnSelected;
+    //public event Action<int> OnSelected;
     public event Action OnBack;
+
+    public static List<string> SummaryPages { get; set; } = new List<string>()
+    {
+        "Cover", "Stats", "Moves"
+    };
+
+    private void Awake()
+    {
+        cover = GetComponentInChildren<SummaryCoverUI>();
+    }
 
     public void HandleUpdate()
     {
@@ -52,10 +66,22 @@ public class SummaryUI : MonoBehaviour
             pageList[prevSelection].SetActive(false);
             pageList[selectedPage].SetActive(true);
         }
-
+        
+        selectedPageText.text = SummaryPages[selectedPage];
+        
         if (selectedPokemon != null)
         {
-            Debug.Log($"name: {selectedPokemon.Base.Name}");
+            switch (selectedPage)
+            {
+                case 0:
+                    cover.Init(selectedPokemon);
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+
+            }
         }
 
         if (Input.GetButtonDown("Back"))

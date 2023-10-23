@@ -73,6 +73,8 @@ public class Pokemon
         ResetStatBoost();
         Status = null;
         VolatileStatus = null;
+
+        CalculateMaxStats();
     }
 
     /// <summary>
@@ -99,6 +101,8 @@ public class Pokemon
         StatusChanges = new Queue<string>();
         ResetStatBoost();
         VolatileStatus = null;
+
+        CalculateMaxStats();
     }
 
     /// <summary>
@@ -240,6 +244,11 @@ public class Pokemon
         }
 
         return false;
+    }
+
+    public int CheckExpToNextLevel()
+    {
+        return (level < (GlobalSettings.i.MaximumPokemonLevel + 1)) ? (Base.GetExpForLevel(Level + 1) - Exp) : 0;
     }
 
     /// <summary>

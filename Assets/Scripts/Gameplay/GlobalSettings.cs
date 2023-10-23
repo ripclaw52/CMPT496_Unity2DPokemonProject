@@ -13,6 +13,8 @@ public class GlobalSettings : MonoBehaviour
     [SerializeField] StatusBase[] status;
     [SerializeField] TypeBase[] type;
 
+    [SerializeField] int maximumPokemonLevel = 100;
+
     public Color HighlightedColor => highlightedColor;
     public Gradient HealthbarGradientTop => healthbarGradientTop;
     public Gradient HealthbarGradientBottom => healthbarGradientBottom;
@@ -20,6 +22,8 @@ public class GlobalSettings : MonoBehaviour
     public CategoryBase[] Category => category;
     public StatusBase[] Status => status;
     public TypeBase[] Type => type;
+
+    public int MaximumPokemonLevel => maximumPokemonLevel;
 
     public static GlobalSettings i { get; private set; }
 
