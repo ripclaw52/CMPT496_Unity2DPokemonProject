@@ -18,8 +18,10 @@ public class SummaryMoveState : State<GameController>
     public override void Enter(GameController owner)
     {
         gc = owner;
-        //summaryMoveUI.gameObject.SetActive(true);
-        //summaryMoveUI.OnSelected += OnMoveSelected;
+        summaryMoveUI.MoveInfo.SetActive(true);
+        summaryMoveUI.InteractionInfo.SetActive(false);
+
+        summaryMoveUI.InitializeMoveBox();
         summaryMoveUI.OnBack += OnBack;
     }
 
@@ -30,7 +32,8 @@ public class SummaryMoveState : State<GameController>
 
     public override void Exit()
     {
-        //summaryMoveUI.OnSelected -= OnMoveSelected;
+        summaryMoveUI.MoveInfo.SetActive(false);
+        summaryMoveUI.InteractionInfo.SetActive(true);
         summaryMoveUI.OnBack -= OnBack;
     }
 

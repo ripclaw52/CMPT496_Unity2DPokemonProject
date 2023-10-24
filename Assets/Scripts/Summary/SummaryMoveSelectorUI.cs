@@ -57,6 +57,16 @@ public class SummaryMoveSelectorUI : MonoBehaviour, ISelectableItem
         }
     }
 
+    public TypeBase GetMoveType(MoveBase move)
+    {
+        foreach (var item in GlobalSettings.i.Type)
+        {
+            if (item.Type == move.Type)
+                return item;
+        }
+        return null;
+    }
+
     public void GetMovePP(Move move)
     {
         maxMovePP.text = "/" + move.Base.PP.ToString();

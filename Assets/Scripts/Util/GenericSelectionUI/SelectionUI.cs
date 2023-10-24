@@ -56,7 +56,11 @@ namespace GDEUtils.GenericSelectionUI
             else if (selectionType == SelectionType.Grid)
                 HandleGridSelection();
 
-            selectedItem = Mathf.Clamp(selectedItem, 0, items.Count - 1);
+            //selectedItem = Mathf.Clamp(selectedItem, 0, items.Count - 1);
+            if (selectedItem < 0)
+                selectedItem = items.Count - 1;
+            else if (selectedItem > items.Count - 1)
+                selectedItem = 0;
 
             if (selectedItem != prevSelection)
                 UpdateSelectionInUI();

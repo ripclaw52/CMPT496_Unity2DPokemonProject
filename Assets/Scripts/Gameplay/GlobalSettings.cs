@@ -31,6 +31,36 @@ public class GlobalSettings : MonoBehaviour
     {
         i = this;
     }
+
+    public CategoryBase GetCategory(MoveBase move)
+    {
+        foreach (var item in Category)
+        {
+            if (item.Category == move.Category)
+                return item;
+        }
+        return null;
+    }
+
+    public StatusBase GetStatusCondition(ConditionID condition)
+    {
+        foreach (var item in Status)
+        {
+            if (item.Condition == condition)
+                return item;
+        }
+        return null;
+    }
+
+    public TypeBase GetMoveType(MoveBase move)
+    {
+        foreach (var item in Type)
+        {
+            if (item.Type == move.Type)
+                return item;
+        }
+        return null;
+    }
 }
 
 [System.Serializable]

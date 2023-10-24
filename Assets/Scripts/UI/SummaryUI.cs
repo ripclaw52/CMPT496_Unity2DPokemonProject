@@ -83,11 +83,7 @@ public class SummaryUI : MonoBehaviour
                     break;
                 case 2:
                     move.Init(selectedPokemon);
-                    if (Input.GetKeyDown(KeyCode.Return))
-                    {
-                        GameController.Instance.StateMachine.Push(SummaryMoveState.i);
-                        move.InitializeMoveBox();
-                    }
+                    //Debug.Log($"Init called on move in summaryUI");
                     break;
 
             }
