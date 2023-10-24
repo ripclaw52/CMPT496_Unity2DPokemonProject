@@ -1,16 +1,20 @@
 using GDEUtils.StateMachine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SummaryState : State<GameController>
 {
     [SerializeField] SummaryUI summaryUI;
 
+    List<Pokemon> pokemonList;
+
     public Pokemon SelectedPokemon { get; private set; }
-    public List<Pokemon> PokemonList { get; private set; }
+    public List<Pokemon> PokemonList => pokemonList;
 
     int selectedIndex;
+
     float selectionTimer = 0;
     const float selectionSpeed = 5;
 
@@ -21,48 +25,55 @@ public class SummaryState : State<GameController>
     }
 
     GameController gc;
-
     public override void Enter(GameController owner)
     {
         gc = owner;
+
+        // initialize pokemon list to iterate through
+        InitPokemonList();
+
         summaryUI.gameObject.SetActive(true);
-        //summaryUI.OnSelected += OnPokemonSelected;
         summaryUI.OnBack += OnBack;
     }
 
     public override void Execute()
     {
-        StartCoroutine(PokemonListCreator());
+        this.HandleUpdate();
         summaryUI.HandleUpdate();
     }
 
     public override void Exit()
     {
+        //selectedIndex = 0;
+        summaryUI.selectedPage = 0;
+
         summaryUI.gameObject.SetActive(false);
-        //summaryUI.OnSelected -= OnPokemonSelected;
         summaryUI.OnBack -= OnBack;
     }
 
-    void OnPokemonSelected(int selected)
-    {
-    }
-
-    IEnumerator PokemonListCreator()
+    void InitPokemonList()
     {
         var prevState = gc.StateMachine.GetPrevState();
-
         if (prevState == PartyState.i)
         {
+            pokemonList = new List<Pokemon>();
             var partyState = prevState as PartyState;
-            PokemonList = partyState.PartyScreen.PokemonList;
 
-            SelectedPokemonChanged();
+            // assign selected pokemon
+            SelectedPokemon = partyState.PartyScreen.SelectedMember;
+            // assign pokemon list from party
+            pokemonList = partyState.PartyScreen.PokemonList;
+
+            // get index value in list for selected pokemon
+            selectedIndex = pokemonList.FindIndex(p => p == SelectedPokemon);
         }
-        yield break;
     }
 
-    void SelectedPokemonChanged()
+    public void HandleUpdate()
     {
+        // index selected
+        //Debug.Log($"selectedIndex; {selectedIndex}");
+
         UpdateSelectionTimer();
         int prevSelection = selectedIndex;
 
@@ -74,20 +85,20 @@ public class SummaryState : State<GameController>
             AudioManager.i.PlaySfx(AudioId.UISelect);
         }
 
-        if (selectedIndex > PokemonList.Count - 1)
+        if (selectedIndex > pokemonList.Count - 1)
         {
             selectedIndex = 0;
-            prevSelection = PokemonList.Count - 1;
+            prevSelection = pokemonList.Count - 1;
         }
         else if (selectedIndex < 0)
         {
-            selectedIndex = PokemonList.Count - 1;
+            selectedIndex = pokemonList.Count - 1;
             prevSelection = 0;
         }
 
         if (selectedIndex != prevSelection)
         {
-            SelectedPokemon = PokemonList[selectedIndex];
+            SelectedPokemon = pokemonList[selectedIndex];
             //Debug.Log($"name; {SelectedPokemon.Base.Name}");
         }
     }

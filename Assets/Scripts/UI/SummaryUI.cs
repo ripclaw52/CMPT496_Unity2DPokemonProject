@@ -11,6 +11,7 @@ public class SummaryUI : MonoBehaviour
 {
     [SerializeField] List<GameObject> pageList;
     [SerializeField] TextMeshProUGUI selectedPageText;
+
     SummaryCoverUI cover;
     SummaryStatUI stat;
     SummaryMoveUI move;
@@ -34,16 +35,27 @@ public class SummaryUI : MonoBehaviour
 
     private void Awake()
     {
-        cover = GetComponentInChildren<SummaryCoverUI>();
-        move = GetComponentInChildren<SummaryMoveUI>();
+        cover = GetComponentInChildren<SummaryCoverUI>(true);
+        stat = GetComponentInChildren<SummaryStatUI>(true);
+        move = GetComponentInChildren<SummaryMoveUI>(true);
+    }
+
+    private void Start()
+    {
+        selectedPokemon = SummaryState.i.SelectedPokemon;
+        
+        selectedPage = 0;
+        pageList[selectedPage].SetActive(true);
+        cover.Init(selectedPokemon);
     }
 
     public void HandleUpdate()
     {
-        selectedPokemon = SummaryState.i.SelectedPokemon;
+        //selectedPokemon = SummaryState.i.SelectedPokemon;
 
         UpdateSelectionTimer();
         int prevSelection = selectedPage;
+        Pokemon prevPokemon = selectedPokemon;
 
         float h = Input.GetAxis("Horizontal");
         if (selectionTimer == 0 && Mathf.Abs(h) > 0.2f)
@@ -53,15 +65,14 @@ public class SummaryUI : MonoBehaviour
             AudioManager.i.PlaySfx(AudioId.UISelect);
         }
 
+        // Page selection movement
         if (selectedPage > pageList.Count - 1)
         {
             selectedPage = 0;
-            prevSelection = pageList.Count - 1;
         }
         else if (selectedPage < 0)
         {
             selectedPage = pageList.Count - 1;
-            prevSelection = 0;
         }
 
         if (selectedPage != prevSelection)
@@ -71,9 +82,12 @@ public class SummaryUI : MonoBehaviour
         }
         
         selectedPageText.text = SummaryPages[selectedPage];
-        
+
         if (selectedPokemon != null)
         {
+            selectedPokemon = SummaryState.i.SelectedPokemon;
+            Debug.Log($"pokemon name from summary; {SummaryState.i.SelectedPokemon.Base.Name}");
+
             switch (selectedPage)
             {
                 case 0:
@@ -82,16 +96,21 @@ public class SummaryUI : MonoBehaviour
                 case 1:
                     break;
                 case 2:
+                    Debug.Log($"move active?{move.isActiveAndEnabled}");
                     move.Init(selectedPokemon);
-                    //Debug.Log($"Init called on move in summaryUI");
                     break;
-
+                default:
+                    break;
             }
         }
 
         if (Input.GetButtonDown("Back"))
         {
             AudioManager.i.PlaySfx(AudioId.UICancel);
+
+            pageList[selectedPage].SetActive(false);
+            pageList[0].SetActive(true);
+            
             OnBack?.Invoke();
         }
     }
