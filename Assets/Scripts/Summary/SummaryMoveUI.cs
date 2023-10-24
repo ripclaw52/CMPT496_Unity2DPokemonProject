@@ -46,7 +46,7 @@ public class SummaryMoveUI : SelectionUI<MoveSlot>
 
     public void Init(Pokemon pokemon)
     {
-        Debug.Log($"Init called in summaryMoveUI");
+        //Debug.Log($"Init called in summaryMoveUI");
 
         if (moveList != null) moveList.Clear();
         moveList = new List<Move>(pokemon.Moves);

@@ -86,8 +86,7 @@ public class SummaryUI : MonoBehaviour
         if (selectedPokemon != null)
         {
             selectedPokemon = SummaryState.i.SelectedPokemon;
-            Debug.Log($"pokemon name from summary; {SummaryState.i.SelectedPokemon.Base.Name}");
-
+            //Debug.Log($"pokemon name from summary; {SummaryState.i.SelectedPokemon.Base.Name}");
             switch (selectedPage)
             {
                 case 0:
@@ -96,7 +95,7 @@ public class SummaryUI : MonoBehaviour
                 case 1:
                     break;
                 case 2:
-                    Debug.Log($"move active?{move.isActiveAndEnabled}");
+                    //Debug.Log($"move active?{move.isActiveAndEnabled}");
                     move.Init(selectedPokemon);
                     break;
                 default:
