@@ -23,7 +23,6 @@ public class SummaryCoverUI : MonoBehaviour
 
         pokemonSpecies.text = pokemon.Base.Name;
 
-
         // Type Icon information
         GameObject pt1 = type1.transform.parent.gameObject;
         GameObject pt2 = type2.transform.parent.gameObject;

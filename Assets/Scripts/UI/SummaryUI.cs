@@ -12,6 +12,8 @@ public class SummaryUI : MonoBehaviour
     [SerializeField] List<GameObject> pageList;
     [SerializeField] TextMeshProUGUI selectedPageText;
     SummaryCoverUI cover;
+    SummaryStatUI stat;
+    SummaryMoveUI move;
 
     Pokemon selectedPokemon;
 
@@ -33,6 +35,7 @@ public class SummaryUI : MonoBehaviour
     private void Awake()
     {
         cover = GetComponentInChildren<SummaryCoverUI>();
+        move = GetComponentInChildren<SummaryMoveUI>();
     }
 
     public void HandleUpdate()
@@ -79,6 +82,12 @@ public class SummaryUI : MonoBehaviour
                 case 1:
                     break;
                 case 2:
+                    move.Init(selectedPokemon);
+                    if (Input.GetKeyDown(KeyCode.Return))
+                    {
+                        GameController.Instance.StateMachine.Push(SummaryMoveState.i);
+                        move.InitializeMoveBox();
+                    }
                     break;
 
             }
