@@ -74,6 +74,14 @@ public class SummaryMoveUI : SelectionUI<MoveSlot>
             slotUIList.Add(slotUIObj);
         }
 
+        // Handles pokemon knowing less than 4 moves
+        int moveListCount = moveList.Count;
+        while (moveListCount < 4)
+        {
+            Instantiate(moveSlotUI, moveSlotList.transform);
+            moveListCount++;
+        }
+
         SetItems(slotUIList.Select(s => s.GetComponent<MoveSlot>()).ToList());
 
         UpdateSelectionInUI();

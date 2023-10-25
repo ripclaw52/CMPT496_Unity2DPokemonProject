@@ -93,6 +93,7 @@ public class SummaryUI : MonoBehaviour
                     cover.Init(selectedPokemon);
                     break;
                 case 1:
+                    stat.Init(selectedPokemon);
                     break;
                 case 2:
                     //Debug.Log($"move active?{move.isActiveAndEnabled}");
