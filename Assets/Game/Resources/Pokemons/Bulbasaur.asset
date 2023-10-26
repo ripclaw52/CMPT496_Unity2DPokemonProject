@@ -215,6 +215,7 @@ MonoBehaviour:
   - {fileID: -1146509365, guid: f4b5f9fafc0e1fd4db5fc1ab3f07c41a, type: 3}
   - {fileID: 1175040713, guid: f4b5f9fafc0e1fd4db5fc1ab3f07c41a, type: 3}
   - {fileID: -166643007, guid: f4b5f9fafc0e1fd4db5fc1ab3f07c41a, type: 3}
+  smallSprite: []
   type1: 5
   type2: 8
   maxHp: 45
@@ -223,6 +224,12 @@ MonoBehaviour:
   spAttack: 65
   spDefense: 65
   speed: 45
+  maximumHp: 200
+  maximumAttack: 92
+  maximumDefense: 92
+  maximumSpAttack: 121
+  maximumSpDefense: 121
+  maximumSpeed: 85
   expYield: 64
   growthRate: 3
   catchRate: 45

@@ -7,6 +7,8 @@ public class SummaryStatUI : MonoBehaviour
     [SerializeField] GameObject statDetail;
     [SerializeField] StatDetailUI statDetailPrefab;
 
+    [SerializeField] UIStatsRadarChart radarChart;
+
     List<StatDetailUI> statList;
 
     public void Init(Pokemon pokemon)
@@ -46,5 +48,8 @@ public class SummaryStatUI : MonoBehaviour
         var stat6 = Instantiate(statDetailPrefab, statDetail.transform);
         stat6.SetData("speed", pokemon.Stats[Stat.Speed]);
         statList.Add(stat6);
+
+        // display radar chart image
+        radarChart.Setup(pokemon);
     }
 }

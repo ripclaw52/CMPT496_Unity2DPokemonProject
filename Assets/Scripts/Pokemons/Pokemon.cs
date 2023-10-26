@@ -130,14 +130,14 @@ public class Pokemon
     void CalculateStats()
     {
         Stats = new Dictionary<Stat, int>();
-        Stats.Add(Stat.Attack, Mathf.FloorToInt((Base.Attack * Level) / 100f) + 5);
-        Stats.Add(Stat.Defense, Mathf.FloorToInt((Base.Defense * Level) / 100f) + 5);
-        Stats.Add(Stat.SpAttack, Mathf.FloorToInt((Base.SpAttack * Level) / 100f) + 5);
-        Stats.Add(Stat.SpDefense, Mathf.FloorToInt((Base.SpDefense * Level) / 100f) + 5);
-        Stats.Add(Stat.Speed, Mathf.FloorToInt((Base.Speed * Level) / 100f) + 5);
+        Stats.Add(Stat.Attack, Mathf.FloorToInt((2 * Base.Attack * Level) / 100f) + 5);
+        Stats.Add(Stat.Defense, Mathf.FloorToInt((2 * Base.Defense * Level) / 100f) + 5);
+        Stats.Add(Stat.SpAttack, Mathf.FloorToInt((2 * Base.SpAttack * Level) / 100f) + 5);
+        Stats.Add(Stat.SpDefense, Mathf.FloorToInt((2 * Base.SpDefense * Level) / 100f) + 5);
+        Stats.Add(Stat.Speed, Mathf.FloorToInt((2 * Base.Speed * Level) / 100f) + 5);
 
         int oldMaxHP = MaxHP;
-        MaxHP = Mathf.FloorToInt((Base.MaxHP * Level) / 100f) + 10 + Level;
+        MaxHP = Mathf.FloorToInt((2 * Base.MaxHP * Level) / 100f) + 10 + Level;
 
         if (oldMaxHP != 0)
             HP += MaxHP - oldMaxHP;
@@ -177,8 +177,8 @@ public class Pokemon
     int GetCurrentHP() { return MaxHP; }
     int GetMaximumHP() { return MaximumHp; }
 
-    float GetHPNormalized() { return (float)GetCurrentHP() / GetMaximumHP(); }
-    float GetStatNormalized(Stat stat) { return (float)GetCurentStat(stat) / GetMaximumStat(stat); }
+    public float GetHPNormalized() { return (float)GetCurrentHP() / GetMaximumHP(); }
+    public float GetStatNormalized(Stat stat) { return (float)GetCurentStat(stat) / GetMaximumStat(stat); }
 
     /// <summary>
     /// Gets the stat value after applying any stat boosts.
