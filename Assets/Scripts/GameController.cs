@@ -27,10 +27,18 @@ public class GameController : MonoBehaviour
         Cursor.visible = false;
 
         PokemonDB.Init();
+        //Debug.Log($"PokemonDB = {PokemonDB.objects.Count}");
+
         MoveDB.Init();
+        //Debug.Log($"MoveDB = {MoveDB.objects.Count}");
+
         ConditionsDB.Init();
+
         ItemDB.Init();
+        //Debug.Log($"ItemDB = {ItemDB.objects.Count}");
+
         QuestDB.Init();
+        //Debug.Log($"QuestDB = {QuestDB.objects.Count}");
     }
 
     private void Start()

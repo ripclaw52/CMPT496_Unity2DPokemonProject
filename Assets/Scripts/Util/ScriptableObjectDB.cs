@@ -9,8 +9,9 @@ public class ScriptableObjectDB<T> : MonoBehaviour where T : ScriptableObject
 {
     /// <summary>
     /// Represents a static dictionary of objects with string keys and generic type values.
+    /// Made public for ease of access.
     /// </summary>
-    static Dictionary<string, T> objects;
+    public static Dictionary<string, T> objects;
 
     /// <summary>
     /// Initializes the objects dictionary by loading all objects of type T from the Resources folder. 
@@ -31,6 +32,8 @@ public class ScriptableObjectDB<T> : MonoBehaviour where T : ScriptableObject
 
             objects[obj.name] = obj;
         }
+
+        //Debug.Log($"DICT of {typeof(T)} with length: {objects.Count}");
     }
 
     /// <summary>
