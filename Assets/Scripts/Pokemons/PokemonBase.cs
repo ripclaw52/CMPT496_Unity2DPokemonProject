@@ -8,7 +8,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Pokemon", menuName = "Pokemon/Create new pokemon")]
 public class PokemonBase : ScriptableObject
 {
-    [SerializeField] string name;
+    [SerializeField] new string name;
 
     [TextAreaAttribute(minLines: 3, maxLines: 18)]
     [SerializeField] string description;

@@ -10,6 +10,7 @@ using UnityEngine.UI;
 public class SummaryMoveUI : SelectionUI<MoveSlot>
 {
     [SerializeField] GameObject moveSlotList;
+    [SerializeField] GameObject moveSlotUIEmpty;
     [SerializeField] MoveSlotUI moveSlotUI;
 
     //[SerializeField] GameObject prefabMoveSelector;
@@ -78,7 +79,7 @@ public class SummaryMoveUI : SelectionUI<MoveSlot>
         int moveListCount = moveList.Count;
         while (moveListCount < 4)
         {
-            Instantiate(moveSlotUI, moveSlotList.transform);
+            Instantiate(moveSlotUIEmpty, moveSlotList.transform);
             moveListCount++;
         }
 

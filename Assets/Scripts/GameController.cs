@@ -26,6 +26,9 @@ public class GameController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
+        NatureDB.Init();
+        //Debug.Log($"NatureDB = {NatureDB.objects.Count}");
+
         PokemonDB.Init();
         //Debug.Log($"PokemonDB = {PokemonDB.objects.Count}");
 

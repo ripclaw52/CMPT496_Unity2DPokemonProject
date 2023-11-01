@@ -9,6 +9,10 @@ public class GlobalSettings : MonoBehaviour
     [SerializeField] Gradient healthbarGradientTop;
     [SerializeField] Gradient healthbarGradientBottom;
 
+    [SerializeField] Color normalNatureStat;
+    [SerializeField] Color lowNatureStat;
+    [SerializeField] Color highNatureStat;
+
     [SerializeField] CategoryBase[] category;
     [SerializeField] StatusBase[] status;
     [SerializeField] TypeBase[] type;
@@ -18,6 +22,10 @@ public class GlobalSettings : MonoBehaviour
     public Color HighlightedColor => highlightedColor;
     public Gradient HealthbarGradientTop => healthbarGradientTop;
     public Gradient HealthbarGradientBottom => healthbarGradientBottom;
+
+    public Color NormalNatureStat => normalNatureStat;
+    public Color LowNatureStat => lowNatureStat;
+    public Color HighNatureStat => highNatureStat;
 
     public CategoryBase[] Category => category;
     public StatusBase[] Status => status;

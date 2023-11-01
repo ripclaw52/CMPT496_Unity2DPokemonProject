@@ -31,7 +31,7 @@ public class ImageAnimator
         timer += Time.deltaTime;
         if (timer > frameRate)
         {
-            Debug.Log($"{currentFrame} / {timer}");
+            //Debug.Log($"{currentFrame} / {timer}");
             currentFrame = (currentFrame + 1) % frames.Count;
             image.sprite = frames[currentFrame];
             timer -= frameRate;

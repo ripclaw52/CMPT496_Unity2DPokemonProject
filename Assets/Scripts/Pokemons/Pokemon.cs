@@ -12,6 +12,10 @@ public class Pokemon
     [SerializeField] PokemonBase _base;
     [SerializeField] int level;
 
+    public NatureBase nature;
+    public StatValue iv = new StatValue();
+    public StatValue ev = new StatValue();
+
     /// <summary>
     /// Constructor for the Pokemon class, initializing the base and level of the Pokemon.
     /// </summary>
@@ -30,6 +34,10 @@ public class Pokemon
     public int Level { get { return level; } }
     public int Exp { get; set; }
     public int HP { get; set; }
+
+    public NatureBase Nature { get; private set; }
+    public StatValue IV { get; private set; }
+    public StatValue EV { get; set; }
 
     public List<Move> Moves { get; set; }
     public Move CurrentMove { get; set; }
@@ -66,6 +74,14 @@ public class Pokemon
 
         Exp = Base.GetExpForLevel(Level);
 
+        // Enable IV and EV before Stat Calculation
+        //Debug.Log("This line exists!");
+        GetRandomNature();
+        //Debug.Log($"{nature.Name}");
+        IV = new StatValue();
+        EV = new StatValue();
+        IV.SetupIV();
+
         CalculateStats();
         HP = MaxHP;
 
@@ -89,6 +105,10 @@ public class Pokemon
         HP = saveData.hp;
         level = saveData.level;
         Exp = saveData.exp;
+
+        nature = NatureDB.GetObjectByName(saveData.nature);
+        iv = new StatValue(saveData.iv);
+        ev = new StatValue(saveData.ev);
 
         if (saveData.statusId != null)
             Status = ConditionsDB.Conditions[saveData.statusId.Value];
@@ -117,6 +137,9 @@ public class Pokemon
             hp = HP,
             level = Level,
             exp = Exp,
+            nature = Nature.name,
+            iv = IV,
+            ev = EV,
             statusId = Status?.Id,
             moves = Moves.Select(m => m.GetSaveData()).ToList()
         };
@@ -129,15 +152,19 @@ public class Pokemon
     /// </summary>
     void CalculateStats()
     {
+        Debug.Log($"NATURE; {nature.Name}");
+        Debug.Log($"IV; {iv.Attack}");
+        Debug.Log($"EV; {ev.Attack}");
+
         Stats = new Dictionary<Stat, int>();
-        Stats.Add(Stat.Attack, Mathf.FloorToInt((2 * Base.Attack * Level) / 100f) + 5);
-        Stats.Add(Stat.Defense, Mathf.FloorToInt((2 * Base.Defense * Level) / 100f) + 5);
-        Stats.Add(Stat.SpAttack, Mathf.FloorToInt((2 * Base.SpAttack * Level) / 100f) + 5);
-        Stats.Add(Stat.SpDefense, Mathf.FloorToInt((2 * Base.SpDefense * Level) / 100f) + 5);
-        Stats.Add(Stat.Speed, Mathf.FloorToInt((2 * Base.Speed * Level) / 100f) + 5);
+        Stats.Add(Stat.Attack, Mathf.FloorToInt(((((2 * Base.Attack + IV.Attack + (EV.Attack / 4)) * Level) / 100f) + 5) * Nature.Attack));
+        Stats.Add(Stat.Defense, Mathf.FloorToInt(((((2 * Base.Defense + IV.Defense + (EV.Defense / 4)) * Level) / 100f) + 5) * Nature.Defense));
+        Stats.Add(Stat.SpAttack, Mathf.FloorToInt(((((2 * Base.SpAttack + IV.SpAttack + (EV.SpAttack / 4)) * Level) / 100f) + 5) * Nature.SpAttack));
+        Stats.Add(Stat.SpDefense, Mathf.FloorToInt(((((2 * Base.SpDefense + IV.SpDefense + (EV.SpDefense / 4)) * Level) / 100f) + 5) * Nature.SpDefense));
+        Stats.Add(Stat.Speed, Mathf.FloorToInt(((((2 * Base.Speed + IV.Speed + (EV.Speed / 4)) * Level) / 100f) + 5) * Nature.Speed));
 
         int oldMaxHP = MaxHP;
-        MaxHP = Mathf.FloorToInt((2 * Base.MaxHP * Level) / 100f) + 10 + Level;
+        MaxHP = Mathf.FloorToInt((((2 * Base.MaxHP + IV.HP + (EV.HP/4)) * Level) / 100f) + 10 + Level);
 
         if (oldMaxHP != 0)
             HP += MaxHP - oldMaxHP;
@@ -446,6 +473,21 @@ public class Pokemon
         VolatileStatus = null;
     }
 
+    public void GetRandomNature()
+    {
+        //Debug.Log("Nature runs!");
+        List<NatureBase> natures = new List<NatureBase>();
+        foreach (var i in NatureDB.objects)
+        {
+            //Debug.Log($"nature; k:{i.Key} v:{i.Value}");
+            natures.Add(i.Value);
+        }
+
+        int index = Mathf.RoundToInt(Random.Range(0, natures.Count));
+        //Debug.Log($"{natures[index].name}");
+        nature = natures[index];
+    }
+
     /// <summary>
     /// Gets a random move from the list of moves with PP greater than 0.
     /// </summary>
@@ -520,6 +562,11 @@ public class PokemonSaveData
     public int hp;
     public int level;
     public int exp;
+
+    public string nature;
+    public StatValue iv;
+    public StatValue ev;
+
     public ConditionID? statusId;
     public List<MoveSaveData> moves;
 }
