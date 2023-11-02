@@ -48,14 +48,14 @@ public class MoveSlotUI : MonoBehaviour
     {
         maxPPText.text = "/" + move.Base.PP.ToString();
         currentPPText.text = move.PP.ToString();
-        var currentPP = move.PP;
-        if ((currentPP / move.Base.PP) <= 0.5f)
-        {
-            currentPPText.color = Color.yellow;
-        }
-        else if ((currentPP / move.Base.PP) <= 0.25f)
+
+        if (((float)move.PP / move.Base.PP) <= 0.25f)
         {
             currentPPText.color = Color.red;
+        }
+        else if (((float)move.PP / move.Base.PP) <= 0.5f)
+        {
+            currentPPText.color = Color.yellow;
         }
         else
         {

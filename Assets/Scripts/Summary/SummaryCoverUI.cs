@@ -36,6 +36,8 @@ public class SummaryCoverUI : MonoBehaviour
     {
         //Debug.Log("Called how many times?");
         pokemonPortrait.sprite = pokemon.Base.FrontSprite[0];
+        pokemonPortrait.SetNativeSize();
+
         pokemonLevel.text = pokemon.Level.ToString();
 
         // Side panel

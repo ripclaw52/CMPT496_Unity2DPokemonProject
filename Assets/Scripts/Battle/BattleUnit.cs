@@ -50,19 +50,26 @@ public class BattleUnit : MonoBehaviour
         {
             // Back facing pokemon animations
             spriteMap = Pokemon.Base.BackSprite;
+            image.sprite = Pokemon.Base.BackSprite[0];
+            image.SetNativeSize();
+            transform.localScale = new Vector3(2, 2, 2);
+            //image.rectTransform.sizeDelta = new Vector2(image.sprite.rect.width * 2, image.sprite.rect.height * 2);
         }
         else
         {
             // Front facing pokemon animations
             spriteMap = Pokemon.Base.FrontSprite;
+            image.sprite = Pokemon.Base.FrontSprite[0];
+            image.SetNativeSize();
+            transform.localScale = new Vector3(1, 1, 1);
         }
-
+        
         pokemonIdleAnim = new ImageAnimator(spriteMap, image);
 
         hud.gameObject.SetActive(true);
         hud.SetData(pokemon);
 
-        transform.localScale = new Vector3(1, 1, 1);
+        //transform.localScale = new Vector3(1, 1, 1);
         image.color = originalColor;
 
         PlayEnterAnimation();
