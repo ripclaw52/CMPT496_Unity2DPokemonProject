@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,11 @@ using UnityEngine;
 public class PokemonBase : ScriptableObject
 {
     [SerializeField] new string name;
+
+    [SerializeField] int dexId;
+    [SerializeField] string species;
+    [SerializeField] float height;
+    [SerializeField] float weight;
 
     [TextAreaAttribute(minLines: 3, maxLines: 18)]
     [SerializeField] string description;
@@ -36,6 +42,8 @@ public class PokemonBase : ScriptableObject
     [SerializeField] int maximumSpAttack;
     [SerializeField] int maximumSpDefense;
     [SerializeField] int maximumSpeed;
+
+    [SerializeField] List<EffortValues> evYield;
 
     // XP yield and Growth rate
     [SerializeField] int expYield;
@@ -124,8 +132,18 @@ public class PokemonBase : ScriptableObject
         }
     }
 
+    public string GetPokedexId() { return DexId.ToString("D4"); }
+    public string GetHeight() { return $"{MathF.Round(Height, 1)} m"; }
+    public string GetWeight() { return $"{MathF.Round(Weight, 1)} kg"; }
+
     public string Name => name;
+
+    public int DexId => dexId;
+    public string Species => species;
+    public float Height => height;
+    public float Weight => weight;
     public string Description => description;
+    
     public List<Sprite> FrontSprite => frontSprite;
     public List<Sprite> BackSprite => backSprite;
     public List<Sprite> SmallSprite => smallSprite;
@@ -144,6 +162,8 @@ public class PokemonBase : ScriptableObject
     public int MaximumSpAttack => maximumSpAttack;
     public int MaximumSpDefense => maximumSpDefense;
     public int MaximumSpeed => maximumSpeed;
+
+    public List<EffortValues> EVYield => evYield;
 
     public int ExpYield => expYield;
     public GrowthRate GrowthRate => growthRate;
@@ -181,6 +201,16 @@ public class Evolution
     public EvolutionItem RequiredItem => requiredItem;
 }
 
+[System.Serializable]
+public class EffortValues
+{
+    [SerializeField] EVStats evStat;
+    [SerializeField] int evValue;
+
+    public EVStats EVStat => evStat;
+    public int EVValue => evValue;
+}
+
 /// <summary>
 /// Enum containing all the different types of Pokemon.
 /// </summary>
@@ -213,6 +243,16 @@ public enum PokemonType
 public enum GrowthRate
 {
     Erratic, Fast, MediumFast, MediumSlow, Slow, Fluctuating
+}
+
+public enum EVStats
+{
+    HP,
+    Attack,
+    Defense,
+    SpAttack,
+    SpDefense,
+    Speed
 }
 
 /// <summary>

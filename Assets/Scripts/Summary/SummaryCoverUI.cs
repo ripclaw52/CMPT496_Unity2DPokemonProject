@@ -12,41 +12,68 @@ public class SummaryCoverUI : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI pokedexNumber;
     [SerializeField] TextMeshProUGUI pokemonSpecies;
+    [SerializeField] TextMeshProUGUI pokemonNature;
 
+    // Type 1
     [SerializeField] GameObject type1;
+    GameObject type1Icon;
+    GameObject type1Text;
+    // Type 2
     [SerializeField] GameObject type2;
+    GameObject type2Icon;
+    GameObject type2Text;
+
+    private void Awake()
+    {
+        type1Icon = type1.transform.Find("Type1").gameObject;
+        type1Text = type1.transform.Find("Type1Text").gameObject;
+
+        type2Icon = type2.transform.Find("Type2").gameObject;
+        type2Text = type2.transform.Find("Type2Text").gameObject;
+    }
 
     public void Init(Pokemon pokemon)
     {
+        Debug.Log("Called how many times?");
         pokemonPortrait.sprite = pokemon.Base.FrontSprite[0];
         pokemonLevel.text = pokemon.Level.ToString();
 
+        // Side panel
+
+        // Pokedex Number
+        pokedexNumber.text = pokemon.Base.GetPokedexId();
+        // Pokemon Species
         pokemonSpecies.text = pokemon.Base.Name;
+        // Nature Field
+        pokemonNature.text = pokemon.Nature.Name;
 
         // Type Icon information
-        GameObject pt1 = type1.transform.parent.gameObject;
-        GameObject pt2 = type2.transform.parent.gameObject;
-
         TypeBase typeBase1 = GetPokemonType(pokemon.Base.Type1);
         TypeBase typeBase2 = GetPokemonType(pokemon.Base.Type2);
-        Image t1Img = type1.gameObject.GetComponent<Image>();
-        Image t2Img = type2.gameObject.GetComponent<Image>();
 
         if (typeBase1 != null)
         {
-            pt1.SetActive(true);
-            t1Img.sprite = typeBase1.TypeIcon;
-            t1Img.color = typeBase1.TypeColor;
+            //Debug.Log($"{typeBase1.Type}");
+
+            type1.SetActive(true);
+            type1Icon.GetComponent<Image>().sprite = typeBase1.TypeIcon;
+            type1Text.GetComponent<TextMeshProUGUI>().text = $"{typeBase1.Type}";
+            type1.GetComponent<Image>().color = typeBase1.TypeColor;
         }
-        else { pt1.SetActive(false); }
+        else { type1.SetActive(false); }
 
         if (typeBase2 != null)
         {
-            pt2.SetActive(true);
-            t2Img.sprite = typeBase2.TypeIcon;
-            t2Img.color = typeBase2.TypeColor;
+            //Debug.Log($"{typeBase2.Type}");
+
+            type2.SetActive(true);
+            type2Icon.GetComponent<Image>().sprite = typeBase2.TypeIcon;
+            type2Text.GetComponent<TextMeshProUGUI>().text = $"{typeBase2.Type}";
+            type2.GetComponent<Image>().color = typeBase2.TypeColor;
         }
-        else { pt2.SetActive(false); }
+        else { type2.SetActive(false); }
+
+        // Add Experience information
     }
 
     public TypeBase GetPokemonType(PokemonType type)
