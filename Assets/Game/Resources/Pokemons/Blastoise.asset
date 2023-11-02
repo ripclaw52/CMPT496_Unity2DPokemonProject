@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: Blastoise
   m_EditorClassIdentifier: 
   name: Blastoise
+  dexId: 9
+  encounterStatus: 0
+  species: Shellfish
+  height: 1.6
+  weight: 85.5
   description: The jets of water it spouts from the rocket cannons on its shell can
     punch through thick steel.
   frontSprite:
@@ -514,12 +519,15 @@ MonoBehaviour:
   spAttack: 85
   spDefense: 105
   speed: 78
-  maximumHp: 268
-  maximumAttack: 153
-  maximumDefense: 184
-  maximumSpAttack: 157
-  maximumSpDefense: 193
-  maximumSpeed: 144
+  maximumHp: 362
+  maximumAttack: 291
+  maximumDefense: 328
+  maximumSpAttack: 295
+  maximumSpDefense: 339
+  maximumSpeed: 280
+  evYield:
+  - evStat: 4
+    evValue: 3
   expYield: 239
   growthRate: 3
   catchRate: 45

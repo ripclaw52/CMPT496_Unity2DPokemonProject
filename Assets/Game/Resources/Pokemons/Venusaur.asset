@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: Venusaur
   m_EditorClassIdentifier: 
   name: Venusaur
+  dexId: 3
+  encounterStatus: 0
+  species: Seed
+  height: 2
+  weight: 100
   description: "After a rainy day, the flower on its back smells stronger. The scent
     attracts other Pok\xE9mon."
   frontSprite:
@@ -360,12 +365,17 @@ MonoBehaviour:
   spAttack: 100
   spDefense: 100
   speed: 80
-  maximumHp: 270
-  maximumAttack: 152
-  maximumDefense: 153
-  maximumSpAttack: 184
-  maximumSpDefense: 184
-  maximumSpeed: 148
+  maximumHp: 364
+  maximumAttack: 289
+  maximumDefense: 291
+  maximumSpAttack: 328
+  maximumSpDefense: 328
+  maximumSpeed: 284
+  evYield:
+  - evStat: 3
+    evValue: 2
+  - evStat: 4
+    evValue: 1
   expYield: 236
   growthRate: 3
   catchRate: 45

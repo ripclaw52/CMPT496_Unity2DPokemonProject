@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: Charmeleon
   m_EditorClassIdentifier: 
   name: Charmeleon
+  dexId: 5
+  encounterStatus: 0
+  species: Flame
+  height: 1.1
+  weight: 19
   description: In the rocky mountains where Charmeleon live, their fiery tails shine
     at night like stars.
   frontSprite:
@@ -204,12 +209,17 @@ MonoBehaviour:
   spAttack: 80
   spDefense: 65
   speed: 80
-  maximumHp: 226
-  maximumAttack: 119
-  maximumDefense: 108
-  maximumSpAttack: 148
-  maximumSpDefense: 121
-  maximumSpeed: 148
+  maximumHp: 320
+  maximumAttack: 249
+  maximumDefense: 236
+  maximumSpAttack: 284
+  maximumSpDefense: 251
+  maximumSpeed: 284
+  evYield:
+  - evStat: 3
+    evValue: 1
+  - evStat: 5
+    evValue: 1
   expYield: 142
   growthRate: 3
   catchRate: 45

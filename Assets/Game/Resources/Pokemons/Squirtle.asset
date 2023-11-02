@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: Squirtle
   m_EditorClassIdentifier: 
   name: Squirtle
+  dexId: 7
+  encounterStatus: 0
+  species: Tiny Turtle
+  height: 0.5
+  weight: 9
   description: It hides in its shell to protect itself, then strikes back with spouts
     of water at every opportunity.
   frontSprite:
@@ -128,12 +133,15 @@ MonoBehaviour:
   spAttack: 50
   spDefense: 64
   speed: 43
-  maximumHp: 198
-  maximumAttack: 90
-  maximumDefense: 121
-  maximumSpAttack: 94
-  maximumSpDefense: 119
-  maximumSpeed: 81
+  maximumHp: 292
+  maximumAttack: 214
+  maximumDefense: 251
+  maximumSpAttack: 218
+  maximumSpDefense: 249
+  maximumSpeed: 203
+  evYield:
+  - evStat: 2
+    evValue: 1
   expYield: 63
   growthRate: 3
   catchRate: 45

@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: Charmander
   m_EditorClassIdentifier: 
   name: Charmander
+  dexId: 4
+  encounterStatus: 0
+  species: Lizard
+  height: 0.6
+  weight: 8.5
   description: "The fire on the tip of its tail is a measure of its life. If the
     Pok\xE9mon is healthy, its tail burns intensely."
   frontSprite:
@@ -240,12 +245,15 @@ MonoBehaviour:
   spAttack: 60
   spDefense: 50
   speed: 65
-  maximumHp: 188
-  maximumAttack: 98
-  maximumDefense: 81
-  maximumSpAttack: 112
-  maximumSpDefense: 94
-  maximumSpeed: 121
+  maximumHp: 282
+  maximumAttack: 223
+  maximumDefense: 203
+  maximumSpAttack: 240
+  maximumSpDefense: 218
+  maximumSpeed: 251
+  evYield:
+  - evStat: 5
+    evValue: 1
   expYield: 62
   growthRate: 3
   catchRate: 45

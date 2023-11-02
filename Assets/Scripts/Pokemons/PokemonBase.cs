@@ -12,6 +12,7 @@ public class PokemonBase : ScriptableObject
     [SerializeField] new string name;
 
     [SerializeField] int dexId;
+    [SerializeField] EncounterStatus encounterStatus;
     [SerializeField] string species;
     [SerializeField] float height;
     [SerializeField] float weight;
@@ -133,12 +134,13 @@ public class PokemonBase : ScriptableObject
     }
 
     public string GetPokedexId() { return DexId.ToString("D4"); }
+    public string GetSpecies() { return $"{Species} Pokemon"; }
     public string GetHeight() { return $"{MathF.Round(Height, 1)} m"; }
     public string GetWeight() { return $"{MathF.Round(Weight, 1)} kg"; }
 
     public string Name => name;
-
     public int DexId => dexId;
+    public EncounterStatus EncounterStatus => encounterStatus;
     public string Species => species;
     public float Height => height;
     public float Weight => weight;
@@ -243,6 +245,13 @@ public enum PokemonType
 public enum GrowthRate
 {
     Erratic, Fast, MediumFast, MediumSlow, Slow, Fluctuating
+}
+
+public enum EncounterStatus
+{
+    None,
+    Encounter,
+    Caught
 }
 
 public enum EVStats

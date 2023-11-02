@@ -5,21 +5,25 @@ using UnityEngine.UI;
 
 public class MoveSlot : MonoBehaviour, ISelectableItem
 {
-    [SerializeField] Image backgroundImage;
-    Color ogColor;
+    [SerializeField] Image topImage;
+    [SerializeField] Image botImage;
+    Color topColor, botColor;
 
     public void Init()
     {
-        ogColor = backgroundImage.color;
+        topColor = topImage.color;
+        botColor = botImage.color;
     }
 
     public void Clear()
     {
-        backgroundImage.color = ogColor;
+        topImage.color = topColor;
+        botImage.color = botColor;
     }
 
     public void OnSelectionChanged(bool selected)
     {
-        backgroundImage.color = (selected) ? new Color(ogColor.r, ogColor.g, ogColor.b, 1f) : ogColor;
+        topImage.color = (selected) ? new Color(topColor.r, topColor.g, topColor.b, 1f) : topColor;
+        botImage.color = (selected) ? new Color(botColor.r, botColor.g, botColor.b, 1f) : botColor;
     }
 }

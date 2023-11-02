@@ -34,7 +34,7 @@ public class SummaryCoverUI : MonoBehaviour
 
     public void Init(Pokemon pokemon)
     {
-        Debug.Log("Called how many times?");
+        //Debug.Log("Called how many times?");
         pokemonPortrait.sprite = pokemon.Base.FrontSprite[0];
         pokemonLevel.text = pokemon.Level.ToString();
 

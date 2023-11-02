@@ -5,7 +5,6 @@ using UnityEngine;
 public class UIStatsRadarChart : MonoBehaviour
 {
     [SerializeField] private Material radarMaterial;
-    [SerializeField] private Texture2D radarTexture2D;
 
     private CanvasRenderer radarMeshCanvasRenderer;
 
@@ -30,7 +29,7 @@ public class UIStatsRadarChart : MonoBehaviour
         int[] triangles = new int[3 * 6];
 
         float angleIncrement = 360f / 6;
-        float radarChartSize = 204.5f;
+        float radarChartSize = 185f;
 
         Vector3 healthVertex = Quaternion.Euler(0, 0, -angleIncrement * 0) * Vector3.up * radarChartSize * pokemon.GetHPNormalized();
         int healthVertexIndex = 1;

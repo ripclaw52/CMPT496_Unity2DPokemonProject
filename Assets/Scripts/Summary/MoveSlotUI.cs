@@ -10,7 +10,8 @@ public class MoveSlotUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI currentPPText;
     [SerializeField] TextMeshProUGUI maxPPText;
 
-    [SerializeField] Image backgroundImage;
+    [SerializeField] Image topImage;
+    [SerializeField] Image bottomImage;
     [SerializeField] Image typeIcon;
 
     RectTransform rectTransform;
@@ -19,7 +20,8 @@ public class MoveSlotUI : MonoBehaviour
     public TextMeshProUGUI NameText => nameText;
     public TextMeshProUGUI CurrentPPText => currentPPText;
     public TextMeshProUGUI MaxPPText => maxPPText;
-    public Image BackgroundImage => backgroundImage;
+    public Image TopImage => topImage;
+    public Image BottomImage => bottomImage;
     public Image TypeIcon => typeIcon;
     public float Height => rectTransform.rect.height;
 
@@ -38,7 +40,8 @@ public class MoveSlotUI : MonoBehaviour
         typeIcon.sprite = moveType.TypeIcon;
         typeIcon.color = Color.white;
 
-        backgroundImage.color = new Color(moveType.TypeColor.r, moveType.TypeColor.g, moveType.TypeColor.b, 0.5f);
+        topImage.color = new Color(moveType.TypeColor.r, moveType.TypeColor.g, moveType.TypeColor.b, 0.75f);
+        bottomImage.color = new Color(moveType.TypeColor.r, moveType.TypeColor.g, moveType.TypeColor.b, 0.5f);
     }
 
     void GetMovePP(Move move)
@@ -46,11 +49,11 @@ public class MoveSlotUI : MonoBehaviour
         maxPPText.text = "/" + move.Base.PP.ToString();
         currentPPText.text = move.PP.ToString();
         var currentPP = move.PP;
-        if (currentPP / move.Base.PP <= 0.5f)
+        if ((currentPP / move.Base.PP) <= 0.5f)
         {
             currentPPText.color = Color.yellow;
         }
-        else if (currentPP / move.Base.PP <= 0.25f)
+        else if ((currentPP / move.Base.PP) <= 0.25f)
         {
             currentPPText.color = Color.red;
         }

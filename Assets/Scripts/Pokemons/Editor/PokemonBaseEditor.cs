@@ -8,6 +8,14 @@ public class PokemonBaseEditor : Editor
 {
     SerializedProperty name;
     SerializedProperty description;
+
+    // Pokedex info
+    SerializedProperty dexId;
+    SerializedProperty encounterStatus;
+    SerializedProperty species;
+    SerializedProperty height;
+    SerializedProperty weight;
+
     SerializedProperty frontSprite;
     SerializedProperty backSprite;
     SerializedProperty smallSprite;
@@ -31,6 +39,7 @@ public class PokemonBaseEditor : Editor
     SerializedProperty maximumSpeed;
 
     // Battle info
+    SerializedProperty evYield;
     SerializedProperty expYield;
     SerializedProperty growthRate;
     SerializedProperty catchRate;
@@ -41,12 +50,20 @@ public class PokemonBaseEditor : Editor
     // Evolution list
     SerializedProperty evolutions;
 
-    bool showBaseStats, showMaxStats, showLevelUpInfo = false;
+    bool showBaseStats, showPokedexInfo, showMaxStats, showLevelUpInfo = false;
 
     private void OnEnable()
     {
         name = serializedObject.FindProperty("name");
         description = serializedObject.FindProperty("description");
+
+        // pokedex info
+        dexId = serializedObject.FindProperty("dexId");
+        encounterStatus = serializedObject.FindProperty("encounterStatus");
+        species = serializedObject.FindProperty("species");
+        height = serializedObject.FindProperty("height");
+        weight = serializedObject.FindProperty("weight");
+
         frontSprite = serializedObject.FindProperty("frontSprite");
         backSprite = serializedObject.FindProperty("backSprite");
         smallSprite = serializedObject.FindProperty("smallSprite");
@@ -70,6 +87,7 @@ public class PokemonBaseEditor : Editor
         maximumSpeed = serializedObject.FindProperty("maximumSpeed");
 
         // levelup info
+        evYield = serializedObject.FindProperty("evYield");
         expYield = serializedObject.FindProperty("expYield");
         growthRate = serializedObject.FindProperty("growthRate");
         catchRate = serializedObject.FindProperty("catchRate");
@@ -84,6 +102,7 @@ public class PokemonBaseEditor : Editor
     {
         serializedObject.Update();
 
+        EditorGUILayout.PropertyField(dexId);
         EditorGUILayout.PropertyField(name);
         EditorGUILayout.PropertyField(description);
         EditorGUILayout.PropertyField(frontSprite);
@@ -91,6 +110,16 @@ public class PokemonBaseEditor : Editor
         EditorGUILayout.PropertyField(smallSprite);
         EditorGUILayout.PropertyField(type1);
         EditorGUILayout.PropertyField(type2);
+
+        showPokedexInfo = EditorGUILayout.BeginFoldoutHeaderGroup(showPokedexInfo, "Pokedex Information");
+        if (showPokedexInfo)
+        {
+            EditorGUILayout.PropertyField(encounterStatus);
+            EditorGUILayout.PropertyField(species);
+            EditorGUILayout.PropertyField(height);
+            EditorGUILayout.PropertyField(weight);
+        }
+        EditorGUILayout.EndFoldoutHeaderGroup();
 
         showBaseStats = EditorGUILayout.BeginFoldoutHeaderGroup(showBaseStats, "Base Stats");
         if (showBaseStats)
@@ -116,6 +145,7 @@ public class PokemonBaseEditor : Editor
         }
         EditorGUILayout.EndFoldoutHeaderGroup();
 
+        EditorGUILayout.PropertyField(evYield);
         showLevelUpInfo = EditorGUILayout.BeginFoldoutHeaderGroup(showLevelUpInfo, "Level Up");
         if (showLevelUpInfo)
         {

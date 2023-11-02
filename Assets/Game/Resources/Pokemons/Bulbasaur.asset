@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: Bulbasaur
   m_EditorClassIdentifier: 
   name: Bulbasaur
+  dexId: 1
+  encounterStatus: 0
+  species: Seed
+  height: 0.7
+  weight: 6.9
   description: For some time after its birth, it grows by taking nourishment from
     the seed on its back.
   frontSprite:
@@ -224,12 +229,15 @@ MonoBehaviour:
   spAttack: 65
   spDefense: 65
   speed: 45
-  maximumHp: 200
-  maximumAttack: 92
-  maximumDefense: 92
-  maximumSpAttack: 121
-  maximumSpDefense: 121
-  maximumSpeed: 85
+  maximumHp: 294
+  maximumAttack: 216
+  maximumDefense: 216
+  maximumSpAttack: 251
+  maximumSpDefense: 251
+  maximumSpeed: 207
+  evYield:
+  - evStat: 3
+    evValue: 1
   expYield: 64
   growthRate: 3
   catchRate: 45

@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: Charizard
   m_EditorClassIdentifier: 
   name: Charizard
+  dexId: 6
+  encounterStatus: 0
+  species: Flame
+  height: 1.7
+  weight: 90.5
   description: "It is said that Charizard\u2019s fire burns hotter if it has experienced
     harsh battles."
   frontSprite:
@@ -312,12 +317,15 @@ MonoBehaviour:
   spAttack: 109
   spDefense: 85
   speed: 100
-  maximumHp: 266
-  maximumAttack: 155
-  maximumDefense: 144
-  maximumSpAttack: 200
-  maximumSpDefense: 157
-  maximumSpeed: 184
+  maximumHp: 360
+  maximumAttack: 293
+  maximumDefense: 280
+  maximumSpAttack: 348
+  maximumSpDefense: 295
+  maximumSpeed: 328
+  evYield:
+  - evStat: 3
+    evValue: 3
   expYield: 267
   growthRate: 3
   catchRate: 45

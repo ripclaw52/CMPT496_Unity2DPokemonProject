@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: Ivysaur
   m_EditorClassIdentifier: 
   name: Ivysaur
+  dexId: 2
+  encounterStatus: 0
+  species: Seed
+  height: 1
+  weight: 13
   description: "When the bud on its back starts swelling, a sweet aroma wafts to
     indicate the flower\u2019s coming bloom."
   frontSprite:
@@ -248,12 +253,17 @@ MonoBehaviour:
   spAttack: 80
   spDefense: 80
   speed: 60
-  maximumHp: 230
-  maximumAttack: 116
-  maximumDefense: 117
-  maximumSpAttack: 148
-  maximumSpDefense: 148
-  maximumSpeed: 112
+  maximumHp: 324
+  maximumAttack: 245
+  maximumDefense: 247
+  maximumSpAttack: 284
+  maximumSpDefense: 284
+  maximumSpeed: 240
+  evYield:
+  - evStat: 3
+    evValue: 1
+  - evStat: 4
+    evValue: 1
   expYield: 142
   growthRate: 3
   catchRate: 45
