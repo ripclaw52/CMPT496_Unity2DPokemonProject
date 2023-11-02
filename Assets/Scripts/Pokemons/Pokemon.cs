@@ -35,9 +35,9 @@ public class Pokemon
     public int Exp { get; set; }
     public int HP { get; set; }
 
-    public NatureBase Nature { get; private set; }
-    public StatValue IV { get; private set; }
-    public StatValue EV { get; set; }
+    public NatureBase Nature { get => nature; set => nature = value; }
+    public StatValue IV { get => iv; set => iv = value; }
+    public StatValue EV { get => ev; set => ev = value; }
 
     public List<Move> Moves { get; set; }
     public Move CurrentMove { get; set; }
@@ -80,7 +80,7 @@ public class Pokemon
         //Debug.Log($"{nature.Name}");
         IV = new StatValue();
         EV = new StatValue();
-        IV.SetupIV();
+        iv.SetupIV();
 
         CalculateStats();
         HP = MaxHP;
@@ -152,9 +152,9 @@ public class Pokemon
     /// </summary>
     void CalculateStats()
     {
-        Debug.Log($"NATURE; {nature.Name}");
-        Debug.Log($"IV; {iv.Attack}");
-        Debug.Log($"EV; {ev.Attack}");
+        //Debug.Log($"NATURE; {nature.Name}");
+        //Debug.Log($"IV; {iv.Attack}");
+        //Debug.Log($"EV; {ev.Attack}");
 
         Stats = new Dictionary<Stat, int>();
         Stats.Add(Stat.Attack, Mathf.FloorToInt(((((2 * Base.Attack + IV.Attack + (EV.Attack / 4)) * Level) / 100f) + 5) * Nature.Attack));

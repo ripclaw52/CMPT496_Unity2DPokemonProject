@@ -6,43 +6,43 @@ using UnityEngine;
 public class StatValue
 {
     // base stat values
-    int hp = 0;
-    int attack = 0;
-    int defense = 0;
-    int spAttack = 0;
-    int spDefense = 0;
-    int speed = 0;
+    private int hp = 0;
+    private int attack = 0;
+    private int defense = 0;
+    private int spAttack = 0;
+    private int spDefense = 0;
+    private int speed = 0;
 
     // Max individual number for stat
     int maxNumber = 252;
 
     public StatValue()
     {
-        hp = 0;
-        attack = 0;
-        defense = 0;
-        spAttack = 0;
-        spDefense = 0;
-        speed = 0;
+        HP = 0;
+        Attack = 0;
+        Defense = 0;
+        SpAttack = 0;
+        SpDefense = 0;
+        Speed = 0;
     }
 
     public StatValue(StatValue statValue)
     {
-        hp = statValue.hp;
-        attack = statValue.attack;
-        defense = statValue.defense;
-        spAttack = statValue.spAttack;
-        spDefense = statValue.spDefense;
-        speed = statValue.speed;
+        HP = statValue.HP;
+        Attack = statValue.Attack;
+        Defense = statValue.Defense;
+        SpAttack = statValue.SpAttack;
+        SpDefense = statValue.SpDefense;
+        Speed = statValue.Speed;
     }
 
     // Expose properties
-    public int HP => hp;
-    public int Attack => attack;
-    public int Defense => defense;
-    public int SpAttack => spAttack;
-    public int SpDefense => spDefense;
-    public int Speed => speed;
+    public int HP { get => hp; set => hp = value; }
+    public int Attack { get => attack; set => attack = value; }
+    public int Defense { get => defense; set => defense = value; }
+    public int SpAttack { get => spAttack; set => spAttack = value; }
+    public int SpDefense { get => spDefense; set => spDefense = value; }
+    public int Speed { get => speed; set => speed = value; }
 
     /// <summary>
     /// Setup IV fields from randomize between 0 and 31
@@ -50,17 +50,17 @@ public class StatValue
     public void SetupIV()
     {
         //Debug.Log($"This runs from the statvalue class!");
-        hp = Mathf.RoundToInt(Random.Range(0, 32));
-        attack = Mathf.RoundToInt(Random.Range(0, 32));
-        defense = Mathf.RoundToInt(Random.Range(0, 32));
-        spAttack = Mathf.RoundToInt(Random.Range(0, 32));
-        spDefense = Mathf.RoundToInt(Random.Range(0, 32));
-        speed = Mathf.RoundToInt(Random.Range(0, 32));
+        HP = Mathf.RoundToInt(Random.Range(0, 32));
+        Attack = Mathf.RoundToInt(Random.Range(0, 32));
+        Defense = Mathf.RoundToInt(Random.Range(0, 32));
+        SpAttack = Mathf.RoundToInt(Random.Range(0, 32));
+        SpDefense = Mathf.RoundToInt(Random.Range(0, 32));
+        Speed = Mathf.RoundToInt(Random.Range(0, 32));
     }
 
     public void ModHP(int value)
     {
-        hp = (hp < maxNumber) ? hp += value : hp;
+        HP = (HP < maxNumber) ? HP += value : HP;
     }
 
     public void ModStat(Stat stat, int value)
@@ -68,19 +68,19 @@ public class StatValue
         switch (stat.ToString())
         {
             case "Attack":
-                attack = (attack < maxNumber) ? attack += value : attack;
+                Attack = (Attack < maxNumber) ? Attack += value : Attack;
                 break;
             case "Defense":
-                defense = (defense < maxNumber) ? defense += value : defense;
+                Defense = (Defense < maxNumber) ? Defense += value : Defense;
                 break;
             case "SpAttack":
-                spAttack = (spAttack < maxNumber) ? spAttack += value : spAttack;
+                SpAttack = (SpAttack < maxNumber) ? SpAttack += value : SpAttack;
                 break;
             case "SpDefense":
-                spDefense = (spDefense < maxNumber) ? spDefense += value : spDefense;
+                SpDefense = (SpDefense < maxNumber) ? SpDefense += value : SpDefense;
                 break;
             case "Speed":
-                speed = (speed < maxNumber) ? speed += value : speed;
+                Speed = (Speed < maxNumber) ? Speed += value : Speed;
                 break;
         }
     }
