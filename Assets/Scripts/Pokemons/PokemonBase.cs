@@ -197,10 +197,46 @@ public class Evolution
     [SerializeField] PokemonBase evolvesInto;
     [SerializeField] int requiredLevel;
     [SerializeField] EvolutionItem requiredItem;
+    [SerializeField] DayNightCycle dayTimeCycle;
 
     public PokemonBase EvolvesInto => evolvesInto;
     public int RequiredLevel => requiredLevel;
     public EvolutionItem RequiredItem => requiredItem;
+    public DayNightCycle DayTimeCycle => dayTimeCycle;
+
+    public bool GetDayTimeCycle()
+    {
+        if (dayTimeCycle == DayNightCycle.None)
+            return true;
+
+        if (dayTimeCycle == DayNightCycle.Day)
+            return IsDay();
+
+        if (dayTimeCycle == DayNightCycle.Night)
+            return IsNight();
+
+        return false;
+    }
+
+    bool IsDay()
+    {
+        int hour = DateTime.Now.Hour;
+        if ((6f < hour) || (hour >= 18))
+            return true;
+
+        return false;
+    }
+
+    bool IsNight()
+    {
+        int hour = DateTime.Now.Hour;
+        if (hour >= 6)
+            return true;
+        if (18 < hour)
+            return true;
+
+        return false;
+    }
 }
 
 [System.Serializable]
@@ -211,6 +247,13 @@ public class EffortValues
 
     public EVStats EVStat => evStat;
     public int EVValue => evValue;
+}
+
+public enum DayNightCycle
+{
+    None,
+    Night,
+    Day
 }
 
 /// <summary>

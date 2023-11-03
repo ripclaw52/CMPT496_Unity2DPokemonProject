@@ -315,7 +315,7 @@ public class Pokemon
     /// <returns>The evolution that is required for the current level.</returns>
     public Evolution CheckForEvolution()
     {
-        return Base.Evolutions.FirstOrDefault(e => e.RequiredLevel <= level);
+        return Base.Evolutions.FirstOrDefault(e => e.RequiredLevel <= level && e.GetDayTimeCycle());
     }
 
     /// <summary>
