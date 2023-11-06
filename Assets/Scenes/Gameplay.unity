@@ -2744,7 +2744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
       propertyPath: tmSlots.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
       propertyPath: medicineSlots.Array.size
@@ -2754,6 +2754,10 @@ PrefabInstance:
       propertyPath: tmSlots.Array.data[3].item
       value: 
       objectReference: {fileID: 11400000, guid: a910421d7c928a143abe5cdc7e1af0d4, type: 2}
+    - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
+      propertyPath: tmSlots.Array.data[4].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 581df9cade3572d4ba6c37e9993355f1, type: 2}
     - target: {fileID: 4282616046144842805, guid: a77dfc4175e4a4b4a91a50ad1c735317, type: 3}
       propertyPath: tmSlots.Array.data[3].count
       value: 1

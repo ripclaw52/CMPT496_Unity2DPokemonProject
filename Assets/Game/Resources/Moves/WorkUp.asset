@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd06e1a6230da2f4a8ba71cd377dbc47, type: 3}
+  m_Name: WorkUp
+  m_EditorClassIdentifier: 
+  name: Work Up
+  description: The user is roused, and its Attack and Sp. Atk stats are boosted.
+  type: 1
+  power: 0
+  accuracy: 100
+  alwaysHits: 0
+  pp: 30
+  priority: 0
+  criticalHitBehaviour: 0
+  recoil:
+    recoilType: 0
+    recoilDamage: 0
+  category: 2
+  effects:
+    boosts:
+    - stat: 0
+      boost: 1
+    - stat: 2
+      boost: 1
+    status: 0
+    volatileStatus: 0
+  secondaries: []
+  target: 1
+  sound: {fileID: 8300000, guid: 98e7b09e3871eba46acd654f1a76e04f, type: 3}

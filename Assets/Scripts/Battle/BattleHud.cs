@@ -12,18 +12,20 @@ public class BattleHud : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI nameText;
     [SerializeField] TextMeshProUGUI levelText;
-    [SerializeField] TextMeshProUGUI statusText;
+    [SerializeField] Image statusIcon;
     [SerializeField] HPBar hpBar;
+    [SerializeField] TextMeshProUGUI currentHealthText, maxHealthText;
     [SerializeField] GameObject expBar;
 
+    /*
     [SerializeField] Color psnColor;
     [SerializeField] Color brnColor;
     [SerializeField] Color slpColor;
     [SerializeField] Color parColor;
     [SerializeField] Color frzColor;
+    */
 
     Pokemon _pokemon;
-    Dictionary<ConditionID, Color> statusColors;
 
     /// <summary>
     /// Sets the data for the Pokemon UI.
@@ -34,7 +36,7 @@ public class BattleHud : MonoBehaviour
         if (_pokemon != null)
         {
             _pokemon.OnHPChanged -= UpdateHP;
-            _pokemon.OnStatusChanged -= SetStatusText;
+            _pokemon.OnStatusChanged -= SetStatusIcon;
         }
 
         _pokemon = pokemon;
@@ -42,35 +44,29 @@ public class BattleHud : MonoBehaviour
         nameText.text = pokemon.Base.Name;
         SetLevel();
         hpBar.SetHP((float)pokemon.HP / pokemon.MaxHP);
+        SetHealthText();
         SetExp();
 
-        statusColors = new Dictionary<ConditionID, Color>()
-        {
-            {ConditionID.psn, psnColor },
-            {ConditionID.brn, brnColor },
-            {ConditionID.slp, slpColor },
-            {ConditionID.par, parColor },
-            {ConditionID.frz, frzColor },
-        };
-
-        SetStatusText();
-        _pokemon.OnStatusChanged += SetStatusText;
+        SetStatusIcon();
+        _pokemon.OnStatusChanged += SetStatusIcon;
         _pokemon.OnHPChanged += UpdateHP;
     }
 
     /// <summary>
     /// Sets the status text and color of the Pokemon based on its status.
     ///</summary>
-    void SetStatusText()
+    void SetStatusIcon()
     {
         if (_pokemon.Status == null)
         {
-            statusText.text = "";
+            statusIcon.enabled = false;
         }
         else
         {
-            statusText.text = _pokemon.Status.Id.ToString().ToUpper();
-            statusText.color = statusColors[_pokemon.Status.Id];
+            StatusBase status = GlobalSettings.i.GetStatusCondition(_pokemon.Status.Id);
+
+            statusIcon.enabled = true;
+            statusIcon.sprite = status.ConditionIcon;
         }
     }
 
@@ -82,6 +78,16 @@ public class BattleHud : MonoBehaviour
         levelText.text = "Lvl " + _pokemon.Level;
     }
 
+    public void SetHealthText()
+    {
+        if (currentHealthText == null || maxHealthText == null) return;
+
+        int currentHealth = _pokemon.HP;
+        int maxHealth = _pokemon.MaxHP;
+
+        currentHealthText.text = $"{currentHealth}/";
+        maxHealthText.text = $"{maxHealth}";
+    }
 
     /// <summary>
     /// Sets the experience bar to the normalized experience value.
@@ -130,6 +136,7 @@ public class BattleHud : MonoBehaviour
     public void UpdateHP()
     {
         StartCoroutine(UpdateHPAsync());
+        SetHealthText();
     }
 
     /// <summary>
@@ -161,7 +168,7 @@ public class BattleHud : MonoBehaviour
         if (_pokemon != null)
         {
             _pokemon.OnHPChanged -= UpdateHP;
-            _pokemon.OnStatusChanged -= SetStatusText;
+            _pokemon.OnStatusChanged -= SetStatusIcon;
         }
     }
 }
