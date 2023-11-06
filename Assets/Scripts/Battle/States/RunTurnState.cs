@@ -291,6 +291,9 @@ public class RunTurnState : State<BattleSystem>
             else if (battleWon && isTrainerBattle)
                 AudioManager.i.PlayMusic(bs.TrainerBattleVictoryMusic);
 
+            // EV Gain
+            playerUnit.Pokemon.EV.IncreaseEVFromEVYield(faintedUnit.Pokemon.Base.EVYield);
+
             // Exp Gain
             int expYield = faintedUnit.Pokemon.Base.ExpYield;
             int enemyLevel = faintedUnit.Pokemon.Level;

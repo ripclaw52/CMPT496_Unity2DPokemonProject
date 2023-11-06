@@ -254,8 +254,8 @@ MonoBehaviour:
   maximumSpDefense: 218
   maximumSpeed: 251
   evYield:
-  - evStat: 5
-    evValue: 1
+  - stat: 5
+    value: 1
   expYield: 62
   growthRate: 3
   catchRate: 45
@@ -305,3 +305,4 @@ MonoBehaviour:
   - evolvesInto: {fileID: 11400000, guid: b435882301b698d429225e8c929ede16, type: 2}
     requiredLevel: 16
     requiredItem: {fileID: 0}
+    dayTimeCycle: 0

@@ -220,8 +220,12 @@ public class Evolution
 
     bool IsDay()
     {
+        // get current local time
         int hour = DateTime.Now.Hour;
-        if ((6f < hour) || (hour >= 18))
+        // Debug.Log($"day; {hour}");
+
+        // check
+        if ((6f <= hour) || (hour <= 18))
             return true;
 
         return false;
@@ -229,10 +233,14 @@ public class Evolution
 
     bool IsNight()
     {
+        // get current local time
         int hour = DateTime.Now.Hour;
-        if (hour >= 6)
+        // Debug.Log($"night; {hour}");
+
+        // check
+        if (hour <= 6)
             return true;
-        if (18 < hour)
+        if (18 <= hour)
             return true;
 
         return false;
@@ -242,11 +250,11 @@ public class Evolution
 [System.Serializable]
 public class EffortValues
 {
-    [SerializeField] EVStats evStat;
-    [SerializeField] int evValue;
+    [SerializeField] EVStats stat;
+    [SerializeField] int value;
 
-    public EVStats EVStat => evStat;
-    public int EVValue => evValue;
+    public EVStats Stat => stat;
+    public int Value => value;
 }
 
 public enum DayNightCycle

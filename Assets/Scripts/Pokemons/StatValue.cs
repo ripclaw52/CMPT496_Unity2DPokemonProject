@@ -58,30 +58,37 @@ public class StatValue
         Speed = Mathf.RoundToInt(Random.Range(0, 32));
     }
 
-    public void ModHP(int value)
+    /// <summary>
+    /// Increase the EV value for a given stat based on ev yield value.
+    /// EV cannot increase beyond maxNumber value
+    /// </summary>
+    /// <param name="evYield">List of EffortValue class define within the PokemonBase class</param>
+    public void IncreaseEVFromEVYield(List<EffortValues> evYield)
     {
-        HP = (HP < maxNumber) ? HP += value : HP;
-    }
-
-    public void ModStat(Stat stat, int value)
-    {
-        switch (stat.ToString())
+        foreach (var ev in evYield)
         {
-            case "Attack":
-                Attack = (Attack < maxNumber) ? Attack += value : Attack;
-                break;
-            case "Defense":
-                Defense = (Defense < maxNumber) ? Defense += value : Defense;
-                break;
-            case "SpAttack":
-                SpAttack = (SpAttack < maxNumber) ? SpAttack += value : SpAttack;
-                break;
-            case "SpDefense":
-                SpDefense = (SpDefense < maxNumber) ? SpDefense += value : SpDefense;
-                break;
-            case "Speed":
-                Speed = (Speed < maxNumber) ? Speed += value : Speed;
-                break;
+            switch (ev.Stat)
+            {
+                case EVStats.HP:
+                    HP = (HP < maxNumber) ? HP += ev.Value : HP;
+                    break;
+                case EVStats.Attack:
+                    Attack = (Attack < maxNumber) ? Attack += ev.Value : Attack;
+                    break;
+                case EVStats.Defense:
+                    Defense = (Defense < maxNumber) ? Defense += ev.Value : Defense;
+                    break;
+                case EVStats.SpAttack:
+                    SpAttack = (SpAttack < maxNumber) ? SpAttack += ev.Value : SpAttack;
+
+                    break;
+                case EVStats.SpDefense:
+                    SpDefense = (SpDefense < maxNumber) ? SpDefense += ev.Value : SpDefense;
+                    break;
+                case EVStats.Speed:
+                    Speed = (Speed < maxNumber) ? Speed += ev.Value : Speed;
+                    break;
+            }
         }
     }
 }
