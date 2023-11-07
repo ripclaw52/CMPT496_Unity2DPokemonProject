@@ -4,11 +4,16 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum PageTypes { Cover, Stats, Moves }
 
 public class SummaryUI : MonoBehaviour
 {
+    [SerializeField] Image menuPokemonSprite;
+    ImageAnimator menuSprite;
+    List<Sprite> spriteMap;
+
     [SerializeField] List<GameObject> pageList;
     [SerializeField] TextMeshProUGUI selectedPageText;
 
@@ -49,13 +54,28 @@ public class SummaryUI : MonoBehaviour
         cover.Init(selectedPokemon);
     }
 
+    private void Update()
+    {
+        menuSprite.HandleUpdate();
+    }
+
+    Pokemon prevPokemon;
+
     public void HandleUpdate()
     {
+        if (selectedPokemon != prevPokemon)
+        {
+            menuPokemonSprite.sprite = selectedPokemon.Base.SmallSprite[0];
+            spriteMap = selectedPokemon.Base.SmallSprite;
+            menuSprite = new ImageAnimator(spriteMap, menuPokemonSprite, frameRate: 0.16f);
+            menuSprite.Start();
+        }
+
         //selectedPokemon = SummaryState.i.SelectedPokemon;
 
         UpdateSelectionTimer();
         int prevSelection = selectedPage;
-        Pokemon prevPokemon = selectedPokemon;
+        prevPokemon = selectedPokemon;
 
         float h = Input.GetAxis("Horizontal");
         if (selectionTimer == 0 && Mathf.Abs(h) > 0.2f)
