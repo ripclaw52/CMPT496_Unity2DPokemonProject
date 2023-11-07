@@ -14,6 +14,10 @@ public class SummaryCoverUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI pokemonSpecies;
     [SerializeField] TextMeshProUGUI pokemonNature;
 
+    [SerializeField] TextMeshProUGUI expTotal;
+    [SerializeField] TextMeshProUGUI expToNextLv;
+    [SerializeField] GameObject expBar;
+
     // Type 1
     [SerializeField] GameObject type1;
     GameObject type1Icon;
@@ -76,6 +80,14 @@ public class SummaryCoverUI : MonoBehaviour
         else { type2.SetActive(false); }
 
         // Add Experience information
+        expTotal.text = $"{pokemon.Exp}";
+        expToNextLv.text = $"{pokemon.CheckExpToNextLevel()}";
+
+        int currLevelExp = pokemon.Base.GetExpForLevel(pokemon.Level);
+        int nextLevelExp = pokemon.Base.GetExpForLevel(pokemon.Level + 1);
+        float normalizedExp = (float)(pokemon.Exp - currLevelExp) / (nextLevelExp - currLevelExp);
+        if (expBar != null)
+            expBar.transform.localScale = new Vector3(normalizedExp, 1, 1);
     }
 
     public TypeBase GetPokemonType(PokemonType type)

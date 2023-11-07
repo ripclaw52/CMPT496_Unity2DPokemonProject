@@ -132,6 +132,14 @@ public class SummaryMoveUI : SelectionUI<MoveSlot>
         moveNameText.text = move.Name;
         moveDescriptionText.text = move.Description;
 
+        CategoryBase category = GlobalSettings.i.GetCategory(move);
+        TypeBase type = GlobalSettings.i.GetMoveType(move);
+
+        moveInfo.GetComponent<Image>().color = new Color(type.TypeColor.r, type.TypeColor.g, type.TypeColor.b, 0.75f);
+
+        moveTypeIcon.sprite = type.TypeIcon;
+        moveCategoryIcon.sprite = category.CategoryIcon;
+
         movePowerText.text = move.Power.ToString();
         moveAccuracyText.text = move.Accuracy.ToString();
 
