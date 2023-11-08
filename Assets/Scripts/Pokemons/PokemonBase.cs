@@ -12,7 +12,7 @@ public class PokemonBase : ScriptableObject
     [SerializeField] new string name;
 
     [SerializeField] int dexId;
-    [SerializeField] EncounterStatus encounterStatus;
+    [SerializeField] EncounterStatus status;
     [SerializeField] string species;
     [SerializeField] float height;
     [SerializeField] float weight;
@@ -140,7 +140,7 @@ public class PokemonBase : ScriptableObject
 
     public string Name => name;
     public int DexId => dexId;
-    public EncounterStatus EncounterStatus => encounterStatus;
+    public EncounterStatus Status { get; set; }
     public string Species => species;
     public float Height => height;
     public float Weight => weight;
@@ -301,8 +301,8 @@ public enum GrowthRate
 public enum EncounterStatus
 {
     None,
-    Encounter,
-    Caught
+    Seen,
+    Own
 }
 
 public enum EVStats
