@@ -36,8 +36,8 @@ public class GameMenuState : State<GameController>
 
     void OnMenuItemSelected(int selection)
     {
-        if (selection == 0)
-            Debug.Log($"Selected index:{selection} || Pokedex!");
+        if (selection == 0) // Pokedex
+            gc.StateMachine.Push(PokedexState.i);
         else if (selection == 1) // Pokemon
             gc.StateMachine.Push(PartyState.i);
         else if (selection == 2) // Bag

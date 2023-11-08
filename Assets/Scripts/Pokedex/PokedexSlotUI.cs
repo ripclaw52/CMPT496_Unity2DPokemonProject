@@ -12,7 +12,7 @@ public class PokedexSlotUI : MonoBehaviour
 
     RectTransform rectTransform;
 
-    public Image EncounterStatus => encounterStatus;
+    public Image PokemonBallIcon => encounterStatus;
     public TextMeshProUGUI IdText => idText;
     public TextMeshProUGUI NameText => nameText;
     public float Height => rectTransform.rect.height;
@@ -29,6 +29,6 @@ public class PokedexSlotUI : MonoBehaviour
         idText.text = pokedexObject.FormatID();
         nameText.text = pokedexObject.Name;
 
-        encounterStatus.color = (pokedexObject.Status == global::EncounterStatus.Own) ? Color.white : Color.black;
+        encounterStatus.color = (pokedexObject.Status == EncounterStatus.None) ? Color.white : Color.black;
     }
 }
