@@ -10,6 +10,8 @@ public class PokedexState : State<GameController>
     List<PokedexObject> pokedex;
     public List<PokedexObject> Pokedex => pokedex;
 
+    public PokedexObject SelectedPokedexObject { get; private set; }
+
     public static PokedexState i { get; private set; }
     private void Awake()
     {
@@ -23,6 +25,8 @@ public class PokedexState : State<GameController>
 
         SetupPokedex();
         pokedexUI.gameObject.SetActive(true);
+
+        pokedexUI.OnSelected += OnPokemonSelected;
         pokedexUI.OnBack += OnBack;
     }
 
@@ -34,12 +38,21 @@ public class PokedexState : State<GameController>
     public override void Exit()
     {
         pokedexUI.gameObject?.SetActive(false);
+
+        pokedexUI.OnSelected -= OnPokemonSelected;
         pokedexUI.OnBack -= OnBack;
     }
 
     void OnBack()
     {
         gc.StateMachine.Pop();
+    }
+
+    void OnPokemonSelected(int selection)
+    {
+        SelectedPokedexObject = pokedexUI.SelectedPokemon;
+
+        //Debug.Log($"id; {SelectedPokedexObject.ID}");
     }
 
     void SetupPokedex()

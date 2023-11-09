@@ -1,4 +1,5 @@
 using GDEUtils.GenericSelectionUI;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,17 +16,19 @@ public class PokedexUI : SelectionUI<PokedexSlot>
     [SerializeField] TextMeshProUGUI totalOwnText;
     [SerializeField] Image pokemonPortrait;
 
-    RectTransform pokedexListRect;
+    [SerializeField] Image upArrow;
+    [SerializeField] Image downArrow;
+
     List<PokedexSlotUI> pokedexSlotUIList;
     List<PokedexObject> pokedexObjects;
 
+    const int itemsInViewport = 8;
+    RectTransform pokedexListRect;
+
+    public PokedexObject SelectedPokemon => pokedexObjects[selectedItem];
+
     int totalSeen;
     int totalOwn;
-
-    int selectedPokedexSlot = 0;
-
-    float selectionTimer = 0;
-    const float selectionSpeed = 5;
 
     int GetTotalEncounterStatus(EncounterStatus status)
     {
@@ -64,7 +67,7 @@ public class PokedexUI : SelectionUI<PokedexSlot>
             Destroy(child.gameObject);
 
         pokedexSlotUIList = new List<PokedexSlotUI>();
-        Debug.Log($"pokedexObjects!=null= {pokedexObjects != null}");
+        //Debug.Log($"pokedexObjects!=null= {pokedexObjects != null}");
         foreach (var pokedexSlot in pokedexObjects)
         {
             //Debug.Log($"{pokedexSlot.ID}");
@@ -76,26 +79,6 @@ public class PokedexUI : SelectionUI<PokedexSlot>
         SetItems(pokedexSlotUIList.Select(s => s.GetComponent<PokedexSlot>()).ToList());
 
         UpdateSelectionInUI();
-    }
-
-    public override void HandleUpdate()
-    {
-        int prevSelection = selectedPokedexSlot;
-        float h = Input.GetAxis("Horizontal");
-        if (selectionTimer == 0 && Mathf.Abs(h) > 0.2f)
-        {
-            selectedPokedexSlot += (int)Mathf.Sign(h);
-            selectionTimer = 1 / selectionSpeed;
-            AudioManager.i.PlaySfx(AudioId.UISelect);
-        }
-        UpdateSelectionTimer();
-
-        if (prevSelection != selectedPokedexSlot)
-        {
-            UpdateSelectionInUI();
-        }
-
-        base.HandleUpdate();
     }
 
     public override void UpdateSelectionInUI()
@@ -118,13 +101,21 @@ public class PokedexUI : SelectionUI<PokedexSlot>
                 pokemonPortrait.color = Color.white;
             }
         }
+
+        HandleScrolling();
     }
 
-    void UpdateSelectionTimer()
+    void HandleScrolling()
     {
-        if (selectionTimer > 0)
-            selectionTimer = Mathf.Clamp(selectionTimer - Time.deltaTime, 0, selectionTimer);
-    }
+        if (pokedexSlotUIList.Count <= itemsInViewport) return;
 
-    public int SelectedPokedexSlot => selectedPokedexSlot;
+        float scrollPos = Mathf.Clamp(selectedItem - itemsInViewport / 2, 0, selectedItem) * pokedexSlotUIList[0].Height;
+        pokedexListRect.localPosition = new Vector2(pokedexListRect.localPosition.x, scrollPos);
+
+        bool showUpArrow = selectedItem > itemsInViewport / 2;
+        upArrow.gameObject.SetActive(showUpArrow);
+
+        bool showDownArrow = selectedItem + itemsInViewport / 2 < pokedexSlotUIList.Count;
+        downArrow.gameObject.SetActive(showDownArrow);
+    }
 }
