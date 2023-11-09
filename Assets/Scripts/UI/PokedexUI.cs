@@ -53,6 +53,8 @@ public class PokedexUI : SelectionUI<PokedexSlot>
         totalSeenText.text = totalSeen.ToString();
         totalOwnText.text = totalOwn.ToString();
 
+        SetSelectionSettings(SelectionType.ListV, 1);
+
         UpdatePokedexList();
     }
 
@@ -62,6 +64,7 @@ public class PokedexUI : SelectionUI<PokedexSlot>
             Destroy(child.gameObject);
 
         pokedexSlotUIList = new List<PokedexSlotUI>();
+        Debug.Log($"pokedexObjects!=null= {pokedexObjects != null}");
         foreach (var pokedexSlot in pokedexObjects)
         {
             //Debug.Log($"{pokedexSlot.ID}");
@@ -93,17 +96,19 @@ public class PokedexUI : SelectionUI<PokedexSlot>
         }
 
         base.HandleUpdate();
-        SetSelectionSettings(SelectionType.ListV, 1);
     }
 
     public override void UpdateSelectionInUI()
     {
+        base.UpdateSelectionInUI();
+
         var pokedex = pokedexObjects;
         if (pokedex.Count > 0)
         {
             var item = pokedex[selectedItem].Base;
             pokemonPortrait.sprite = item.FrontSprite[0];
             pokemonPortrait.SetNativeSize();
+
             if (item.Status == EncounterStatus.None)
             {
                 pokemonPortrait.color = Color.black;

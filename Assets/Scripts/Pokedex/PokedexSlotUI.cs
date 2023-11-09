@@ -26,9 +26,23 @@ public class PokedexSlotUI : MonoBehaviour
     public void SetData(PokedexObject pokedexObject)
     {
         rectTransform = GetComponent<RectTransform>();
+        
         idText.text = pokedexObject.FormatID();
-        nameText.text = pokedexObject.Name;
 
-        encounterStatus.color = (pokedexObject.Status == EncounterStatus.None) ? Color.white : Color.black;
+        if (pokedexObject.Status == EncounterStatus.None)
+        {
+            nameText.text = $"?????";
+            encounterStatus.color = Color.black;
+        }
+        else if (pokedexObject.Status == EncounterStatus.Seen)
+        {
+            nameText.text = pokedexObject.Name.ToUpper();
+            encounterStatus.color = Color.black;
+        }
+        else if (pokedexObject.Status == EncounterStatus.Own)
+        {
+            nameText.text = pokedexObject.Name.ToUpper();
+            encounterStatus.color = Color.white;
+        }
     }
 }
