@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class PokedexPokemonUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] PokedexPokemonImageUI pokemonImage;
+    [SerializeField] PokedexPokemonDataUI pokemonInfo;
 
-    // Update is called once per frame
-    void Update()
+    public void Setup(PokedexObject pokemon)
     {
-        
+        pokemonImage.Setup(pokemon);
+        pokemonInfo.Setup(pokemon);
     }
 }

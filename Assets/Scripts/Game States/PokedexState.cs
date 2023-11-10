@@ -9,8 +9,9 @@ public class PokedexState : State<GameController>
 
     List<PokedexObject> pokedex;
     public List<PokedexObject> Pokedex => pokedex;
-
-    public PokedexObject SelectedPokedexObject { get; private set; }
+    public PokedexObject SelectedPokedexObject { get; set; }
+    public int PokedexIndex { get => pokedexUI.PokedexIndex; set => pokedexUI.PokedexIndex = value; }
+    public PokedexUI PokedexUI => pokedexUI;
 
     public static PokedexState i { get; private set; }
     private void Awake()
@@ -50,8 +51,11 @@ public class PokedexState : State<GameController>
 
     void OnPokemonSelected(int selection)
     {
+        PokedexIndex = selection;
         SelectedPokedexObject = pokedexUI.SelectedPokemon;
 
+        GameController.Instance.StateMachine.Push(PokedexPokemonState.i);
+        pokedexUI.UpdateSelectionInUI();
         //Debug.Log($"id; {SelectedPokedexObject.ID}");
     }
 

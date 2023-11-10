@@ -54,8 +54,8 @@ public class SummaryCoverUI : MonoBehaviour
         pokemonNature.text = pokemon.Nature.Name;
 
         // Type Icon information
-        TypeBase typeBase1 = GetPokemonType(pokemon.Base.Type1);
-        TypeBase typeBase2 = GetPokemonType(pokemon.Base.Type2);
+        TypeBase typeBase1 = GlobalSettings.i.GetPokemonType(pokemon.Base.Type1);
+        TypeBase typeBase2 = GlobalSettings.i.GetPokemonType(pokemon.Base.Type2);
 
         if (typeBase1 != null)
         {
@@ -88,15 +88,5 @@ public class SummaryCoverUI : MonoBehaviour
         float normalizedExp = (float)(pokemon.Exp - currLevelExp) / (nextLevelExp - currLevelExp);
         if (expBar != null)
             expBar.transform.localScale = new Vector3(normalizedExp, 1, 1);
-    }
-
-    public TypeBase GetPokemonType(PokemonType type)
-    {
-        foreach (var item in GlobalSettings.i.Type)
-        {
-            if (type == item.Type)
-                return item;
-        }
-        return null;
     }
 }

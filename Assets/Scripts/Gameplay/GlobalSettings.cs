@@ -40,6 +40,16 @@ public class GlobalSettings : MonoBehaviour
         i = this;
     }
 
+    public TypeBase GetPokemonType(PokemonType type)
+    {
+        foreach (var item in GlobalSettings.i.Type)
+        {
+            if (type == item.Type)
+                return item;
+        }
+        return null;
+    }
+
     public CategoryBase GetCategory(MoveBase move)
     {
         foreach (var item in Category)

@@ -25,7 +25,8 @@ public class PokedexUI : SelectionUI<PokedexSlot>
     const int itemsInViewport = 8;
     RectTransform pokedexListRect;
 
-    public PokedexObject SelectedPokemon => pokedexObjects[selectedItem];
+    public PokedexObject SelectedPokemon => pokedexObjects[PokedexIndex];
+    public int PokedexIndex { get => selectedItem; set => selectedItem = value; }
 
     int totalSeen;
     int totalOwn;
