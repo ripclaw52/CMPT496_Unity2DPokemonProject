@@ -218,6 +218,10 @@ public class BattleSystem : MonoBehaviour
             PlayerParty.AddPokemon(enemyUnit.Pokemon);
             yield return dialogBox.TypeDialog($"{enemyUnit.Pokemon.Base.Name} has been added to the party!");
 
+
+            if (enemyUnit.Pokemon.Base.Status != EncounterStatus.Own)
+                enemyUnit.Pokemon.Base.Status = EncounterStatus.Own;
+
             Destroy(pokeball);
             BattleOver(true);
         }

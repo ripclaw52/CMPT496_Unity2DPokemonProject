@@ -62,6 +62,11 @@ public class BattleUnit : MonoBehaviour
             image.sprite = Pokemon.Base.FrontSprite[0];
             image.SetNativeSize();
             transform.localScale = new Vector3(1, 1, 1);
+
+            if (pokemon.Base.Status == EncounterStatus.None)
+            {
+                pokemon.Base.Status = EncounterStatus.Seen;
+            }
         }
         
         pokemonIdleAnim = new ImageAnimator(spriteMap, image);

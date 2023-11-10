@@ -51,19 +51,23 @@ public class PokedexUI : SelectionUI<PokedexSlot>
 
     void Start()
     {
+        SetSelectionSettings(SelectionType.ListV, 1);
+        UpdateEncounterStatus();
+        UpdatePokedexList();
+    }
+
+    void UpdateEncounterStatus()
+    {
         totalSeen = GetTotalEncounterStatus(EncounterStatus.Seen);
         totalOwn = GetTotalEncounterStatus(EncounterStatus.Own);
-
         totalSeenText.text = totalSeen.ToString();
         totalOwnText.text = totalOwn.ToString();
-
-        SetSelectionSettings(SelectionType.ListV, 1);
-
-        UpdatePokedexList();
     }
 
     void UpdatePokedexList()
     {
+        UpdateEncounterStatus();
+
         foreach (Transform child in pokedexList.transform)
             Destroy(child.gameObject);
 

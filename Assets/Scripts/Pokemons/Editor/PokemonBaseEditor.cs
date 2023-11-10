@@ -11,7 +11,7 @@ public class PokemonBaseEditor : Editor
 
     // Pokedex info
     SerializedProperty dexId;
-    SerializedProperty encounterStatus;
+    SerializedProperty status;
     SerializedProperty species;
     SerializedProperty height;
     SerializedProperty weight;
@@ -59,7 +59,7 @@ public class PokemonBaseEditor : Editor
 
         // pokedex info
         dexId = serializedObject.FindProperty("dexId");
-        encounterStatus = serializedObject.FindProperty("encounterStatus");
+        status = serializedObject.FindProperty("status");
         species = serializedObject.FindProperty("species");
         height = serializedObject.FindProperty("height");
         weight = serializedObject.FindProperty("weight");
@@ -114,7 +114,7 @@ public class PokemonBaseEditor : Editor
         showPokedexInfo = EditorGUILayout.BeginFoldoutHeaderGroup(showPokedexInfo, "Pokedex Information");
         if (showPokedexInfo)
         {
-            EditorGUILayout.PropertyField(encounterStatus);
+            EditorGUILayout.PropertyField(status);
             EditorGUILayout.PropertyField(species);
             EditorGUILayout.PropertyField(height);
             EditorGUILayout.PropertyField(weight);

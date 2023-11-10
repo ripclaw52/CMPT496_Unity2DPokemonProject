@@ -64,6 +64,8 @@ public class PokedexState : State<GameController>
         List<PokemonBase> pokedexBase = new List<PokemonBase>();
         foreach (var pokemon in PokemonDB.objects.Values)
         {
+            Debug.Log($"{pokemon.Name}, {pokemon.Status} == {PokemonDB.GetObjectByName(pokemon.Name).Status}");
+            //Debug.Log($"{pokemon.Name} ES={pokemon.Status}");
             pokedexBase.Add(pokemon);
         }
         pokedex = new List<PokedexObject>();

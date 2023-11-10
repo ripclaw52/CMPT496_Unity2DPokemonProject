@@ -1,14 +1,12 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
-public class PokedexObject
+public class PokedexObject : ISavable
 {
     public int ID { get; set; }
     public string Name { get; set; }
-    public PokemonBase Base { get; set; }
+    public PokemonBase Base { get; private set; }
     public EncounterStatus Status { get; set; }    
 
     public PokedexObject(PokemonBase pPokemon)
@@ -19,17 +17,12 @@ public class PokedexObject
         Status = pPokemon.Status;
     }
 
-    public PokedexObject(PokedexObjectSaveData saveData)
+    public string FormatID()
     {
-        ID = saveData.id;
-        Status = saveData.status;
-        Name = saveData.name;
-        Base = PokemonDB.GetObjectByName(saveData.name);
-
-        Base.Status = Status;
+        return $"No. {Base.GetPokedexId()}";
     }
 
-    public PokedexObjectSaveData GetSaveData()
+    public object CaptureState()
     {
         var saveData = new PokedexObjectSaveData()
         {
@@ -40,12 +33,20 @@ public class PokedexObject
         return saveData;
     }
 
-    public string FormatID()
+    public void RestoreState(object state)
     {
-        return $"No. {Base.GetPokedexId()}";
+        var saveData = (PokedexObjectSaveData)state;
+
+        ID = saveData.id;
+        Status = saveData.status;
+        Name = saveData.name;
+        Base = PokemonDB.GetObjectByName(saveData.name);
+
+        Base.Status = Status;
     }
 }
 
+[System.Serializable]
 public class PokedexObjectSaveData
 {
     public int id;
