@@ -23,6 +23,9 @@ public class PokedexState : State<GameController>
         gc = owner;
         pokedexUI.gameObject.SetActive(true);
 
+        pokedexUI.UpdatePokedexList();
+        pokedexUI.UpdateEncounterStatus();
+
         pokedexUI.OnSelected += OnPokemonSelected;
         pokedexUI.OnBack += OnBack;
     }

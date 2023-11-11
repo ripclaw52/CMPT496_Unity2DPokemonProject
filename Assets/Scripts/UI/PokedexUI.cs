@@ -54,7 +54,7 @@ public class PokedexUI : SelectionUI<PokedexSlot>
         UpdatePokedexList();
     }
 
-    void UpdateEncounterStatus()
+    public void UpdateEncounterStatus()
     {
         totalSeen = GetTotalEncounterStatus(EncounterStatus.Seen);
         totalOwn = GetTotalEncounterStatus(EncounterStatus.Own);
@@ -62,7 +62,7 @@ public class PokedexUI : SelectionUI<PokedexSlot>
         totalOwnText.text = totalOwn.ToString();
     }
 
-    void UpdatePokedexList()
+    public void UpdatePokedexList()
     {
         UpdateEncounterStatus();
 
