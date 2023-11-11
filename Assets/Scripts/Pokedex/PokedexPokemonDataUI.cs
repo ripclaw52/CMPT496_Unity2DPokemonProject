@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,14 +36,50 @@ public class PokedexPokemonDataUI : MonoBehaviour
     {
         pokedexSlotUI.SetData(pokemon);
 
+        if (pokemon.Status == EncounterStatus.Own)
+        {
+            SetPokemonTypeIcon(pokemon);
+            SetPokemonInformation(pokemon);
+        }
+        else if (pokemon.Status == EncounterStatus.Seen)
+        {
+            SetPokemonTypeIcon(pokemon);
+            SetPokemonInfoUnknown(pokemon);
+        }
+        else if (pokemon.Status == EncounterStatus.None)
+        {
+            SetPokemonTypeIcon(pokemon);
+            SetPokemonInfoUnknown(pokemon);
+            type1.SetActive(false);
+            type2.SetActive(false);
+        }
+    }
+
+    void SetPokemonInformation(PokedexObject pokemon)
+    {
         speciesText.text = pokemon.Base.GetSpecies();
-
-        SetPokemonTypeIcon(pokemon);
-
         heightText.text = pokemon.Base.GetHeight();
         weightText.text = pokemon.Base.GetWeight();
-
         descriptionText.text = pokemon.Base.Description;
+    }
+
+    void SetPokemonInfoUnknown(PokedexObject pokemon)
+    {
+        string speciesString = pokemon.Base.Species;
+        speciesString = Regex.Replace(speciesString, "[a-zA-Z]", "?");
+        speciesText.text = speciesString + " Pokemon";
+
+        string heightString = pokemon.Base.GetHeight();
+        heightString = Regex.Replace(heightString, "[0-9]", "?");
+        heightText.text = heightString;
+
+        string weightString = pokemon.Base.GetWeight();
+        weightString = Regex.Replace(weightString, "[0-9]", "?");
+        weightText.text = weightString;
+
+        string descriptionString = pokemon.Base.Description;
+        descriptionString = Regex.Replace(descriptionString, "[a-zA-Z0-9]", "?");
+        descriptionText.text = descriptionString;
     }
 
     void SetPokemonTypeIcon(PokedexObject pokemon)

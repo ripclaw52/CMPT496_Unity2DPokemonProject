@@ -135,8 +135,8 @@ public class PokemonBase : ScriptableObject
 
     public string GetPokedexId() { return DexId.ToString("D4"); }
     public string GetSpecies() { return $"{Species} Pokemon"; }
-    public string GetHeight() { return $"{MathF.Round(Height, 1)} m"; }
-    public string GetWeight() { return $"{MathF.Round(Weight, 1)} kg"; }
+    public string GetHeight() { return $"{MathF.Round(Height, 2)} m"; }
+    public string GetWeight() { return $"{MathF.Round(Weight, 2)} kg"; }
 
     public string Name => name;
     public int DexId => dexId;
