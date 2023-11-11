@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PokedexObject : ISavable
+public class PokedexObject
 {
     public int ID { get; set; }
     public string Name { get; set; }
@@ -17,12 +17,15 @@ public class PokedexObject : ISavable
         Status = pPokemon.Status;
     }
 
-    public string FormatID()
+    public PokedexObject(PokedexObjectSaveData saveData)
     {
-        return $"No. {Base.GetPokedexId()}";
+        ID = saveData.id;
+        Status = saveData.status;
+        Name = saveData.name;
+        Base = PokemonDB.GetObjectByName(saveData.name);
     }
 
-    public object CaptureState()
+    public PokedexObjectSaveData GetSaveData()
     {
         var saveData = new PokedexObjectSaveData()
         {
@@ -33,16 +36,9 @@ public class PokedexObject : ISavable
         return saveData;
     }
 
-    public void RestoreState(object state)
+    public string FormatID()
     {
-        var saveData = (PokedexObjectSaveData)state;
-
-        ID = saveData.id;
-        Status = saveData.status;
-        Name = saveData.name;
-        Base = PokemonDB.GetObjectByName(saveData.name);
-
-        Base.Status = Status;
+        return $"No. {Base.GetPokedexId()}";
     }
 }
 

@@ -62,6 +62,8 @@ public class GameController : MonoBehaviour
         {
             StateMachine.Pop();
         };
+
+        Pokedex.i.SetupPokedex();
     }
 
     public void PauseGame(bool pause)

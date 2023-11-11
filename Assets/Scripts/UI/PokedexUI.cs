@@ -20,12 +20,11 @@ public class PokedexUI : SelectionUI<PokedexSlot>
     [SerializeField] Image downArrow;
 
     List<PokedexSlotUI> pokedexSlotUIList;
-    List<PokedexObject> pokedexObjects;
 
     const int itemsInViewport = 8;
     RectTransform pokedexListRect;
 
-    public PokedexObject SelectedPokemon => pokedexObjects[PokedexIndex];
+    public PokedexObject SelectedPokemon => Pokedex.i.PokeDex[PokedexIndex];
     public int PokedexIndex { get => selectedItem; set => selectedItem = value; }
 
     int totalSeen;
@@ -34,7 +33,7 @@ public class PokedexUI : SelectionUI<PokedexSlot>
     int GetTotalEncounterStatus(EncounterStatus status)
     {
         int total = 0;
-        foreach (var item in pokedexObjects)
+        foreach (var item in Pokedex.i.PokeDex)
         {
             if (item.Status == status)
                 total++;
@@ -45,7 +44,6 @@ public class PokedexUI : SelectionUI<PokedexSlot>
 
     private void Awake()
     {
-        pokedexObjects = PokedexState.i.Pokedex;
         pokedexListRect = pokedexList.GetComponent<RectTransform>();
     }
 
@@ -73,7 +71,7 @@ public class PokedexUI : SelectionUI<PokedexSlot>
 
         pokedexSlotUIList = new List<PokedexSlotUI>();
         //Debug.Log($"pokedexObjects!=null= {pokedexObjects != null}");
-        foreach (var pokedexSlot in pokedexObjects)
+        foreach (var pokedexSlot in Pokedex.i.PokeDex)
         {
             //Debug.Log($"{pokedexSlot.ID}");
             var slotUI = Instantiate(pokedexSlotUI, pokedexList.transform);
@@ -90,14 +88,14 @@ public class PokedexUI : SelectionUI<PokedexSlot>
     {
         base.UpdateSelectionInUI();
 
-        var pokedex = pokedexObjects;
+        var pokedex = Pokedex.i.PokeDex;
         if (pokedex.Count > 0)
         {
-            var item = pokedex[selectedItem].Base;
-            pokemonPortrait.sprite = item.FrontSprite[0];
+            var item = pokedex[selectedItem];
+            pokemonPortrait.sprite = item.Base.FrontSprite[0];
             pokemonPortrait.SetNativeSize();
 
-            if (item.Status == EncounterStatus.None)
+            if (item.Status.Equals(EncounterStatus.None))
             {
                 pokemonPortrait.color = Color.black;
             }

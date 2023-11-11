@@ -7,8 +7,6 @@ public class PokedexState : State<GameController>
 {
     [SerializeField] PokedexUI pokedexUI;
 
-    List<PokedexObject> pokedex;
-    public List<PokedexObject> Pokedex => pokedex;
     public PokedexObject SelectedPokedexObject { get; set; }
     public int PokedexIndex { get => pokedexUI.PokedexIndex; set => pokedexUI.PokedexIndex = value; }
     public PokedexUI PokedexUI => pokedexUI;
@@ -23,8 +21,6 @@ public class PokedexState : State<GameController>
     public override void Enter(GameController owner)
     {
         gc = owner;
-
-        SetupPokedex();
         pokedexUI.gameObject.SetActive(true);
 
         pokedexUI.OnSelected += OnPokemonSelected;
@@ -53,27 +49,7 @@ public class PokedexState : State<GameController>
     {
         PokedexIndex = selection;
         SelectedPokedexObject = pokedexUI.SelectedPokemon;
-
         GameController.Instance.StateMachine.Push(PokedexPokemonState.i);
         pokedexUI.UpdateSelectionInUI();
-        //Debug.Log($"id; {SelectedPokedexObject.ID}");
-    }
-
-    void SetupPokedex()
-    {
-        List<PokemonBase> pokedexBase = new List<PokemonBase>();
-        foreach (var pokemon in PokemonDB.objects.Values)
-        {
-            Debug.Log($"{pokemon.Name}, {pokemon.Status} == {PokemonDB.GetObjectByName(pokemon.Name).Status}");
-            //Debug.Log($"{pokemon.Name} ES={pokemon.Status}");
-            pokedexBase.Add(pokemon);
-        }
-        pokedex = new List<PokedexObject>();
-
-        foreach (var pokemon in pokedexBase)
-        {
-            pokedex.Add(new PokedexObject(pokemon));
-        }
-        pokedex.Sort((p, q) => p.ID.CompareTo(q.ID));
     }
 }

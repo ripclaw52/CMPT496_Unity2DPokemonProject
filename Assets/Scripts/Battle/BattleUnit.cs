@@ -63,9 +63,9 @@ public class BattleUnit : MonoBehaviour
             image.SetNativeSize();
             transform.localScale = new Vector3(1, 1, 1);
 
-            if (pokemon.Base.Status == EncounterStatus.None)
+            if (Pokedex.i.FindEncounterStatus(pokemon.Base) == EncounterStatus.None)
             {
-                pokemon.Base.Status = EncounterStatus.Seen;
+                Pokedex.i.ChangePokemonStatus(pokemon, EncounterStatus.Seen);
             }
         }
         

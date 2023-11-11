@@ -23,7 +23,7 @@ public class PokedexPokemonState : State<GameController>
     {
         gc = owner;
         pokedexPokemonUI.gameObject.SetActive(true);
-        pokedexPokemonUI.Setup(PokedexState.i.Pokedex[PokedexIndex]);
+        pokedexPokemonUI.Setup(Pokedex.i.PokeDex[PokedexIndex]);
     }
 
     public override void Execute()
@@ -50,20 +50,21 @@ public class PokedexPokemonState : State<GameController>
             AudioManager.i.PlaySfx(AudioId.UISelect);
         }
 
-        if (PokedexIndex > PokedexState.i.Pokedex.Count - 1)
+        if (PokedexIndex > Pokedex.i.PokeDex.Count - 1)
         {
             PokedexIndex = 0;
-            prevSelection = PokedexState.i.Pokedex.Count - 1;
+            prevSelection = Pokedex.i.PokeDex.Count - 1;
         }
         else if (PokedexIndex < 0)
         {
-            PokedexIndex = PokedexState.i.Pokedex.Count - 1;
+            PokedexIndex = Pokedex.i.PokeDex.Count - 1;
             prevSelection = 0;
         }
 
         if (PokedexIndex != prevSelection)
         {
-            pokedexPokemonUI.Setup(PokedexState.i.Pokedex[PokedexIndex]);
+            Debug.Log($"index => {Pokedex.i.PokeDex[PokedexIndex]}");
+            pokedexPokemonUI.Setup(Pokedex.i.PokeDex[PokedexIndex]);
         }
 
         if (Input.GetButtonDown("Back"))
