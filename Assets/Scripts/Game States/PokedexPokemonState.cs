@@ -63,7 +63,7 @@ public class PokedexPokemonState : State<GameController>
 
         if (PokedexIndex != prevSelection)
         {
-            Debug.Log($"index => {Pokedex.i.PokeDex[PokedexIndex]}");
+            //Debug.Log($"index => {Pokedex.i.PokeDex[PokedexIndex]}");
             pokedexPokemonUI.Setup(Pokedex.i.PokeDex[PokedexIndex]);
         }
 

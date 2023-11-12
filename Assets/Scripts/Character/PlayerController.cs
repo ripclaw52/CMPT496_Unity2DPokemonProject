@@ -128,8 +128,6 @@ public class PlayerController : MonoBehaviour, ISavable
 
         // Restore Party
         GetComponent<PokemonParty>().Pokemons = saveData.pokemons.Select(s => new Pokemon(s)).ToList();
-
-
     }
 }
 

@@ -63,9 +63,11 @@ public class BattleUnit : MonoBehaviour
             image.SetNativeSize();
             transform.localScale = new Vector3(1, 1, 1);
 
+            // Change status to be 'seen' if not encountered before.
             if (Pokedex.i.FindEncounterStatus(pokemon.Base) == EncounterStatus.None)
             {
                 Pokedex.i.ChangePokemonStatus(pokemon, EncounterStatus.Seen);
+                Pokedex.i.SeenCount++;
             }
         }
         

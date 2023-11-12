@@ -6,7 +6,8 @@ using UnityEngine;
 public class Pokedex : MonoBehaviour, ISavable
 {
     public List<PokedexObject> pokeDex;
-
+    public int seenCount;
+    public int ownCount;
     public static Pokedex i { get; private set; }
     private void Awake()
     {
@@ -57,6 +58,8 @@ public class Pokedex : MonoBehaviour, ISavable
     }
 
     public List<PokedexObject> PokeDex { get => pokeDex; set => pokeDex = value; }
+    public int SeenCount { get => seenCount; set => seenCount = value; }
+    public int OwnCount { get => ownCount; set => ownCount = value; }
 }
 
 [System.Serializable]

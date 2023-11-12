@@ -27,21 +27,6 @@ public class PokedexUI : SelectionUI<PokedexSlot>
     public PokedexObject SelectedPokemon => Pokedex.i.PokeDex[PokedexIndex];
     public int PokedexIndex { get => selectedItem; set => selectedItem = value; }
 
-    int totalSeen;
-    int totalOwn;
-
-    int GetTotalEncounterStatus(EncounterStatus status)
-    {
-        int total = 0;
-        foreach (var item in Pokedex.i.PokeDex)
-        {
-            if (item.Status == status)
-                total++;
-        }
-        // Debug.Log($"{status} ={total}");
-        return total;
-    }
-
     private void Awake()
     {
         pokedexListRect = pokedexList.GetComponent<RectTransform>();
@@ -56,10 +41,8 @@ public class PokedexUI : SelectionUI<PokedexSlot>
 
     public void UpdateEncounterStatus()
     {
-        totalSeen = GetTotalEncounterStatus(EncounterStatus.Seen);
-        totalOwn = GetTotalEncounterStatus(EncounterStatus.Own);
-        totalSeenText.text = totalSeen.ToString();
-        totalOwnText.text = totalOwn.ToString();
+        totalSeenText.text = Pokedex.i.SeenCount.ToString();
+        totalOwnText.text = Pokedex.i.OwnCount.ToString();
     }
 
     public void UpdatePokedexList()

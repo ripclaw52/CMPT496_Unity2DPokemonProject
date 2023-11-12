@@ -46,7 +46,19 @@ public class PokemonParty : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        // Ensure pokemons in party are listed as owned
+        foreach (var pokemon in pokemons)
+        {
+            var status = Pokedex.i.FindEncounterStatus(pokemon.Base);
+            if (status != EncounterStatus.Own)
+            {
+                if (status != EncounterStatus.Seen)
+                    Pokedex.i.SeenCount++;
 
+                Pokedex.i.ChangePokemonStatus(pokemon, EncounterStatus.Own);
+                Pokedex.i.OwnCount++;
+            }
+        }
     }
 
     /// <summary>
@@ -64,6 +76,16 @@ public class PokemonParty : MonoBehaviour
     /// <param name="newPokemon">The new Pokemon being added</param>
     public void AddPokemon(Pokemon newPokemon)
     {
+        var status = Pokedex.i.FindEncounterStatus(newPokemon.Base);
+        if (status != EncounterStatus.Own)
+        {
+            if (status != EncounterStatus.Seen)
+                Pokedex.i.SeenCount++;
+
+            Pokedex.i.ChangePokemonStatus(newPokemon, EncounterStatus.Own);
+            Pokedex.i.OwnCount++;
+        }
+
         if (pokemons.Count < 6)
         {
             pokemons.Add(newPokemon);
