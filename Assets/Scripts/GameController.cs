@@ -23,8 +23,10 @@ public class GameController : MonoBehaviour
         Instance = this;
 
         // disables the mouse
+        /*
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        */
 
         NatureDB.Init();
         //Debug.Log($"NatureDB = {NatureDB.objects.Count}");
