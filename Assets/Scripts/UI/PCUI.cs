@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class PCUI : MonoBehaviour
 {
+    [Header("Array Components")]
+    [SerializeField] List<BoxSlot> partyList;
+    [SerializeField] BoxUI boxUI;
+
+    [Header("Arrow keys")]
     [SerializeField] Image leftArrow;
     [SerializeField] Image rightArrow;
 

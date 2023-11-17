@@ -37,15 +37,29 @@ public class GameMenuState : State<GameController>
     void OnMenuItemSelected(int selection)
     {
         if (selection == 0) // Pokedex
+        {
             gc.StateMachine.Push(PokedexState.i);
+        }
         else if (selection == 1) // Pokemon
+        {
             gc.StateMachine.Push(PartyState.i);
-        else if (selection == 2) // Bag
+        }
+        else if (selection == 2) // PC Box System
+        {
+            gc.StateMachine.Push(PCState.i);
+        }
+        else if (selection == 3) // Bag
+        {
             gc.StateMachine.Push(InventoryState.i);
-        else if (selection == 3) // Save
+        }
+        else if (selection == 4) // Save
+        {
             SavingSystem.i.Save("slot1");
-        else if (selection == 4) // Load
+        }
+        else if (selection == 5) // Load
+        {
             SavingSystem.i.Load("slot1");
+        }
     }
 
     void OnBack()
