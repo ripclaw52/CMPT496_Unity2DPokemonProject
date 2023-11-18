@@ -3,22 +3,45 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
+[System.Serializable]
 public class Box
 {
-    string boxName;
+    [SerializeField] string boxName = "box";
+    [SerializeField] Image backgroundImage;
 
     // creates box with 30 items initially
-    List<Pokemon?> boxList = new List<Pokemon?>(Enumerable.Repeat((Pokemon?)null, 30));
+    [SerializeField] List<Pokemon?> boxList = new List<Pokemon?>(Enumerable.Repeat((Pokemon?)null, 30));
     int listSize;
+    int fillAmount;
     bool isFull;
+
+    public Box(string boxName)
+    {
+        this.boxName = boxName;
+        boxList = new List<Pokemon?>(Enumerable.Repeat((Pokemon?)null, 30));
+        listSize = boxList.Count;
+        GetFilledAmount();
+    }
+
+    public Box(string boxName, Image background)
+    {
+        this.boxName = boxName;
+        backgroundImage.sprite = background.sprite;
+        boxList = new List<Pokemon?>(Enumerable.Repeat((Pokemon?)null, 30));
+        listSize = boxList.Count;
+        GetFilledAmount();
+    }
 
     public Box()
     {
+        boxList = new List<Pokemon?>(Enumerable.Repeat((Pokemon?)null, 30));
         listSize = boxList.Count;
+        GetFilledAmount();
     }
 
-    public void CheckIsFull()
+    int GetFilledAmount()
     {
         int total = 0;
         foreach (var item in BoxList)
@@ -26,6 +49,7 @@ public class Box
             if (item != null)
                 total++;
         }
+        return total;
     }
 
     // Get human readable list and strips null fields from box list
@@ -45,6 +69,7 @@ public class Box
     // Adds a pokemon to the first index in the list containing null value
     public void AddPokemon(Pokemon pokemon)
     {
+        GetFilledAmount();
         for (int i = 0; i < ListSize; i++)
         {
             if (BoxList[i] == null)
@@ -63,6 +88,7 @@ public class Box
     /// <returns>This returns the value at the previous index, either null or a pokemon</returns>
     public Pokemon? MovePokemon(Pokemon pokemon, int index)
     {
+        GetFilledAmount();
         Pokemon? prevPokemon = BoxList[index];
         BoxList[index] = pokemon;
         return prevPokemon;
@@ -71,7 +97,9 @@ public class Box
     // Add save system
 
     public string BoxName { get => boxName; set => boxName = value; }
-    public List<Pokemon?> BoxList { get => boxList; set=> boxList = value; }
+    public List<Pokemon?> BoxList { get => boxList; set => boxList = value; }
+    public Image BackgroundImage { get => backgroundImage; set => backgroundImage = value; }
     public int ListSize => listSize;
-    public bool IsFull => isFull;
+    public int FillAmount { get => fillAmount; set => fillAmount = GetFilledAmount(); }
+    public bool IsFull { get => isFull = (fillAmount == 30) ? true : false; }
 }

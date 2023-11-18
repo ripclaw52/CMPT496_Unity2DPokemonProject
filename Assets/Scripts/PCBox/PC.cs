@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PC : MonoBehaviour
 {
-    List<Box> pcList = new List<Box>();
+    [SerializeField] List<Box> pcList = new List<Box>();
     public List<Box> PCList { get => pcList; set => pcList = value; }
 
     public static PC i { get; set; }
@@ -13,8 +13,8 @@ public class PC : MonoBehaviour
         i = this;
     }
 
-    public void BoxIsFull()
+    void AddBox()
     {
-
+        pcList.Add(new Box($"box_{pcList.Count}"));
     }
 }

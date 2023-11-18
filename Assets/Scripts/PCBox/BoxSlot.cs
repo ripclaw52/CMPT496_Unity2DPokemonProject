@@ -15,13 +15,23 @@ public class BoxSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoint
         selected.SetActive(false);
     }
 
+    // Adds the pokemon into the slot from the list if not null
     public void AddPokemonInSlot(GameObject prefab, Pokemon? pokemon)
     {
-        var pokemonDrag = Instantiate(prefab, transform);
+        var prevObject = transform.gameObject.GetComponentInChildren<DraggablePokemon>();
+        if (prevObject != null)
+        {
+            Destroy(prevObject);
+        }
+
         if (pokemon != null)
+        {
+            var pokemonDrag = Instantiate(prefab, transform);
             pokemonDrag.GetComponent<DraggablePokemon>().SetData(pokemon);
+        }
     }
 
+    // Gets the pokemon object from the slot, or returns null
     public Pokemon? GetPokemonInSlot()
     {
         return transform.gameObject.GetComponentInChildren<DraggablePokemon?>().pokemon;
