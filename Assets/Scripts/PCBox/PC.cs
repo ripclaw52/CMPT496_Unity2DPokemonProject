@@ -13,7 +13,7 @@ public class PC : MonoBehaviour
         i = this;
     }
 
-    void AddBox()
+    public void AddBox()
     {
         pcList.Add(new Box($"box_{pcList.Count}"));
     }

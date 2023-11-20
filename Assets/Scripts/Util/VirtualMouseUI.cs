@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.InputSystem.UI;
 
@@ -29,6 +30,15 @@ public class VirtualMouseUI : MonoBehaviour
         virtualMousePosition.x = Mathf.Clamp(virtualMousePosition.x, 0f, Screen.width);
         virtualMousePosition.y = Mathf.Clamp(virtualMousePosition.y, 0f, Screen.height);
         InputState.Change(virtualMouseInput.virtualMouse.position, virtualMousePosition);
+    }
+
+    public void SetToCenterOfScreen()
+    {
+        Debug.Log($"mouse before pos? {virtualMouseInput.virtualMouse.position.ReadValue()}");
+        Vector2 center = new Vector2(canvasRectTransform.localPosition.x / 2f, canvasRectTransform.localPosition.y / 2f);
+
+        //InputState.Change(virtualMouseInput.virtualMouse.position, center);
+        Debug.Log($"mouse after pos? {virtualMouseInput.virtualMouse.position.ReadValue()}");
     }
 
     public VirtualMouseInput VirtualMouseInput => virtualMouseInput;

@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.UI;
 
 public class PCUI : MonoBehaviour
@@ -10,9 +13,14 @@ public class PCUI : MonoBehaviour
     [SerializeField] BoxUI boxUI;
     [SerializeField] GameObject pokemonPrefab;
 
-    [Header("Box Selection Arrow Keys")]
+    [Header("Buttons")]
     [SerializeField] Image leftArrow;
     [SerializeField] Image rightArrow;
+    [SerializeField] Color activeSBC;
+    [SerializeField] Color disabledSBC;
+    [SerializeField] Button switchButton;
+
+    public event Action OnBack;
 
     int selectedBoxIndex = 0;
     PokemonParty party;
@@ -33,6 +41,31 @@ public class PCUI : MonoBehaviour
     {
         // Get the pokemon party list
         party = PokemonParty.GetPlayerParty();
+    }
+
+    public void BackButton()
+    {
+        VirtualMouseUI.i.SetToCenterOfScreen();
+
+        OnBack?.Invoke();
+    }
+
+    public void ToggleSwitching()
+    {
+        if (PCState.i.isSwitching == false)
+        {
+            // Set button toggle to true
+            PCState.i.isSwitching = true;
+            // Change color to active state
+            switchButton.GetComponent<Image>().color = activeSBC;
+        }
+        else
+        {
+            // Set button toggle to false
+            PCState.i.isSwitching = false;
+            // change color to disabled state
+            switchButton.GetComponent<Image>().color = disabledSBC;
+        }
     }
 
     // Go to next box, save changes to PC instance and generate new box selection

@@ -15135,7 +15135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7, g: 0.74999994, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -15174,8 +15174,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    m_PressedColor: {r: 0.75, g: 0.75, b: 0.75, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -15195,7 +15195,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6875618400858921994}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2167765603544036724}
+        m_TargetAssemblyTypeName: PCUI, Assembly-CSharp
+        m_MethodName: ToggleSwitching
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6508214484179624857
 GameObject:
   m_ObjectHideFlags: 0
@@ -17636,7 +17648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.702, b: 0.702, a: 1}
+  m_Color: {r: 1, g: 0.7, b: 0.7, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -17696,7 +17708,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7147563005401545802}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2167765603544036724}
+        m_TargetAssemblyTypeName: PCUI, Assembly-CSharp
+        m_MethodName: BackButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7553951131694960392
 GameObject:
   m_ObjectHideFlags: 0
@@ -20996,8 +21020,12 @@ MonoBehaviour:
   - {fileID: 6656043758969783816}
   - {fileID: 8148124277272680565}
   boxUI: {fileID: 63775780248655029}
+  pokemonPrefab: {fileID: 4142386086458767237, guid: d3d249b904d20794699dc72a03a067d6, type: 3}
   leftArrow: {fileID: 740157812492201829}
   rightArrow: {fileID: 7265079159457949207}
+  activeSBC: {r: 0.7, g: 0.749342, b: 1, a: 1}
+  disabledSBC: {r: 1, g: 1, b: 1, a: 1}
+  switchButton: {fileID: 4687399789918880870}
 --- !u!1 &9033148205721406139
 GameObject:
   m_ObjectHideFlags: 0
