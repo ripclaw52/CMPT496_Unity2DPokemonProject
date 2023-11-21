@@ -32,13 +32,10 @@ public class VirtualMouseUI : MonoBehaviour
         InputState.Change(virtualMouseInput.virtualMouse.position, virtualMousePosition);
     }
 
-    public void SetToCenterOfScreen()
+    public void MoveMousePosition()
     {
-        Debug.Log($"mouse before pos? {virtualMouseInput.virtualMouse.position.ReadValue()}");
-        Vector2 center = new Vector2(canvasRectTransform.localPosition.x / 2f, canvasRectTransform.localPosition.y / 2f);
-
-        //InputState.Change(virtualMouseInput.virtualMouse.position, center);
-        Debug.Log($"mouse after pos? {virtualMouseInput.virtualMouse.position.ReadValue()}");
+        // Top Left corner
+        virtualMouseInput.cursorTransform.position = new Vector3(35f, Screen.height - 35f, 0f);
     }
 
     public VirtualMouseInput VirtualMouseInput => virtualMouseInput;

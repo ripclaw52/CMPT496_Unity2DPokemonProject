@@ -25,7 +25,11 @@ public class PCState : State<GameController>
         Cursor.lockState = CursorLockMode.None;
 
         virtualMouse.SetActive(true);
+        VirtualMouseUI.i.MoveMousePosition();
+
         pcUI.gameObject.SetActive(true);
+        pcUI.SetSwitchDisabled();
+
         pcUI.OnBack += OnBack;
     }
 
@@ -36,13 +40,13 @@ public class PCState : State<GameController>
 
     public override void Exit()
     {
-        VirtualMouseUI.i.SetToCenterOfScreen();
-
-        virtualMouse.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
+        pcUI.SetSwitchDisabled();
         pcUI.gameObject.SetActive(false);
 
         pcUI.OnBack -= OnBack;
+        
+        virtualMouse.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void OnBack()

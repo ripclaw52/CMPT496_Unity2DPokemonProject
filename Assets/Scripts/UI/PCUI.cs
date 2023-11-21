@@ -43,28 +43,38 @@ public class PCUI : MonoBehaviour
         party = PokemonParty.GetPlayerParty();
     }
 
+    IEnumerator WaitForTime(float time=1f)
+    {
+        yield return new WaitForSeconds(time);
+    }
+
     public void BackButton()
     {
-        VirtualMouseUI.i.SetToCenterOfScreen();
-
+        VirtualMouseUI.i.MoveMousePosition();
         OnBack?.Invoke();
+    }
+
+    public void SetSwitchEnabled()
+    {
+        PCState.i.isSwitching = true;
+        switchButton.GetComponent<Image>().color = activeSBC;
+    }
+
+    public void SetSwitchDisabled()
+    {
+        PCState.i.isSwitching = false;
+        switchButton.GetComponent<Image>().color = disabledSBC;
     }
 
     public void ToggleSwitching()
     {
         if (PCState.i.isSwitching == false)
         {
-            // Set button toggle to true
-            PCState.i.isSwitching = true;
-            // Change color to active state
-            switchButton.GetComponent<Image>().color = activeSBC;
+            SetSwitchEnabled();
         }
         else
         {
-            // Set button toggle to false
-            PCState.i.isSwitching = false;
-            // change color to disabled state
-            switchButton.GetComponent<Image>().color = disabledSBC;
+            SetSwitchDisabled();
         }
     }
 

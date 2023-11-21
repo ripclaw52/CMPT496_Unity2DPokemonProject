@@ -6,15 +6,29 @@ using UnityEngine.UI;
 
 public class DraggablePokemon : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    [HideInInspector] public Pokemon pokemon;
+    [SerializeField] Pokemon pokemon;
     [HideInInspector] public Image image;
     [HideInInspector] public Transform parentAfterDrag;
     ImageAnimator boxSprite;
     List<Sprite> spriteMap;
+    bool isMouseOver = false;
+
+    public Pokemon Pokemon => pokemon;
 
     private void Awake()
     {
         image = transform.GetComponent<Image>();
+    }
+
+    private void Start()
+    {
+        SetData(Pokemon);
+    }
+
+    private void FixedUpdate()
+    {
+        if (isMouseOver)
+            boxSprite.HandleUpdate();
     }
 
     public void SetData(Pokemon pokemon)
@@ -29,6 +43,7 @@ public class DraggablePokemon : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        isMouseOver = true;
         Debug.Log($"Begin drag");
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root.Find("UI Canvas"));
@@ -39,12 +54,14 @@ public class DraggablePokemon : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
     public void OnDrag(PointerEventData eventData)
     {
+        isMouseOver = true;
         Debug.Log($"Dragging");
         transform.position = VirtualMouseUI.i.VirtualMouseInput.virtualMouse.position.ReadValue();
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        isMouseOver = false;
         Debug.Log($"End drag");
         transform.SetParent(parentAfterDrag);
         image.raycastTarget = true;
@@ -52,11 +69,12 @@ public class DraggablePokemon : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        boxSprite.HandleUpdate();
+        isMouseOver = true;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        isMouseOver = false;
         boxSprite.Start();
     }
 }
