@@ -22,14 +22,13 @@ public class BoxUI : MonoBehaviour
     public void GetBoxData(Box box)
     {
         List<Pokemon?> list =  new List<Pokemon?>(box.BoxList);
-
+        Debug.Log($"listCount; ({list?.Count})");
         // Iterate through BoxSlots and update positions of pokemon
         for (int i = 0; i < list.Count; i++)
         {
             // Sets to Pokemon? or null object
             list[i] = boxSlots[i].GetPokemonInSlot();
         }
-
         box.BoxList = list;
         //return box;
     }
@@ -46,8 +45,7 @@ public class BoxUI : MonoBehaviour
         for (int i = 0; i < list.Count; i++)
         {
             Debug.Log($"c:{list.Count} i:{list[i]}");
-            if (list[i]?.HasValue != null)
-                boxSlots[i].AddPokemonInSlot(pokemonPrefab, list[i]);
+            boxSlots[i].AddPokemonInSlot(pokemonPrefab, list[i]);
             continue;
         }
 

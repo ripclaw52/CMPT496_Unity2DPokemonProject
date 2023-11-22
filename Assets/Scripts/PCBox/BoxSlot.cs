@@ -28,7 +28,7 @@ public class BoxSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoint
 
         // The pokemon exists, so instantiate into boxslot
         // Set draggable pokemon to pokemon data
-        if (pokemon != null)
+        if (pokemon?.HasValue != null)
         {
             var pokemonDrag = Instantiate(prefab, transform);
             pokemonDrag.GetComponent<DraggablePokemon>().SetData(pokemon);
@@ -39,15 +39,16 @@ public class BoxSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoint
     public Pokemon? GetPokemonInSlot()
     {
         selected?.SetActive(false);
-
-        if (TryGetComponent(out DraggablePokemon pokemon))
+        for (int i = 0; i < transform.childCount; i++)
         {
-            return pokemon.Pokemon;
+            var child = transform.GetChild(i);
+            if (child.TryGetComponent<DraggablePokemon>(out DraggablePokemon pokemon))
+            {
+                return pokemon.Pokemon;
+            }
+            
         }
-        else
-        {
-            return null;
-        }
+        return null;
     }
 
     public void OnDrop(PointerEventData eventData)

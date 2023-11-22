@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
@@ -16,13 +17,14 @@ public class PCUI : MonoBehaviour
     [Header("Buttons")]
     [SerializeField] Image leftArrow;
     [SerializeField] Image rightArrow;
+    [SerializeField] TextMeshProUGUI boxName;
     [SerializeField] Color activeSBC;
     [SerializeField] Color disabledSBC;
     [SerializeField] Button switchButton;
 
     public event Action OnBack;
 
-    int selectedBoxIndex = 0;
+    [HideInInspector] public int selectedBoxIndex = 0;
     PokemonParty party;
     PC pc;
     Box currentBox;
@@ -32,6 +34,8 @@ public class PCUI : MonoBehaviour
         party = PokemonParty.GetPlayerParty();
         pc = PC.GetPC();
         currentBox = new Box(pc.PCList[selectedBoxIndex]);
+        boxName.text = currentBox?.BoxName;
+
         PartyDataToBoxSlot();
         boxUI.SetBoxData(currentBox);
     }
@@ -63,12 +67,14 @@ public class PCUI : MonoBehaviour
     public List<Pokemon> BoxSlotToPartyData()
     {
         List<Pokemon> list = new List<Pokemon>();
-
         // iterate over partyList
         for (int i = 0; i < partyList.Count; i++)
         {
+            // Assign a nullable pokemon object
+            // Value will either be a pokemon or null
             Pokemon? pokemon = partyList[i].GetPokemonInSlot();
-            if (pokemon != null)
+            // check if its a pokemon, as a pokemon will have init called and HasValue will be set
+            if (pokemon?.HasValue != null)
             {
                 list.Add(pokemon);
             }
@@ -128,11 +134,14 @@ public class PCUI : MonoBehaviour
         }
         // Save current items in UI into list
         boxUI.GetBoxData(pc.PCList[selectedBoxIndex]);
+        pc.PCList[selectedBoxIndex].BoxUpdated();
 
         selectedBoxIndex = (selectedBoxIndex == pc.PCList.Count - 1) ? 0 : selectedBoxIndex + 1;
 
         // Create new items from list in UI
         boxUI.SetBoxData(pc.PCList[selectedBoxIndex]);
+        boxName.text = pc.PCList[selectedBoxIndex]?.BoxName;
+        pc.PCList[selectedBoxIndex].BoxUpdated();
     }
 
     // Go to prev box, save changes to PC instance and generate new box selection
@@ -144,10 +153,13 @@ public class PCUI : MonoBehaviour
         }
         // Save current items in UI into list
         boxUI.GetBoxData(pc.PCList[selectedBoxIndex]);
+        pc.PCList[selectedBoxIndex].BoxUpdated();
 
         selectedBoxIndex = (selectedBoxIndex == 0) ? pc.PCList.Count - 1 : selectedBoxIndex - 1;
 
         // Create new items from list in UI
         boxUI.SetBoxData(pc.PCList[selectedBoxIndex]);
+        boxName.text = pc.PCList[selectedBoxIndex]?.BoxName;
+        pc.PCList[selectedBoxIndex].BoxUpdated();
     }
 }

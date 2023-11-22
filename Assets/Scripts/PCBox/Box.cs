@@ -56,28 +56,16 @@ public class Box
 
     public void Init()
     {
-        Debug.Log($"box_name;{boxName}");
-
         for (int i = 0; i < boxList.Count; i++)
         {
             if (boxList[i]?.Base != null)
             {
-                Debug.Log($"pokeName; {boxList[i].Base.Name}");
                 boxList[i].Init();
             }
-
-            if (boxList[i]?.Base == null && boxList[i]?.HasValue == null)
+            else if ((boxList[i]?.Base == null) && (boxList[i]?.HasValue == null))
             {
-                Debug.Log($"not_null{boxList[i] != null} has_value;({boxList[i]?.HasValue})");
                 boxList[i] = null;
-                Debug.Log($"not_null{boxList[i] != null} has_value;({boxList[i]?.HasValue})");
             }
-            /*
-            if (boxList[i]?.HasValue != null)
-            {
-                boxList[i].Init();
-            }
-            */
         }
     }
 
@@ -98,6 +86,8 @@ public class Box
         List<Pokemon> newList = new List<Pokemon>();
         foreach (var item in BoxList)
         {
+            Debug.Log($"item_not_null: ({item != null}) has_value-> ({item.HasValue})");
+
             if (item != null)
             {
                 newList.Add(item);
@@ -146,6 +136,7 @@ public class Box
         BackgroundImage = saveData.background;
         BoxList = saveData.list.Select(p => new Pokemon(p)).ToList();
     }
+
     public BoxSaveData GetSaveData()
     {
         var saveData = new BoxSaveData()
