@@ -38,7 +38,16 @@ public class BoxSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoint
     // Gets the pokemon object from the slot, or returns null
     public Pokemon? GetPokemonInSlot()
     {
-        return transform.gameObject.GetComponentInChildren<DraggablePokemon?>().Pokemon;
+        selected?.SetActive(false);
+
+        if (TryGetComponent(out DraggablePokemon pokemon))
+        {
+            return pokemon.Pokemon;
+        }
+        else
+        {
+            return null;
+        }
     }
 
     public void OnDrop(PointerEventData eventData)

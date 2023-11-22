@@ -82,7 +82,8 @@ public class Pokemon
 
         // Enable IV and EV before Stat Calculation
         //Debug.Log("This line exists!");
-        GetRandomNature();
+        if (Nature == null)
+            GetRandomNature();
         //Debug.Log($"{nature.Name}");
         IV = new StatValue();
         EV = new StatValue();

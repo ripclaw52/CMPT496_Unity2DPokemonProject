@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +13,7 @@ public class Box
     [SerializeField] Image backgroundImage;
 
     // creates box with 30 items initially
-    [SerializeField] List<Pokemon?> boxList = Enumerable.Repeat<Pokemon?>(null, 30).ToList();
+    [SerializeField] List<Pokemon?> boxList; // = new List<Pokemon?>(new Pokemon?[30]); //Enumerable.Repeat<Pokemon?>(null, 30).ToList();
 
     public event Action OnUpdated;
 
@@ -55,12 +56,28 @@ public class Box
 
     public void Init()
     {
-        foreach (var pokemon in boxList)
+        Debug.Log($"box_name;{boxName}");
+
+        for (int i = 0; i < boxList.Count; i++)
         {
-            if (pokemon.HasValue != null)
+            if (boxList[i]?.Base != null)
             {
-                pokemon.Init();
+                Debug.Log($"pokeName; {boxList[i].Base.Name}");
+                boxList[i].Init();
             }
+
+            if (boxList[i]?.Base == null && boxList[i]?.HasValue == null)
+            {
+                Debug.Log($"not_null{boxList[i] != null} has_value;({boxList[i]?.HasValue})");
+                boxList[i] = null;
+                Debug.Log($"not_null{boxList[i] != null} has_value;({boxList[i]?.HasValue})");
+            }
+            /*
+            if (boxList[i]?.HasValue != null)
+            {
+                boxList[i].Init();
+            }
+            */
         }
     }
 

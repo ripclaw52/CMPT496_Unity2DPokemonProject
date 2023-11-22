@@ -46,7 +46,7 @@ public class BoxUI : MonoBehaviour
         for (int i = 0; i < list.Count; i++)
         {
             Debug.Log($"c:{list.Count} i:{list[i]}");
-            if (list[i].HasValue != null)
+            if (list[i]?.HasValue != null)
                 boxSlots[i].AddPokemonInSlot(pokemonPrefab, list[i]);
             continue;
         }
