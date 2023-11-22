@@ -28,11 +28,6 @@ public class PC : MonoBehaviour
         }
     }
 
-    public void AddBox()
-    {
-        pcList.Add(new Box($"box_{pcList.Count}"));
-    }
-
     public void PCUpdated()
     {
         OnUpdated?.Invoke();

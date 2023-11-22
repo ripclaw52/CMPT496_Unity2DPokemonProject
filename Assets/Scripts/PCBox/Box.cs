@@ -20,6 +20,15 @@ public class Box
     int fillAmount;
     bool isFull;
 
+    public Box(Box box)
+    {
+        this.boxName = box.boxName;
+        this.backgroundImage = box.backgroundImage;
+        this.boxList = box.boxList;
+        listSize = boxList.Count;
+        GetFilledAmount();
+    }
+
     public Box(string boxName)
     {
         this.boxName = boxName;
@@ -83,8 +92,8 @@ public class Box
     // Adds a pokemon to the first index in the list containing null value
     public void AddPokemon(Pokemon pokemon)
     {
-        GetFilledAmount();
-        for (int i = 0; i < ListSize; i++)
+        //GetFilledAmount();
+        for (int i = 0; i < BoxList.Count; i++)
         {
             if (BoxList[i] == null)
             {
@@ -114,6 +123,22 @@ public class Box
     }
 
     // Add save system
+    public Box(BoxSaveData saveData)
+    {
+        BoxName = saveData.name;
+        BackgroundImage = saveData.background;
+        BoxList = saveData.list.Select(p => new Pokemon(p)).ToList();
+    }
+    public BoxSaveData GetSaveData()
+    {
+        var saveData = new BoxSaveData()
+        {
+            name = BoxName,
+            background = BackgroundImage,
+            list = BoxList.Select(p => p.GetSaveData()).ToList()
+        };
+        return saveData;
+    }
 
     public string BoxName { get => boxName; set => boxName = value; }
     public List<Pokemon?> BoxList
@@ -132,4 +157,12 @@ public class Box
     public int ListSize => listSize;
     public int FillAmount { get => fillAmount; set => fillAmount = GetFilledAmount(); }
     public bool IsFull { get => isFull = (fillAmount == 30) ? true : false; }
+}
+
+[System.Serializable]
+public class BoxSaveData
+{
+    public string name;
+    public Image background;
+    public List<PokemonSaveData?> list;
 }

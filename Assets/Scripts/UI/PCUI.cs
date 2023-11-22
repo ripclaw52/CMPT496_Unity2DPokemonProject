@@ -31,10 +31,7 @@ public class PCUI : MonoBehaviour
     {
         party = PokemonParty.GetPlayerParty();
         pc = PC.GetPC();
-
-        Debug.Log($"{pc.PCList.Count}");
-        currentBox = pc.PCList[selectedBoxIndex];
-
+        currentBox = new Box(pc.PCList[selectedBoxIndex]);
         PartyDataToBoxSlot();
         boxUI.SetBoxData(currentBox);
     }
