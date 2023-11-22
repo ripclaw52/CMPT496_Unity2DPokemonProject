@@ -30,6 +30,8 @@ public class PCState : State<GameController>
         pcUI.gameObject.SetActive(true);
         pcUI.SetSwitchDisabled();
 
+        pcUI.Init();
+
         pcUI.OnBack += OnBack;
     }
 

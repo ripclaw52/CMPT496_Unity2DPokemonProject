@@ -13,6 +13,9 @@ public class Box
 
     // creates box with 30 items initially
     [SerializeField] List<Pokemon?> boxList = new List<Pokemon?>(Enumerable.Repeat((Pokemon?)null, 30));
+
+    public event Action OnUpdated;
+
     int listSize;
     int fillAmount;
     bool isFull;
@@ -39,6 +42,18 @@ public class Box
         boxList = new List<Pokemon?>(Enumerable.Repeat((Pokemon?)null, 30));
         listSize = boxList.Count;
         GetFilledAmount();
+    }
+
+    public void Init()
+    {
+        foreach (var pokemon in boxList)
+        {
+            Debug.Log($"isNull; {pokemon!}");
+            if (pokemon! != null)
+            {
+                //pokemon.Init();
+            }
+        }
     }
 
     int GetFilledAmount()
@@ -94,10 +109,26 @@ public class Box
         return prevPokemon;
     }
 
+    public void BoxUpdated()
+    {
+        OnUpdated?.Invoke();
+    }
+
     // Add save system
 
     public string BoxName { get => boxName; set => boxName = value; }
-    public List<Pokemon?> BoxList { get => boxList; set => boxList = value; }
+    public List<Pokemon?> BoxList
+    {
+        get
+        {
+            return boxList;
+        }
+        set
+        {
+            boxList = value;
+            OnUpdated?.Invoke();
+        }
+    }
     public Image BackgroundImage { get => backgroundImage; set => backgroundImage = value; }
     public int ListSize => listSize;
     public int FillAmount { get => fillAmount; set => fillAmount = GetFilledAmount(); }

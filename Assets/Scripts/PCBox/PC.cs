@@ -1,20 +1,45 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PC : MonoBehaviour
 {
-    [SerializeField] List<Box> pcList = new List<Box>();
-    public List<Box> PCList { get => pcList; set => pcList = value; }
+    [SerializeField] List<Box> pcList;
+    public event Action OnUpdated;
+    public List<Box> PCList
+    {
+        get
+        {
+            return pcList;
+        }
+        set
+        {
+            pcList = value;
+            OnUpdated?.Invoke();
+        }
+    }
 
-    public static PC i { get; set; }
     private void Awake()
     {
-        i = this;
+        foreach (var box in pcList)
+        {
+            box.Init();
+        }
     }
 
     public void AddBox()
     {
         pcList.Add(new Box($"box_{pcList.Count}"));
+    }
+
+    public void PCUpdated()
+    {
+        OnUpdated?.Invoke();
+    }
+
+    public static PC GetPC()
+    {
+        return FindObjectOfType<PlayerController>().GetComponent<PC>();
     }
 }

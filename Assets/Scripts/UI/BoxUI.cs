@@ -15,6 +15,10 @@ public class BoxUI : MonoBehaviour
         backgroundImage = GetComponent<Image>();
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="box">Updates box list to new configuration</param>
     public void GetBoxData(Box box)
     {
         List<Pokemon?> list = box.BoxList;
@@ -22,6 +26,7 @@ public class BoxUI : MonoBehaviour
         // Iterate through BoxSlots and update positions of pokemon
         for (int i = 0; i < list.Count; i++)
         {
+            // Sets to Pokemon? or null object
             list[i] = boxSlots[i].GetPokemonInSlot();
         }
 
@@ -29,6 +34,10 @@ public class BoxUI : MonoBehaviour
         //return box;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="box">Creates draggable pokemon inside box slots</param>
     public void SetBoxData(Box box)
     {
         List<Pokemon?> list = box.BoxList;
@@ -36,7 +45,10 @@ public class BoxUI : MonoBehaviour
         // instantiate draggablepokemon prefab inside boxSlot
         for (int i = 0; i < list.Count; i++)
         {
-            boxSlots[i].AddPokemonInSlot(pokemonPrefab, list[i]);
+            Debug.Log($"c:{list.Count} i:{list[i]}");
+            if (list[i] != null)
+                boxSlots[i].AddPokemonInSlot(pokemonPrefab, list[i]);
+            continue;
         }
 
         backgroundImage.sprite = box.BackgroundImage.sprite;

@@ -24,32 +24,73 @@ public class PCUI : MonoBehaviour
 
     int selectedBoxIndex = 0;
     PokemonParty party;
+    PC pc;
+    Box currentBox;
 
     public void Init()
     {
         party = PokemonParty.GetPlayerParty();
-        Box box = PC.i.PCList[selectedBoxIndex];
+        pc = PC.GetPC();
+
+        Debug.Log($"{pc.PCList.Count}");
+        currentBox = pc.PCList[selectedBoxIndex];
+
+        PartyDataToBoxSlot();
+        boxUI.SetBoxData(currentBox);
     }
 
-    public void CreateParty()
+    /// <summary>
+    /// Takes party data and creates pokemon in boxslots
+    /// </summary>
+    public void PartyDataToBoxSlot()
     {
-        // Get the pokemon party list
-        party = PokemonParty.GetPlayerParty();
+        List<Pokemon?> boxParty = party.Pokemons;
+
+        for (int i = 0; i < partyList.Count; i++)
+        {
+            if (boxParty.Count < partyList.Count)
+            {
+                int dif = partyList.Count - boxParty.Count;
+                for (int j = 0; j < dif; j++)
+                {
+                    boxParty.Add(null);
+                }
+            }
+            partyList[i].AddPokemonInSlot(pokemonPrefab, boxParty[i]);
+        }
     }
 
-    public void UpdateParty()
+    /// <summary>
+    /// Gets boxslot data and updates party placement
+    /// </summary>
+    public List<Pokemon> BoxSlotToPartyData()
     {
-        // Get the pokemon party list
-        party = PokemonParty.GetPlayerParty();
+        List<Pokemon> list = new List<Pokemon>();
+
+        // iterate over partyList
+        for (int i = 0; i < partyList.Count; i++)
+        {
+            Pokemon? pokemon = partyList[i].GetPokemonInSlot();
+            if (pokemon != null)
+            {
+                list.Add(pokemon);
+            }
+        }
+
+        return list;
     }
 
-    IEnumerator WaitForTime(float time=1f)
-    {
-        yield return new WaitForSeconds(time);
-    }
-
+    /// <summary>
+    /// For Button usage
+    /// </summary>
     public void BackButton()
     {
+        // update party
+        party.Pokemons = BoxSlotToPartyData();
+        // update box
+        boxUI.GetBoxData(pc.PCList[selectedBoxIndex]);
+        pc.PCList[selectedBoxIndex].BoxUpdated();
+
         VirtualMouseUI.i.MoveMousePosition();
         OnBack?.Invoke();
     }
@@ -66,6 +107,9 @@ public class PCUI : MonoBehaviour
         switchButton.GetComponent<Image>().color = disabledSBC;
     }
 
+    /// <summary>
+    /// For button usage
+    /// </summary>
     public void ToggleSwitching()
     {
         if (PCState.i.isSwitching == false)
@@ -81,32 +125,32 @@ public class PCUI : MonoBehaviour
     // Go to next box, save changes to PC instance and generate new box selection
     public void GoToNextBox()
     {
-        if (PC.i.PCList.Count == 0)
+        if (pc.PCList.Count == 0)
         {
             return;
         }
         // Save current items in UI into list
-        boxUI.GetBoxData(PC.i.PCList[selectedBoxIndex]);
+        boxUI.GetBoxData(pc.PCList[selectedBoxIndex]);
 
-        selectedBoxIndex = (selectedBoxIndex == PC.i.PCList.Count - 1) ? 0 : selectedBoxIndex + 1;
+        selectedBoxIndex = (selectedBoxIndex == pc.PCList.Count - 1) ? 0 : selectedBoxIndex + 1;
 
         // Create new items from list in UI
-        boxUI.SetBoxData(PC.i.PCList[selectedBoxIndex]);
+        boxUI.SetBoxData(pc.PCList[selectedBoxIndex]);
     }
 
     // Go to prev box, save changes to PC instance and generate new box selection
     public void GoToPrevBox()
     {
-        if (PC.i.PCList.Count == 0)
+        if (pc.PCList.Count == 0)
         {
             return;
         }
         // Save current items in UI into list
-        boxUI.GetBoxData(PC.i.PCList[selectedBoxIndex]);
+        boxUI.GetBoxData(pc.PCList[selectedBoxIndex]);
 
-        selectedBoxIndex = (selectedBoxIndex == 0) ? PC.i.PCList.Count - 1 : selectedBoxIndex - 1;
+        selectedBoxIndex = (selectedBoxIndex == 0) ? pc.PCList.Count - 1 : selectedBoxIndex - 1;
 
         // Create new items from list in UI
-        boxUI.SetBoxData(PC.i.PCList[selectedBoxIndex]);
+        boxUI.SetBoxData(pc.PCList[selectedBoxIndex]);
     }
 }

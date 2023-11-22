@@ -22,7 +22,7 @@ public class DraggablePokemon : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
     private void Start()
     {
-        SetData(Pokemon);
+        //SetData(Pokemon);
     }
 
     private void FixedUpdate()
@@ -31,12 +31,13 @@ public class DraggablePokemon : MonoBehaviour, IBeginDragHandler, IDragHandler, 
             boxSprite.HandleUpdate();
     }
 
-    public void SetData(Pokemon pokemon)
+    public void SetData(Pokemon poke)
     {
-        this.pokemon = pokemon;
-        image.sprite = pokemon.Base.SmallSprite[0];
+        Debug.Log($"{poke.Level}");
+        pokemon = poke;
+        image.sprite = poke.Base.SmallSprite[0];
 
-        spriteMap = pokemon.Base.SmallSprite;
+        spriteMap = poke.Base.SmallSprite;
         boxSprite = new ImageAnimator(spriteMap, image, frameRate: 0.16f);
         boxSprite.Start();
     }
