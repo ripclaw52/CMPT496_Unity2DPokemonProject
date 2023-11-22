@@ -6,13 +6,9 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-#nullable enable
-
 public class BoxSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    #nullable disable annotations
     [SerializeField] GameObject selected;
-    #nullable enable annotations
 
     private void Start()
     {
@@ -30,11 +26,9 @@ public class BoxSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoint
             Destroy(prevObject.gameObject);
         }
 
-        Debug.Log($"pokemon.Equals(null) =>{pokemon==null}");
-
         // The pokemon exists, so instantiate into boxslot
         // Set draggable pokemon to pokemon data
-        if (pokemon!=null)
+        if (pokemon != null)
         {
             var pokemonDrag = Instantiate(prefab, transform);
             pokemonDrag.GetComponent<DraggablePokemon>().SetData(pokemon);

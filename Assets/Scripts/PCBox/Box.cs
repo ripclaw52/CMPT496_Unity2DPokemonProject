@@ -12,7 +12,7 @@ public class Box
     [SerializeField] Image backgroundImage;
 
     // creates box with 30 items initially
-    [SerializeField] List<Pokemon?> boxList = new List<Pokemon?>(Enumerable.Repeat((Pokemon?)null, 30));
+    [SerializeField] List<Pokemon?> boxList = Enumerable.Repeat<Pokemon?>(null, 30).ToList();
 
     public event Action OnUpdated;
 
@@ -23,7 +23,7 @@ public class Box
     public Box(string boxName)
     {
         this.boxName = boxName;
-        boxList = new List<Pokemon?>(Enumerable.Repeat((Pokemon?)null, 30));
+        boxList = new List<Pokemon?>(30);
         listSize = boxList.Count;
         GetFilledAmount();
     }
@@ -32,14 +32,14 @@ public class Box
     {
         this.boxName = boxName;
         backgroundImage.sprite = background.sprite;
-        boxList = new List<Pokemon?>(Enumerable.Repeat((Pokemon?)null, 30));
+        boxList = new List<Pokemon?>(30);
         listSize = boxList.Count;
         GetFilledAmount();
     }
 
     public Box()
     {
-        boxList = new List<Pokemon?>(Enumerable.Repeat((Pokemon?)null, 30));
+        boxList = new List<Pokemon?>(30);
         listSize = boxList.Count;
         GetFilledAmount();
     }
@@ -48,10 +48,9 @@ public class Box
     {
         foreach (var pokemon in boxList)
         {
-            Debug.Log($"isNull; {pokemon!}");
-            if (pokemon! != null)
+            if (pokemon.HasValue != null)
             {
-                //pokemon.Init();
+                pokemon.Init();
             }
         }
     }

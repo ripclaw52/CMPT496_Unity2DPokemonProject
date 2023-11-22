@@ -9,6 +9,8 @@ using UnityEngine;
 [System.Serializable]
 public class Pokemon
 {
+    [HideInInspector] public bool? HasValue { get; set; } = null;
+
     [SerializeField] PokemonBase _base;
     [SerializeField] int level;
 
@@ -24,6 +26,8 @@ public class Pokemon
     /// <returns>A new Pokemon instance.</returns>
     public Pokemon(PokemonBase pBase, int pLevel)
     {
+        HasValue = true;
+
         _base = pBase;
         level = pLevel;
 
@@ -61,6 +65,8 @@ public class Pokemon
     /// </summary>
     public void Init()
     {
+        HasValue = true;
+
         // Generate Moves
         Moves = new List<Move>();
         foreach (var move in Base.LearnableMoves)
@@ -101,6 +107,8 @@ public class Pokemon
     /// </returns>
     public Pokemon(PokemonSaveData saveData)
     {
+        HasValue = true;
+
         _base = PokemonDB.GetObjectByName(saveData.name);
         HP = saveData.hp;
         level = saveData.level;
