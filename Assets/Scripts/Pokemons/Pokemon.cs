@@ -9,7 +9,27 @@ using UnityEngine;
 [System.Serializable]
 public class Pokemon
 {
-    [HideInInspector] public bool? HasValue { get; set; } = null;
+    bool hasValue;
+    [HideInInspector] public bool HasValue
+    {
+        get
+        {
+            if (_base != null)
+            {
+                hasValue = true;
+            }
+            else
+            {
+                hasValue = false;
+            }
+            return hasValue;
+        }
+
+        set
+        {
+            hasValue = value;
+        }
+    }
 
     [SerializeField] PokemonBase _base;
     [SerializeField] int level;
@@ -32,6 +52,28 @@ public class Pokemon
         level = pLevel;
 
         Init();
+    }
+
+    /// <summary>
+    /// None Pokemon constructor to hold nullable Pokemon objects.
+    /// Should be fired on list creation
+    /// </summary>
+    public Pokemon()
+    {
+        HasValue = false;
+
+        _base = null;
+        
+        level = 0;
+        HP = 0;
+        Exp = 0;
+
+        Nature = null;
+        IV = new StatValue();
+        EV = new StatValue();
+        Status = null;
+
+        Moves = new List<Move>(4);
     }
 
     public PokemonBase Base { get { return _base; } }
@@ -108,30 +150,41 @@ public class Pokemon
     /// </returns>
     public Pokemon(PokemonSaveData saveData)
     {
-        HasValue = true;
+        // Get HasValue
+        HasValue = saveData.hasValue;
+        Debug.Log($"({HasValue})");
 
-        _base = PokemonDB.GetObjectByName(saveData.name);
-        HP = saveData.hp;
-        level = saveData.level;
-        Exp = saveData.exp;
+        // if true
+        if (saveData.hasValue)
+        {
+            HasValue = true;
+            _base = PokemonDB.GetObjectByName(saveData.name);
+            HP = saveData.hp;
+            level = saveData.level;
+            Exp = saveData.exp;
 
-        nature = NatureDB.GetObjectByName(saveData.nature);
-        iv = new StatValue(saveData.iv);
-        ev = new StatValue(saveData.ev);
+            nature = NatureDB.GetObjectByName(saveData.nature);
+            iv = new StatValue(saveData.iv);
+            ev = new StatValue(saveData.ev);
 
-        if (saveData.statusId != null)
-            Status = ConditionsDB.Conditions[saveData.statusId.Value];
+            if (saveData.statusId != null)
+                Status = ConditionsDB.Conditions[saveData.statusId.Value];
+            else
+                Status = null;
+
+            Moves = saveData.moves.Select(s => new Move(s)).ToList();
+
+            CalculateStats();
+            StatusChanges = new Queue<string>();
+            ResetStatBoost();
+            VolatileStatus = null;
+
+            CalculateMaxStats();
+        }
         else
-            Status = null;
-
-        Moves = saveData.moves.Select(s => new Move(s)).ToList();
-
-        CalculateStats();
-        StatusChanges = new Queue<string>();
-        ResetStatBoost();
-        VolatileStatus = null;
-
-        CalculateMaxStats();
+        {
+            new Pokemon();
+        }
     }
 
     /// <summary>
@@ -140,18 +193,35 @@ public class Pokemon
     /// <returns>The Pokemon's save data.</returns>
     public PokemonSaveData GetSaveData()
     {
-        var saveData = new PokemonSaveData()
+        var saveData = new PokemonSaveData
         {
-            name = Base.name,
-            hp = HP,
-            level = Level,
-            exp = Exp,
-            nature = Nature.name,
-            iv = IV,
-            ev = EV,
-            statusId = Status?.Id,
-            moves = Moves.Select(m => m.GetSaveData()).ToList()
+            hasValue = HasValue
         };
+
+        if (hasValue)
+        {
+            saveData.name = Base.name;
+            saveData.hp = HP;
+            saveData.level = Level;
+            saveData.exp = Exp;
+            saveData.nature = Nature.name;
+            saveData.iv = IV;
+            saveData.ev = EV;
+            saveData.statusId = Status?.Id;
+            saveData.moves = Moves.Select(m => m.GetSaveData()).ToList();
+        }
+        else
+        {
+            saveData.name = "null";
+            saveData.hp = 0;
+            saveData.level = 0;
+            saveData.exp = 0;
+            saveData.name = "null";
+            saveData.iv = new StatValue();
+            saveData.ev = new StatValue();
+            saveData.statusId = 0;
+            saveData.moves = new List<MoveSaveData>(4);
+        }
 
         return saveData;
     }
@@ -567,6 +637,8 @@ public class DamageDetails
 [System.Serializable]
 public class PokemonSaveData
 {
+    public bool hasValue;
+
     public string name;
     public int hp;
     public int level;

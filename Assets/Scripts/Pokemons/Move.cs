@@ -67,6 +67,6 @@ public class Move
 [Serializable]
 public class MoveSaveData
 {
-    public string name;
-    public int pp;
+    public string name = "";
+    public int pp = 0;
 }

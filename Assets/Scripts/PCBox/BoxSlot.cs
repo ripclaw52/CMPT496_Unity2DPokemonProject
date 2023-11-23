@@ -17,10 +17,10 @@ public class BoxSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoint
     }
 
     // Adds the pokemon into the slot from the list if not null
-    public void AddPokemonInSlot(GameObject prefab, Pokemon? pokemon)
+    public void AddPokemonInSlot(GameObject prefab, Pokemon pokemon)
     {
         // A Pokemon object exists inside already
-        var prevObject = transform.gameObject.GetComponentInChildren<DraggablePokemon?>();
+        var prevObject = transform.gameObject.GetComponentInChildren<DraggablePokemon>();
         if (prevObject != null)
         {
             Destroy(prevObject.gameObject);
@@ -28,7 +28,7 @@ public class BoxSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoint
 
         // The pokemon exists, so instantiate into boxslot
         // Set draggable pokemon to pokemon data
-        if (pokemon?.HasValue != null)
+        if (pokemon.HasValue)
         {
             var pokemonDrag = Instantiate(prefab, transform);
             pokemonDrag.GetComponent<DraggablePokemon>().SetData(pokemon);
@@ -48,7 +48,7 @@ public class BoxSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoint
             }
             
         }
-        return null;
+        return new Pokemon();
     }
 
     public void OnDrop(PointerEventData eventData)

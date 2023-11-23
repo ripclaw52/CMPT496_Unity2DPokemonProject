@@ -13,7 +13,9 @@ public class Box
     [SerializeField] Image backgroundImage;
 
     // creates box with 30 items initially
-    [SerializeField] List<Pokemon?> boxList; // = new List<Pokemon?>(new Pokemon?[30]); //Enumerable.Repeat<Pokemon?>(null, 30).ToList();
+
+    // none value
+    [SerializeField] List<Pokemon> boxList = Enumerable.Repeat<Pokemon>(new Pokemon(), 30).ToList();
 
     public event Action OnUpdated;
 
@@ -49,7 +51,7 @@ public class Box
 
     public Box()
     {
-        boxList = new List<Pokemon?>(30);
+        boxList = new List<Pokemon>(30);
         listSize = boxList.Count;
         GetFilledAmount();
     }
@@ -58,13 +60,9 @@ public class Box
     {
         for (int i = 0; i < boxList.Count; i++)
         {
-            if (boxList[i]?.Base != null)
+            if (boxList[i].HasValue != false)
             {
                 boxList[i].Init();
-            }
-            else if ((boxList[i]?.Base == null) && (boxList[i]?.HasValue == null))
-            {
-                boxList[i] = null;
             }
         }
     }
@@ -102,7 +100,7 @@ public class Box
         //GetFilledAmount();
         for (int i = 0; i < BoxList.Count; i++)
         {
-            if (BoxList[i] == null)
+            if (BoxList[i]?.HasValue == null)
             {
                 BoxList[i] = pokemon;
                 return;
@@ -132,9 +130,13 @@ public class Box
     // Add save system
     public Box(BoxSaveData saveData)
     {
+        Debug.Log($"Within Box SaveData");
         BoxName = saveData.name;
-        BackgroundImage = saveData.background;
+        Debug.Log($"");
+        //BackgroundImage = saveData.background;
+        Debug.Log($"");
         BoxList = saveData.list.Select(p => new Pokemon(p)).ToList();
+        Debug.Log($"");
     }
 
     public BoxSaveData GetSaveData()
@@ -142,14 +144,15 @@ public class Box
         var saveData = new BoxSaveData()
         {
             name = BoxName,
-            background = BackgroundImage,
+            //background = BackgroundImage,
             list = BoxList.Select(p => p.GetSaveData()).ToList()
         };
+
         return saveData;
     }
 
     public string BoxName { get => boxName; set => boxName = value; }
-    public List<Pokemon?> BoxList
+    public List<Pokemon> BoxList
     {
         get
         {
@@ -171,6 +174,6 @@ public class Box
 public class BoxSaveData
 {
     public string name;
-    public Image background;
-    public List<PokemonSaveData?> list;
+    //public Image background;
+    public List<PokemonSaveData> list;
 }

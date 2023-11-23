@@ -15,12 +15,12 @@ public class PCUI : MonoBehaviour
     [SerializeField] GameObject pokemonPrefab;
 
     [Header("Buttons")]
-    [SerializeField] Image leftArrow;
-    [SerializeField] Image rightArrow;
     [SerializeField] TextMeshProUGUI boxName;
     [SerializeField] Color activeSBC;
     [SerializeField] Color disabledSBC;
     [SerializeField] Button switchButton;
+    [SerializeField] Button prev;
+    [SerializeField] Button next;
 
     public event Action OnBack;
 
@@ -33,11 +33,16 @@ public class PCUI : MonoBehaviour
     {
         party = PokemonParty.GetPlayerParty();
         pc = PC.GetPC();
-        currentBox = new Box(pc.PCList[selectedBoxIndex]);
-        boxName.text = currentBox?.BoxName;
+
+        pc.ReadThroughBox(0);
+        pc.ReadThroughBox(1);
+        pc.ReadThroughBox(2);
+
+
+        boxName.text = PC.GetPC().PCList[selectedBoxIndex]?.BoxName;
 
         PartyDataToBoxSlot();
-        boxUI.SetBoxData(currentBox);
+        boxUI.SetBoxData(PC.GetPC().PCList[selectedBoxIndex]);
     }
 
     /// <summary>
@@ -54,7 +59,7 @@ public class PCUI : MonoBehaviour
                 int dif = partyList.Count - boxParty.Count;
                 for (int j = 0; j < dif; j++)
                 {
-                    boxParty.Add(null);
+                    boxParty.Add(new Pokemon());
                 }
             }
             partyList[i].AddPokemonInSlot(pokemonPrefab, boxParty[i]);
@@ -74,7 +79,7 @@ public class PCUI : MonoBehaviour
             // Value will either be a pokemon or null
             Pokemon? pokemon = partyList[i].GetPokemonInSlot();
             // check if its a pokemon, as a pokemon will have init called and HasValue will be set
-            if (pokemon?.HasValue != null)
+            if (pokemon.HasValue)
             {
                 list.Add(pokemon);
             }
@@ -92,6 +97,7 @@ public class PCUI : MonoBehaviour
         party.Pokemons = BoxSlotToPartyData();
         // update box
         boxUI.GetBoxData(pc.PCList[selectedBoxIndex]);
+        pc.PCUpdated();
         pc.PCList[selectedBoxIndex].BoxUpdated();
 
         VirtualMouseUI.i.MoveMousePosition();
@@ -128,38 +134,72 @@ public class PCUI : MonoBehaviour
     // Go to next box, save changes to PC instance and generate new box selection
     public void GoToNextBox()
     {
+        //Debug.Log($"pcCount= ({pc.PCList.Count})");
         if (pc.PCList.Count == 0)
         {
             return;
         }
         // Save current items in UI into list
-        boxUI.GetBoxData(pc.PCList[selectedBoxIndex]);
-        pc.PCList[selectedBoxIndex].BoxUpdated();
+        boxUI.GetBoxData(box: PC.GetPC().PCList[selectedBoxIndex]);
+        //pc.PCList[selectedBoxIndex].BoxUpdated();
+        pc.PCUpdated();
 
-        selectedBoxIndex = (selectedBoxIndex == pc.PCList.Count - 1) ? 0 : selectedBoxIndex + 1;
+        pc.ReadThroughBox(selectedBoxIndex);
 
+        Debug.Log($"NEXT_index: ({selectedBoxIndex}).bef");
+        selectedBoxIndex = selectedBoxIndex != (PC.GetPC().PCList.Count - 1) ? selectedBoxIndex + 1 : 0;
+        /*
+        if (selectedBoxIndex == (pc.PCList.Count - 1))
+        {
+            selectedBoxIndex = 0;
+        }
+        else
+        {
+            selectedBoxIndex++;
+        }
+        */
+        Debug.Log($"NEXT_index: ({selectedBoxIndex}).aft");
+        pc.ReadThroughBox(selectedBoxIndex);
         // Create new items from list in UI
-        boxUI.SetBoxData(pc.PCList[selectedBoxIndex]);
+        boxUI.SetBoxData(box: PC.GetPC().PCList[selectedBoxIndex]);
+        pc.PCUpdated();
+
         boxName.text = pc.PCList[selectedBoxIndex]?.BoxName;
-        pc.PCList[selectedBoxIndex].BoxUpdated();
+        //pc.PCList[selectedBoxIndex].BoxUpdated();
     }
 
     // Go to prev box, save changes to PC instance and generate new box selection
     public void GoToPrevBox()
     {
+        Debug.Log($"pcCount= ({pc.PCList.Count})");
         if (pc.PCList.Count == 0)
         {
             return;
         }
         // Save current items in UI into list
-        boxUI.GetBoxData(pc.PCList[selectedBoxIndex]);
-        pc.PCList[selectedBoxIndex].BoxUpdated();
+        boxUI.GetBoxData(box: PC.GetPC().PCList[selectedBoxIndex]);
+        //pc.PCList[selectedBoxIndex].BoxUpdated();
+        pc.PCUpdated();
 
-        selectedBoxIndex = (selectedBoxIndex == 0) ? pc.PCList.Count - 1 : selectedBoxIndex - 1;
+        Debug.Log($"PREV_index: ({selectedBoxIndex}).bef");
+        selectedBoxIndex = selectedBoxIndex != 0 ? selectedBoxIndex - 1 : (PC.GetPC().PCList.Count - 1);
+        /*
+        if (selectedBoxIndex == 0)
+        {
+            selectedBoxIndex = pc.PCList.Count - 1;
+        }
+        else
+        {
+            selectedBoxIndex--;
+        }
+        */
+        Debug.Log($"PREV_index: ({selectedBoxIndex}).aft");
 
         // Create new items from list in UI
-        boxUI.SetBoxData(pc.PCList[selectedBoxIndex]);
+        boxUI.SetBoxData(box: PC.GetPC().PCList[selectedBoxIndex]);
+        pc.PCUpdated();
+
         boxName.text = pc.PCList[selectedBoxIndex]?.BoxName;
-        pc.PCList[selectedBoxIndex].BoxUpdated();
+        //pc.PCList[selectedBoxIndex].BoxUpdated();
     }
 }

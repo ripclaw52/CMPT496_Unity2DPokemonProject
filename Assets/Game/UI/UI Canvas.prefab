@@ -5183,7 +5183,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!222 &8639871302985516126
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19867,7 +19867,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!222 &455759136309610456
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21021,12 +21021,13 @@ MonoBehaviour:
   - {fileID: 8148124277272680565}
   boxUI: {fileID: 63775780248655029}
   pokemonPrefab: {fileID: 4142386086458767237, guid: d3d249b904d20794699dc72a03a067d6, type: 3}
-  leftArrow: {fileID: 740157812492201829}
-  rightArrow: {fileID: 7265079159457949207}
   boxName: {fileID: 5483685557278686878}
   activeSBC: {r: 0.55, g: 0.6253926, b: 1, a: 1}
   disabledSBC: {r: 1, g: 1, b: 1, a: 1}
   switchButton: {fileID: 4687399789918880870}
+  prev: {fileID: 3630971895647368870}
+  next: {fileID: 3351483747620429355}
+  selectedBoxIndex: 0
 --- !u!1 &9033148205721406139
 GameObject:
   m_ObjectHideFlags: 0

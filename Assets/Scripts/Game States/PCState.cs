@@ -37,18 +37,18 @@ public class PCState : State<GameController>
 
     public override void Execute()
     {
-        base.Execute();
+        //base.Execute();
     }
 
     public override void Exit()
     {
         pcUI.SetSwitchDisabled();
         pcUI.gameObject.SetActive(false);
-
-        pcUI.OnBack -= OnBack;
         
         virtualMouse.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+
+        pcUI.OnBack -= OnBack;
     }
 
     void OnBack()

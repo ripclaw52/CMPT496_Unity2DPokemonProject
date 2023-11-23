@@ -43,6 +43,9 @@ public class ScriptableObjectDB<T> : MonoBehaviour where T : ScriptableObject
     /// <returns>The object with the specified name, or null if not found.</returns>
     public static T GetObjectByName(string name)
     {
+        if (name.Equals("null"))
+            return null;
+
         if (!objects.ContainsKey(name))
         {
             Debug.LogError($"Object with name {name} not found in the database");

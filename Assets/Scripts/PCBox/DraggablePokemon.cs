@@ -33,7 +33,7 @@ public class DraggablePokemon : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
     public void SetData(Pokemon poke)
     {
-        Debug.Log($"{poke.Level}");
+        //Debug.Log($"{poke.Level}");
         pokemon = poke;
         image.sprite = poke.Base.SmallSprite[0];
 
