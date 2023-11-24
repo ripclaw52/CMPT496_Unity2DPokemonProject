@@ -10,6 +10,11 @@ public class PCState : State<GameController>
     [SerializeField] PCUI pcUI;
     [SerializeField] GameObject virtualMouse;
 
+    public Pokemon SelectedPokemon { get; set; }
+    public List<Pokemon> ReadablePokemonList { get; set; }
+    public GameObject VirtualMouse { get => virtualMouse; set => virtualMouse = value; }
+    public PCUI PCUI { get => pcUI; set => pcUI = value; }
+
     public bool isSwitching = false;
 
     public static PCState i { get; private set; }

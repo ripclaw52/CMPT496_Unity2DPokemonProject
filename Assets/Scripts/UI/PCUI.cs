@@ -11,7 +11,7 @@ public class PCUI : MonoBehaviour
 {
     [Header("Game Object Components")]
     [SerializeField] List<BoxSlot> partyList;
-    [SerializeField] BoxUI boxUI;
+    [SerializeField] public BoxUI boxUI;
     [SerializeField] GameObject pokemonPrefab;
 
     [Header("Buttons")]

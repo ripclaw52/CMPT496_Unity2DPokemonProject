@@ -76,11 +76,6 @@ public class PartyState : State<GameController>
             }
             else if (DynamicMenuState.i.SelectedItem == 1)
             {
-                // Todo: Open summary screen
-                // Debug.Log($"Selected pokemon at index {selection}");
-
-                // array partyScreen.PokemonList
-                // SelectedPokemon
                 gc.StateMachine.Push(SummaryState.i);
             }
             else

@@ -23,6 +23,7 @@ public class SummaryState : State<GameController>
     {
         i = this;
     }
+    State<GameController> previousState;
 
     GameController gc;
     public override void Enter(GameController owner)
@@ -34,6 +35,8 @@ public class SummaryState : State<GameController>
 
         summaryUI.gameObject.SetActive(true);
         summaryUI.OnBack += OnBack;
+
+        previousState = gc.StateMachine.GetPrevState();
     }
 
     public override void Execute()
@@ -44,6 +47,14 @@ public class SummaryState : State<GameController>
 
     public override void Exit()
     {
+        Debug.Log($"prev state: ({previousState == PCState.i})");
+        if (previousState == PCState.i)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            PCState.i.VirtualMouse.SetActive(true);
+            VirtualMouseUI.i.MoveMousePosition();
+        }
+
         //selectedIndex = 0;
         summaryUI.selectedPage = 0;
 
@@ -65,6 +76,18 @@ public class SummaryState : State<GameController>
             pokemonList = partyState.PartyScreen.PokemonList;
 
             // get index value in list for selected pokemon
+            selectedIndex = pokemonList.FindIndex(p => p == SelectedPokemon);
+        }
+        else if (prevState == PCState.i)
+        {
+            pokemonList = new List<Pokemon>();
+            var pcState = prevState as PCState;
+
+            // Get selected Pokemon
+            SelectedPokemon = pcState.SelectedPokemon;
+
+            // Check if pokemon is in party and which box is done in draggablepokemon
+            pokemonList = pcState.ReadablePokemonList;
             selectedIndex = pokemonList.FindIndex(p => p == SelectedPokemon);
         }
     }
