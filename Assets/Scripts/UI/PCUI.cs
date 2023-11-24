@@ -15,7 +15,6 @@ public class PCUI : MonoBehaviour
     [SerializeField] GameObject pokemonPrefab;
 
     [Header("Buttons")]
-    [SerializeField] TextMeshProUGUI boxName;
     [SerializeField] Color activeSBC;
     [SerializeField] Color disabledSBC;
     [SerializeField] Button switchButton;
@@ -33,9 +32,6 @@ public class PCUI : MonoBehaviour
     {
         party = PokemonParty.GetPlayerParty();
         pc = PC.GetPC();
-
-        boxName.text = pc.PCList[selectedBoxIndex]?.BoxName;
-
         PartyDataToBoxSlot();
         boxUI.SetBoxData(pc.PCList[selectedBoxIndex]);
     }
@@ -158,8 +154,6 @@ public class PCUI : MonoBehaviour
         // Create new items from list in UI
         boxUI.SetBoxData(box: PC.GetPC().PCList[selectedBoxIndex]);
         pc.PCUpdated();
-
-        boxName.text = pc.PCList[selectedBoxIndex]?.BoxName;
         //pc.PCList[selectedBoxIndex].BoxUpdated();
     }
 
@@ -193,8 +187,6 @@ public class PCUI : MonoBehaviour
         // Create new items from list in UI
         boxUI.SetBoxData(box: PC.GetPC().PCList[selectedBoxIndex]);
         pc.PCUpdated();
-
-        boxName.text = pc.PCList[selectedBoxIndex]?.BoxName;
         //pc.PCList[selectedBoxIndex].BoxUpdated();
     }
 }

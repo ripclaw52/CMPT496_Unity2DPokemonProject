@@ -9,8 +9,8 @@ using UnityEngine.UI;
 [System.Serializable]
 public class Box
 {
-    [SerializeField] string boxName = "box";
-    [SerializeField] Image backgroundImage;
+    [SerializeField] BoxName boxType = BoxName.None;
+    [SerializeField] string boxHeaderName = "";
 
     // creates box with 30 items initially
 
@@ -22,35 +22,6 @@ public class Box
     int listSize;
     int pokemonInBox;
     bool isFull;
-
-    public Box(Box box)
-    {
-        this.boxName = box.boxName;
-        this.backgroundImage = box.backgroundImage;
-        this.boxList = box.boxList;
-        listSize = boxList.Count;
-    }
-
-    public Box(string boxName)
-    {
-        this.boxName = boxName;
-        boxList = new List<Pokemon?>(30);
-        listSize = boxList.Count;
-    }
-
-    public Box(string boxName, Image background)
-    {
-        this.boxName = boxName;
-        backgroundImage.sprite = background.sprite;
-        boxList = new List<Pokemon?>(30);
-        listSize = boxList.Count;
-    }
-
-    public Box()
-    {
-        boxList = new List<Pokemon>(30);
-        listSize = boxList.Count;
-    }
 
     public void Init()
     {
@@ -109,18 +80,17 @@ public class Box
     // Add save system
     public Box(BoxSaveData saveData)
     {
-        BoxName = saveData.name;
+        BoxHeaderName = saveData.name;
+        BoxType = saveData.boxType;
         BoxList = saveData.list.Select(p => new Pokemon(p)).ToList();
-        
-        Debug.Log($"Figure something else out for storing images. Use GlobalSettings and Image dictionary for lookup?");
-        //BackgroundImage = saveData.background;
     }
 
     public BoxSaveData GetSaveData()
     {
         var saveData = new BoxSaveData()
         {
-            name = BoxName,
+            name = BoxHeaderName,
+            boxType = BoxType,
             list = BoxList.Select(p => p.GetSaveData()).ToList(),
 
             //background = BackgroundImage,
@@ -129,13 +99,13 @@ public class Box
         return saveData;
     }
 
-    public string BoxName { get => boxName; set => boxName = value; }
+    public string BoxHeaderName { get => boxHeaderName; set => boxHeaderName = value; }
+    public BoxName BoxType { get => boxType; set => boxType = value; }
     public List<Pokemon> BoxList
     {
         get { return boxList; }
         set { boxList = value; OnUpdated?.Invoke(); }
     }
-    public Image BackgroundImage { get => backgroundImage; set => backgroundImage = value; }
 
     public int PokemonInBox
     {
@@ -151,6 +121,6 @@ public class Box
 public class BoxSaveData
 {
     public string name;
-    //public Image background;
+    public BoxName boxType;
     public List<PokemonSaveData> list;
 }

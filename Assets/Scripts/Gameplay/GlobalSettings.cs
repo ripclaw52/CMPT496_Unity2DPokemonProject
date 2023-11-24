@@ -16,6 +16,7 @@ public class GlobalSettings : MonoBehaviour
     [SerializeField] CategoryBase[] category;
     [SerializeField] StatusBase[] status;
     [SerializeField] TypeBase[] type;
+    [SerializeField] BoxImageData[] boxes;
 
     [SerializeField] int maximumPokemonLevel = 100;
 
@@ -30,6 +31,7 @@ public class GlobalSettings : MonoBehaviour
     public CategoryBase[] Category => category;
     public StatusBase[] Status => status;
     public TypeBase[] Type => type;
+    public BoxImageData[] Boxes => boxes;
 
     public int MaximumPokemonLevel => maximumPokemonLevel;
 
@@ -45,6 +47,16 @@ public class GlobalSettings : MonoBehaviour
         foreach (var item in GlobalSettings.i.Type)
         {
             if (type == item.Type)
+                return item;
+        }
+        return null;
+    }
+
+    public TypeBase GetMoveType(MoveBase move)
+    {
+        foreach (var item in Type)
+        {
+            if (item.Type == move.Type)
                 return item;
         }
         return null;
@@ -70,11 +82,11 @@ public class GlobalSettings : MonoBehaviour
         return null;
     }
 
-    public TypeBase GetMoveType(MoveBase move)
+    public BoxImageData GetBoxImageData(BoxName name)
     {
-        foreach (var item in Type)
+        foreach (var item in Boxes)
         {
-            if (item.Type == move.Type)
+            if (item.BoxType == name)
                 return item;
         }
         return null;
@@ -110,4 +122,42 @@ public class TypeBase
     public PokemonType Type => type;
     public Sprite TypeIcon => typeIcon;
     public Color TypeColor => typeColor;
+}
+
+[System.Serializable]
+public class BoxImageData
+{
+    [SerializeField] BoxName boxType;
+    [SerializeField] Sprite boxHeaderImage;
+    [SerializeField] Sprite boxImage;
+
+    public BoxName BoxType => boxType;
+    public Sprite BoxHeader => boxHeaderImage;
+    public Sprite BoxImage => boxImage;
+
+    public string GetBoxNameString()
+    {
+        return BoxType.ToString();
+    }
+}
+
+public enum BoxName
+{
+    None,
+    Plain,
+    City,
+    Desert,
+    Savannah,
+    Mountain,
+    Volcano,
+    Tundra,
+    Cave,
+    Beach,
+    Sea,
+    River,
+    Sky,
+    Bubble,
+    Poke,
+    PC,
+    Empty,
 }

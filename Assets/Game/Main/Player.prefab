@@ -383,6 +383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pcList:
   - boxName: Grass
+    boxType: 1
     backgroundImage: {fileID: 0}
     boxList:
     - _base: {fileID: 11400000, guid: 1a6fe0a08f37f0448ada09c76ce4e080, type: 2}
@@ -476,6 +477,7 @@ MonoBehaviour:
       level: 0
       nature: {fileID: 0}
   - boxName: Fire
+    boxType: 6
     backgroundImage: {fileID: 0}
     boxList:
     - _base: {fileID: 11400000, guid: 302ed754aa48cc044823e077e1408adc, type: 2}
@@ -569,6 +571,7 @@ MonoBehaviour:
       level: 0
       nature: {fileID: 0}
   - boxName: Water
+    boxType: 10
     backgroundImage: {fileID: 0}
     boxList:
     - _base: {fileID: 11400000, guid: 8b97e354023529b44824c3d75f799fde, type: 2}

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,10 +10,14 @@ public class BoxUI : MonoBehaviour
     [SerializeField] GameObject pokemonPrefab;
 
     Image backgroundImage;
+    Image headerImage;
+    TextMeshProUGUI boxName;
 
     private void Awake()
     {
         backgroundImage = GetComponent<Image>();
+        headerImage = transform.parent.Find("Header").GetComponent<Image>();
+        boxName = transform.parent.Find("Header").Find("BoxName").GetComponent<TextMeshProUGUI>();
     }
 
     /// <summary>
@@ -38,6 +43,19 @@ public class BoxUI : MonoBehaviour
     /// <param name="box">Creates draggable pokemon inside box slots</param>
     public void SetBoxData(Box box)
     {
+        BoxImageData imageData = GlobalSettings.i.GetBoxImageData(box.BoxType);
+        headerImage.sprite = imageData.BoxHeader;
+        backgroundImage.sprite = imageData.BoxImage;
+
+        if (box.BoxHeaderName.Equals(""))
+        {
+            boxName.text =imageData.GetBoxNameString();
+        }
+        else
+        {
+            boxName.text = box.BoxHeaderName;
+        }
+
         // instantiate draggablepokemon prefab inside boxSlot
         for (int i = 0; i < box.BoxList.Count; i++)
         {
@@ -53,7 +71,5 @@ public class BoxUI : MonoBehaviour
                 boxSlots[i].AddPokemonInSlot(pokemonPrefab, box.BoxList[i]);
             */
         }
-
-        backgroundImage.sprite = box.BackgroundImage?.sprite;
     }
 }
