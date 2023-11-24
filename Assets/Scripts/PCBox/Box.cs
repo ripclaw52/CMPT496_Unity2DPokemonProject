@@ -20,7 +20,7 @@ public class Box
     public event Action OnUpdated;
 
     int listSize;
-    int fillAmount;
+    int pokemonInBox;
     bool isFull;
 
     public Box(Box box)
@@ -29,7 +29,6 @@ public class Box
         this.backgroundImage = box.backgroundImage;
         this.boxList = box.boxList;
         listSize = boxList.Count;
-        GetFilledAmount();
     }
 
     public Box(string boxName)
@@ -37,7 +36,6 @@ public class Box
         this.boxName = boxName;
         boxList = new List<Pokemon?>(30);
         listSize = boxList.Count;
-        GetFilledAmount();
     }
 
     public Box(string boxName, Image background)
@@ -46,14 +44,12 @@ public class Box
         backgroundImage.sprite = background.sprite;
         boxList = new List<Pokemon?>(30);
         listSize = boxList.Count;
-        GetFilledAmount();
     }
 
     public Box()
     {
         boxList = new List<Pokemon>(30);
         listSize = boxList.Count;
-        GetFilledAmount();
     }
 
     public void Init()
@@ -67,12 +63,12 @@ public class Box
         }
     }
 
-    int GetFilledAmount()
+    int GetAmountOfPokemonInBox()
     {
         int total = 0;
         foreach (var item in BoxList)
         {
-            if (item != null)
+            if (item.HasValue)
                 total++;
         }
         return total;
@@ -84,9 +80,7 @@ public class Box
         List<Pokemon> newList = new List<Pokemon>();
         foreach (var item in BoxList)
         {
-            Debug.Log($"item_not_null: ({item != null}) has_value-> ({item.HasValue})");
-
-            if (item != null)
+            if (item.HasValue)
             {
                 newList.Add(item);
             }
@@ -97,29 +91,14 @@ public class Box
     // Adds a pokemon to the first index in the list containing null value
     public void AddPokemon(Pokemon pokemon)
     {
-        //GetFilledAmount();
         for (int i = 0; i < BoxList.Count; i++)
         {
-            if (BoxList[i]?.HasValue == null)
+            if (!BoxList[i].HasValue)
             {
                 BoxList[i] = pokemon;
                 return;
             }
         }
-    }
-
-    /// <summary>
-    /// Moves a Pokemon into the current index
-    /// </summary>
-    /// <param name="pokemon">The pokemon being added into the box list</param>
-    /// <param name="index">The index the pokemon is being added into</param>
-    /// <returns>This returns the value at the previous index, either null or a pokemon</returns>
-    public Pokemon? MovePokemon(Pokemon pokemon, int index)
-    {
-        GetFilledAmount();
-        Pokemon? prevPokemon = BoxList[index];
-        BoxList[index] = pokemon;
-        return prevPokemon;
     }
 
     public void BoxUpdated()
@@ -130,13 +109,11 @@ public class Box
     // Add save system
     public Box(BoxSaveData saveData)
     {
-        Debug.Log($"Within Box SaveData");
         BoxName = saveData.name;
-        Debug.Log($"");
-        //BackgroundImage = saveData.background;
-        Debug.Log($"");
         BoxList = saveData.list.Select(p => new Pokemon(p)).ToList();
-        Debug.Log($"");
+        
+        Debug.Log($"Figure something else out for storing images. Use GlobalSettings and Image dictionary for lookup?");
+        //BackgroundImage = saveData.background;
     }
 
     public BoxSaveData GetSaveData()
@@ -144,8 +121,9 @@ public class Box
         var saveData = new BoxSaveData()
         {
             name = BoxName,
+            list = BoxList.Select(p => p.GetSaveData()).ToList(),
+
             //background = BackgroundImage,
-            list = BoxList.Select(p => p.GetSaveData()).ToList()
         };
 
         return saveData;
@@ -154,20 +132,19 @@ public class Box
     public string BoxName { get => boxName; set => boxName = value; }
     public List<Pokemon> BoxList
     {
-        get
-        {
-            return boxList;
-        }
-        set
-        {
-            boxList = value;
-            OnUpdated?.Invoke();
-        }
+        get { return boxList; }
+        set { boxList = value; OnUpdated?.Invoke(); }
     }
     public Image BackgroundImage { get => backgroundImage; set => backgroundImage = value; }
-    public int ListSize => listSize;
-    public int FillAmount { get => fillAmount; set => fillAmount = GetFilledAmount(); }
-    public bool IsFull { get => isFull = (fillAmount == 30) ? true : false; }
+
+    public int PokemonInBox
+    {
+        get { pokemonInBox = GetAmountOfPokemonInBox(); return pokemonInBox; }
+    }
+    public bool IsFull
+    {
+        get { isFull = (PokemonInBox == 30); return isFull; }
+    }
 }
 
 [System.Serializable]

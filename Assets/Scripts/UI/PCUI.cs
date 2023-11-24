@@ -34,15 +34,10 @@ public class PCUI : MonoBehaviour
         party = PokemonParty.GetPlayerParty();
         pc = PC.GetPC();
 
-        pc.ReadThroughBox(0);
-        pc.ReadThroughBox(1);
-        pc.ReadThroughBox(2);
-
-
-        boxName.text = PC.GetPC().PCList[selectedBoxIndex]?.BoxName;
+        boxName.text = pc.PCList[selectedBoxIndex]?.BoxName;
 
         PartyDataToBoxSlot();
-        boxUI.SetBoxData(PC.GetPC().PCList[selectedBoxIndex]);
+        boxUI.SetBoxData(pc.PCList[selectedBoxIndex]);
     }
 
     /// <summary>
@@ -146,7 +141,7 @@ public class PCUI : MonoBehaviour
 
         pc.ReadThroughBox(selectedBoxIndex);
 
-        Debug.Log($"NEXT_index: ({selectedBoxIndex}).bef");
+        //Debug.Log($"NEXT_index: ({selectedBoxIndex}).bef");
         selectedBoxIndex = selectedBoxIndex != (PC.GetPC().PCList.Count - 1) ? selectedBoxIndex + 1 : 0;
         /*
         if (selectedBoxIndex == (pc.PCList.Count - 1))
@@ -158,7 +153,7 @@ public class PCUI : MonoBehaviour
             selectedBoxIndex++;
         }
         */
-        Debug.Log($"NEXT_index: ({selectedBoxIndex}).aft");
+        //Debug.Log($"NEXT_index: ({selectedBoxIndex}).aft");
         pc.ReadThroughBox(selectedBoxIndex);
         // Create new items from list in UI
         boxUI.SetBoxData(box: PC.GetPC().PCList[selectedBoxIndex]);
@@ -171,7 +166,7 @@ public class PCUI : MonoBehaviour
     // Go to prev box, save changes to PC instance and generate new box selection
     public void GoToPrevBox()
     {
-        Debug.Log($"pcCount= ({pc.PCList.Count})");
+        //Debug.Log($"pcCount= ({pc.PCList.Count})");
         if (pc.PCList.Count == 0)
         {
             return;
@@ -181,7 +176,7 @@ public class PCUI : MonoBehaviour
         //pc.PCList[selectedBoxIndex].BoxUpdated();
         pc.PCUpdated();
 
-        Debug.Log($"PREV_index: ({selectedBoxIndex}).bef");
+        //Debug.Log($"PREV_index: ({selectedBoxIndex}).bef");
         selectedBoxIndex = selectedBoxIndex != 0 ? selectedBoxIndex - 1 : (PC.GetPC().PCList.Count - 1);
         /*
         if (selectedBoxIndex == 0)
@@ -193,7 +188,7 @@ public class PCUI : MonoBehaviour
             selectedBoxIndex--;
         }
         */
-        Debug.Log($"PREV_index: ({selectedBoxIndex}).aft");
+        //Debug.Log($"PREV_index: ({selectedBoxIndex}).aft");
 
         // Create new items from list in UI
         boxUI.SetBoxData(box: PC.GetPC().PCList[selectedBoxIndex]);
