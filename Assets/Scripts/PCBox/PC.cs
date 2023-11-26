@@ -39,6 +39,56 @@ public class PC : MonoBehaviour, ISavable
         OnUpdated?.Invoke();
     }
 
+    public void AddMoreBoxes()
+    {
+        int listCount = PCList.Count();
+        int fullBoxes = 0;
+        foreach (var box in PCList)
+        {
+            if (box.IsFull)
+                fullBoxes++;
+        }
+
+        // while 4 boxes are free
+        if ((fullBoxes + 4) >= listCount)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                int index = listCount % 16;
+                int nameMod = listCount / 16;
+
+                BoxImageData bid = GlobalSettings.i.Boxes[index];
+                string headerName = bid.GetBoxNameString();
+                if (nameMod != 0)
+                {
+                    headerName = $"{bid.GetBoxNameString()}_{nameMod}";
+                }
+
+                Debug.Log($"{i} _ {headerName}");
+
+                Box box = new Box(bid.BoxType, headerName);
+                PCList.Add(box);
+
+                listCount = PCList.Count();
+            }
+        }
+    }
+
+    public void AddPokemonIntoBox(Pokemon pokemon)
+    {
+        // check if can add more boxes
+        AddMoreBoxes();
+
+        foreach (var box in PCList)
+        {
+            if (!box.IsFull)
+            {
+                box.AddPokemon(pokemon);
+                return;
+            }
+        }
+    }
+
     public void ReadThroughBox(int index)
     {
         foreach (var pokemon in PCList[index].BoxList)

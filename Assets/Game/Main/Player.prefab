@@ -133,6 +133,15 @@ MonoBehaviour:
   - _base: {fileID: 11400000, guid: 8b97e354023529b44824c3d75f799fde, type: 2}
     level: 5
     nature: {fileID: 0}
+  - _base: {fileID: 11400000, guid: 8b97e354023529b44824c3d75f799fde, type: 2}
+    level: 5
+    nature: {fileID: 0}
+  - _base: {fileID: 11400000, guid: 8b97e354023529b44824c3d75f799fde, type: 2}
+    level: 5
+    nature: {fileID: 0}
+  - _base: {fileID: 11400000, guid: 8b97e354023529b44824c3d75f799fde, type: 2}
+    level: 5
+    nature: {fileID: 0}
 --- !u!114 &5463470663888356623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,9 +391,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pcList:
-  - boxName: Grass
-    boxType: 1
-    backgroundImage: {fileID: 0}
+  - boxType: 1
+    boxHeaderName: 
     boxList:
     - _base: {fileID: 11400000, guid: 1a6fe0a08f37f0448ada09c76ce4e080, type: 2}
       level: 10
@@ -476,9 +484,8 @@ MonoBehaviour:
     - _base: {fileID: 0}
       level: 0
       nature: {fileID: 0}
-  - boxName: Fire
-    boxType: 6
-    backgroundImage: {fileID: 0}
+  - boxType: 2
+    boxHeaderName: 
     boxList:
     - _base: {fileID: 11400000, guid: 302ed754aa48cc044823e077e1408adc, type: 2}
       level: 10
@@ -570,9 +577,8 @@ MonoBehaviour:
     - _base: {fileID: 0}
       level: 0
       nature: {fileID: 0}
-  - boxName: Water
-    boxType: 10
-    backgroundImage: {fileID: 0}
+  - boxType: 3
+    boxHeaderName: 
     boxList:
     - _base: {fileID: 11400000, guid: 8b97e354023529b44824c3d75f799fde, type: 2}
       level: 10

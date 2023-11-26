@@ -135,7 +135,7 @@ public class PCUI : MonoBehaviour
         //pc.PCList[selectedBoxIndex].BoxUpdated();
         pc.PCUpdated();
 
-        pc.ReadThroughBox(selectedBoxIndex);
+        //pc.ReadThroughBox(selectedBoxIndex);
 
         //Debug.Log($"NEXT_index: ({selectedBoxIndex}).bef");
         selectedBoxIndex = selectedBoxIndex != (PC.GetPC().PCList.Count - 1) ? selectedBoxIndex + 1 : 0;
@@ -150,7 +150,7 @@ public class PCUI : MonoBehaviour
         }
         */
         //Debug.Log($"NEXT_index: ({selectedBoxIndex}).aft");
-        pc.ReadThroughBox(selectedBoxIndex);
+        //pc.ReadThroughBox(selectedBoxIndex);
         // Create new items from list in UI
         boxUI.SetBoxData(box: PC.GetPC().PCList[selectedBoxIndex]);
         pc.PCUpdated();

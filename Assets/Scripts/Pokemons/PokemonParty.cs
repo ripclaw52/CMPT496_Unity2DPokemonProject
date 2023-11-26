@@ -94,6 +94,7 @@ public class PokemonParty : MonoBehaviour
         else
         {
             // TODO: Add to the PC once that's implemented
+            PC.GetPC().AddPokemonIntoBox(newPokemon);
         }
     }
 

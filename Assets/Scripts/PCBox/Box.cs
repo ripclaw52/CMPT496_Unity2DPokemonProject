@@ -23,6 +23,15 @@ public class Box
     int pokemonInBox;
     bool isFull;
 
+    public Box(BoxName type, string headerName)
+    {
+        boxList = Enumerable.Repeat<Pokemon>(new Pokemon(), 30).ToList();
+        boxType = type;
+        boxHeaderName = headerName;
+
+        Init();
+    }
+
     public void Init()
     {
         for (int i = 0; i < boxList.Count; i++)
@@ -64,6 +73,7 @@ public class Box
     {
         for (int i = 0; i < BoxList.Count; i++)
         {
+            // has value is false
             if (!BoxList[i].HasValue)
             {
                 BoxList[i] = pokemon;
