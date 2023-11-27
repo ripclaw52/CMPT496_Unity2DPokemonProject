@@ -16,6 +16,8 @@ public class VirtualMouseUI : MonoBehaviour
     {
         i = this;
         virtualMouseInput = GetComponent<VirtualMouseInput>();
+
+        MoveMousePosition();
     }
 
     private void Update()

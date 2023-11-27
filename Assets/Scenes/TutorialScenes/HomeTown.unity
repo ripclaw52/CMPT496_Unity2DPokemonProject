@@ -10202,6 +10202,18 @@ PrefabInstance:
       propertyPath: uniqueId
       value: f0ffbd9d-1944-4fb2-84b1-386a912f47b0
       objectReference: {fileID: 0}
+    - target: {fileID: 9217893221454379481, guid: aee00117bddfd59449a3281ea07b6bc3, type: 3}
+      propertyPath: pokemons.Array.data[0]._base
+      value: 
+      objectReference: {fileID: 11400000, guid: 58055b0035630c84b8864eb65aef1577, type: 2}
+    - target: {fileID: 9217893221454379481, guid: aee00117bddfd59449a3281ea07b6bc3, type: 3}
+      propertyPath: pokemons.Array.data[1]._base
+      value: 
+      objectReference: {fileID: 11400000, guid: 9c0949a5155c7424f86a45a9d49c88e9, type: 2}
+    - target: {fileID: 9217893221454379481, guid: aee00117bddfd59449a3281ea07b6bc3, type: 3}
+      propertyPath: pokemons.Array.data[1].level
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 9217893221454379488, guid: aee00117bddfd59449a3281ea07b6bc3, type: 3}
       propertyPath: m_Name
       value: Trainer

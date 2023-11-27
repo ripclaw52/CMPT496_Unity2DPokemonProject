@@ -2572,6 +2572,11 @@ MonoBehaviour:
   - {fileID: -452556975, guid: e2bd8919dd700664091fca4f47efa93f, type: 3}
   - {fileID: 1101235302, guid: e2bd8919dd700664091fca4f47efa93f, type: 3}
   - {fileID: 1314144502, guid: e2bd8919dd700664091fca4f47efa93f, type: 3}
+  runDownSprites: []
+  runUpSprites: []
+  runRightSprites: []
+  runLeftSprites: []
+  surfSprites: []
   defaultDirection: 1
 --- !u!114 &170781560
 MonoBehaviour:
@@ -2586,6 +2591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  runSpeed: 0
 --- !u!61 &170781561
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2714,6 +2720,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog:
     lines: []
+  questToStart: {fileID: 0}
+  questToComplete: {fileID: 0}
   movementPattern:
   - {x: 2, y: 0}
   - {x: 0, y: -2}
@@ -3166,6 +3174,11 @@ MonoBehaviour:
   - {fileID: -452556975, guid: e2bd8919dd700664091fca4f47efa93f, type: 3}
   - {fileID: 1101235302, guid: e2bd8919dd700664091fca4f47efa93f, type: 3}
   - {fileID: 1314144502, guid: e2bd8919dd700664091fca4f47efa93f, type: 3}
+  runDownSprites: []
+  runUpSprites: []
+  runRightSprites: []
+  runLeftSprites: []
+  surfSprites: []
   defaultDirection: 1
 --- !u!114 &310045402
 MonoBehaviour:
@@ -3180,6 +3193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  runSpeed: 0
 --- !u!61 &310045404
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3318,6 +3332,7 @@ MonoBehaviour:
     - I will train harder and beat you one day!
   exclamation: {fileID: 1959933811}
   fov: {fileID: 1097722444}
+  trainerAppearsClip: {fileID: 0}
 --- !u!114 &310045409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3331,10 +3346,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pokemons:
-  - _base: {fileID: 11400000, guid: c47f7eab777b9d040be66b5090c96b53, type: 2}
-    level: 6
-  - _base: {fileID: 11400000, guid: c501666c27cd21b47a427aebd0c6c8a7, type: 2}
-    level: 8
+  - _base: {fileID: 11400000, guid: 1a6fe0a08f37f0448ada09c76ce4e080, type: 2}
+    level: 5
+    nature: {fileID: 0}
+  - _base: {fileID: 11400000, guid: 302ed754aa48cc044823e077e1408adc, type: 2}
+    level: 5
+    nature: {fileID: 0}
+  - _base: {fileID: 11400000, guid: 8b97e354023529b44824c3d75f799fde, type: 2}
+    level: 5
+    nature: {fileID: 0}
 --- !u!1 &650905257
 GameObject:
   m_ObjectHideFlags: 0

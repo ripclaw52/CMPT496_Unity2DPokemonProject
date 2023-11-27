@@ -42,6 +42,7 @@ public class SummaryCoverUI : MonoBehaviour
         pokemonPortrait.sprite = pokemon.Base.FrontSprite[0];
         pokemonPortrait.SetNativeSize();
 
+        pokemonName.text = pokemon.Base.Name;
         pokemonLevel.text = pokemon.Level.ToString();
 
         // Side panel
