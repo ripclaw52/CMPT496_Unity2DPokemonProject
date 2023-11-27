@@ -1,0 +1,166 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d6a81213263ba40a3ba4a850bc9aaa, type: 3}
+  m_Name: Beedrill
+  m_EditorClassIdentifier: 
+  name: Beedrill
+  dexId: 15
+  status: 0
+  species: Poison Bee
+  height: 1
+  weight: 29.5
+  description: Its best attack involves flying around at high speed, striking with
+    poison needles, then flying off.
+  frontSprite:
+  - {fileID: 1328622115, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 1724109102, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 339038400, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 482163671, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -345727190, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 30871548, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 1833685178, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 2012826709, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 776908293, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 1564060245, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 1963373699, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -1624879908, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 2072251790, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 939856345, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 47764954, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -1964217112, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -880474678, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -1888303627, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -1516455566, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 1106925778, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -1823576047, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 168612851, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 1000325050, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -1613459717, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -1794684906, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 2012171400, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -1823235690, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -247167402, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -1548711087, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 1310330790, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 530074080, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 488427726, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 862149562, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 388122598, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 314123299, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 533971539, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -705971041, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 1898681860, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 599312510, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -806653033, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -1267600597, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -98865301, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -759392526, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -242980783, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 1427467272, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 872481649, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 1416764930, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -137190661, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 393037673, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 1248006860, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 158338284, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -488780723, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 1986516295, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -2050552828, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -173903369, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: 1614165278, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -664157373, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -537562776, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -1717378849, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  - {fileID: -612112920, guid: a739fe92ba2e92a4eb5430bac9c24d69, type: 3}
+  backSprite:
+  - {fileID: -937270602, guid: 235d776c58b34c44bba39d3e6b6d69eb, type: 3}
+  - {fileID: 1313685921, guid: 235d776c58b34c44bba39d3e6b6d69eb, type: 3}
+  - {fileID: 1764567910, guid: 235d776c58b34c44bba39d3e6b6d69eb, type: 3}
+  - {fileID: -1956786490, guid: 235d776c58b34c44bba39d3e6b6d69eb, type: 3}
+  - {fileID: -2024124755, guid: 235d776c58b34c44bba39d3e6b6d69eb, type: 3}
+  - {fileID: -1473022962, guid: 235d776c58b34c44bba39d3e6b6d69eb, type: 3}
+  - {fileID: 1140503062, guid: 235d776c58b34c44bba39d3e6b6d69eb, type: 3}
+  - {fileID: 27624114, guid: 235d776c58b34c44bba39d3e6b6d69eb, type: 3}
+  - {fileID: 2097106801, guid: 235d776c58b34c44bba39d3e6b6d69eb, type: 3}
+  - {fileID: 588617446, guid: 235d776c58b34c44bba39d3e6b6d69eb, type: 3}
+  - {fileID: -1784092183, guid: 235d776c58b34c44bba39d3e6b6d69eb, type: 3}
+  - {fileID: -1141003052, guid: 235d776c58b34c44bba39d3e6b6d69eb, type: 3}
+  - {fileID: 621720205, guid: 235d776c58b34c44bba39d3e6b6d69eb, type: 3}
+  - {fileID: -1847237984, guid: 235d776c58b34c44bba39d3e6b6d69eb, type: 3}
+  - {fileID: -1381569556, guid: 235d776c58b34c44bba39d3e6b6d69eb, type: 3}
+  - {fileID: -1716829646, guid: 235d776c58b34c44bba39d3e6b6d69eb, type: 3}
+  - {fileID: 1794548911, guid: 235d776c58b34c44bba39d3e6b6d69eb, type: 3}
+  - {fileID: 1103619204, guid: 235d776c58b34c44bba39d3e6b6d69eb, type: 3}
+  - {fileID: 1679336901, guid: 235d776c58b34c44bba39d3e6b6d69eb, type: 3}
+  - {fileID: 553694718, guid: 235d776c58b34c44bba39d3e6b6d69eb, type: 3}
+  smallSprite:
+  - {fileID: -1767471921, guid: d3ae3e6a3992f4d45b9389888fc60647, type: 3}
+  - {fileID: 119058445, guid: d3ae3e6a3992f4d45b9389888fc60647, type: 3}
+  type1: 12
+  type2: 8
+  maxHp: 65
+  attack: 90
+  defense: 40
+  spAttack: 45
+  spDefense: 80
+  speed: 75
+  maximumHp: 334
+  maximumAttack: 306
+  maximumDefense: 196
+  maximumSpAttack: 207
+  maximumSpDefense: 284
+  maximumSpeed: 273
+  evYield:
+  - stat: 1
+    value: 2
+  - stat: 4
+    value: 1
+  expYield: 178
+  growthRate: 2
+  catchRate: 45
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: 84b1e7ad030888f40ad42724b517c3e4, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 11a53a050fcde6146b079f7532b470d7, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: de2894b1d8d83d14c9b5c92704c1638b, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: cba6298faa2eea44cae2152ae7fddcd9, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 9538e41515b050b4d97a7201d0714646, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: ceda9439557b93b4d95799ee266e0883, type: 2}
+    level: 11
+  - moveBase: {fileID: 11400000, guid: db339cf680cb8154db9a367fd2413665, type: 2}
+    level: 14
+  - moveBase: {fileID: 11400000, guid: cba6298faa2eea44cae2152ae7fddcd9, type: 2}
+    level: 17
+  - moveBase: {fileID: 11400000, guid: 010798ddecc55b54a98191bc8adc7b52, type: 2}
+    level: 20
+  - moveBase: {fileID: 11400000, guid: d362d31534bc78c4e9c3f676e6914469, type: 2}
+    level: 23
+  - moveBase: {fileID: 11400000, guid: 93adb85a3c76e01419cba02044783358, type: 2}
+    level: 26
+  - moveBase: {fileID: 11400000, guid: b2b3ebae0b973a942b0b83f01813050d, type: 2}
+    level: 29
+  - moveBase: {fileID: 11400000, guid: c03394e14c0e6d24a997087ff17db248, type: 2}
+    level: 32
+  - moveBase: {fileID: 11400000, guid: 4ebbb19aff9321c4aa5ab10cf7c2228f, type: 2}
+    level: 35
+  - moveBase: {fileID: 11400000, guid: a14431ffef875bc488aaa49950ac1d0f, type: 2}
+    level: 38
+  - moveBase: {fileID: 11400000, guid: 698982906160c5c45a9fbf97b798123a, type: 2}
+    level: 41
+  - moveBase: {fileID: 11400000, guid: a4a67efa725e0b649a863d775f03592e, type: 2}
+    level: 44
+  learnableByItems: []
+  evolutions: []

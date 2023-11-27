@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd06e1a6230da2f4a8ba71cd377dbc47, type: 3}
-  m_Name: Withdraw
+  m_Name: Venoshock
   m_EditorClassIdentifier: 
-  name: Withdraw
-  description: The user withdraws its body into its hard shell, boosting its Defense
-    stat.
-  type: 3
-  power: 0
-  accuracy: 0
-  alwaysHits: 1
-  pp: 40
+  name: Venoshock
+  description: "The user drenches the target in a special poisonous liquid. This
+    move\u2019s power is doubled if the target is poisoned."
+  type: 8
+  power: 65
+  accuracy: 100
+  alwaysHits: 0
+  pp: 10
   priority: 0
   criticalHitBehaviour: 0
   recoil:
     recoilType: 0
     recoilDamage: 0
-  category: 2
+  category: 1
   effects:
     boosts:
-    - stat: 1
-      boost: 1
+    - stat: 0
+      boost: 0
     status: 0
     volatileStatus: 0
   secondaries: []
-  target: 1
-  sound: {fileID: 8300000, guid: 5ffa418b7c1b94f488792aac1d754afb, type: 3}
+  target: 0
+  sound: {fileID: 8300000, guid: acd805d4843fadb438a71547af8e4f1b, type: 3}

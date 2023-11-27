@@ -10,28 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd06e1a6230da2f4a8ba71cd377dbc47, type: 3}
-  m_Name: Withdraw
+  m_Name: AirSlash
   m_EditorClassIdentifier: 
-  name: Withdraw
-  description: The user withdraws its body into its hard shell, boosting its Defense
-    stat.
-  type: 3
-  power: 0
-  accuracy: 0
-  alwaysHits: 1
-  pp: 40
+  name: Air Slash
+  description: The user attacks with a blade of air that slices even the sky. This
+    may also make the target flinch.
+  type: 10
+  power: 75
+  accuracy: 95
+  alwaysHits: 0
+  pp: 15
   priority: 0
   criticalHitBehaviour: 0
   recoil:
     recoilType: 0
     recoilDamage: 0
-  category: 2
+  category: 1
   effects:
-    boosts:
-    - stat: 1
-      boost: 1
+    boosts: []
     status: 0
     volatileStatus: 0
-  secondaries: []
-  target: 1
-  sound: {fileID: 8300000, guid: 5ffa418b7c1b94f488792aac1d754afb, type: 3}
+  secondaries:
+  - boosts: []
+    status: 0
+    volatileStatus: 0
+    chance: 30
+    target: 0
+  target: 0
+  sound: {fileID: 8300000, guid: ab80c0b7f6590c5408b89495dfa8f96e, type: 3}

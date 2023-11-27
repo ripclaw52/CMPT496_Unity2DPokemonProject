@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d6a81213263ba40a3ba4a850bc9aaa, type: 3}
+  m_Name: Butterfree
+  m_EditorClassIdentifier: 
+  name: Butterfree
+  dexId: 12
+  status: 0
+  species: Butterfly
+  height: 1.1
+  weight: 32
+  description: It loves the nectar of flowers and can locate flower patches that
+    have even tiny amounts of pollen.
+  frontSprite:
+  - {fileID: 2063041799, guid: 71475a85adb065f4ea979fafe2f381f6, type: 3}
+  - {fileID: 1463452372, guid: 71475a85adb065f4ea979fafe2f381f6, type: 3}
+  - {fileID: 955169712, guid: 71475a85adb065f4ea979fafe2f381f6, type: 3}
+  - {fileID: -1734826545, guid: 71475a85adb065f4ea979fafe2f381f6, type: 3}
+  - {fileID: -1953993837, guid: 71475a85adb065f4ea979fafe2f381f6, type: 3}
+  - {fileID: -199655426, guid: 71475a85adb065f4ea979fafe2f381f6, type: 3}
+  - {fileID: 1660163227, guid: 71475a85adb065f4ea979fafe2f381f6, type: 3}
+  - {fileID: -174781577, guid: 71475a85adb065f4ea979fafe2f381f6, type: 3}
+  - {fileID: 1146867555, guid: 71475a85adb065f4ea979fafe2f381f6, type: 3}
+  - {fileID: -1744874589, guid: 71475a85adb065f4ea979fafe2f381f6, type: 3}
+  - {fileID: 588696447, guid: 71475a85adb065f4ea979fafe2f381f6, type: 3}
+  - {fileID: 267043170, guid: 71475a85adb065f4ea979fafe2f381f6, type: 3}
+  - {fileID: -911095190, guid: 71475a85adb065f4ea979fafe2f381f6, type: 3}
+  - {fileID: 144448649, guid: 71475a85adb065f4ea979fafe2f381f6, type: 3}
+  - {fileID: -81557895, guid: 71475a85adb065f4ea979fafe2f381f6, type: 3}
+  - {fileID: 1622364536, guid: 71475a85adb065f4ea979fafe2f381f6, type: 3}
+  - {fileID: -296110870, guid: 71475a85adb065f4ea979fafe2f381f6, type: 3}
+  - {fileID: 573515080, guid: 71475a85adb065f4ea979fafe2f381f6, type: 3}
+  - {fileID: 1126196136, guid: 71475a85adb065f4ea979fafe2f381f6, type: 3}
+  - {fileID: -753945577, guid: 71475a85adb065f4ea979fafe2f381f6, type: 3}
+  - {fileID: 782874645, guid: 71475a85adb065f4ea979fafe2f381f6, type: 3}
+  backSprite:
+  - {fileID: 479130319, guid: bdb2b539ca9fb9a4983ea11330975d00, type: 3}
+  - {fileID: -636892529, guid: bdb2b539ca9fb9a4983ea11330975d00, type: 3}
+  - {fileID: -2631551, guid: bdb2b539ca9fb9a4983ea11330975d00, type: 3}
+  - {fileID: 39755984, guid: bdb2b539ca9fb9a4983ea11330975d00, type: 3}
+  - {fileID: -1521752069, guid: bdb2b539ca9fb9a4983ea11330975d00, type: 3}
+  - {fileID: -1730673358, guid: bdb2b539ca9fb9a4983ea11330975d00, type: 3}
+  - {fileID: 768014305, guid: bdb2b539ca9fb9a4983ea11330975d00, type: 3}
+  - {fileID: -2085726414, guid: bdb2b539ca9fb9a4983ea11330975d00, type: 3}
+  - {fileID: -2090889462, guid: bdb2b539ca9fb9a4983ea11330975d00, type: 3}
+  - {fileID: 1199152068, guid: bdb2b539ca9fb9a4983ea11330975d00, type: 3}
+  - {fileID: -1132885905, guid: bdb2b539ca9fb9a4983ea11330975d00, type: 3}
+  - {fileID: -2133203209, guid: bdb2b539ca9fb9a4983ea11330975d00, type: 3}
+  - {fileID: -239947301, guid: bdb2b539ca9fb9a4983ea11330975d00, type: 3}
+  - {fileID: -1253839475, guid: bdb2b539ca9fb9a4983ea11330975d00, type: 3}
+  - {fileID: -612372037, guid: bdb2b539ca9fb9a4983ea11330975d00, type: 3}
+  - {fileID: -1373472419, guid: bdb2b539ca9fb9a4983ea11330975d00, type: 3}
+  - {fileID: 1786754869, guid: bdb2b539ca9fb9a4983ea11330975d00, type: 3}
+  - {fileID: -2058572653, guid: bdb2b539ca9fb9a4983ea11330975d00, type: 3}
+  - {fileID: -1873877726, guid: bdb2b539ca9fb9a4983ea11330975d00, type: 3}
+  - {fileID: 1897187668, guid: bdb2b539ca9fb9a4983ea11330975d00, type: 3}
+  - {fileID: -823707214, guid: bdb2b539ca9fb9a4983ea11330975d00, type: 3}
+  smallSprite:
+  - {fileID: -1996968098, guid: 6d012b5135603624f8abfb9d6af56b89, type: 3}
+  - {fileID: -1011459901, guid: 6d012b5135603624f8abfb9d6af56b89, type: 3}
+  type1: 12
+  type2: 10
+  maxHp: 60
+  attack: 45
+  defense: 50
+  spAttack: 90
+  spDefense: 80
+  speed: 70
+  maximumHp: 324
+  maximumAttack: 207
+  maximumDefense: 218
+  maximumSpAttack: 306
+  maximumSpDefense: 284
+  maximumSpeed: 262
+  evYield:
+  - stat: 3
+    value: 2
+  - stat: 4
+    value: 1
+  expYield: 178
+  growthRate: 2
+  catchRate: 45
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: 84b1e7ad030888f40ad42724b517c3e4, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 219ccc8dbdc65fe49b179c600be9da82, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: de2894b1d8d83d14c9b5c92704c1638b, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 9538e41515b050b4d97a7201d0714646, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: ef7f37ad17a9c1a4fb55885ea75a9b38, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 9261cf1b648fc8a499ac94de05363438, type: 2}
+    level: 4
+  - moveBase: {fileID: 11400000, guid: 31decd57f23d2504d87e4f171462fb5a, type: 2}
+    level: 8
+  - moveBase: {fileID: 11400000, guid: 4f193e195a8f1e74287d504326bff868, type: 2}
+    level: 12
+  - moveBase: {fileID: 11400000, guid: 6296329e911b240458aa74224135db88, type: 2}
+    level: 12
+  - moveBase: {fileID: 11400000, guid: 45534f00bd8515d48affebfdfe8e252f, type: 2}
+    level: 12
+  - moveBase: {fileID: 11400000, guid: 2851b048b107ab74aa6d23b456088234, type: 2}
+    level: 16
+  - moveBase: {fileID: 11400000, guid: a7df1a1728dc6b54daa06278437a200c, type: 2}
+    level: 20
+  - moveBase: {fileID: 11400000, guid: b28d94930f1b75845a6f1496cb714f58, type: 2}
+    level: 24
+  - moveBase: {fileID: 11400000, guid: 5878e778ce86b0e4f97b02dcb3083e90, type: 2}
+    level: 28
+  - moveBase: {fileID: 11400000, guid: c25f4a73abdafa44cadb23c6b3f69699, type: 2}
+    level: 32
+  - moveBase: {fileID: 11400000, guid: e961ea12518e17e45b3b63dd3540d553, type: 2}
+    level: 36
+  - moveBase: {fileID: 11400000, guid: a889178ee504d2c4eb3be1e5377d0980, type: 2}
+    level: 40
+  - moveBase: {fileID: 11400000, guid: a1a430b0499a65746b4dc042d4f2bd00, type: 2}
+    level: 44
+  learnableByItems: []
+  evolutions: []

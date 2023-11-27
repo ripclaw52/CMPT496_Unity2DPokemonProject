@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd06e1a6230da2f4a8ba71cd377dbc47, type: 3}
-  m_Name: Withdraw
+  m_Name: Tailwind
   m_EditorClassIdentifier: 
-  name: Withdraw
-  description: The user withdraws its body into its hard shell, boosting its Defense
-    stat.
-  type: 3
+  name: Tailwind
+  description: The user whips up a turbulent whirlwind that boosts the Speed stats
+    of itself and its allies for four turns.
+  type: 10
   power: 0
   accuracy: 0
   alwaysHits: 1
-  pp: 40
+  pp: 15
   priority: 0
   criticalHitBehaviour: 0
   recoil:
@@ -28,10 +28,10 @@ MonoBehaviour:
   category: 2
   effects:
     boosts:
-    - stat: 1
-      boost: 1
+    - stat: 4
+      boost: 4
     status: 0
     volatileStatus: 0
   secondaries: []
   target: 1
-  sound: {fileID: 8300000, guid: 5ffa418b7c1b94f488792aac1d754afb, type: 3}
+  sound: {fileID: 8300000, guid: b4570ca842380b2459f08d95b10e983c, type: 3}

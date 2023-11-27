@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd06e1a6230da2f4a8ba71cd377dbc47, type: 3}
-  m_Name: Withdraw
+  m_Name: Agility
   m_EditorClassIdentifier: 
-  name: Withdraw
-  description: The user withdraws its body into its hard shell, boosting its Defense
-    stat.
-  type: 3
+  name: Agility
+  description: The user relaxes and lightens its body to move faster. This sharply
+    boosts its Speed stat.
+  type: 11
   power: 0
   accuracy: 0
   alwaysHits: 1
-  pp: 40
+  pp: 30
   priority: 0
   criticalHitBehaviour: 0
   recoil:
@@ -28,10 +28,10 @@ MonoBehaviour:
   category: 2
   effects:
     boosts:
-    - stat: 1
-      boost: 1
+    - stat: 4
+      boost: 2
     status: 0
     volatileStatus: 0
   secondaries: []
   target: 1
-  sound: {fileID: 8300000, guid: 5ffa418b7c1b94f488792aac1d754afb, type: 3}
+  sound: {fileID: 8300000, guid: 8161e9e17b1c99b4aaae941f1e4a1351, type: 3}

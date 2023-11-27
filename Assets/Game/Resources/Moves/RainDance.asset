@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: RainDance
   m_EditorClassIdentifier: 
   name: Rain Dance
-  description: "\tThe user summons a heavy rain that falls for five turns, powering
-    up Water-type attacks. The rain also lowers the power of Fire-type attacks."
+  description: The user summons a heavy rain that falls for five turns, powering
+    up Water-type attacks. The rain also lowers the power of Fire-type attacks.
   type: 3
   power: 0
   accuracy: 0
-  alwaysHits: 0
+  alwaysHits: 1
   pp: 5
   priority: 0
   criticalHitBehaviour: 0
