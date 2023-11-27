@@ -17,6 +17,9 @@ public class BattleHud : MonoBehaviour
     [SerializeField] TextMeshProUGUI currentHealthText, maxHealthText;
     [SerializeField] GameObject expBar;
 
+    [SerializeField] GameObject expObject;
+    [SerializeField] GameObject background;
+
     /*
     [SerializeField] Color psnColor;
     [SerializeField] Color brnColor;
@@ -33,6 +36,8 @@ public class BattleHud : MonoBehaviour
     /// <param name="pokemon">The Pokemon whose data is to be set.</param>
     public void SetData(Pokemon pokemon)
     {
+        SetBackgroundObjects(true);
+
         if (_pokemon != null)
         {
             _pokemon.OnHPChanged -= UpdateHP;
@@ -50,6 +55,17 @@ public class BattleHud : MonoBehaviour
         SetStatusIcon();
         _pokemon.OnStatusChanged += SetStatusIcon;
         _pokemon.OnHPChanged += UpdateHP;
+    }
+
+    public void SetBackgroundObjects(bool value)
+    {
+        if (background != null)
+            background.SetActive(value);
+
+        if (expObject != null)
+            expObject.SetActive(value);
+
+        return;
     }
 
     /// <summary>

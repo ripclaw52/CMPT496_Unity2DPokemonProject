@@ -308,6 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  runSpeed: 0
 --- !u!114 &9217893221454379489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,6 +341,11 @@ MonoBehaviour:
   - {fileID: -452556975, guid: e2bd8919dd700664091fca4f47efa93f, type: 3}
   - {fileID: 1101235302, guid: e2bd8919dd700664091fca4f47efa93f, type: 3}
   - {fileID: 1314144502, guid: e2bd8919dd700664091fca4f47efa93f, type: 3}
+  runDownSprites: []
+  runUpSprites: []
+  runRightSprites: []
+  runLeftSprites: []
+  surfSprites: []
   defaultDirection: 1
 --- !u!114 &9217893221454379480
 MonoBehaviour:
@@ -377,10 +383,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pokemons:
-  - _base: {fileID: 11400000, guid: c47f7eab777b9d040be66b5090c96b53, type: 2}
+  - _base: {fileID: 0}
     level: 6
-  - _base: {fileID: 11400000, guid: c501666c27cd21b47a427aebd0c6c8a7, type: 2}
+    nature: {fileID: 0}
+  - _base: {fileID: 0}
     level: 8
+    nature: {fileID: 0}
 --- !u!114 &2868677386675601320
 MonoBehaviour:
   m_ObjectHideFlags: 0

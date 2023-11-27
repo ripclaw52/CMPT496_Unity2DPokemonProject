@@ -87,6 +87,7 @@ public class BattleUnit : MonoBehaviour
     /// </summary>
     public void Clear()
     {
+        hud.SetBackgroundObjects(false);
         hud.gameObject.SetActive(false);
     }
 
