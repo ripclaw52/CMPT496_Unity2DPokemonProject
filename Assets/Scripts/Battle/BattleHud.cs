@@ -64,8 +64,6 @@ public class BattleHud : MonoBehaviour
 
         if (expObject != null)
             expObject.SetActive(value);
-
-        return;
     }
 
     /// <summary>

@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d6a81213263ba40a3ba4a850bc9aaa, type: 3}
+  m_Name: Gyarados
+  m_EditorClassIdentifier: 
+  name: Gyarados
+  dexId: 130
+  status: 0
+  species: Atrocious
+  height: 6.5
+  weight: 235
+  description: Once it appears, it goes on a rampage. It remains enraged until it
+    demolishes everything around it.
+  frontSprite: []
+  backSprite: []
+  smallSprite: []
+  type1: 3
+  type2: 10
+  maxHp: 95
+  attack: 125
+  defense: 79
+  spAttack: 60
+  spDefense: 100
+  speed: 81
+  maximumHp: 394
+  maximumAttack: 383
+  maximumDefense: 282
+  maximumSpAttack: 240
+  maximumSpDefense: 328
+  maximumSpeed: 287
+  evYield:
+  - stat: 1
+    value: 2
+  expYield: 189
+  growthRate: 4
+  catchRate: 45
+  learnableMoves:
+  - moveBase: {fileID: 0}
+    level: 1
+  - moveBase: {fileID: 0}
+    level: 1
+  - moveBase: {fileID: 0}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: ef7f37ad17a9c1a4fb55885ea75a9b38, type: 2}
+    level: 1
+  - moveBase: {fileID: 0}
+    level: 1
+  - moveBase: {fileID: 0}
+    level: 4
+  - moveBase: {fileID: 0}
+    level: 8
+  - moveBase: {fileID: 0}
+    level: 12
+  - moveBase: {fileID: 11400000, guid: c142ad765cda169459b93a4b9291e525, type: 2}
+    level: 16
+  - moveBase: {fileID: 0}
+    level: 21
+  - moveBase: {fileID: 0}
+    level: 24
+  - moveBase: {fileID: 11400000, guid: b2381c86a1a9e8d4eb2ad5ff6d36c457, type: 2}
+    level: 28
+  - moveBase: {fileID: 11400000, guid: e699153edf8da0940bce3117e41b4ccc, type: 2}
+    level: 32
+  - moveBase: {fileID: 0}
+    level: 36
+  - moveBase: {fileID: 11400000, guid: af0dedce9b2b20049b6981a3212da7b2, type: 2}
+    level: 40
+  - moveBase: {fileID: 0}
+    level: 44
+  - moveBase: {fileID: 0}
+    level: 48
+  - moveBase: {fileID: 0}
+    level: 52
+  learnableByItems: []
+  evolutions: []

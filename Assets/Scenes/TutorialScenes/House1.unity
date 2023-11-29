@@ -1450,6 +1450,14 @@ PrefabInstance:
       value: "Hello, and Welcome to the Pok\xE9mon Center. We restore your tired
         Pok\xE9mon to full health."
       objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971493, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.3125
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971495, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 695731909, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
     - target: {fileID: 7473421002554971496, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
       propertyPath: m_Name
       value: Merchant
@@ -1458,6 +1466,86 @@ PrefabInstance:
       propertyPath: defaultDirection
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkUpSprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkDownSprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkLeftSprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkRightSprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkUpSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 1415394776, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkUpSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: -780229423, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkUpSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 1415394776, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkUpSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: -1987755484, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkDownSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 695731909, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkDownSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 1525537887, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkDownSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 695731909, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkDownSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: -1089674132, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkLeftSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 834435200, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkLeftSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 1775801126, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkLeftSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 834435200, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkLeftSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: -550621557, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkRightSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 834435200, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkRightSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 1775801126, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkRightSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 834435200, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkRightSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: -550621557, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
     m_RemovedComponents:
     - {fileID: 46218181946416111, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
@@ -1561,10 +1649,94 @@ PrefabInstance:
       propertyPath: dialog.lines.Array.data[0]
       value: Now you can battle the wild pokemon in the tall grass
       objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971495, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1553799369, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
     - target: {fileID: 7473421002554971496, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
       propertyPath: m_Name
       value: Professor
       objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkUpSprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkDownSprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkLeftSprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkRightSprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkUpSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 1683139550, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkUpSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: -277600370, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkUpSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 1683139550, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkUpSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: -1391995535, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkDownSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: -1553799369, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkDownSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 58007600, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkDownSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: -1553799369, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkDownSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: -631059816, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkLeftSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 1993875316, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkLeftSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: -1104290701, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkLeftSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 1993875316, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkLeftSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: -2064880849, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkRightSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 1993875316, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkRightSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: -1104290701, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkRightSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 1993875316, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkRightSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: -2064880849, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
 --- !u!1 &1036880345 stripped
@@ -1587,6 +1759,7 @@ MonoBehaviour:
   pokemonToGive:
     _base: {fileID: 11400000, guid: 302ed754aa48cc044823e077e1408adc, type: 2}
     level: 5
+    nature: {fileID: 0}
   dialog:
     lines:
     - It's not safe to go out their without a Pokemon
@@ -1897,6 +2070,10 @@ PrefabInstance:
       value: "Hello, and Welcome to the Pok\xE9mon Center. We restore your tired
         Pok\xE9mon to full health."
       objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971495, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1502110681, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
     - target: {fileID: 7473421002554971496, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
       propertyPath: m_Name
       value: Healer
@@ -1905,6 +2082,38 @@ PrefabInstance:
       propertyPath: defaultDirection
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkUpSprites.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkDownSprites.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkLeftSprites.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkRightSprites.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkUpSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 294775590, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkDownSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 1502110681, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkLeftSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: -234806835, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
+    - target: {fileID: 7473421002554971499, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
+      propertyPath: walkRightSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: -234806835, guid: c7c802999a06d30448c5de80ea31a8ed, type: 3}
     m_RemovedComponents:
     - {fileID: 46218181946416111, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 044a6d3719a14924b862f122f7a4db12, type: 3}
@@ -2782,10 +2991,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wildPokemons:
-  - _base: {fileID: 11400000, guid: 1a6fe0a08f37f0448ada09c76ce4e080, type: 2}
-    level: 6
-  - _base: {fileID: 11400000, guid: 85e4f6beafe9d8c43a7f4516b7036c47, type: 2}
-    level: 4
+  - pokemon: {fileID: 0}
+    levelRange: {x: 0, y: 0}
+    chancePercentage: 0
+  - pokemon: {fileID: 0}
+    levelRange: {x: 0, y: 0}
+    chancePercentage: 0
+  wildPokemonsInWater: []
+  totalChance: 0
+  totalChanceInWater: -1
 --- !u!156049354 &1339516655
 Grid:
   m_ObjectHideFlags: 0

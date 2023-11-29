@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d6a81213263ba40a3ba4a850bc9aaa, type: 3}
+  m_Name: Magikarp
+  m_EditorClassIdentifier: 
+  name: Magikarp
+  dexId: 129
+  status: 0
+  species: Fish
+  height: 0.9
+  weight: 10
+  description: "An underpowered, pathetic Pok\xE9mon. It may jump high on rare occasions
+    but never more than seven feet."
+  frontSprite: []
+  backSprite: []
+  smallSprite: []
+  type1: 3
+  type2: 0
+  maxHp: 20
+  attack: 10
+  defense: 55
+  spAttack: 15
+  spDefense: 20
+  speed: 80
+  maximumHp: 244
+  maximumAttack: 130
+  maximumDefense: 229
+  maximumSpAttack: 141
+  maximumSpDefense: 152
+  maximumSpeed: 284
+  evYield:
+  - stat: 5
+    value: 1
+  expYield: 40
+  growthRate: 4
+  catchRate: 255
+  learnableMoves:
+  - moveBase: {fileID: 0}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: ef7f37ad17a9c1a4fb55885ea75a9b38, type: 2}
+    level: 15
+  - moveBase: {fileID: 0}
+    level: 25
+  learnableByItems: []
+  evolutions:
+  - evolvesInto: {fileID: 11400000, guid: 146593965fd1d83448387a050d85767d, type: 2}
+    requiredLevel: 20
+    requiredItem: {fileID: 0}
+    dayTimeCycle: 0

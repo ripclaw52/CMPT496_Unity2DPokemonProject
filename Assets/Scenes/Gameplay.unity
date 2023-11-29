@@ -10535,7 +10535,10 @@ MonoBehaviour:
   wildPokemonsInWater:
   - pokemon: {fileID: 11400000, guid: 8b97e354023529b44824c3d75f799fde, type: 2}
     levelRange: {x: 3, y: 6}
-    chancePercentage: 100
+    chancePercentage: 95
+  - pokemon: {fileID: 11400000, guid: 8b97e354023529b44824c3d75f799fde, type: 2}
+    levelRange: {x: 3, y: 6}
+    chancePercentage: 5
   totalChance: 100
   totalChanceInWater: 100
 --- !u!114 &1112566994 stripped
@@ -10562,12 +10565,16 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: cef9b5c0ed448544aa623a9fb3eb1c5e, type: 3}
     - target: {fileID: 7270024934051447565, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: connectedScenes.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7270024934051447565, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: connectedScenes.Array.data[0]
       value: 
       objectReference: {fileID: 751171108}
+    - target: {fileID: 7270024934051447565, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: connectedScenes.Array.data[1]
+      value: 
+      objectReference: {fileID: 1112566994}
     - target: {fileID: 7270024934051447568, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: m_Name
       value: Town2
@@ -10654,10 +10661,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1218654664b58e468c44cdaa144e1d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wildPokemons: []
-  wildPokemonsInWater: []
-  totalChance: -1
-  totalChanceInWater: -1
+  wildPokemons:
+  - pokemon: {fileID: 11400000, guid: 302ed754aa48cc044823e077e1408adc, type: 2}
+    levelRange: {x: 5, y: 7}
+    chancePercentage: 20
+  - pokemon: {fileID: 11400000, guid: 1a6fe0a08f37f0448ada09c76ce4e080, type: 2}
+    levelRange: {x: 5, y: 7}
+    chancePercentage: 20
+  - pokemon: {fileID: 11400000, guid: c99f7838bb9bbc84590e6365cfcfb26d, type: 2}
+    levelRange: {x: 5, y: 7}
+    chancePercentage: 60
+  wildPokemonsInWater:
+  - pokemon: {fileID: 11400000, guid: 8b97e354023529b44824c3d75f799fde, type: 2}
+    levelRange: {x: 3, y: 5}
+    chancePercentage: 95
+  - pokemon: {fileID: 11400000, guid: 8b97e354023529b44824c3d75f799fde, type: 2}
+    levelRange: {x: 3, y: 5}
+    chancePercentage: 5
+  totalChance: 100
+  totalChanceInWater: 100
 --- !u!1001 &7270024934577174973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10671,7 +10693,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: b537700733abb6647b65145bbbe148ee, type: 3}
     - target: {fileID: 7270024934051447565, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: connectedScenes.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7270024934051447565, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: connectedScenes.Array.data[0]
@@ -10681,6 +10703,10 @@ PrefabInstance:
       propertyPath: connectedScenes.Array.data[1]
       value: 
       objectReference: {fileID: 585593383}
+    - target: {fileID: 7270024934051447565, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
+      propertyPath: connectedScenes.Array.data[2]
+      value: 
+      objectReference: {fileID: 1612216332}
     - target: {fileID: 7270024934051447568, guid: b38c4c11857b7c4439f12d389fd71ad6, type: 3}
       propertyPath: m_Name
       value: HomeTown
@@ -10757,12 +10783,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wildPokemons:
+  - pokemon: {fileID: 11400000, guid: 58055b0035630c84b8864eb65aef1577, type: 2}
+    levelRange: {x: 2, y: 3}
+    chancePercentage: 35
+  - pokemon: {fileID: 11400000, guid: c99f7838bb9bbc84590e6365cfcfb26d, type: 2}
+    levelRange: {x: 3, y: 4}
+    chancePercentage: 25
+  - pokemon: {fileID: 11400000, guid: 9c0949a5155c7424f86a45a9d49c88e9, type: 2}
+    levelRange: {x: 2, y: 3}
+    chancePercentage: 35
   - pokemon: {fileID: 11400000, guid: 1a6fe0a08f37f0448ada09c76ce4e080, type: 2}
-    levelRange: {x: 3, y: 0}
-    chancePercentage: 100
+    levelRange: {x: 7, y: 9}
+    chancePercentage: 5
   wildPokemonsInWater:
   - pokemon: {fileID: 11400000, guid: 8b97e354023529b44824c3d75f799fde, type: 2}
     levelRange: {x: 4, y: 6}
-    chancePercentage: 100
+    chancePercentage: 95
+  - pokemon: {fileID: 11400000, guid: 8b97e354023529b44824c3d75f799fde, type: 2}
+    levelRange: {x: 4, y: 6}
+    chancePercentage: 5
   totalChance: 100
   totalChanceInWater: 100
