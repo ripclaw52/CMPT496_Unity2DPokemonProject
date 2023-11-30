@@ -111,6 +111,31 @@ public class Pokemon
 
         // Generate Moves
         Moves = new List<Move>();
+
+        // Start at highest level move and work to lowest from learnable moves list
+        var temp = Base.LearnableMoves;
+        for (int i = temp.Count-1; i >= 0; i--)
+        {
+            if (temp[i].Level <= Level)
+            {
+                // if index in list is greater than 3 (Level has more than 4 moves), enable randomness
+                if (i > 3)
+                {
+                    // Add randomness [0-2] / [3-9] = (3/10)
+                    if (Random.Range(0, 10) > 2)
+                        Moves.Add(new Move(temp[i].Base));
+                }
+                else
+                {
+                    Moves.Add(new Move(temp[i].Base));
+                }
+            }
+
+            if (Moves.Count >= PokemonBase.MaxNumOfMoves)
+                break;
+        }
+
+        /*
         foreach (var move in Base.LearnableMoves)
         {
             if (move.Level <= Level)
@@ -119,6 +144,7 @@ public class Pokemon
             if (Moves.Count >= PokemonBase.MaxNumOfMoves)
                 break;
         }
+        */
 
         Exp = Base.GetExpForLevel(Level);
 

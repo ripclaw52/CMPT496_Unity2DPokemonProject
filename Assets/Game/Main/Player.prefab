@@ -125,22 +125,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemons:
   - _base: {fileID: 11400000, guid: 1a6fe0a08f37f0448ada09c76ce4e080, type: 2}
-    level: 5
+    level: 15
     nature: {fileID: 0}
   - _base: {fileID: 11400000, guid: 302ed754aa48cc044823e077e1408adc, type: 2}
-    level: 5
+    level: 15
     nature: {fileID: 0}
   - _base: {fileID: 11400000, guid: 8b97e354023529b44824c3d75f799fde, type: 2}
-    level: 5
+    level: 15
     nature: {fileID: 0}
-  - _base: {fileID: 11400000, guid: 8b97e354023529b44824c3d75f799fde, type: 2}
-    level: 5
+  - _base: {fileID: 11400000, guid: 32cf2765e76d10344833942f435f36f9, type: 2}
+    level: 19
     nature: {fileID: 0}
-  - _base: {fileID: 11400000, guid: 8b97e354023529b44824c3d75f799fde, type: 2}
-    level: 5
+  - _base: {fileID: 11400000, guid: d84361ce5b71dbc40b3e2f2a4da59f9e, type: 2}
+    level: 25
     nature: {fileID: 0}
-  - _base: {fileID: 11400000, guid: 8b97e354023529b44824c3d75f799fde, type: 2}
-    level: 5
+  - _base: {fileID: 11400000, guid: bc16f66b087b4104e8219ae7ccf5a823, type: 2}
+    level: 25
     nature: {fileID: 0}
 --- !u!114 &5463470663888356623
 MonoBehaviour:
@@ -412,8 +412,14 @@ MonoBehaviour:
     - _base: {fileID: 0}
       level: 0
       nature: {fileID: 0}
-    - _base: {fileID: 0}
-      level: 0
+    - _base: {fileID: 11400000, guid: 58055b0035630c84b8864eb65aef1577, type: 2}
+      level: 6
+      nature: {fileID: 0}
+    - _base: {fileID: 11400000, guid: 81e18fdfb8693634daa1187dc200cae7, type: 2}
+      level: 9
+      nature: {fileID: 0}
+    - _base: {fileID: 11400000, guid: d84361ce5b71dbc40b3e2f2a4da59f9e, type: 2}
+      level: 25
       nature: {fileID: 0}
     - _base: {fileID: 0}
       level: 0
@@ -424,8 +430,14 @@ MonoBehaviour:
     - _base: {fileID: 0}
       level: 0
       nature: {fileID: 0}
-    - _base: {fileID: 0}
-      level: 0
+    - _base: {fileID: 11400000, guid: 9c0949a5155c7424f86a45a9d49c88e9, type: 2}
+      level: 6
+      nature: {fileID: 0}
+    - _base: {fileID: 11400000, guid: ff45ad675604089479b2245ea5bd15c0, type: 2}
+      level: 9
+      nature: {fileID: 0}
+    - _base: {fileID: 11400000, guid: bc16f66b087b4104e8219ae7ccf5a823, type: 2}
+      level: 25
       nature: {fileID: 0}
     - _base: {fileID: 0}
       level: 0
@@ -436,23 +448,11 @@ MonoBehaviour:
     - _base: {fileID: 0}
       level: 0
       nature: {fileID: 0}
-    - _base: {fileID: 0}
-      level: 0
+    - _base: {fileID: 11400000, guid: c99f7838bb9bbc84590e6365cfcfb26d, type: 2}
+      level: 30
       nature: {fileID: 0}
-    - _base: {fileID: 0}
-      level: 0
-      nature: {fileID: 0}
-    - _base: {fileID: 0}
-      level: 0
-      nature: {fileID: 0}
-    - _base: {fileID: 0}
-      level: 0
-      nature: {fileID: 0}
-    - _base: {fileID: 0}
-      level: 0
-      nature: {fileID: 0}
-    - _base: {fileID: 0}
-      level: 0
+    - _base: {fileID: 11400000, guid: 834e0f7621ce37a4ba75868b7cf24f80, type: 2}
+      level: 50
       nature: {fileID: 0}
     - _base: {fileID: 0}
       level: 0
@@ -598,11 +598,11 @@ MonoBehaviour:
     - _base: {fileID: 0}
       level: 0
       nature: {fileID: 0}
-    - _base: {fileID: 0}
-      level: 0
+    - _base: {fileID: 11400000, guid: 32cf2765e76d10344833942f435f36f9, type: 2}
+      level: 19
       nature: {fileID: 0}
-    - _base: {fileID: 0}
-      level: 0
+    - _base: {fileID: 11400000, guid: 146593965fd1d83448387a050d85767d, type: 2}
+      level: 50
       nature: {fileID: 0}
     - _base: {fileID: 0}
       level: 0
