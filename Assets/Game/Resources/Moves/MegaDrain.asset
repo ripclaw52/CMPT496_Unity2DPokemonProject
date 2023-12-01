@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd06e1a6230da2f4a8ba71cd377dbc47, type: 3}
+  m_Name: MegaDrain
+  m_EditorClassIdentifier: 
+  name: Mega Drain
+  description: "A nutrient-draining attack. The user\u2019s HP is restored by up
+    to half the damage taken by the target."
+  type: 5
+  power: 40
+  accuracy: 100
+  alwaysHits: 0
+  pp: 15
+  priority: 0
+  criticalHitBehaviour: 0
+  recoil:
+    recoilType: 0
+    recoilDamage: 0
+  category: 1
+  effects:
+    boosts: []
+    status: 0
+    volatileStatus: 0
+  secondaries: []
+  target: 0
+  sound: {fileID: 8300000, guid: 96682ed8c9418854a9479ae8c0a0b28c, type: 3}

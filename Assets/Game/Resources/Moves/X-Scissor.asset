@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd06e1a6230da2f4a8ba71cd377dbc47, type: 3}
+  m_Name: X-Scissor
+  m_EditorClassIdentifier: 
+  name: X-Scissor
+  description: The user slashes at the target by crossing its scythes, claws, or
+    the like as if they were a pair of scissors.
+  type: 12
+  power: 80
+  accuracy: 100
+  alwaysHits: 0
+  pp: 15
+  priority: 0
+  criticalHitBehaviour: 0
+  recoil:
+    recoilType: 0
+    recoilDamage: 0
+  category: 0
+  effects:
+    boosts: []
+    status: 0
+    volatileStatus: 0
+  secondaries: []
+  target: 0
+  sound: {fileID: 8300000, guid: 1e7f2df68d5dbf842b912d4b700f7069, type: 3}

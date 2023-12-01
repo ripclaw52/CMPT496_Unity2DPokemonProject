@@ -60,6 +60,11 @@ public class GameMenuState : State<GameController>
         {
             SavingSystem.i.Load("slot1");
         }
+        else if (selection == 6) // Quit
+        {
+            Debug.Log($"Quit called");
+            Application.Quit();
+        }
     }
 
     void OnBack()

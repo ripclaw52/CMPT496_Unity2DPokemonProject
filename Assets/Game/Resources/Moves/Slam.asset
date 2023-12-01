@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd06e1a6230da2f4a8ba71cd377dbc47, type: 3}
+  m_Name: Slam
+  m_EditorClassIdentifier: 
+  name: Slam
+  description: The target is slammed with a long tail, vines, or the like to inflict
+    damage.
+  type: 1
+  power: 80
+  accuracy: 75
+  alwaysHits: 0
+  pp: 20
+  priority: 0
+  criticalHitBehaviour: 0
+  recoil:
+    recoilType: 0
+    recoilDamage: 0
+  category: 0
+  effects:
+    boosts: []
+    status: 0
+    volatileStatus: 0
+  secondaries: []
+  target: 0
+  sound: {fileID: 8300000, guid: a8431c2673f9b3c409952d0406f09d34, type: 3}

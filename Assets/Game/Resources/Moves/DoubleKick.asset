@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd06e1a6230da2f4a8ba71cd377dbc47, type: 3}
+  m_Name: DoubleKick
+  m_EditorClassIdentifier: 
+  name: Double Kick
+  description: The user attacks by kicking the target twice in a row using two feet.
+  type: 7
+  power: 60
+  accuracy: 100
+  alwaysHits: 0
+  pp: 30
+  priority: 0
+  criticalHitBehaviour: 0
+  recoil:
+    recoilType: 0
+    recoilDamage: 0
+  category: 0
+  effects:
+    boosts: []
+    status: 0
+    volatileStatus: 0
+  secondaries: []
+  target: 0
+  sound: {fileID: 8300000, guid: 99061907802fe744a86038efbdf3a843, type: 3}
