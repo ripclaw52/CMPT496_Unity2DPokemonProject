@@ -10,8 +10,13 @@ public class HPBar : MonoBehaviour
 
     public bool IsUpdating { get; private set; }
 
-    public void SetHP(float hpNormalized)
+    public void SetHP(float hpNormalized = 1)
     {
+        if (hpNormalized.Equals(float.NaN))
+        {
+            hpNormalized = 1;
+        }
+
         healthTop.transform.localScale = new Vector3(hpNormalized, 1f);
         healthBottom.transform.localScale = new Vector3(hpNormalized, 1f);
 

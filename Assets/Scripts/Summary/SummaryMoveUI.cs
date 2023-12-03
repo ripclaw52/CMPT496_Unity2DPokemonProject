@@ -54,7 +54,7 @@ public class SummaryMoveUI : SelectionUI<MoveSlot>
 
         UpdateMoveList();
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetButtonDown("Menu"))
         {
             GameController.Instance.StateMachine.Push(SummaryMoveState.i);
             SetSelectionSettings(SelectionType.ListV, 1);

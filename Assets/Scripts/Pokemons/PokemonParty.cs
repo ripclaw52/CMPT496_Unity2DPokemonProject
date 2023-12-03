@@ -35,16 +35,21 @@ public class PokemonParty : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-        foreach (var pokemon in pokemons)
-        {
-            pokemon.Init();
-        }
+
     }
 
     /// <summary>
     /// Starts the process.
     /// </summary>
     private void Start()
+    {
+        foreach (var pokemon in pokemons)
+        {
+            pokemon.Init();
+        }
+    }
+
+    public void UpdatePokedex()
     {
         // Ensure pokemons in party are listed as owned
         foreach (var pokemon in pokemons)

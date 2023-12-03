@@ -21,7 +21,7 @@ public class FreeRoamState : State<GameController>
     {
         PlayerController.i.HandleUpdate();
 
-        if (Input.GetKeyUp(KeyCode.Return))
+        if (Input.GetButtonUp("Menu"))
             gc.StateMachine.Push(GameMenuState.i);
     }
 }

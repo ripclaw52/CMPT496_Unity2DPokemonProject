@@ -38,7 +38,9 @@ public class PartyMemberUI : MonoBehaviour
     {
         nameText.text = _pokemon.Base.Name;
         levelText.text = "Lvl " + _pokemon.Level;
-        hpBar.SetHP((float)_pokemon.HP / _pokemon.MaxHP);
+
+        // normalize this
+        hpBar.SetHP( (float)_pokemon.HP / _pokemon.MaxHP );
     }
 
     /// <summary>
@@ -48,9 +50,13 @@ public class PartyMemberUI : MonoBehaviour
     public void SetSelected(bool selected)
     {
         if (selected)
+        {
             nameText.color = GlobalSettings.i.HighlightedColor;
+        }
         else
+        {
             nameText.color = Color.black;
+        }
     }
 
     /// <summary>

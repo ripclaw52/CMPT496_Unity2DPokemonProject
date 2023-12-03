@@ -14,8 +14,19 @@ public class Pokedex : MonoBehaviour, ISavable
         i = this;
     }
 
+    void ClearPokedexData()
+    {
+        foreach (var pokemon in PokemonDB.objects)
+        {
+            pokemon.Value.Status = EncounterStatus.None;
+        }
+    }
+
     public void SetupPokedex()
     {
+        // Clear pokedex data
+        ClearPokedexData();
+
         List<PokemonBase> pokedexBase = new List<PokemonBase>();
         foreach (var pokemon in PokemonDB.objects.Values)
         {

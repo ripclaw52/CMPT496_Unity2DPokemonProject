@@ -21,7 +21,7 @@ public class PC : MonoBehaviour, ISavable
         }
     }
 
-    private void Awake()
+    private void Start()
     {
         foreach (var box in pcList)
         {

@@ -34,7 +34,7 @@ public class Pokemon
     [SerializeField] PokemonBase _base;
     [SerializeField] int level;
 
-    public NatureBase nature;
+    public NatureBase? nature;
     public StatValue iv = new StatValue();
     public StatValue ev = new StatValue();
 
@@ -151,7 +151,9 @@ public class Pokemon
         // Enable IV and EV before Stat Calculation
         //Debug.Log("This line exists!");
         if (Nature == null)
+        {
             GetRandomNature();
+        }
         //Debug.Log($"{nature.Name}");
         IV = new StatValue();
         EV = new StatValue();
@@ -581,16 +583,17 @@ public class Pokemon
     public void GetRandomNature()
     {
         //Debug.Log("Nature runs!");
-        List<NatureBase> natures = new List<NatureBase>();
+        int size = NatureDB.objects.Count;
+        List<string> natures = new List<string>();
         foreach (var i in NatureDB.objects)
         {
             //Debug.Log($"nature; k:{i.Key} v:{i.Value}");
-            natures.Add(i.Value);
+            natures.Add(i.Key);
         }
 
-        int index = Mathf.RoundToInt(Random.Range(0, natures.Count));
+        int index = Mathf.RoundToInt(Random.Range(0, size));
         //Debug.Log($"{natures[index].name}");
-        nature = natures[index];
+        nature = NatureDB.GetObjectByName(natures[index]);
     }
 
     /// <summary>

@@ -30,6 +30,7 @@ public class PartyScreen : SelectionUI<TextSlot>
         SetSelectionSettings(SelectionType.Grid, 2);
 
         party = PokemonParty.GetPlayerParty();
+        party.UpdatePokedex();
         SetPartyData();
 
         party.OnUpdated += SetPartyData;

@@ -23,22 +23,22 @@ public class GameController : MonoBehaviour
         Instance = this;
 
         // disables the mouse
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+
+        ConditionsDB.Init();
+        
+        MoveDB.Init();
+        //Debug.Log($"MoveDB = {MoveDB.objects.Count}");
+        
+        ItemDB.Init();
+        //Debug.Log($"ItemDB = {ItemDB.objects.Count}");
 
         NatureDB.Init();
         //Debug.Log($"NatureDB = {NatureDB.objects.Count}");
 
         PokemonDB.Init();
         //Debug.Log($"PokemonDB = {PokemonDB.objects.Count}");
-
-        MoveDB.Init();
-        //Debug.Log($"MoveDB = {MoveDB.objects.Count}");
-
-        ConditionsDB.Init();
-
-        ItemDB.Init();
-        //Debug.Log($"ItemDB = {ItemDB.objects.Count}");
 
         QuestDB.Init();
         //Debug.Log($"QuestDB = {QuestDB.objects.Count}");
@@ -50,7 +50,9 @@ public class GameController : MonoBehaviour
         StateMachine.ChangeState(FreeRoamState.i);
 
         battleSystem.OnBattleOver += EndBattle;
-
+        
+        Pokedex.i.SetupPokedex();
+        
         partyScreen.Init();
         
         DialogManager.Instance.OnShowDialog += () =>
@@ -62,8 +64,6 @@ public class GameController : MonoBehaviour
         {
             StateMachine.Pop();
         };
-
-        Pokedex.i.SetupPokedex();
     }
 
     public void PauseGame(bool pause)
@@ -141,6 +141,7 @@ public class GameController : MonoBehaviour
             StartCoroutine(Fader.i.FadeOut(0.5f));
     }
 
+    /*
     private void OnGUI()
     {
         var style = new GUIStyle();
@@ -152,6 +153,7 @@ public class GameController : MonoBehaviour
             GUILayout.Label(state.GetType().ToString(), style);
         }
     }
+    */
 
     public PlayerController PlayerController => playerController;
     public Camera WorldCamera => worldCamera;

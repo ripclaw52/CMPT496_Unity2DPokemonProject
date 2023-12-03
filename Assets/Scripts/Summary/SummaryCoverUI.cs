@@ -38,6 +38,8 @@ public class SummaryCoverUI : MonoBehaviour
 
     public void Init(Pokemon pokemon)
     {
+        Debug.Log($"pokemon.hasValue => ({pokemon.HasValue})");
+
         //Debug.Log("Called how many times?");
         pokemonPortrait.sprite = pokemon.Base.FrontSprite[0];
         pokemonPortrait.SetNativeSize();
@@ -52,7 +54,7 @@ public class SummaryCoverUI : MonoBehaviour
         // Pokemon Species
         pokemonSpecies.text = pokemon.Base.Name;
         // Nature Field
-        pokemonNature.text = pokemon.Nature.Name;
+        pokemonNature.text = (pokemon.Nature != null) ? pokemon.Nature.Name : "???";
 
         // Type Icon information
         TypeBase typeBase1 = GlobalSettings.i.GetPokemonType(pokemon.Base.Type1);
