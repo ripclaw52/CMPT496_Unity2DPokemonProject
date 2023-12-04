@@ -38,8 +38,6 @@ public class SummaryCoverUI : MonoBehaviour
 
     public void Init(Pokemon pokemon)
     {
-        Debug.Log($"pokemon.hasValue => ({pokemon.HasValue})");
-
         //Debug.Log("Called how many times?");
         pokemonPortrait.sprite = pokemon.Base.FrontSprite[0];
         pokemonPortrait.SetNativeSize();

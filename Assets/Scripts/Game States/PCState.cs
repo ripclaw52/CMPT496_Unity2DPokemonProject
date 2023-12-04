@@ -27,7 +27,7 @@ public class PCState : State<GameController>
     public override void Enter(GameController owner)
     {
         gc = owner;
-        Cursor.lockState = CursorLockMode.None;
+        //Cursor.lockState = CursorLockMode.None;
 
         virtualMouse.SetActive(true);
         VirtualMouseUI.i.MoveMousePosition();
@@ -51,7 +51,7 @@ public class PCState : State<GameController>
         pcUI.gameObject.SetActive(false);
         
         virtualMouse.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
 
         pcUI.OnBack -= OnBack;
     }

@@ -124,7 +124,7 @@ public class DraggablePokemon : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         GameController gc = GameController.Instance;
 
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         PCState.i.VirtualMouse.SetActive(false);
         VirtualMouseUI.i.MoveMousePosition();
 
@@ -133,13 +133,13 @@ public class DraggablePokemon : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
         if (DynamicMenuState.i.SelectedItem == 0)
         {
-            Debug.Log($"Check summary!");
+            //Debug.Log($"Check summary!");
             gc.StateMachine.Push(SummaryState.i);
         }
         else if (DynamicMenuState.i.SelectedItem == 1)
         {
-            Debug.Log($"Cancel!");
-            Cursor.lockState = CursorLockMode.None;
+            //Debug.Log($"Cancel!");
+            //Cursor.lockState = CursorLockMode.None;
             PCState.i.VirtualMouse.SetActive(true);
             yield break;
         }

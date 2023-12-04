@@ -47,10 +47,10 @@ public class SummaryState : State<GameController>
 
     public override void Exit()
     {
-        Debug.Log($"prev state: ({previousState == PCState.i})");
+        //Debug.Log($"prev state: ({previousState == PCState.i})");
         if (previousState == PCState.i)
         {
-            Cursor.lockState = CursorLockMode.None;
+            //Cursor.lockState = CursorLockMode.None;
             PCState.i.VirtualMouse.SetActive(true);
             VirtualMouseUI.i.MoveMousePosition();
         }
