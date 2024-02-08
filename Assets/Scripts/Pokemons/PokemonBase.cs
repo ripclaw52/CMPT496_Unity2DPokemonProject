@@ -298,12 +298,7 @@ public enum GrowthRate
     Erratic, Fast, MediumFast, MediumSlow, Slow, Fluctuating
 }
 
-public enum EncounterStatus
-{
-    None,
-    Seen,
-    Own
-}
+public enum EncounterStatus { None, Seen, Own }
 
 public enum EVStats
 {

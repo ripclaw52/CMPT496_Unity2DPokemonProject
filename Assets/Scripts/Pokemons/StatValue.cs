@@ -80,7 +80,6 @@ public class StatValue
                     break;
                 case EVStats.SpAttack:
                     SpAttack = (SpAttack < maxNumber) ? SpAttack += ev.Value : SpAttack;
-
                     break;
                 case EVStats.SpDefense:
                     SpDefense = (SpDefense < maxNumber) ? SpDefense += ev.Value : SpDefense;

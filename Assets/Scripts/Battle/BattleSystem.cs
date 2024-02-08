@@ -112,10 +112,11 @@ public class BattleSystem : MonoBehaviour
         {
             // Trainer Battle
 
-            // Show trainer and player sprites
+            // Hide Pokemon sprites
             playerUnit.gameObject.SetActive(false);
             enemyUnit.gameObject.SetActive(false);
 
+            // Show player and trainer sprites
             playerImage.gameObject.SetActive(true);
             trainerImage.gameObject.SetActive(true);
             playerImage.sprite = player.Sprite;
@@ -124,13 +125,15 @@ public class BattleSystem : MonoBehaviour
             yield return dialogBox.TypeDialog($"{Trainer.Name} wants to battle!");
 
             // Send out first pokemon of the trainer
+            // Hide trainer and send out trainer pokemon
             trainerImage.gameObject.SetActive(false);
             enemyUnit.gameObject.SetActive(true);
+
             var enemyPokemon = TrainerParty.GetHealthyPokemon();
             enemyUnit.Setup(enemyPokemon);
             yield return dialogBox.TypeDialog($"{Trainer.Name} sent out {enemyPokemon.Base.Name}!");
 
-            // Send out first pokemon of the player
+            // Hide player and send out player pokemon
             playerImage.gameObject.SetActive(false);
             playerUnit.gameObject.SetActive(true);
             var playerPokemon = PlayerParty.GetHealthyPokemon();

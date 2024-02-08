@@ -7,7 +7,7 @@ public class PokedexObject
     public int ID { get; set; }
     public string Name { get; set; }
     public PokemonBase Base { get; private set; }
-    public EncounterStatus Status { get; set; }    
+    public EncounterStatus Status { get; set; }
 
     public PokedexObject(PokemonBase pPokemon)
     {
