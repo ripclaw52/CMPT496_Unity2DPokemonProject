@@ -6,6 +6,8 @@ Computer Science Capstone project at MacEwan University - Pokemon recreation in 
 " target="_blank"><img src="http://img.youtube.com/vi/u1BlhmtqeUc/0.jpg" 
 alt="Full demo video" width="80%" height="80%" border="10" /></a>
 
+
+
 <br />
 <hr />
 
@@ -14,12 +16,26 @@ alt="Full demo video" width="80%" height="80%" border="10" /></a>
 " target="_blank"><img src="http://img.youtube.com/vi/AF2VQmdsRak/0.jpg" 
 alt="Pokdex screen video" width="80%" height="80%" border="10" /></a>
 
+
+
+<br />
+<hr />
+
 ### PC BOX screen video
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=w8yYK9hELBo
 " target="_blank"><img src="http://img.youtube.com/vi/w8yYK9hELBo/0.jpg" 
 alt="PC Box screen video" width="80%" height="80%" border="10" /></a>
 
+
+
+<br />
+<hr />
+
 ### SUMMARY screen video
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=P_4jdJTdBRg
 " target="_blank"><img src="http://img.youtube.com/vi/P_4jdJTdBRg/0.jpg" 
 alt="Summary screen video" width="80%" height="80%" border="10" /></a>
+
+
+<br />
+<hr />
