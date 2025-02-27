@@ -4,20 +4,22 @@ Computer Science Capstone project at MacEwan University - Pokemon recreation in 
 ### Full demo video
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=u1BlhmtqeUc
 " target="_blank"><img src="http://img.youtube.com/vi/u1BlhmtqeUc/0.jpg" 
-alt="Full demo video" width="240" height="180" border="10" /></a>
+alt="Full demo video" width="80%" height="80%" border="10" /></a>
+
+<br />
+<hr />
 
 ### POKEDEX screen video
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE
-" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=AF2VQmdsRak
+" target="_blank"><img src="http://img.youtube.com/vi/AF2VQmdsRak/0.jpg" 
+alt="Pokdex screen video" width="80%" height="80%" border="10" /></a>
 
 ### PC BOX screen video
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE
-" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=w8yYK9hELBo
+" target="_blank"><img src="http://img.youtube.com/vi/w8yYK9hELBo/0.jpg" 
+alt="PC Box screen video" width="80%" height="80%" border="10" /></a>
 
 ### SUMMARY screen video
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE
-" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
-https://youtu.be/P_4jdJTdBRg
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=P_4jdJTdBRg
+" target="_blank"><img src="http://img.youtube.com/vi/P_4jdJTdBRg/0.jpg" 
+alt="Summary screen video" width="80%" height="80%" border="10" /></a>
